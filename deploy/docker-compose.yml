@@ -28,6 +28,7 @@ services:
       - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/dem/ldem_80s_80m_f32.npy:/app/data/dem/ldem_80s_80m_f32.npy:ro
       - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/dem20:/app/data/dem20:ro
       - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/dem5:/app/data/dem5:ro
+      - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/skyfast:/app/data/addons/skyfast:ro
       - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/horizon_cache:/app/data/horizon_cache
     ports:
       - "127.0.0.1:${SLIPDAY_LOCAL_PORT:-8100}:8000"
