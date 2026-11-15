@@ -34,6 +34,8 @@
   }
   /* a number from the estimate's own test report: the share of verdicts it got right on held-out clicks */
   function estAccuracy(est) {
+    var ma = est && est.measured_accuracy;
+    if (ma && typeof ma.verdict_accuracy === 'number') { return (ma.verdict_accuracy <= 1 ? Math.round(ma.verdict_accuracy * 1000) / 10 : ma.verdict_accuracy) + ' %'; }
     var found = null;
     (function walk(o, path) {
       if (found !== null || !o || typeof o !== 'object') { return; }
@@ -231,8 +233,8 @@
     renderSky();
     if (SKYFAST_ON) {
       napi('/api/addons/skyfast?lat=' + s.lat + '&lon=' + s.lon).then(function (r) {
-        if (nv.whyKey !== key || nv.why || !r || r.available === false || !r.track || !r.skyline) { return; }
-        r._approx = true; nv.why = r; renderSky();
+        if (nv.whyKey !== key || nv.why || !r || r.available === false || !r.skyline || !r.skyline.az_deg) { return; }
+        nv.approxSky = { key: key, r: r }; renderSky();   /* skyline only: the Sun and Earth tracks come with the exact answer */
       }).catch(function () { /* the exact answer follows anyway */ });
     }
     napi('/api/why', body).then(function (w) { if (nv.whyKey === key) { nv.why = w; renderSky(); } })
@@ -277,6 +279,10 @@
       if (tokV !== nv.vTok || !$('nvGround')) { return; }
       if (!sf || !sf.available || !sf.steepest) { $('nvGround').textContent = 'Ground: slope not known here (no fine terrain grid covers it).'; return; }
       var flat = sf.points_passing === sf.points_known;
+      /* the closed fold still says the key number */
+      var fk = document.querySelector('#foldSafety > summary .foldKey');
+      if (!fk && document.querySelector('#foldSafety > summary')) { fk = document.createElement('span'); fk.className = 'foldKey'; document.querySelector('#foldSafety > summary b').insertAdjacentElement('afterend', fk); }
+      if (fk) { fk.textContent = 'Here: steepest ' + sf.steepest.slope_deg.toFixed(1) + '°, ' + (flat ? 'flat enough' : 'too steep') + ' (limit ' + sf.limit_deg + '°)'; }
       $('nvGround').innerHTML = 'Ground: <b>' + (flat ? 'flat enough' : 'too steep') + '</b> (steepest of ' + sf.points_known + ' touchdown points ' + sf.steepest.slope_deg.toFixed(1) + '°, NASA’s limit ' + sf.limit_deg + '°)';
       if (!flat && verdict === 'yes') {
         var band = $('nvBand'); band.className = 'vband v-notsure';
@@ -301,6 +307,16 @@
       (m.criteria && m.criteria.stations ? 'Radio contact also needs a Deep Space Network station to see the Moon. ' : '') +
       'Yes means all 13 touchdown points, a coarser grid and a finer sampling agree; Not sure means they do not.</p>';
   }
+  /* the estimate is trained for one plan, which the API names in words, for example "landing 18 Nov 2026, 60 landing
+     dates, 240 sunlit hours and 100 hours of Earth contact in the first 14 days"; it is used only when the page's plan matches */
+  function estPlanMatches(plan, cfg) {
+    if (typeof plan === 'object') { return plan.start === cfg.start && +plan.need_sun_h === +cfg.need.need_sun_h && +plan.need_earth_h === +cfg.need.need_earth_h && +plan.window_days === +cfg.need.window_days; }
+    var p = String(plan), d = /landing (\d{1,2} \w+ \d{4})/.exec(p), sun = /(\d+) sunlit hours/.exec(p), earth = /(\d+) hours of Earth contact/.exec(p), win = /first (\d+) days/.exec(p);
+    if (!d || !sun || !earth || !win) { return false; }
+    var t = Date.parse(d[1] + ' UTC'), c = Date.parse(String(cfg.start).slice(0, 10) + 'T00:00:00Z');
+    return isFinite(t) && isFinite(c) && Math.abs(t - c) < 86400000 && +sun[1] === +cfg.need.need_sun_h && +earth[1] === +cfg.need.need_earth_h &&
+      (cfg.need.window_days === undefined || +win[1] === +cfg.need.window_days);
+  }
   /* an instant first answer at a clicked point, from the precomputed map grids; the full check replaces it */
   function quickAnswer(s) {
     var A = app(), g = A && A.grids ? A.grids() : null;
@@ -314,8 +330,7 @@
       napi('/api/addons/estimate?lat=' + s.lat + '&lon=' + s.lon).then(function (r) { nv.est[ek] = r || false; renderVerdict(); }).catch(function () { nv.est[ek] = false; });
     }
     var est = nv.est[ek], cfgE = A.cfg();
-    var planOk = est && est.available && est.plan && cfgE && est.plan.start === cfgE.start && +est.plan.need_sun_h === +cfgE.need.need_sun_h &&
-      +est.plan.need_earth_h === +cfgE.need.need_earth_h && +est.plan.window_days === +cfgE.need.window_days;
+    var planOk = est && est.available && est.plan && cfgE && estPlanMatches(est.plan, cfgE);
     if (planOk) {
       var acc = estAccuracy(est);
       return '<p class="nv-quick-ans"><b>Learned estimate' + (acc ? ' (right ' + acc + ' of the time in testing)' : '') + '; the full check on the finest terrain follows:</b> ' + esc(est.verdict_words || est.verdict) +
@@ -358,6 +373,7 @@
     var w = nv.why, chart = $('nvChart');
     if (!curSite()) { chart.innerHTML = ''; $('nvTable').innerHTML = ''; $('nvStrip').innerHTML = ''; $('nvScrubBox').hidden = true; return; }
     renderSentence();
+    if (!w && nv.approxSky && nv.approxSky.key === nv.whyKey) { drawApproxSky(nv.approxSky.r); $('nvScrubBox').hidden = true; return; }
     if (!w) { chart.innerHTML = '<div class="nv-wait">Drawing the skyline from NASA LOLA heights…</div>'; $('nvScrubBox').hidden = true; return; }
     if (w.error) { chart.innerHTML = '<p class="nv-hint">' + esc(w.error) + '</p>'; $('nvScrubBox').hidden = true; return; }
     $('nvScrubBox').hidden = false;
@@ -509,6 +525,23 @@
       $('nvApprox').textContent = w._approx ? 'Approximate: the nearest precomputed point' + (ap !== null ? ', ' + Math.round(ap) + ' m away' : '') + '. The exact skyline for this spot replaces it in a few seconds.' : '';
     }
   }
+  /* the instant approximate skyline (from /api/addons/skyfast): the ground line only, labelled with its distance */
+  function drawApproxSky(r) {
+    var sk = r.skyline, az = sk.az_deg, elv = sk.el_deg, n = Math.min(az.length, elv.length), box = $('nvChart');
+    var W = Math.max(280, Math.round(box.clientWidth || 600)), H = 200, L = 34, R = 8, T = 10, B = 24;
+    var lo = Math.min(-2, Math.floor(Math.min.apply(null, elv))), hi = Math.max(2, Math.ceil(Math.max.apply(null, elv)));
+    var sx = function (a) { return L + (W - L - R) * (((a % 360) + 360) % 360) / 360; }, sy = function (e) { return T + (H - T - B) * (hi - e) / (hi - lo); };
+    var pts = [];
+    for (var k = 0; k < n; k++) { pts.push(sx(az[k]).toFixed(1) + ',' + sy(elv[k]).toFixed(1)); }
+    var ax = '';
+    [[0, 'N'], [90, 'E'], [180, 'S'], [270, 'W']].forEach(function (q) { ax += '<text class="ax" x="' + sx(q[0]) + '" y="' + (H - 6) + '" text-anchor="middle">' + q[1] + '</text>'; });
+    [lo, 0, hi].forEach(function (e) { ax += '<text class="ax" x="' + (L - 4) + '" y="' + (sy(e) + 4) + '" text-anchor="end">' + e + '°</text>'; });
+    box.innerHTML = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Approximate skyline all around the site">' +
+      '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + sy(0) + '" y2="' + sy(0) + '" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="3 3"/>' +
+      '<polygon points="' + L + ',' + sy(lo) + ' ' + pts.join(' ') + ' ' + (W - R) + ',' + sy(lo) + '" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.5"/>' + ax + '</svg>' +
+      '<p class="nv-hint">Approximate: the skyline of the nearest precomputed point' + (isFinite(r.distance_m) ? ', ' + Math.round(r.distance_m) + ' m away' : '') +
+      '. The Sun and the Earth are added with the exact skyline for this spot in a few seconds.</p>';
+  }
   function approxDist(w) {
     var found = null;
     (function walk(o) {
@@ -560,6 +593,7 @@
     });
     var days = Math.round((n - 1) / 24), every = W < 520 ? 2 : 1;
     for (var d = 0; d <= days; d += every) {
+      if (d === every && days > 3) { continue; }   /* the first tick after "day 0" would touch it */
       svg.appendChild(el('text', { x: sx(Math.min(d * 24, n - 1)), y: 60, 'text-anchor': d === 0 ? 'start' : (d === days ? 'end' : 'middle'), 'class': 'ax' }, d === 0 ? 'day 0' : String(d)));
     }
     svg.appendChild(el('line', { x1: sx(nv.hour), x2: sx(nv.hour), y1: 2, y2: 44, 'class': 'cursor' }));
@@ -834,7 +868,7 @@
       }, function (c) { var k = c.st && c.st.available && c.st.classes ? c.st.classes.filter(function (q) { return q.id === 'clps' && q.p8 !== undefined; })[0] : null; return k ? k.p8 : null; });
       h += row('Plan holds / flat / both, per lander class <small>(joint chance; accuracies assumed)</small>', function (c) {
         if (c.jt === null || c.jt === undefined) { return wait; }
-        if (!c.jt || !c.jt.available || !c.jt.classes) { return '<small>' + esc((c.jt && c.jt.reason) ? 'not known here: ' + c.jt.reason : 'not known here') + '</small>'; }
+        if (!c.jt || !c.jt.available || !c.jt.classes) { return '<small>not known here</small>' + ((c.jt && c.jt.reason) ? '<details class="cellWhy"><summary>Why not</summary><small>' + esc(c.jt.reason) + '</small></details>' : ''); }
         return c.jt.classes.map(function (q) { return esc(q.label) + ': ' + Math.round(q.plan_holds_pct) + ' / ' + Math.round(q.flat_pct) + ' / <b>' + Math.round(q.joint_pct) + '%</b>'; }).join('<br>');
       }, function (c) { var k = c.jt && c.jt.available && c.jt.classes ? c.jt.classes.filter(function (q) { return q.id === 'clps'; })[0] : null; return k ? k.joint_pct : null; });
       h += row('Next good dates', function (c) {
@@ -1199,6 +1233,63 @@
       var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) { return; }
       for (var p = t; p; p = p.parentElement) { if (p.tagName === 'DETAILS') { p.open = true; } }
     });
+    /* section bar: open the section's first fold (never close one), put the section in the address,
+       and move focus to its heading so keyboard and screen-reader users land there too */
+    Array.prototype.forEach.call(document.querySelectorAll('#jumpBar a[href^="#"]'), function (a) {
+      a.addEventListener('click', function () {
+        var id = a.getAttribute('href').slice(1), t = document.getElementById(id); if (!t) { return; }
+        var fold = t.tagName === 'DETAILS' ? t : (t.querySelector && t.querySelector('details.fold'));
+        if (!fold && /^H[1-3]$/.test(t.tagName)) {
+          for (var s = t.nextElementSibling; s && !s.classList.contains('groupHead'); s = s.nextElementSibling) {
+            if (s.matches('details.fold')) { fold = s; break; }
+            var inner = s.querySelector && s.querySelector('details.fold'); if (inner && s.tagName !== 'SECTION') { fold = inner; break; }
+          }
+        }
+        if (fold && !fold.open) { fold.open = true; }
+        setTimeout(function () { setSectionInAddress(id); }, 400);   /* after the link's own jump and the plan's address update */
+        var h = /^H[1-3]$/.test(t.tagName) ? t : (t.querySelector('h2, h3, summary') || t);
+        if (!h.hasAttribute('tabindex') && !/^(SUMMARY|A|BUTTON)$/.test(h.tagName)) { h.setAttribute('tabindex', '-1'); }
+        setTimeout(function () { try { h.focus({ preventScroll: true }); } catch (e) { /* focus is an extra */ } }, 60);
+      });
+    });
+    /* opening a fold updates the address, so the open section can be shared and reloaded */
+    Array.prototype.forEach.call(document.querySelectorAll('details.fold[id]'), function (d) {
+      d.addEventListener('toggle', function () { if (d.open && sectionReady) { setSectionInAddress(d.id); } });
+    });
+    /* the plan lives in the address (s=…&d=…); the open section is kept beside it as at=<id>, never replacing it */
+    function setSectionInAddress(id) {
+      var parts = String(location.hash || '').replace(/^#/, '').split('&').filter(function (kv) { return kv && /=/.test(kv) && kv.indexOf('at=') !== 0; });
+      parts.push('at=' + encodeURIComponent(id));
+      try { history.replaceState(null, '', '#' + parts.join('&')); } catch (e) { /* the address is an extra */ }
+    }
+    var sectionReady = false;
+    (function () {
+      var m = /(?:^#|&)at=([^&]+)/.exec(location.hash || ''); var t = m ? document.getElementById(decodeURIComponent(m[1])) : null;
+      setTimeout(function () {
+        sectionReady = true;
+        if (!t) { return; }
+        for (var p = t; p; p = p.parentElement) { if (p.tagName === 'DETAILS') { p.open = true; } }
+        if (t.tagName === 'DETAILS') { t.open = true; }
+        t.scrollIntoView();
+      }, 1500);
+    })();
+    /* back to top, shown after the first screen */
+    var top = document.createElement('a');
+    top.href = '#'; top.id = 'toTop'; top.className = 'btn'; top.textContent = 'Back to top'; top.hidden = true;
+    top.addEventListener('click', function (ev) {
+      ev.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      var h1 = document.querySelector('header.top h1'); if (h1) { h1.setAttribute('tabindex', '-1'); h1.focus({ preventScroll: true }); }
+    });
+    document.body.appendChild(top);
+    var tt = false;
+    window.addEventListener('scroll', function () { if (tt) { return; } tt = true; requestAnimationFrame(function () { tt = false; top.hidden = window.scrollY < window.innerHeight * 1.5; }); }, { passive: true });
+    /* one line on rocks under the slope check, in the API's own words */
+    if ($('rocksLine')) {
+      napi('/api/addons/rocks').then(function (r) {
+        var t = r && (r.available === false ? (r.why ? 'Rocks and boulders: no value is shown. ' + r.why : '') : (r.summary || r.note || r.headline || ''));
+        if (t) { $('rocksLine').textContent = t; $('rocksLine').hidden = false; }
+      }).catch(function () { /* the line is an extra */ });
+    }
     var rt = null;
     window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (nv.why && !nv.why.error) { drawChart(); drawStrip(); } }, 120); });
     update();

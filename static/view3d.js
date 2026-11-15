@@ -923,6 +923,21 @@
     renderer: '',                               /* set to 'canvas2d' before show() to do without WebGL */
     show: function (container, opts) {
       if (!container) { return null; }
+      /* the fold is open by default, so wait until the view comes near the screen before building
+         the 3-D scene: the first screen never pays for it. The latest options are kept and used then. */
+      if (!container.__slipday3d && !container.__v3dSeen && 'IntersectionObserver' in window) {
+        container.__v3dOpts = opts || {};
+        if (!container.__v3dObs) {
+          var self = this;
+          container.__v3dObs = new IntersectionObserver(function (ents) {
+            if (!ents.some(function (e) { return e.isIntersecting; })) { return; }
+            container.__v3dObs.disconnect(); container.__v3dSeen = true;
+            self.show(container, container.__v3dOpts);
+          }, { rootMargin: '300px 0px' });
+          container.__v3dObs.observe(container);
+        }
+        return null;
+      }
       var st = container.__slipday3d;
       if (!st) { st = container.__slipday3d = build(container); }
       st.setOptions(opts || {});

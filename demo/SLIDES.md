@@ -13,7 +13,7 @@ recording (`slipday_draft_voiceover.mp4`) and the screenshots in `../screenshots
 
 - `[TEAM NAME]` · `[MEMBER NAMES]`
 - Lunar Landing Site Navigator · NASA Space Apps Challenge 2026
-- Live link: `[PUBLIC LINK]`
+- Live link: https://slipday.synpse.app
 
 Picture: `../screenshots/overhaul/after_1280_light.png` (the first screen: map, date, sky chart, "Yes, and the
 launch can slip up to 8 days").

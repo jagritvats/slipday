@@ -63,9 +63,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await keep('answer', ['#h-nav', '#nvWhen', '#nvSiteName', '#nvVerdict']);
   await film('answer', ['#h-nav', '#nvWhen', '#nvSiteName', '#nvVerdict'], 10, 5300);
   // 2. the challenge objective: the Sun and the Earth against the real skyline, in numbers, on the chart
-  await top('#nvSentence', 12);
-  await keep('objective', ['#nvChart']);
-  await film('objective', ['#nvSentence', '#nvChart', '#nvTags'], 10, 5300);
+  await top('.nv-youhere', 12);
+  await keep('objective', ['.nv-youhere', '#nvChart', '#nvRidge']);
+  await film('objective', ['.nv-youhere', '#nvChart', '#nvRidge'], 10, 5300);
   // 3. the launch slipped 9 days: the card's day banner and what ends the margin
   await page.evaluate(() => { const e = document.getElementById('mSlip'); e.value = '9'; e.dispatchEvent(new Event('change', { bubbles: true })); });
   await page.waitForFunction(() => /slip of 9 day/.test((document.querySelector('#why .whyHead') || {}).textContent || ''), { timeout: 90000 }).catch(() => {});

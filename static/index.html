@@ -272,7 +272,7 @@
 </section>
 </details>
 
-<details class="fold panel" id="fold3d">
+<details class="fold panel" id="fold3d" open>
   <summary><b>The ground in 3-D</b> <span class="foldSum">The terrain around the site with the Sun, the Earth and the shadows at the chosen time.</span></summary>
 <section class="panel" id="view3dPanel" aria-labelledby="h-3d" hidden>
   <h2 id="h-3d">The ground around this site in 3-D, with the Sun, the Earth and the shadows at the chosen time</h2>
@@ -284,6 +284,10 @@
   <h2 id="h-real">Real missions: what a missed launch window does</h2>
   <div id="real" aria-live="polite"></div>
 </section>
+<details class="fold panel" id="foldTraj">
+  <summary><b>Launch windows from orbital mechanics</b> <span class="foldSum">When a launch from Earth can reach the Moon, next to the landing windows above.</span></summary>
+  <div id="addon-trajwindows"></div>
+</details>
 
 <h2 class="groupHead" id="h-isSafe">Is it safe to land there?</h2>
 <details class="fold panel" id="foldSafety">
@@ -296,7 +300,10 @@
     5&deg; goal: moving it by one 5 m cell gives 4.4&deg; to 5.8&deg;. Of the 78 published Artemis region sites, 76 have only 80 m terrain here, which is too coarse to judge slope
     well. On the map's slope layer, "slip-tolerant" means at least 1 day of slip at all 13 touchdown points; the map's own
     legend also counts points that keep 0 days.</p></details>
+  <p class="note" id="rocksLine" hidden></p>
   <div id="addon-thermal"></div>
+  <div id="addon-power"></div>
+  <div id="addon-darkness"></div>
   <div id="addon-safetouch"></div>
   <details class="noteFold"><summary>What the safe-touchdown chances leave out</summary><p class="note" id="touchNote">The chances above use slope only: there is no boulder data. The three lander classes are
     assumed accuracies, each taken from one published figure, not the specification of any real lander. A 2&deg; error in
@@ -399,13 +406,13 @@
 
 <h2 class="groupHead" id="h-found">What we found</h2>
 <details class="fold panel" id="foldFindings">
-  <summary><b>What we found</b> <span class="foldSum">The main results, each with its charts, its numbers and its caveats.</span></summary>
+  <summary><b>Open the findings</b> <span class="foldSum">The main results, each with its charts, its numbers and its caveats.</span></summary>
 <div id="addon-findings"></div>
 </details>
 
 <h2 class="groupHead" id="h-proof">Proof: can you trust it?</h2>
 <section class="panel" aria-labelledby="h-valid">
-  <h2 id="h-valid">Can you trust it?</h2>
+  <h2 id="h-valid">The checks behind every answer</h2>
   <div class="tiles" id="validTiles"></div>
   <details class="vt" id="validMore">
   <summary>The tables behind these numbers: terrain checks, three real landings, JPL Horizons</summary>
@@ -445,6 +452,8 @@
 <script src="/static/navigator.js"></script>
 <script src="/static/addons/brief.js"></script>
 <script src="/static/addons/thermal.js"></script>
+<script src="/static/addons/power.js"></script>
+<script src="/static/addons/trajwindows.js"></script>
 <script src="/static/addons/atlas.js"></script>
 <script src="/static/addons/listen.js"></script>
 <script src="/static/addons/planner_game.js"></script>

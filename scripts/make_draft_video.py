@@ -69,7 +69,7 @@ def closing_card(path: str, font: ImageFont.FreeTypeFont) -> None:
     img = Image.new("RGB", (1280, 800), (16, 24, 40))
     d = ImageDraw.Draw(img)
     big = ImageFont.truetype(font.path, 64)
-    for text, f, y in (("Slipday", big, 280), ("[PUBLIC LINK]", font, 400), ("Lunar Landing Site Navigator", font, 450)):
+    for text, f, y in (("Slipday", big, 280), ("https://slipday.synpse.app", font, 400), ("Lunar Landing Site Navigator", font, 450)):
         w = d.textlength(text, font=f)
         d.text(((1280 - w) / 2, y), text, font=f, fill=(255, 255, 255))
     img.save(path)

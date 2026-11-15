@@ -45,7 +45,7 @@ add, and follows the real missions planned for the next two years.
 
 ## Link to final project
 
-`[PUBLIC LINK TO THE PROJECT: repository or hosted app, viewable without sign-in]`
+https://slipday.synpse.app (the hosted app, viewable without sign-in)
 
 ## Detailed description
 

@@ -127,7 +127,11 @@
       h += '<p class="th-note">Loading measured temperatures…</p>';
     } else {
       var d = state.data;
-      h += '<dl>' +
+      var none = [d.max_k, d.min_k, d.coldest_night_k, d.avg_k].every(function (v) { return typeof v !== 'number'; });
+      if (none) {
+        /* nothing measured here: say why, in the API's words, instead of four "no data" boxes */
+        h += '<p class="th-note">Not measured here: ' + esc(d.note || 'outside NASA Diviner\'s south-polar map') + '.</p>';
+      } else h += '<dl>' +
         '<div><dt>Highest measured</dt><dd>' + k(d.max_k) + '<small>' + c(d.max_k) + '</small></dd></div>' +
         '<div><dt>Lowest measured</dt><dd>' + k(d.min_k) + '<small>' + c(d.min_k) + '</small></dd></div>' +
         '<div><dt>Coldest night</dt><dd>' + k(d.coldest_night_k) + '<small>' + c(d.coldest_night_k) + '</small></dd></div>' +

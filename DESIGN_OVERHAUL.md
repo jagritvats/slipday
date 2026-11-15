@@ -310,3 +310,49 @@ The two Python failures:
 - **Instant approximate skyline:** wired for `/api/addons/skyfast` and switched on only if `/openapi.json` lists it. Its skyline is drawn at once, labelled "Approximate: the nearest precomputed point, N m away", and the exact `/api/why` replaces it.
 - **Checks:** `navigator_check` 16 of 16, `game_check` 17 of 17, `listen_game_check` 25 of 25. The contrast and tap-target audit has 0 failures, and there are no console errors at 1280 or 390.
 
+## 14. Final polish pass (22:57 to 23:25 IST)
+The first screen's layout and the skyline chart were not moved or restructured. Every number still comes from the API, and nothing was removed.
+
+**Bugs fixed**
+- **Learned estimate now shows.** The API gives its plan as words ("landing 18 Nov 2026, … 240 sunlit hours and 100 hours of Earth contact in the first 14 days"). The page reads the date, the hours and the days from that text and compares them with its own plan (`estPlanMatches`). The label now gives the measured accuracy from `measured_accuracy.verdict_accuracy`, for example "right 97.5 % of the time in testing".
+- **Instant approximate skyline now shows.** `/api/addons/skyfast` returns a skyline only. The chart draws that ground line at once, with no Sun or Earth tracks, labelled "Approximate: the skyline of the nearest precomputed point, N m away" (`distance_m`). The exact `/api/why` replaces it.
+- **Battery, darkness and launch windows are on the page.** `power.js` and `trajwindows.js` are loaded. `#addon-power` and `#addon-darkness` sit in "Is it safe?" next to slope and temperature. `#addon-trajwindows` is a new fold, "Launch windows from orbital mechanics", right after the real-missions panel. A rocks line (`#rocksLine`, from `/api/addons/rocks`) sits under the slope note in the API's own words: no rock value is shown, and why.
+- **Findings chart.** The stacked bars set each part's height from its own value, so there are no more negative `<rect>` heights (that was 9 console errors).
+- **Brief follows the shown site.** `brief.js` ignores `/api/mission` answers for any site other than the one shown (`SlipdayApp.selected()[current()]`).
+- **Temperature outside Diviner's map.** When nothing is measured, the card says "Not measured here: <the API's note>" instead of four "no data" boxes.
+
+**Navigation**
+- Section-bar links open the section's first fold (they never close one), move focus to the section heading, and add `at=<section>` to the address beside the plan (`s=…&d=…`, unchanged). Opening any fold does the same. A reload with `at=` opens and scrolls to that section. The bar's highlight of the section on screen was already in place.
+- A "Back to top" button (44 px high) appears after 1.5 screens. It respects reduced motion and moves focus to the page title.
+- The closed "Is the ground flat enough?" fold shows its key number, for example "Here: steepest 4.9°, flat enough (limit 8°)".
+
+**3-D view**
+- "The ground in 3-D" is open by default. `SlipdayView3D.show` waits for an IntersectionObserver (300 px ahead of the screen) before building the scene and keeps the latest options until then. Checked: the scene is not built at first load, and it is built after scrolling, at 1280 and 390.
+
+**Polish**
+- The header now lines up with the content at 1920. It had `margin: 0`, which cancelled the centring.
+- Glossary words no longer take a button's 36 px height, so their sentences keep even line spacing. This uses the inline-text exception of WCAG 2.5.8.
+- **Decision path.** The cards no longer stretch beside a tall "What to do" card. Above 1100 px, "Answer", "How sure" and "Why" sit in one row, and "What to do" takes a full row below them, with its options in two columns.
+- Multi-line tags (relay caveat, need, tiles) and the "Behind this map" line use an 8 px radius instead of a pill shape.
+- **Comparison table.** The long "not known here" reason for the joint chance is now under a "Why not" fold in its cell. The reason is kept in full.
+- The time strip leaves out the tick next to "day 0", so the two labels no longer touch.
+- The card's "Stations hour by hour", "Beside permanent shadow?" and "See this place in 3-D" buttons have gaps between them.
+- The 3-D controls are at least 36 x 36 px.
+- **Duplicate headings.**
+  - The findings fold is now titled "Open the findings", under the "What we found" heading.
+  - The proof card is now headed "The checks behind every answer", under "Proof: can you trust it?".
+
+**Not done:** a scroll hint at the edge of the wide tables on phones; a redesign of the "Launch slipped?" sentence form, which is a kept feature; the phone order of steps 2, 3 and 1, which is part of the first-screen layout recorded in the video.
+
+**Checks (23:08 to 23:10 IST, own servers on 8181, 8182 and 8184):**
+
+| Check | Result |
+|---|---|
+| `navigator_check` | 16 of 16 |
+| `game_check` | 17 of 17 |
+| `listen_game_check` | 25 of 25 |
+| Console errors, page load and full scroll, 1280 x 800, 1920 x 1080 and 390 x 844, light and dark | 0, with no sideways scroll |
+| Section-bar walk through all sections, findings fold included | 0 console errors |
+
+The `screenshots/overhaul/after_*` files were retaken at all three sizes, in light and dark mode.
+

@@ -1258,7 +1258,7 @@ def api_horizons_check(start: str, stop: str, site: Optional[str] = None,
         raise HTTPException(502, f"Horizons request failed: {exc}")
 
 
-for _extra in ("why", "scatterfield", "view3d", "contrast", "addons.atlas", "addons.safety", "addons.relay", "addons.safetouch", "addons.slopemap", "addons.impact", "addons.fullmap", "addons.planner", "addons.bestspots", "addons.findings", "addons.brief", "addons.thermal", "addons.power", "addons.darkness", "addons.trajwindows", "addons.rocks", "addons.estimate"):
+for _extra in ("why", "scatterfield", "view3d", "contrast", "addons.atlas", "addons.safety", "addons.relay", "addons.safetouch", "addons.slopemap", "addons.impact", "addons.fullmap", "addons.planner", "addons.bestspots", "addons.findings", "addons.brief", "addons.thermal", "addons.power", "addons.darkness", "addons.trajwindows", "addons.rocks", "addons.estimate", "addons.skyfast"):
     if importlib.util.find_spec("slipday." + _extra) is not None:
         _mod = importlib.import_module("slipday." + _extra)
         if hasattr(_mod, "router"):

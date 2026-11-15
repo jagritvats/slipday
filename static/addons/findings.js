@@ -62,7 +62,7 @@
       var parts = [[r.agree, c.skyfill], [r.coarse_yes_fine_no, c.crit], [r.coarse_no_fine_yes, c.accent]];
       parts.forEach(function (p) {
         if (!p[0]) return;
-        var hh = y0 - y(p[0]);
+        var hh = (H - T - B) * p[0] / max;   /* this part's own height (stacked on the parts below it) */
         el("rect", { x: x, y: y0 - hh, width: w, height: hh, fill: p[1] }, s);
         y0 -= hh;
       });

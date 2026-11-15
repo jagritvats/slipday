@@ -56,7 +56,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* ---------- header and section bar ---------- */
-header.top { display: flex; align-items: center; justify-content: space-between; gap: var(--s3) var(--s5); flex-wrap: wrap; padding: var(--s4) 0 var(--s3); margin: 0; }
+header.top { display: flex; align-items: center; justify-content: space-between; gap: var(--s3) var(--s5); flex-wrap: wrap; padding: var(--s4) 0 var(--s3); margin: 0 auto; }
 header.top .brand { display: flex; align-items: baseline; gap: var(--s1) var(--s3); flex-wrap: wrap; }
 header.top h1 { font-size: var(--fs-xl); font-weight: 750; letter-spacing: -0.02em; margin: 0; }
 header.top .tag { margin: 0; color: var(--text2); font-size: var(--fs-sm); max-width: 70ch; }
@@ -96,6 +96,29 @@ button:disabled, .btn:disabled { opacity: .6; cursor: default; }
 /* cells and inline text buttons keep their own look */
 .vstrip .vc, .strip .cell, .chip button, .slabel.pick { min-height: 0; border-radius: 3px; font-size: inherit; }
 .slabel.pick { padding: 0; border: 0; background: none; font-weight: 400; }
+/* final polish pass (section 14) */
+.dp { align-items: start; }
+/* "What to do" is the longest step: on wide screens it takes its own full row under the first three,
+   so the three short cards no longer sit beside a tall empty space */
+@media (min-width: 1101px) {
+  .dp { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+  .dp > .dp-step:nth-child(4) { grid-column: 1 / -1; }
+  .dp > .dp-step:nth-child(4) .dp-opts { columns: 2 300px; column-gap: var(--s5); }
+  .dp > .dp-step:nth-child(4) .dp-opts li { break-inside: avoid; }
+}
+.nv-compute { border-radius: var(--r-sm); }
+.nv-tags .mtag, .dp-relay .mtag, .dp-list .mtag, .tile .mtag { border-radius: 8px; line-height: 1.4; }
+#contactGo, #shadowGo, #why3d { margin: 4px 8px 4px 0; }
+#view3d button { min-height: 36px; min-width: 36px; }
+summary .foldKey { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 8px; background: var(--raised); color: var(--text); font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums; }
+#toTop { position: fixed; right: 16px; bottom: 16px; z-index: 50; min-height: 44px; display: inline-flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+#toTop[hidden] { display: none; }
+@media print { #toTop { display: none; } }
+.nv-cmp details.cellWhy { margin-top: 4px; }
+.nv-cmp details.cellWhy summary { cursor: pointer; color: var(--accent); font-size: var(--fs-xs); font-weight: 600; min-height: 24px; display: inline-flex; align-items: center; }
+.nv-cmp details.cellWhy small { display: block; margin-top: 4px; }
+/* glossary terms are words inside a sentence (WCAG 2.5.8 inline exception): no button height, so line spacing stays even */
+button.gloss { min-height: 0; min-width: 0; padding: 0; border: 0; background: none; font: inherit; line-height: inherit; vertical-align: baseline; border-radius: 0; box-shadow: none; }
 .chip button { border: 0; background: none; padding: 0 8px; min-height: 24px; min-width: 24px; }
 .replays button, .nextGood button, .winLine button, .whyFlip button, .earthLine button, .robust button.add { min-height: 28px; border-radius: 999px; padding: 2px 10px; font-size: var(--fs-xs); }
 input, select { font: inherit; font-size: 14px; min-height: 32px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--surface); color: var(--text); padding: 4px 8px; }

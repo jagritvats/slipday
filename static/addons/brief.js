@@ -23,6 +23,12 @@
             r.clone().json().then(function (j) {
               if (!j || !j.site) { return; }
               var ref = (req && req.site) || {};
+              /* latest-site guard: answers for other compared sites, or ones that arrive late, never replace the shown site */
+              var A = window.SlipdayApp, shown = A && A.selected && A.current ? A.selected()[A.current()] : null;
+              if (shown) {
+                var same = shown.id ? ref.id === shown.id : (!ref.id && Math.abs(j.site.lat - shown.lat) < 1e-4 && Math.abs(j.site.lon - shown.lon) < 1e-4);
+                if (!same) { return; }
+              }
               cur.site = ref.id || null;
               cur.lat = ref.id ? null : j.site.lat; cur.lon = ref.id ? null : j.site.lon;
               cur.name = ref.id ? '' : (j.site.name || '');

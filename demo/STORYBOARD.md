@@ -1,6 +1,6 @@
 # Storyboard for the 30-second video
 
-Recorded on the overhauled page with the live terrain (5 m at the opening example, 20 m near the pole, 80 m beyond), 15 Nov 2026, evening.
+Recorded on the deployed build (same commit as https://slipday.synpse.app, served locally for speed) with the live terrain, 15 Nov 2026, 23:00.
 
 Total running time: 29 seconds, 29.5 s with the voice (the limit is 30). It opens on the hook (NASA's need to keep several regions open, in numbers), then the tool: the answer, the objective line, day 9, the decision path's real missions, the slope line and the slip-day map; the closing frame is 2 s. The draft video
 is a **screen recording of the running page** (recorded in a headless browser,
@@ -10,19 +10,19 @@ clicks through the steps below and writes the frames with their times; `python s
 band under the picture (the band covers nothing of the page) and adds a closing frame of text. Nothing is
 drawn into the page. Captions are the English subtitles; no narration is needed. Every number in a caption
 is on the screen in its step. The challenge name opens the first caption and the team name closes the last
-one; `[TEAM NAME]` and `[PUBLIC LINK]` (on the closing frame) are the only placeholders. Older stills
+one; `[TEAM NAME]` is the only placeholder, and the closing frame shows https://slipday.synpse.app. Older stills
 (`scripts/storyboard.js`, `scripts/make_draft_video.py`) are kept as a fallback.
 
 | # | Time | Step | Caption (one or two lines, on screen) |
 |---|---|---|---|
 | 1 | 0-4 s | step `regions` (zoomed on the calendar and the coverage table of NASA's nine south-pole landing regions): "26%" and "37%" in the first and third rows | "Lunar Landing Site Navigator. NASA must keep several south-pole regions open for Artemis IV: one works at 26% of landing times, three at 37%." |
 | 2 | 4-9 s | step `answer` (zoomed on the page's question, the date and time, the site and the verdict): "Yes and the launch can slip up to 8 days" | "Land here on 18 Nov 2026. If the launch slips, can we still land? Yes, with 8 days of slip margin." |
-| 3 | 9-13 s | step `objective` (zoomed on the sky chart): "Sun 2.3° high, 1.0° over the skyline"; "Earth -0.2° high, 0.6° over the skyline"; "On 5 m terrain" | "The challenge objective: at touchdown the Sun is 1.0° and the Earth 0.6° above the real skyline, on NASA's 5 m terrain." |
+| 3 | 9-13 s | step `objective` (zoomed on "You are here", the skyline panorama and the compass inset "seen from above"): "Sun: 2.3° up, just 1.0° above the ground in that direction"; "Earth: -0.2° up, just 0.6° above the ground in that direction" | "You are here. The challenge objective: the Sun is 1.0° and the Earth 0.6° above the real skyline; the circle shows them from above." |
 | 4 | 13-17 s | step `why` (zoomed on the day banner and the chart): "Land on Nov 27 (launch slipped 9 days): No"; "The Earth goes behind ground inside Mons Mouton, 131.4 km WSW" | "Launch slipped 9 days: No. The Earth sets behind ground 131.4 km away." |
 | 5 | 17-21 s | step `missions` (zoomed on the four-step decision path): "VIPER on Blue Moon MK1 (landing by late 2027) plan to land at Mons Mouton, 167 km from this site" | "A real mission faces this: VIPER lands at Mons Mouton by late 2027, 167 km from here." |
 | 6 | 21-24 s | step `safety` (zoomed on "Is the ground flat enough?"): "the steepest is 4.9°, under NASA's 8° limit" | "Flat enough to land? The steepest touchdown point is 4.9°: inside NASA's 8° limit and just inside its 5° goal." |
 | 7 | 24-27 s | step `map` (zoomed on the close-up slip-day map and its legend): "Days of slip that all 13 touchdown points survive"; red 20 m crosses; "639 of 733 re-checked points agree" | "The slip-day map: how many days of slip each point survives. On NASA's 20 m grid, 639 of 733 agree." |
-| 8 | 27-29 s | step `closing`: closing frame (text only: the name, `[PUBLIC LINK]` and the challenge) | "Slipday, by [TEAM NAME]." |
+| 8 | 27-29 s | step `closing`: closing frame (text only: the name, https://slipday.synpse.app and the challenge) | "Slipday, by [TEAM NAME]." |
 
 Notes for whoever records it:
 

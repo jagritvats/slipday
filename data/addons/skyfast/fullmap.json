@@ -1,0 +1,12 @@
+{
+ "n": 304,
+ "step_m": 2000.0,
+ "mast_m": 2.0,
+ "n_az": 720,
+ "el_scale_deg": 0.002,
+ "dem_fingerprint": "76de51d5e9+35bc39a609+cdb14f87ee+feb25e8376",
+ "dem_label": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+ "points": 92416,
+ "with_terrain": 92416,
+ "source": "data/addons/fullmap/chunks_2000m"
+}
