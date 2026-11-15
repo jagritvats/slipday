@@ -21,6 +21,15 @@ The run is skipped unless the repository variable `DEPLOY_ENABLED` is `true`.
 | `DEPLOY_PATH` | variable, optional | default `/opt/spaceapps/slipday` |
 | `SLIPDAY_HOST_RULE` | variable, optional | Traefik rule, default ``Host(`slipday.synpse.app`)``; several hosts are joined with `\|\|`, never commas |
 
+## Shared VM: keep the project name
+
+`docker-compose.yml` sets `name: slipday`, and `deploy.sh` does not use `--remove-orphans`.
+Keep both. Without the name, Compose calls the project `deploy` after its folder, which other
+stacks on the VM share. The first deploy on 15 Nov 2026 had no name, and `--remove-orphans`
+deleted the personal site's container (`jagritvats-site`, down about 10 minutes). Rule for every
+stack on that VM: its own project name, no VM-wide `docker image prune -a`, and only remove your
+own app's old image tags.
+
 ## The large grids (once per VM)
 
 The 80 m grid, the 20 m crop and the 5 m site models are over GitHub's file limit, so they are not in the
