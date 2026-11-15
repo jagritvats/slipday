@@ -1,5 +1,5 @@
 {
- "what": "Artemis III candidate regions (NASA, 28 Oct 2024) on the published candidate landing sites of Wueller et al. 2026, judged in each missed window",
+ "what": "NASA's nine south-pole landing regions (named 28 Oct 2024; the first crewed landing is now planned for Artemis IV, early 2028) on the published candidate landing sites of Wueller et al. 2026, judged in each missed window",
  "source": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/ (data/reference/sources/artemis3_regions_2024.html)",
  "sites_source": "Wueller, L., Berger, L. M., Christopher, H., Sugimoto, K., Thaker, A. D., Carton, L., Jo, W., Lee, S., Pedrelli, R., Sanchez, P., & Kring, D. A. (2026). Assessing Potential Landing Sites With Favorable Illumination and Accessible, Potentially Volatile-Rich Permanently Shadowed Regions Within Artemis Candidate Landing Regions. Journal of Geophysical Research: Planets, 131(3), e2025JE009434. https://doi.org/10.1029/2025JE009434 (CC BY 4.0). Data: https://doi.org/10.5281/zenodo.17084058",
  "anchor_rule": "every published candidate landing site of Wueller et al. 2026 in the region (5 to 11 per region); not NASA's landing sites; replaces our earlier single best-lit point per region",
@@ -157,21 +157,16 @@
       "region": "Peak near Cabeus B",
       "code": "PCB",
       "n_sites": 5,
-      "best_site": "PCB03",
+      "best_site": null,
       "best_hour": {
-       "found": true,
-       "landing_utc": "2026-12-20T13:00:00Z",
-       "slip_margin_days": 5,
-       "offset_h": 72,
+       "found": false,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
        "planned_margin_days": -1,
-       "tie_with_planned": false,
-       "min_clearance_deg": 0.1,
-       "fragile": true
+       "tie_with_planned": false
       },
-      "sites_yes": 1,
+      "sites_yes": 0,
       "sites_yes_not_fragile": 0,
       "at_window": "no",
       "at_window_margin": -1,
@@ -223,17 +218,12 @@
          "Sun at touchdown"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2026-12-20T13:00:00Z",
-         "slip_margin_days": 5,
-         "offset_h": 72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.1,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -286,32 +276,32 @@
        "step_h": 6,
        "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.56,
+       "min_clearance_deg": 0.31,
        "fragile": false
       },
       "sites_yes": 6,
-      "sites_yes_not_fragile": 4,
+      "sites_yes_not_fragile": 1,
       "at_window": "yes",
       "at_window_margin": 5,
       "fails_on": [],
       "sites": [
        {
         "site": "HW01",
-        "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-14T13:00:00Z",
-         "slip_margin_days": 4,
-         "offset_h": -72,
+         "landing_utc": "2026-12-14T19:00:00Z",
+         "slip_margin_days": 2,
+         "offset_h": -66,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.56,
-         "fragile": false
+         "min_clearance_deg": 0.07,
+         "fragile": true
         }
        },
        {
@@ -343,8 +333,8 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.53,
-         "fragile": false
+         "min_clearance_deg": 0.04,
+         "fragile": true
         }
        },
        {
@@ -364,8 +354,8 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.34,
-         "fragile": false
+         "min_clearance_deg": 0.02,
+         "fragile": true
         }
        },
        {
@@ -419,7 +409,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.56,
+         "min_clearance_deg": 0.31,
          "fragile": false
         }
        },
@@ -501,22 +491,22 @@
       "region": "Malapert Massif",
       "code": "MMA",
       "n_sites": 5,
-      "best_site": "MMA_K2023",
+      "best_site": "MMA01",
       "best_hour": {
        "found": true,
-       "landing_utc": "2026-12-14T13:00:00Z",
-       "slip_margin_days": 9,
-       "offset_h": -72,
+       "landing_utc": "2026-12-17T07:00:00Z",
+       "slip_margin_days": 3,
+       "offset_h": -6,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 6,
-       "tie_with_planned": false,
-       "min_clearance_deg": 0.54,
+       "planned_margin_days": 3,
+       "tie_with_planned": true,
+       "min_clearance_deg": 0.52,
        "fragile": false
       },
       "sites_yes": 3,
-      "sites_yes_not_fragile": 3,
+      "sites_yes_not_fragile": 2,
       "at_window": "yes",
       "at_window_margin": 6,
       "fails_on": [],
@@ -536,7 +526,7 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": true,
-         "min_clearance_deg": 0.53,
+         "min_clearance_deg": 0.52,
          "fragile": false
         }
        },
@@ -547,16 +537,16 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-14T13:00:00Z",
-         "slip_margin_days": 9,
-         "offset_h": -72,
+         "landing_utc": "2026-12-16T01:00:00Z",
+         "slip_margin_days": 8,
+         "offset_h": -36,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 6,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.54,
-         "fragile": false
+         "min_clearance_deg": 0.07,
+         "fragile": true
         }
        },
        {
@@ -578,7 +568,7 @@
        {
         "site": "MMA03",
         "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window_margin": 1,
         "fails_on": [],
         "best_hour": {
          "found": true,
@@ -588,9 +578,9 @@
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
-         "tie_with_planned": true,
-         "min_clearance_deg": 0.29,
+         "planned_margin_days": 1,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.27,
          "fragile": false
         }
        },
@@ -623,36 +613,36 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2026-12-14T13:00:00Z",
-       "slip_margin_days": 4,
+       "slip_margin_days": 3,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 1,
+       "planned_margin_days": 0,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.92,
+       "min_clearance_deg": 0.75,
        "fragile": false
       },
       "sites_yes": 6,
       "sites_yes_not_fragile": 3,
       "at_window": "yes",
-      "at_window_margin": 2,
+      "at_window_margin": 1,
       "fails_on": [],
       "sites": [
        {
         "site": "MMP01",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-16T01:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -36,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
          "min_clearance_deg": 0.35,
          "fragile": false
@@ -673,7 +663,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.08,
+         "min_clearance_deg": 0.06,
          "fragile": true
         }
        },
@@ -696,19 +686,19 @@
        {
         "site": "MMP04",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-16T19:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -18,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.4,
+         "min_clearance_deg": 0.38,
          "fragile": false
         }
        },
@@ -799,38 +789,38 @@
        {
         "site": "MMP10",
         "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window_margin": 1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-15T13:00:00Z",
-         "slip_margin_days": 4,
+         "slip_margin_days": 3,
          "offset_h": -48,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.1,
+         "min_clearance_deg": 0.05,
          "fragile": true
         }
        },
        {
         "site": "MMP11",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-14T13:00:00Z",
-         "slip_margin_days": 4,
+         "slip_margin_days": 3,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.92,
+         "min_clearance_deg": 0.75,
          "fragile": false
         }
        }
@@ -840,61 +830,61 @@
       "region": "Mons Mouton",
       "code": "MMO",
       "n_sites": 10,
-      "best_site": "MMO05",
+      "best_site": "MMO03",
       "best_hour": {
        "found": true,
-       "landing_utc": "2026-12-16T19:00:00Z",
-       "slip_margin_days": 5,
-       "offset_h": -18,
+       "landing_utc": "2026-12-16T13:00:00Z",
+       "slip_margin_days": 3,
+       "offset_h": -24,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 4,
+       "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.45,
+       "min_clearance_deg": 0.47,
        "fragile": false
       },
       "sites_yes": 6,
-      "sites_yes_not_fragile": 3,
+      "sites_yes_not_fragile": 2,
       "at_window": "yes",
-      "at_window_margin": 6,
+      "at_window_margin": 4,
       "fails_on": [],
       "sites": [
        {
         "site": "MMO01",
-        "at_window": "yes",
-        "at_window_margin": 0,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-14T19:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -66,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 0,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.19,
+         "min_clearance_deg": 0.06,
          "fragile": true
         }
        },
        {
         "site": "MMO02",
         "at_window": "yes",
-        "at_window_margin": 6,
+        "at_window_margin": 4,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-14T19:00:00Z",
-         "slip_margin_days": 9,
+         "slip_margin_days": 7,
          "offset_h": -66,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 6,
+         "planned_margin_days": 4,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.1,
+         "min_clearance_deg": 0.09,
          "fragile": true
         }
        },
@@ -913,7 +903,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.49,
+         "min_clearance_deg": 0.47,
          "fragile": false
         }
        },
@@ -932,7 +922,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.53,
+         "min_clearance_deg": 0.46,
          "fragile": false
         }
        },
@@ -951,8 +941,8 @@
          "step_h": 6,
          "planned_margin_days": 4,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.45,
-         "fragile": false
+         "min_clearance_deg": 0.24,
+         "fragile": true
         }
        },
        {
@@ -970,7 +960,7 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": true,
-         "min_clearance_deg": 0.24,
+         "min_clearance_deg": 0.12,
          "fragile": true
         }
        },
@@ -1048,38 +1038,38 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2026-12-14T13:00:00Z",
-       "slip_margin_days": 9,
+       "slip_margin_days": 8,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 6,
+       "planned_margin_days": 5,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.66,
+       "min_clearance_deg": 0.4,
        "fragile": false
       },
       "sites_yes": 9,
-      "sites_yes_not_fragile": 6,
+      "sites_yes_not_fragile": 4,
       "at_window": "yes",
-      "at_window_margin": 6,
+      "at_window_margin": 5,
       "fails_on": [],
       "sites": [
        {
         "site": "NR101",
         "at_window": "yes",
-        "at_window_margin": 6,
+        "at_window_margin": 5,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-14T13:00:00Z",
-         "slip_margin_days": 9,
+         "slip_margin_days": 8,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 6,
+         "planned_margin_days": 5,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.66,
+         "min_clearance_deg": 0.4,
          "fragile": false
         }
        },
@@ -1098,26 +1088,26 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.86,
+         "min_clearance_deg": 1.36,
          "fragile": false
         }
        },
        {
         "site": "NR103",
-        "at_window": "yes",
-        "at_window_margin": 6,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-15T13:00:00Z",
-         "slip_margin_days": 8,
-         "offset_h": -48,
+         "landing_utc": "2026-12-18T19:00:00Z",
+         "slip_margin_days": 2,
+         "offset_h": 30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 6,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.06,
+         "min_clearance_deg": 0.04,
          "fragile": true
         }
        },
@@ -1128,15 +1118,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-14T13:00:00Z",
+         "landing_utc": "2026-12-15T01:00:00Z",
          "slip_margin_days": 4,
-         "offset_h": -72,
+         "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.24,
+         "min_clearance_deg": 0.03,
          "fragile": true
         }
        },
@@ -1157,7 +1147,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.38,
+         "min_clearance_deg": 1.04,
          "fragile": false
         }
        },
@@ -1168,15 +1158,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-14T19:00:00Z",
+         "landing_utc": "2026-12-15T01:00:00Z",
          "slip_margin_days": 1,
-         "offset_h": -66,
+         "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.16,
+         "min_clearance_deg": 0.24,
          "fragile": true
         }
        },
@@ -1190,15 +1180,15 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-14T13:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.41,
-         "fragile": false
+         "min_clearance_deg": 0.12,
+         "fragile": true
         }
        },
        {
@@ -1218,8 +1208,8 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.29,
-         "fragile": false
+         "min_clearance_deg": 0.08,
+         "fragile": true
         }
        },
        {
@@ -1237,7 +1227,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.46,
+         "min_clearance_deg": 1.11,
          "fragile": false
         }
        }
@@ -1258,11 +1248,11 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 2.01,
+       "min_clearance_deg": 2.02,
        "fragile": false
       },
-      "sites_yes": 9,
-      "sites_yes_not_fragile": 4,
+      "sites_yes": 7,
+      "sites_yes_not_fragile": 3,
       "at_window": "no",
       "at_window_margin": -1,
       "fails_on": [
@@ -1278,16 +1268,16 @@
         ],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-14T13:00:00Z",
+         "landing_utc": "2026-12-14T19:00:00Z",
          "slip_margin_days": 1,
-         "offset_h": -72,
+         "offset_h": -66,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.27,
-         "fragile": false
+         "min_clearance_deg": 0.22,
+         "fragile": true
         }
        },
        {
@@ -1298,17 +1288,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2026-12-15T01:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -60,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.26,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -1328,7 +1313,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.01,
+         "min_clearance_deg": 2.02,
          "fragile": false
         }
        },
@@ -1370,7 +1355,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.85,
+         "min_clearance_deg": 0.41,
          "fragile": false
         }
        },
@@ -1383,15 +1368,15 @@
         ],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-14T13:00:00Z",
-         "slip_margin_days": 1,
-         "offset_h": -72,
+         "landing_utc": "2026-12-15T01:00:00Z",
+         "slip_margin_days": 0,
+         "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.01,
+         "min_clearance_deg": 0.25,
          "fragile": true
         }
        },
@@ -1412,7 +1397,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.3,
+         "min_clearance_deg": 1.02,
          "fragile": false
         }
        },
@@ -1424,17 +1409,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2026-12-14T19:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -66,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.12,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -1447,14 +1427,14 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-15T01:00:00Z",
-         "slip_margin_days": 1,
+         "slip_margin_days": 0,
          "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.18,
+         "min_clearance_deg": 0.14,
          "fragile": true
         }
        }
@@ -1468,17 +1448,17 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2026-12-18T13:00:00Z",
-       "slip_margin_days": 4,
+       "slip_margin_days": 2,
        "offset_h": 24,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.15,
+       "min_clearance_deg": 0.09,
        "fragile": true
       },
-      "sites_yes": 4,
+      "sites_yes": 3,
       "sites_yes_not_fragile": 0,
       "at_window": "no",
       "at_window_margin": -1,
@@ -1497,14 +1477,14 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2026-12-18T13:00:00Z",
-         "slip_margin_days": 4,
+         "slip_margin_days": 2,
          "offset_h": 24,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.15,
+         "min_clearance_deg": 0.09,
          "fragile": true
         }
        },
@@ -1532,17 +1512,12 @@
          "Sun at touchdown"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2026-12-19T13:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": 48,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.01,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -1562,7 +1537,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.02,
+         "min_clearance_deg": 0.01,
          "fragile": true
         }
        },
@@ -1589,15 +1564,15 @@
         ],
         "best_hour": {
          "found": true,
-         "landing_utc": "2026-12-20T01:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": 60,
+         "landing_utc": "2026-12-20T13:00:00Z",
+         "slip_margin_days": 0,
+         "offset_h": 72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": -0.0,
+         "min_clearance_deg": 0.07,
          "fragile": true
         }
        },
@@ -1827,7 +1802,7 @@
       ]
      }
     ],
-    "regions_yes_within_72h": 8,
+    "regions_yes_within_72h": 7,
     "regions_yes_not_fragile": 6,
     "regions_yes_at_window": 5
    },
@@ -1911,7 +1886,8 @@
         "at_window": "no",
         "at_window_margin": -1,
         "fails_on": [
-         "Sun at touchdown"
+         "Sun at touchdown",
+         "sunlight"
         ],
         "best_hour": {
          "found": false,
@@ -1945,7 +1921,7 @@
       "region": "Haworth",
       "code": "HW",
       "n_sites": 11,
-      "best_site": "HW06",
+      "best_site": "HW_K2023",
       "best_hour": {
        "found": true,
        "landing_utc": "2027-01-13T01:00:00Z",
@@ -1956,10 +1932,10 @@
        "step_h": 6,
        "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.18,
+       "min_clearance_deg": 0.09,
        "fragile": true
       },
-      "sites_yes": 4,
+      "sites_yes": 3,
       "sites_yes_not_fragile": 0,
       "at_window": "yes",
       "at_window_margin": 2,
@@ -2001,21 +1977,16 @@
        },
        {
         "site": "HW03",
-        "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-01-16T01:00:00Z",
-         "slip_margin_days": 1,
-         "offset_h": 0,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.05,
-         "fragile": true
+         "planned_margin_days": -1,
+         "tie_with_planned": false
         }
        },
        {
@@ -2055,17 +2026,17 @@
        {
         "site": "HW06",
         "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2027-01-13T01:00:00Z",
-         "slip_margin_days": 5,
+         "slip_margin_days": 3,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
          "min_clearance_deg": 0.18,
          "fragile": true
@@ -2086,7 +2057,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.1,
+         "min_clearance_deg": 0.09,
          "fragile": true
         }
        },
@@ -2178,7 +2149,7 @@
        "step_h": 6,
        "planned_margin_days": 3,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.4,
+       "min_clearance_deg": 0.38,
        "fragile": false
       },
       "sites_yes": 3,
@@ -2202,7 +2173,7 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.4,
+         "min_clearance_deg": 0.38,
          "fragile": false
         }
        },
@@ -2213,15 +2184,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-01-13T07:00:00Z",
-         "slip_margin_days": 7,
-         "offset_h": -66,
+         "landing_utc": "2027-01-15T19:00:00Z",
+         "slip_margin_days": 4,
+         "offset_h": -6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 4,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.02,
+         "tie_with_planned": true,
+         "min_clearance_deg": 0.14,
          "fragile": true
         }
        },
@@ -2257,7 +2228,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.37,
+         "min_clearance_deg": 0.32,
          "fragile": false
         }
        },
@@ -2290,14 +2261,14 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2027-01-13T01:00:00Z",
-       "slip_margin_days": 3,
+       "slip_margin_days": 2,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 0,
+       "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.56,
+       "min_clearance_deg": 0.53,
        "fragile": false
       },
       "sites_yes": 4,
@@ -2308,18 +2279,18 @@
       "sites": [
        {
         "site": "MMP01",
-        "at_window": "yes",
-        "at_window_margin": 0,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2027-01-14T19:00:00Z",
-         "slip_margin_days": 1,
+         "slip_margin_days": 0,
          "offset_h": -30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 0,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
          "min_clearance_deg": 0.12,
          "fragile": true
@@ -2465,64 +2436,19 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2027-01-14T13:00:00Z",
-         "slip_margin_days": 3,
+         "slip_margin_days": 2,
          "offset_h": -36,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.16,
+         "min_clearance_deg": 0.15,
          "fragile": true
         }
        },
        {
         "site": "MMP11",
-        "at_window": "yes",
-        "at_window_margin": 0,
-        "fails_on": [],
-        "best_hour": {
-         "found": true,
-         "landing_utc": "2027-01-13T01:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -72,
-         "tried": 25,
-         "span_h": 72,
-         "step_h": 6,
-         "planned_margin_days": 0,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.56,
-         "fragile": false
-        }
-       }
-      ]
-     },
-     {
-      "region": "Mons Mouton",
-      "code": "MMO",
-      "n_sites": 10,
-      "best_site": "MMO03",
-      "best_hour": {
-       "found": true,
-       "landing_utc": "2027-01-15T07:00:00Z",
-       "slip_margin_days": 3,
-       "offset_h": -18,
-       "tried": 25,
-       "span_h": 72,
-       "step_h": 6,
-       "planned_margin_days": 2,
-       "tie_with_planned": false,
-       "min_clearance_deg": 0.28,
-       "fragile": false
-      },
-      "sites_yes": 6,
-      "sites_yes_not_fragile": 3,
-      "at_window": "yes",
-      "at_window_margin": 4,
-      "fails_on": [],
-      "sites": [
-       {
-        "site": "MMO01",
         "at_window": "not sure",
         "at_window_margin": -1,
         "fails_on": [],
@@ -2536,45 +2462,90 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.6,
+         "min_clearance_deg": 0.53,
          "fragile": false
+        }
+       }
+      ]
+     },
+     {
+      "region": "Mons Mouton",
+      "code": "MMO",
+      "n_sites": 10,
+      "best_site": "MMO06",
+      "best_hour": {
+       "found": true,
+       "landing_utc": "2027-01-16T01:00:00Z",
+       "slip_margin_days": 3,
+       "offset_h": 0,
+       "tried": 25,
+       "span_h": 72,
+       "step_h": 6,
+       "planned_margin_days": 3,
+       "tie_with_planned": false,
+       "min_clearance_deg": 0.38,
+       "fragile": false
+      },
+      "sites_yes": 6,
+      "sites_yes_not_fragile": 3,
+      "at_window": "yes",
+      "at_window_margin": 3,
+      "fails_on": [],
+      "sites": [
+       {
+        "site": "MMO01",
+        "at_window": "not sure",
+        "at_window_margin": -1,
+        "fails_on": [],
+        "best_hour": {
+         "found": true,
+         "landing_utc": "2027-01-13T01:00:00Z",
+         "slip_margin_days": 0,
+         "offset_h": -72,
+         "tried": 25,
+         "span_h": 72,
+         "step_h": 6,
+         "planned_margin_days": -1,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.16,
+         "fragile": true
         }
        },
        {
         "site": "MMO02",
         "at_window": "yes",
-        "at_window_margin": 4,
+        "at_window_margin": 3,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2027-01-15T01:00:00Z",
-         "slip_margin_days": 5,
+         "slip_margin_days": 4,
          "offset_h": -24,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 4,
+         "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.2,
+         "min_clearance_deg": 0.19,
          "fragile": true
         }
        },
        {
         "site": "MMO03",
         "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window_margin": 1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2027-01-15T07:00:00Z",
-         "slip_margin_days": 3,
+         "slip_margin_days": 2,
          "offset_h": -18,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.28,
+         "min_clearance_deg": 0.29,
          "fragile": false
         }
        },
@@ -2585,16 +2556,16 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-01-15T13:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -12,
+         "landing_utc": "2027-01-15T19:00:00Z",
+         "slip_margin_days": 2,
+         "offset_h": -6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 2,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.07,
-         "fragile": true
+         "tie_with_planned": true,
+         "min_clearance_deg": 0.33,
+         "fragile": false
         }
        },
        {
@@ -2604,15 +2575,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-01-15T13:00:00Z",
+         "landing_utc": "2027-01-15T19:00:00Z",
          "slip_margin_days": 4,
-         "offset_h": -12,
+         "offset_h": -6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.08,
+         "min_clearance_deg": 0.19,
          "fragile": true
         }
        },
@@ -2631,7 +2602,7 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.43,
+         "min_clearance_deg": 0.38,
          "fragile": false
         }
        },
@@ -2719,31 +2690,31 @@
        "step_h": 6,
        "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 1.48,
+       "min_clearance_deg": 0.78,
        "fragile": false
       },
-      "sites_yes": 9,
-      "sites_yes_not_fragile": 6,
+      "sites_yes": 8,
+      "sites_yes_not_fragile": 5,
       "at_window": "yes",
-      "at_window_margin": 4,
+      "at_window_margin": 2,
       "fails_on": [],
       "sites": [
        {
         "site": "NR101",
-        "at_window": "yes",
-        "at_window_margin": 3,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-01-13T01:00:00Z",
-         "slip_margin_days": 6,
-         "offset_h": -72,
+         "landing_utc": "2027-01-16T07:00:00Z",
+         "slip_margin_days": 3,
+         "offset_h": 6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 3,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.25,
+         "min_clearance_deg": 0.04,
          "fragile": true
         }
        },
@@ -2762,26 +2733,26 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.48,
+         "min_clearance_deg": 0.78,
          "fragile": false
         }
        },
        {
         "site": "NR103",
-        "at_window": "yes",
-        "at_window_margin": 4,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-01-15T13:00:00Z",
-         "slip_margin_days": 4,
-         "offset_h": -12,
+         "landing_utc": "2027-01-18T07:00:00Z",
+         "slip_margin_days": 0,
+         "offset_h": 54,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 4,
-         "tie_with_planned": true,
-         "min_clearance_deg": 0.05,
+         "planned_margin_days": -1,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.17,
          "fragile": true
         }
        },
@@ -2792,9 +2763,9 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-01-13T13:00:00Z",
-         "slip_margin_days": 4,
-         "offset_h": -60,
+         "landing_utc": "2027-01-14T19:00:00Z",
+         "slip_margin_days": 2,
+         "offset_h": -30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
@@ -2821,7 +2792,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.94,
+         "min_clearance_deg": 2.92,
          "fragile": false
         }
        },
@@ -2833,17 +2804,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-01-13T01:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 1.01,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -2863,7 +2829,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.99,
+         "min_clearance_deg": 0.52,
          "fragile": false
         }
        },
@@ -2884,7 +2850,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.07,
+         "min_clearance_deg": 2.85,
          "fragile": false
         }
        },
@@ -2903,7 +2869,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.77,
+         "min_clearance_deg": 0.4,
          "fragile": false
         }
        }
@@ -2924,7 +2890,7 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 1.78,
+       "min_clearance_deg": 1.61,
        "fragile": false
       },
       "sites_yes": 9,
@@ -2952,7 +2918,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.46,
+         "min_clearance_deg": 3.1,
          "fragile": false
         }
        },
@@ -2973,7 +2939,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.76,
+         "min_clearance_deg": 2.46,
          "fragile": false
         }
        },
@@ -2994,7 +2960,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.74,
+         "min_clearance_deg": 2.61,
          "fragile": false
         }
        },
@@ -3036,7 +3002,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.78,
+         "min_clearance_deg": 1.61,
          "fragile": false
         }
        },
@@ -3057,7 +3023,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.68,
+         "min_clearance_deg": 0.45,
          "fragile": false
         }
        },
@@ -3078,7 +3044,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.01,
+         "min_clearance_deg": 1.86,
          "fragile": false
         }
        },
@@ -3099,7 +3065,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.9,
+         "min_clearance_deg": 2.27,
          "fragile": false
         }
        },
@@ -3120,7 +3086,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.97,
+         "min_clearance_deg": 0.96,
          "fragile": false
         }
        }
@@ -3811,14 +3777,19 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.28,
+       "min_clearance_deg": 0.27,
        "fragile": false
       },
-      "sites_yes": 3,
-      "sites_yes_not_fragile": 2,
-      "at_window": "yes",
-      "at_window_margin": 2,
-      "fails_on": [],
+      "sites_yes": 2,
+      "sites_yes_not_fragile": 1,
+      "at_window": "no",
+      "at_window_margin": -1,
+      "fails_on": [
+       "Sun at touchdown",
+       "sunlight",
+       "Earth at touchdown",
+       "Earth contact"
+      ],
       "sites": [
        {
         "site": "MMA01",
@@ -3837,26 +3808,26 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.28,
+         "min_clearance_deg": 0.27,
          "fragile": false
         }
        },
        {
         "site": "MMA_K2023",
-        "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-02-13T20:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -18,
+         "landing_utc": "2027-02-15T14:00:00Z",
+         "slip_margin_days": 1,
+         "offset_h": 24,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.05,
+         "min_clearance_deg": 0.06,
          "fragile": true
         }
        },
@@ -3885,17 +3856,12 @@
          "Sun at touchdown"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-02-15T02:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": 12,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.49,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -3934,7 +3900,7 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.15,
+       "min_clearance_deg": 0.14,
        "fragile": true
       },
       "sites_yes": 2,
@@ -4114,7 +4080,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.19,
+         "min_clearance_deg": 0.18,
          "fragile": true
         }
        },
@@ -4135,7 +4101,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.15,
+         "min_clearance_deg": 0.14,
          "fragile": true
         }
        }
@@ -4145,24 +4111,24 @@
       "region": "Mons Mouton",
       "code": "MMO",
       "n_sites": 10,
-      "best_site": "MMO02",
+      "best_site": "MMO05",
       "best_hour": {
        "found": true,
-       "landing_utc": "2027-02-14T02:00:00Z",
+       "landing_utc": "2027-02-15T02:00:00Z",
        "slip_margin_days": 2,
-       "offset_h": -12,
+       "offset_h": 12,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 1,
+       "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.38,
+       "min_clearance_deg": 0.31,
        "fragile": false
       },
-      "sites_yes": 5,
+      "sites_yes": 4,
       "sites_yes_not_fragile": 1,
       "at_window": "yes",
-      "at_window_margin": 2,
+      "at_window_margin": 1,
       "fails_on": [],
       "sites": [
        {
@@ -4181,21 +4147,16 @@
        },
        {
         "site": "MMO02",
-        "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-02-14T02:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": -12,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.38,
-         "fragile": false
+         "planned_margin_days": -1,
+         "tie_with_planned": false
         }
        },
        {
@@ -4206,14 +4167,14 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2027-02-14T02:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -12,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.04,
+         "tie_with_planned": true,
+         "min_clearance_deg": 0.03,
          "fragile": true
         }
        },
@@ -4232,27 +4193,27 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.21,
+         "min_clearance_deg": 0.15,
          "fragile": true
         }
        },
        {
         "site": "MMO05",
-        "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-02-14T14:00:00Z",
+         "landing_utc": "2027-02-15T02:00:00Z",
          "slip_margin_days": 2,
-         "offset_h": 0,
+         "offset_h": 12,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.15,
-         "fragile": true
+         "min_clearance_deg": 0.31,
+         "fragile": false
         }
        },
        {
@@ -4270,7 +4231,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.05,
+         "min_clearance_deg": 0.01,
          "fragile": true
         }
        },
@@ -4347,22 +4308,22 @@
       "region": "Nobile Rim 1",
       "code": "NR1",
       "n_sites": 9,
-      "best_site": "NR102",
+      "best_site": "NR105",
       "best_hour": {
        "found": true,
        "landing_utc": "2027-02-11T14:00:00Z",
-       "slip_margin_days": 4,
+       "slip_margin_days": 0,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 1,
+       "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.64,
+       "min_clearance_deg": 2.64,
        "fragile": false
       },
-      "sites_yes": 7,
-      "sites_yes_not_fragile": 3,
+      "sites_yes": 4,
+      "sites_yes_not_fragile": 1,
       "at_window": "yes",
       "at_window_margin": 1,
       "fails_on": [],
@@ -4373,17 +4334,12 @@
         "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-02-15T14:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": 24,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.01,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -4393,16 +4349,16 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-02-11T14:00:00Z",
-         "slip_margin_days": 4,
-         "offset_h": -72,
+         "landing_utc": "2027-02-12T08:00:00Z",
+         "slip_margin_days": 3,
+         "offset_h": -54,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.64,
-         "fragile": false
+         "min_clearance_deg": 0.02,
+         "fragile": true
         }
        },
        {
@@ -4421,21 +4377,16 @@
        },
        {
         "site": "NR104",
-        "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-02-13T14:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": -24,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.02,
-         "fragile": true
+         "planned_margin_days": -1,
+         "tie_with_planned": false
         }
        },
        {
@@ -4455,7 +4406,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.63,
+         "min_clearance_deg": 2.64,
          "fragile": false
         }
        },
@@ -4484,15 +4435,15 @@
         ],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-02-11T14:00:00Z",
+         "landing_utc": "2027-02-12T02:00:00Z",
          "slip_margin_days": 0,
-         "offset_h": -72,
+         "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.16,
+         "min_clearance_deg": 0.05,
          "fragile": true
         }
        },
@@ -4504,17 +4455,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-02-11T14:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 3.39,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -4524,15 +4470,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2027-02-11T20:00:00Z",
+         "landing_utc": "2027-02-12T02:00:00Z",
          "slip_margin_days": 3,
-         "offset_h": -66,
+         "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.08,
+         "min_clearance_deg": 0.09,
          "fragile": true
         }
        }
@@ -4553,11 +4499,11 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 1.88,
+       "min_clearance_deg": 1.72,
        "fragile": false
       },
-      "sites_yes": 4,
-      "sites_yes_not_fragile": 4,
+      "sites_yes": 3,
+      "sites_yes_not_fragile": 3,
       "at_window": "no",
       "at_window_margin": -1,
       "fails_on": [
@@ -4572,17 +4518,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2027-02-11T14:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 2.95,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -4618,7 +4559,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.88,
+         "min_clearance_deg": 1.72,
          "fragile": false
         }
        },
@@ -4655,7 +4596,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.94,
+         "min_clearance_deg": 0.78,
          "fragile": false
         }
        },
@@ -4692,7 +4633,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.18,
+         "min_clearance_deg": 1.05,
          "fragile": false
         }
        },
@@ -4824,7 +4765,9 @@
         "site": "dGR2_K2023",
         "at_window": "not sure",
         "at_window_margin": -1,
-        "fails_on": [],
+        "fails_on": [
+         "Sun at touchdown"
+        ],
         "best_hour": {
          "found": false,
          "tried": 25,
@@ -5082,7 +5025,7 @@
     ],
     "regions_yes_within_72h": 5,
     "regions_yes_not_fragile": 4,
-    "regions_yes_at_window": 3
+    "regions_yes_at_window": 2
    }
   ]
  },
@@ -5097,24 +5040,24 @@
       "region": "Peak near Cabeus B",
       "code": "PCB",
       "n_sites": 5,
-      "best_site": "PCB04",
+      "best_site": "PCB03",
       "best_hour": {
        "found": true,
-       "landing_utc": "2024-01-24T04:00:00Z",
+       "landing_utc": "2024-01-22T22:00:00Z",
        "slip_margin_days": 8,
-       "offset_h": -6,
+       "offset_h": -36,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 8,
-       "tie_with_planned": true,
-       "min_clearance_deg": 0.43,
+       "planned_margin_days": 6,
+       "tie_with_planned": false,
+       "min_clearance_deg": 0.51,
        "fragile": false
       },
       "sites_yes": 3,
-      "sites_yes_not_fragile": 1,
+      "sites_yes_not_fragile": 2,
       "at_window": "yes",
-      "at_window_margin": 8,
+      "at_window_margin": 6,
       "fails_on": [],
       "sites": [
        {
@@ -5140,16 +5083,16 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-23T04:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -30,
+         "landing_utc": "2024-01-23T22:00:00Z",
+         "slip_margin_days": 2,
+         "offset_h": -12,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.15,
-         "fragile": true
+         "min_clearance_deg": 0.66,
+         "fragile": false
         }
        },
        {
@@ -5159,35 +5102,35 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-22T10:00:00Z",
+         "landing_utc": "2024-01-22T22:00:00Z",
          "slip_margin_days": 8,
-         "offset_h": -48,
+         "offset_h": -36,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 6,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.2,
-         "fragile": true
+         "min_clearance_deg": 0.51,
+         "fragile": false
         }
        },
        {
         "site": "PCB04",
         "at_window": "yes",
-        "at_window_margin": 8,
+        "at_window_margin": 4,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-24T04:00:00Z",
-         "slip_margin_days": 8,
-         "offset_h": -6,
+         "landing_utc": "2024-01-24T10:00:00Z",
+         "slip_margin_days": 4,
+         "offset_h": 0,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 8,
-         "tie_with_planned": true,
-         "min_clearance_deg": 0.43,
-         "fragile": false
+         "planned_margin_days": 4,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.02,
+         "fragile": true
         }
        },
        {
@@ -5218,36 +5161,36 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2024-01-21T10:00:00Z",
-       "slip_margin_days": 7,
+       "slip_margin_days": 6,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 4,
+       "planned_margin_days": 3,
        "tie_with_planned": false,
        "min_clearance_deg": 0.29,
        "fragile": false
       },
-      "sites_yes": 10,
-      "sites_yes_not_fragile": 6,
+      "sites_yes": 9,
+      "sites_yes_not_fragile": 4,
       "at_window": "yes",
-      "at_window_margin": 4,
+      "at_window_margin": 3,
       "fails_on": [],
       "sites": [
        {
         "site": "HW01",
         "at_window": "yes",
-        "at_window_margin": 4,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-23T04:00:00Z",
-         "slip_margin_days": 5,
+         "slip_margin_days": 1,
          "offset_h": -30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 4,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
          "min_clearance_deg": 0.67,
          "fragile": false
@@ -5260,15 +5203,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-22T22:00:00Z",
-         "slip_margin_days": 5,
-         "offset_h": -36,
+         "landing_utc": "2024-01-23T04:00:00Z",
+         "slip_margin_days": 4,
+         "offset_h": -30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.0,
+         "min_clearance_deg": 0.07,
          "fragile": true
         }
        },
@@ -5297,17 +5240,12 @@
         "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-01-22T10:00:00Z",
-         "slip_margin_days": 1,
-         "offset_h": -48,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.49,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -5353,17 +5291,17 @@
        {
         "site": "HW_K2023",
         "at_window": "yes",
-        "at_window_margin": 4,
+        "at_window_margin": 3,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 7,
+         "slip_margin_days": 6,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 4,
+         "planned_margin_days": 3,
          "tie_with_planned": false,
          "min_clearance_deg": 0.29,
          "fragile": false
@@ -5390,21 +5328,21 @@
        },
        {
         "site": "HW08",
-        "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-23T22:00:00Z",
+         "landing_utc": "2024-01-24T16:00:00Z",
          "slip_margin_days": 2,
-         "offset_h": -12,
+         "offset_h": 6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
-         "tie_with_planned": true,
-         "min_clearance_deg": 0.5,
-         "fragile": false
+         "planned_margin_days": -1,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.02,
+         "fragile": true
         }
        },
        {
@@ -5461,11 +5399,11 @@
        "step_h": 6,
        "planned_margin_days": 4,
        "tie_with_planned": false,
-       "min_clearance_deg": 2.9,
+       "min_clearance_deg": 2.46,
        "fragile": false
       },
       "sites_yes": 4,
-      "sites_yes_not_fragile": 4,
+      "sites_yes_not_fragile": 3,
       "at_window": "yes",
       "at_window_margin": 4,
       "fails_on": [],
@@ -5504,7 +5442,7 @@
          "step_h": 6,
          "planned_margin_days": 4,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.9,
+         "min_clearance_deg": 2.46,
          "fragile": false
         }
        },
@@ -5517,16 +5455,16 @@
         ],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": -72,
+         "landing_utc": "2024-01-21T16:00:00Z",
+         "slip_margin_days": 1,
+         "offset_h": -66,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.65,
-         "fragile": false
+         "min_clearance_deg": 0.25,
+         "fragile": true
         }
        },
        {
@@ -5544,7 +5482,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.7,
+         "min_clearance_deg": 3.16,
          "fragile": false
         }
        },
@@ -5572,7 +5510,7 @@
       "region": "Mons Mouton Plateau",
       "code": "MMP",
       "n_sites": 11,
-      "best_site": "MMP04",
+      "best_site": "MMP10",
       "best_hour": {
        "found": true,
        "landing_utc": "2024-01-21T10:00:00Z",
@@ -5583,7 +5521,7 @@
        "step_h": 6,
        "planned_margin_days": 0,
        "tie_with_planned": false,
-       "min_clearance_deg": 3.01,
+       "min_clearance_deg": 5.01,
        "fragile": false
       },
       "sites_yes": 7,
@@ -5600,14 +5538,14 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.28,
+         "min_clearance_deg": 2.72,
          "fragile": false
         }
        },
@@ -5626,7 +5564,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.09,
+         "min_clearance_deg": 0.08,
          "fragile": true
         }
        },
@@ -5648,20 +5586,20 @@
        },
        {
         "site": "MMP04",
-        "at_window": "yes",
-        "at_window_margin": 0,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 3,
+         "slip_margin_days": 2,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 0,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.01,
+         "min_clearance_deg": 2.99,
          "fragile": false
         }
        },
@@ -5714,7 +5652,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.4,
+         "min_clearance_deg": 1.38,
          "fragile": false
         }
        },
@@ -5751,7 +5689,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 8.36,
+         "min_clearance_deg": 8.06,
          "fragile": false
         }
        },
@@ -5770,7 +5708,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 5.08,
+         "min_clearance_deg": 5.01,
          "fragile": false
         }
        },
@@ -5789,7 +5727,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.51,
+         "min_clearance_deg": 4.3,
          "fragile": false
         }
        }
@@ -5803,24 +5741,43 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2024-01-21T10:00:00Z",
-       "slip_margin_days": 7,
+       "slip_margin_days": 6,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 4,
+       "planned_margin_days": 3,
        "tie_with_planned": false,
-       "min_clearance_deg": 2.49,
+       "min_clearance_deg": 1.8,
        "fragile": false
       },
-      "sites_yes": 9,
-      "sites_yes_not_fragile": 8,
+      "sites_yes": 8,
+      "sites_yes_not_fragile": 7,
       "at_window": "yes",
-      "at_window_margin": 4,
+      "at_window_margin": 3,
       "fails_on": [],
       "sites": [
        {
         "site": "MMO01",
+        "at_window": "not sure",
+        "at_window_margin": -1,
+        "fails_on": [],
+        "best_hour": {
+         "found": true,
+         "landing_utc": "2024-01-21T10:00:00Z",
+         "slip_margin_days": 0,
+         "offset_h": -72,
+         "tried": 25,
+         "span_h": 72,
+         "step_h": 6,
+         "planned_margin_days": -1,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.84,
+         "fragile": false
+        }
+       },
+       {
+        "site": "MMO02",
         "at_window": "yes",
         "at_window_margin": 3,
         "fails_on": [],
@@ -5834,64 +5791,45 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.51,
-         "fragile": false
-        }
-       },
-       {
-        "site": "MMO02",
-        "at_window": "yes",
-        "at_window_margin": 4,
-        "fails_on": [],
-        "best_hour": {
-         "found": true,
-         "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 7,
-         "offset_h": -72,
-         "tried": 25,
-         "span_h": 72,
-         "step_h": 6,
-         "planned_margin_days": 4,
-         "tie_with_planned": false,
-         "min_clearance_deg": 2.49,
+         "min_clearance_deg": 1.8,
          "fragile": false
         }
        },
        {
         "site": "MMO03",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 4,
+         "slip_margin_days": 3,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 5.63,
+         "min_clearance_deg": 4.92,
          "fragile": false
         }
        },
        {
         "site": "MMO04",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 4,
+         "slip_margin_days": 3,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 5.92,
+         "min_clearance_deg": 5.83,
          "fragile": false
         }
        },
@@ -5910,7 +5848,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 5.44,
+         "min_clearance_deg": 4.67,
          "fragile": false
         }
        },
@@ -5929,7 +5867,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.23,
+         "min_clearance_deg": 4.22,
          "fragile": false
         }
        },
@@ -5950,34 +5888,31 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.09,
+         "min_clearance_deg": 2.07,
          "fragile": false
         }
        },
        {
         "site": "MMO08",
-        "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-01-23T10:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -24,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.31,
-         "fragile": false
+         "planned_margin_days": -1,
+         "tie_with_planned": false
         }
        },
        {
         "site": "MMO09",
         "at_window": "not sure",
         "at_window_margin": -1,
-        "fails_on": [],
+        "fails_on": [
+         "sunlight"
+        ],
         "best_hour": {
          "found": false,
          "tried": 25,
@@ -6002,7 +5937,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.09,
+         "min_clearance_deg": 0.03,
          "fragile": true
         }
        }
@@ -6012,24 +5947,24 @@
       "region": "Nobile Rim 1",
       "code": "NR1",
       "n_sites": 9,
-      "best_site": "NR103",
+      "best_site": "NR101",
       "best_hour": {
        "found": true,
        "landing_utc": "2024-01-21T10:00:00Z",
-       "slip_margin_days": 7,
+       "slip_margin_days": 6,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 4,
+       "planned_margin_days": 3,
        "tie_with_planned": false,
-       "min_clearance_deg": 1.39,
+       "min_clearance_deg": 1.51,
        "fragile": false
       },
-      "sites_yes": 8,
-      "sites_yes_not_fragile": 8,
+      "sites_yes": 7,
+      "sites_yes_not_fragile": 7,
       "at_window": "yes",
-      "at_window_margin": 4,
+      "at_window_margin": 3,
       "fails_on": [],
       "sites": [
        {
@@ -6047,45 +5982,45 @@
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.78,
+         "min_clearance_deg": 1.51,
          "fragile": false
         }
        },
        {
         "site": "NR102",
         "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window_margin": 1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 5,
+         "slip_margin_days": 4,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.7,
+         "min_clearance_deg": 3.06,
          "fragile": false
         }
        },
        {
         "site": "NR103",
         "at_window": "yes",
-        "at_window_margin": 4,
+        "at_window_margin": 3,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 7,
+         "slip_margin_days": 6,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 4,
+         "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.39,
+         "min_clearance_deg": 0.83,
          "fragile": false
         }
        },
@@ -6104,7 +6039,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.07,
+         "min_clearance_deg": 2.06,
          "fragile": false
         }
        },
@@ -6116,17 +6051,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 4.2,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -6146,7 +6076,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.78,
+         "min_clearance_deg": 3.07,
          "fragile": false
         }
        },
@@ -6167,7 +6097,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.48,
+         "min_clearance_deg": 3.04,
          "fragile": false
         }
        },
@@ -6204,7 +6134,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.13,
+         "min_clearance_deg": 4.12,
          "fragile": false
         }
        }
@@ -6225,7 +6155,7 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 7.04,
+       "min_clearance_deg": 6.82,
        "fragile": false
       },
       "sites_yes": 2,
@@ -6285,7 +6215,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 7.04,
+         "min_clearance_deg": 6.82,
          "fragile": false
         }
        },
@@ -6322,7 +6252,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.2,
+         "min_clearance_deg": 2.46,
          "fragile": false
         }
        },
@@ -6400,18 +6330,18 @@
       "best_hour": {
        "found": true,
        "landing_utc": "2024-01-21T10:00:00Z",
-       "slip_margin_days": 6,
+       "slip_margin_days": 5,
        "offset_h": -72,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 3,
+       "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.4,
-       "fragile": false
+       "min_clearance_deg": 0.2,
+       "fragile": true
       },
-      "sites_yes": 7,
-      "sites_yes_not_fragile": 1,
+      "sites_yes": 6,
+      "sites_yes_not_fragile": 0,
       "at_window": "yes",
       "at_window_margin": 4,
       "fails_on": [],
@@ -6419,20 +6349,20 @@
        {
         "site": "dGR201",
         "at_window": "yes",
-        "at_window_margin": 3,
+        "at_window_margin": 2,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-01-21T10:00:00Z",
-         "slip_margin_days": 6,
+         "slip_margin_days": 5,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 3,
+         "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.4,
-         "fragile": false
+         "min_clearance_deg": 0.2,
+         "fragile": true
         }
        },
        {
@@ -6442,15 +6372,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-23T04:00:00Z",
+         "landing_utc": "2024-01-23T10:00:00Z",
          "slip_margin_days": 5,
-         "offset_h": -30,
+         "offset_h": -24,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 4,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.23,
+         "min_clearance_deg": 0.15,
          "fragile": true
         }
        },
@@ -6469,7 +6399,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.25,
+         "min_clearance_deg": 0.06,
          "fragile": true
         }
        },
@@ -6480,15 +6410,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-21T22:00:00Z",
-         "slip_margin_days": 6,
-         "offset_h": -60,
+         "landing_utc": "2024-01-22T04:00:00Z",
+         "slip_margin_days": 5,
+         "offset_h": -54,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 3,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.0,
+         "min_clearance_deg": 0.04,
          "fragile": true
         }
        },
@@ -6498,17 +6428,12 @@
         "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-01-26T04:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": 42,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.15,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -6518,15 +6443,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-01-21T22:00:00Z",
+         "landing_utc": "2024-01-22T04:00:00Z",
          "slip_margin_days": 5,
-         "offset_h": -60,
+         "offset_h": -54,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.16,
+         "min_clearance_deg": 0.1,
          "fragile": true
         }
        },
@@ -6568,7 +6493,7 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 1.53,
+       "min_clearance_deg": 1.28,
        "fragile": false
       },
       "sites_yes": 1,
@@ -6612,7 +6537,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.53,
+         "min_clearance_deg": 1.28,
          "fragile": false
         }
        },
@@ -6772,7 +6697,7 @@
      }
     ],
     "regions_yes_within_72h": 9,
-    "regions_yes_not_fragile": 9,
+    "regions_yes_not_fragile": 8,
     "regions_yes_at_window": 7
    },
    {
@@ -6786,15 +6711,15 @@
       "best_site": "PCB03",
       "best_hour": {
        "found": true,
-       "landing_utc": "2024-02-21T05:00:00Z",
+       "landing_utc": "2024-02-21T11:00:00Z",
        "slip_margin_days": 8,
-       "offset_h": -42,
+       "offset_h": -36,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
        "planned_margin_days": 5,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.07,
+       "min_clearance_deg": 0.04,
        "fragile": true
       },
       "sites_yes": 3,
@@ -6827,15 +6752,15 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-21T23:00:00Z",
+         "landing_utc": "2024-02-22T11:00:00Z",
          "slip_margin_days": 2,
-         "offset_h": -24,
+         "offset_h": -12,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.07,
+         "min_clearance_deg": 0.16,
          "fragile": true
         }
        },
@@ -6846,34 +6771,34 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-21T05:00:00Z",
+         "landing_utc": "2024-02-21T11:00:00Z",
          "slip_margin_days": 8,
-         "offset_h": -42,
+         "offset_h": -36,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 5,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.07,
+         "min_clearance_deg": 0.04,
          "fragile": true
         }
        },
        {
         "site": "PCB04",
-        "at_window": "yes",
-        "at_window_margin": 5,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-02-23T05:00:00Z",
-         "slip_margin_days": 7,
+         "slip_margin_days": 2,
          "offset_h": 6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 5,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.21,
+         "min_clearance_deg": 0.01,
          "fragile": true
         }
        },
@@ -6901,40 +6826,40 @@
       "region": "Haworth",
       "code": "HW",
       "n_sites": 11,
-      "best_site": "HW03",
+      "best_site": "HW_K2023",
       "best_hour": {
        "found": true,
-       "landing_utc": "2024-02-22T05:00:00Z",
+       "landing_utc": "2024-02-21T23:00:00Z",
        "slip_margin_days": 2,
-       "offset_h": -18,
+       "offset_h": -24,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
        "planned_margin_days": 1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.42,
+       "min_clearance_deg": 0.65,
        "fragile": false
       },
-      "sites_yes": 8,
-      "sites_yes_not_fragile": 4,
+      "sites_yes": 7,
+      "sites_yes_not_fragile": 3,
       "at_window": "yes",
-      "at_window_margin": 2,
+      "at_window_margin": 1,
       "fails_on": [],
       "sites": [
        {
         "site": "HW01",
-        "at_window": "yes",
-        "at_window_margin": 2,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-02-21T17:00:00Z",
-         "slip_margin_days": 3,
+         "slip_margin_days": 0,
          "offset_h": -30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 2,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
          "min_clearance_deg": 0.11,
          "fragile": true
@@ -6943,36 +6868,36 @@
        {
         "site": "HW02",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-21T17:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": -30,
+         "landing_utc": "2024-02-22T17:00:00Z",
+         "slip_margin_days": 1,
+         "offset_h": -6,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.19,
+         "min_clearance_deg": 0.07,
          "fragile": true
         }
        },
        {
         "site": "HW03",
         "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window_margin": 0,
         "fails_on": [],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-02-22T05:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -18,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
+         "planned_margin_days": 0,
          "tie_with_planned": false,
          "min_clearance_deg": 0.42,
          "fragile": false
@@ -7078,17 +7003,12 @@
          "Earth contact"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-02-22T17:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -6,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.4,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -7143,7 +7063,7 @@
        "step_h": 6,
        "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 2.5,
+       "min_clearance_deg": 2.05,
        "fragile": false
       },
       "sites_yes": 4,
@@ -7186,7 +7106,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.5,
+         "min_clearance_deg": 2.05,
          "fragile": false
         }
        },
@@ -7199,34 +7119,34 @@
         ],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-19T23:00:00Z",
+         "landing_utc": "2024-02-20T11:00:00Z",
          "slip_margin_days": 1,
+         "offset_h": -60,
+         "tried": 25,
+         "span_h": 72,
+         "step_h": 6,
+         "planned_margin_days": -1,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.08,
+         "fragile": true
+        }
+       },
+       {
+        "site": "MMA03",
+        "at_window": "not sure",
+        "at_window_margin": -1,
+        "fails_on": [],
+        "best_hour": {
+         "found": true,
+         "landing_utc": "2024-02-19T23:00:00Z",
+         "slip_margin_days": 2,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.24,
-         "fragile": true
-        }
-       },
-       {
-        "site": "MMA03",
-        "at_window": "yes",
-        "at_window_margin": 0,
-        "fails_on": [],
-        "best_hour": {
-         "found": true,
-         "landing_utc": "2024-02-19T23:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -72,
-         "tried": 25,
-         "span_h": 72,
-         "step_h": 6,
-         "planned_margin_days": 0,
-         "tie_with_planned": false,
-         "min_clearance_deg": 3.28,
+         "min_clearance_deg": 2.77,
          "fragile": false
         }
        },
@@ -7265,18 +7185,18 @@
        "step_h": 6,
        "planned_margin_days": 0,
        "tie_with_planned": false,
-       "min_clearance_deg": 4.68,
+       "min_clearance_deg": 4.61,
        "fragile": false
       },
-      "sites_yes": 7,
-      "sites_yes_not_fragile": 6,
+      "sites_yes": 6,
+      "sites_yes_not_fragile": 5,
       "at_window": "yes",
       "at_window_margin": 0,
       "fails_on": [],
       "sites": [
        {
         "site": "MMP01",
-        "at_window": "not sure",
+        "at_window": "no",
         "at_window_margin": -1,
         "fails_on": [
          "sunlight"
@@ -7291,7 +7211,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.9,
+         "min_clearance_deg": 2.33,
          "fragile": false
         }
        },
@@ -7312,7 +7232,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.09,
+         "min_clearance_deg": 0.08,
          "fragile": true
         }
        },
@@ -7341,14 +7261,14 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2024-02-19T23:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.58,
+         "min_clearance_deg": 2.54,
          "fragile": false
         }
        },
@@ -7392,17 +7312,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-02-19T23:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.88,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -7438,7 +7353,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 7.98,
+         "min_clearance_deg": 7.68,
          "fragile": false
         }
        },
@@ -7457,7 +7372,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.68,
+         "min_clearance_deg": 4.61,
          "fragile": false
         }
        },
@@ -7471,14 +7386,14 @@
         "best_hour": {
          "found": true,
          "landing_utc": "2024-02-19T23:00:00Z",
-         "slip_margin_days": 2,
+         "slip_margin_days": 1,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.12,
+         "min_clearance_deg": 4.07,
          "fragile": false
         }
        }
@@ -7499,11 +7414,11 @@
        "step_h": 6,
        "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 4.98,
+       "min_clearance_deg": 4.18,
        "fragile": false
       },
-      "sites_yes": 9,
-      "sites_yes_not_fragile": 8,
+      "sites_yes": 7,
+      "sites_yes_not_fragile": 6,
       "at_window": "yes",
       "at_window_margin": 2,
       "fails_on": [],
@@ -7514,17 +7429,12 @@
         "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-02-19T23:00:00Z",
-         "slip_margin_days": 1,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 1.59,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -7542,7 +7452,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.65,
+         "min_clearance_deg": 1.87,
          "fragile": false
         }
        },
@@ -7561,7 +7471,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 5.21,
+         "min_clearance_deg": 4.49,
          "fragile": false
         }
        },
@@ -7580,7 +7490,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 5.4,
+         "min_clearance_deg": 5.31,
          "fragile": false
         }
        },
@@ -7599,7 +7509,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.98,
+         "min_clearance_deg": 4.18,
          "fragile": false
         }
        },
@@ -7639,27 +7549,22 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.57,
+         "min_clearance_deg": 1.56,
          "fragile": false
         }
        },
        {
         "site": "MMO08",
-        "at_window": "yes",
-        "at_window_margin": 1,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-02-22T05:00:00Z",
-         "slip_margin_days": 1,
-         "offset_h": -18,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 1,
-         "tie_with_planned": true,
-         "min_clearance_deg": 0.37,
-         "fragile": false
+         "planned_margin_days": -1,
+         "tie_with_planned": false
         }
        },
        {
@@ -7693,7 +7598,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.27,
+         "min_clearance_deg": 0.23,
          "fragile": true
         }
        }
@@ -7714,7 +7619,7 @@
        "step_h": 6,
        "planned_margin_days": 1,
        "tie_with_planned": false,
-       "min_clearance_deg": 1.38,
+       "min_clearance_deg": 1.13,
        "fragile": false
       },
       "sites_yes": 6,
@@ -7738,7 +7643,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.38,
+         "min_clearance_deg": 1.13,
          "fragile": false
         }
        },
@@ -7757,7 +7662,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.52,
+         "min_clearance_deg": 2.66,
          "fragile": false
         }
        },
@@ -7776,7 +7681,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.1,
+         "min_clearance_deg": 0.41,
          "fragile": false
         }
        },
@@ -7795,7 +7700,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.68,
+         "min_clearance_deg": 1.66,
          "fragile": false
         }
        },
@@ -7848,7 +7753,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.1,
+         "min_clearance_deg": 2.64,
          "fragile": false
         }
        },
@@ -7906,7 +7811,7 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 6.65,
+       "min_clearance_deg": 6.44,
        "fragile": false
       },
       "sites_yes": 2,
@@ -7966,7 +7871,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 6.65,
+         "min_clearance_deg": 6.44,
          "fragile": false
         }
        },
@@ -8003,7 +7908,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.82,
+         "min_clearance_deg": 2.09,
          "fragile": false
         }
        },
@@ -8077,42 +7982,42 @@
       "region": "de Gerlache Rim 2",
       "code": "dGR2",
       "n_sites": 7,
-      "best_site": "dGR204",
+      "best_site": "dGR202",
       "best_hour": {
        "found": true,
-       "landing_utc": "2024-02-21T11:00:00Z",
+       "landing_utc": "2024-02-22T11:00:00Z",
        "slip_margin_days": 2,
-       "offset_h": -36,
+       "offset_h": -12,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 0,
+       "planned_margin_days": 1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.35,
+       "min_clearance_deg": 0.27,
        "fragile": false
       },
-      "sites_yes": 5,
-      "sites_yes_not_fragile": 1,
+      "sites_yes": 4,
+      "sites_yes_not_fragile": 2,
       "at_window": "yes",
       "at_window_margin": 1,
       "fails_on": [],
       "sites": [
        {
         "site": "dGR201",
-        "at_window": "yes",
-        "at_window_margin": 0,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-20T05:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -66,
+         "landing_utc": "2024-02-19T23:00:00Z",
+         "slip_margin_days": 0,
+         "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 0,
+         "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.01,
+         "min_clearance_deg": 0.0,
          "fragile": true
         }
        },
@@ -8123,35 +8028,30 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-21T23:00:00Z",
+         "landing_utc": "2024-02-22T11:00:00Z",
          "slip_margin_days": 2,
-         "offset_h": -24,
+         "offset_h": -12,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.07,
-         "fragile": true
+         "min_clearance_deg": 0.27,
+         "fragile": false
         }
        },
        {
         "site": "dGR203",
-        "at_window": "yes",
-        "at_window_margin": 0,
+        "at_window": "not sure",
+        "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-02-22T05:00:00Z",
-         "slip_margin_days": 1,
-         "offset_h": -18,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 0,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.01,
-         "fragile": true
+         "planned_margin_days": -1,
+         "tie_with_planned": false
         }
        },
        {
@@ -8169,7 +8069,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.35,
+         "min_clearance_deg": 0.34,
          "fragile": false
         }
        },
@@ -8194,9 +8094,9 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-02-20T17:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": -54,
+         "landing_utc": "2024-02-21T17:00:00Z",
+         "slip_margin_days": 1,
+         "offset_h": -30,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
@@ -8457,21 +8357,21 @@
       "best_site": "PCB03",
       "best_hour": {
        "found": true,
-       "landing_utc": "2024-03-22T12:00:00Z",
-       "slip_margin_days": 7,
-       "offset_h": -24,
+       "landing_utc": "2024-03-22T18:00:00Z",
+       "slip_margin_days": 6,
+       "offset_h": -18,
        "tried": 25,
        "span_h": 72,
        "step_h": 6,
-       "planned_margin_days": 6,
+       "planned_margin_days": 5,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.17,
-       "fragile": true
+       "min_clearance_deg": 0.3,
+       "fragile": false
       },
-      "sites_yes": 3,
-      "sites_yes_not_fragile": 0,
+      "sites_yes": 2,
+      "sites_yes_not_fragile": 1,
       "at_window": "yes",
-      "at_window_margin": 6,
+      "at_window_margin": 5,
       "fails_on": [],
       "sites": [
        {
@@ -8499,35 +8399,35 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-03-23T00:00:00Z",
+         "landing_utc": "2024-03-23T12:00:00Z",
          "slip_margin_days": 0,
-         "offset_h": -12,
+         "offset_h": 0,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": 0,
-         "tie_with_planned": true,
-         "min_clearance_deg": 0.12,
+         "tie_with_planned": false,
+         "min_clearance_deg": 0.23,
          "fragile": true
         }
        },
        {
         "site": "PCB03",
         "at_window": "yes",
-        "at_window_margin": 6,
+        "at_window_margin": 5,
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-03-22T12:00:00Z",
-         "slip_margin_days": 7,
-         "offset_h": -24,
+         "landing_utc": "2024-03-22T18:00:00Z",
+         "slip_margin_days": 6,
+         "offset_h": -18,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
-         "planned_margin_days": 6,
+         "planned_margin_days": 5,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.17,
-         "fragile": true
+         "min_clearance_deg": 0.3,
+         "fragile": false
         }
        },
        {
@@ -8536,17 +8436,12 @@
         "at_window_margin": -1,
         "fails_on": [],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-23T18:00:00Z",
-         "slip_margin_days": 4,
-         "offset_h": 6,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.14,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -8573,7 +8468,7 @@
       "region": "Haworth",
       "code": "HW",
       "n_sites": 11,
-      "best_site": "HW06",
+      "best_site": "HW_K2023",
       "best_hour": {
        "found": true,
        "landing_utc": "2024-03-20T12:00:00Z",
@@ -8584,11 +8479,11 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.42,
-       "fragile": false
+       "min_clearance_deg": 0.06,
+       "fragile": true
       },
-      "sites_yes": 3,
-      "sites_yes_not_fragile": 2,
+      "sites_yes": 1,
+      "sites_yes_not_fragile": 0,
       "at_window": "no",
       "at_window_margin": -1,
       "fails_on": [
@@ -8602,19 +8497,16 @@
         "site": "HW01",
         "at_window": "not sure",
         "at_window_margin": -1,
-        "fails_on": [],
+        "fails_on": [
+         "Earth contact"
+        ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-22T18:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -18,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.22,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -8687,17 +8579,12 @@
          "Earth contact"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-20T12:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.42,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -8717,8 +8604,8 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.38,
-         "fragile": false
+         "min_clearance_deg": 0.06,
+         "fragile": true
         }
        },
        {
@@ -8809,7 +8696,7 @@
        "min_clearance_deg": 3.88,
        "fragile": false
       },
-      "sites_yes": 4,
+      "sites_yes": 3,
       "sites_yes_not_fragile": 3,
       "at_window": "yes",
       "at_window_margin": 1,
@@ -8849,7 +8736,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 1.79,
+         "min_clearance_deg": 1.33,
          "fragile": false
         }
        },
@@ -8861,17 +8748,12 @@
          "sunlight"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-21T06:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -54,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.03,
-         "fragile": true
+         "tie_with_planned": false
         }
        },
        {
@@ -8889,7 +8771,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.85,
+         "min_clearance_deg": 2.05,
          "fragile": false
         }
        },
@@ -8929,11 +8811,11 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 3.97,
+       "min_clearance_deg": 3.89,
        "fragile": false
       },
-      "sites_yes": 4,
-      "sites_yes_not_fragile": 4,
+      "sites_yes": 3,
+      "sites_yes_not_fragile": 3,
       "at_window": "no",
       "at_window_margin": -1,
       "fails_on": [
@@ -8951,17 +8833,12 @@
          "Earth contact"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-20T12:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -72,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 2.19,
-         "fragile": false
+         "tie_with_planned": false
         }
        },
        {
@@ -9101,7 +8978,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 7.26,
+         "min_clearance_deg": 6.97,
          "fragile": false
         }
        },
@@ -9122,7 +8999,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.97,
+         "min_clearance_deg": 3.89,
          "fragile": false
         }
        },
@@ -9144,7 +9021,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.76,
+         "min_clearance_deg": 3.41,
          "fragile": false
         }
        }
@@ -9165,11 +9042,11 @@
        "step_h": 6,
        "planned_margin_days": 2,
        "tie_with_planned": false,
-       "min_clearance_deg": 4.24,
+       "min_clearance_deg": 3.42,
        "fragile": false
       },
-      "sites_yes": 8,
-      "sites_yes_not_fragile": 8,
+      "sites_yes": 6,
+      "sites_yes_not_fragile": 6,
       "at_window": "yes",
       "at_window_margin": 2,
       "fails_on": [],
@@ -9182,21 +9059,35 @@
          "Earth contact"
         ],
         "best_hour": {
+         "found": false,
+         "tried": 25,
+         "span_h": 72,
+         "step_h": 6,
+         "planned_margin_days": -1,
+         "tie_with_planned": false
+        }
+       },
+       {
+        "site": "MMO02",
+        "at_window": "not sure",
+        "at_window_margin": -1,
+        "fails_on": [],
+        "best_hour": {
          "found": true,
          "landing_utc": "2024-03-20T12:00:00Z",
-         "slip_margin_days": 0,
+         "slip_margin_days": 1,
          "offset_h": -72,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.88,
+         "min_clearance_deg": 1.72,
          "fragile": false
         }
        },
        {
-        "site": "MMO02",
+        "site": "MMO03",
         "at_window": "not sure",
         "at_window_margin": -1,
         "fails_on": [],
@@ -9210,26 +9101,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.21,
-         "fragile": false
-        }
-       },
-       {
-        "site": "MMO03",
-        "at_window": "yes",
-        "at_window_margin": 0,
-        "fails_on": [],
-        "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-20T12:00:00Z",
-         "slip_margin_days": 3,
-         "offset_h": -72,
-         "tried": 25,
-         "span_h": 72,
-         "step_h": 6,
-         "planned_margin_days": 0,
-         "tie_with_planned": false,
-         "min_clearance_deg": 4.48,
+         "min_clearance_deg": 3.76,
          "fragile": false
         }
        },
@@ -9248,7 +9120,7 @@
          "step_h": 6,
          "planned_margin_days": 0,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.63,
+         "min_clearance_deg": 4.56,
          "fragile": false
         }
        },
@@ -9267,7 +9139,7 @@
          "step_h": 6,
          "planned_margin_days": 2,
          "tie_with_planned": false,
-         "min_clearance_deg": 4.24,
+         "min_clearance_deg": 3.42,
          "fragile": false
         }
        },
@@ -9286,7 +9158,7 @@
          "step_h": 6,
          "planned_margin_days": 1,
          "tie_with_planned": false,
-         "min_clearance_deg": 3.07,
+         "min_clearance_deg": 3.08,
          "fragile": false
         }
        },
@@ -9307,7 +9179,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.82,
+         "min_clearance_deg": 0.81,
          "fragile": false
         }
        },
@@ -9353,17 +9225,12 @@
          "Earth contact"
         ],
         "best_hour": {
-         "found": true,
-         "landing_utc": "2024-03-22T06:00:00Z",
-         "slip_margin_days": 0,
-         "offset_h": -30,
+         "found": false,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
-         "tie_with_planned": false,
-         "min_clearance_deg": 0.27,
-         "fragile": false
+         "tie_with_planned": false
         }
        }
       ]
@@ -9383,16 +9250,16 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 0.66,
+       "min_clearance_deg": 0.42,
        "fragile": false
       },
       "sites_yes": 5,
-      "sites_yes_not_fragile": 5,
+      "sites_yes_not_fragile": 4,
       "at_window": "no",
       "at_window_margin": -1,
       "fails_on": [
-       "sunlight",
-       "Earth contact"
+       "Earth contact",
+       "sunlight"
       ],
       "sites": [
        {
@@ -9410,7 +9277,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.66,
+         "min_clearance_deg": 0.42,
          "fragile": false
         }
        },
@@ -9418,7 +9285,9 @@
         "site": "NR102",
         "at_window": "not sure",
         "at_window_margin": -1,
-        "fails_on": [],
+        "fails_on": [
+         "Earth contact"
+        ],
         "best_hour": {
          "found": true,
          "landing_utc": "2024-03-20T12:00:00Z",
@@ -9429,7 +9298,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.83,
+         "min_clearance_deg": 1.94,
          "fragile": false
         }
        },
@@ -9440,16 +9309,16 @@
         "fails_on": [],
         "best_hour": {
          "found": true,
-         "landing_utc": "2024-03-20T12:00:00Z",
-         "slip_margin_days": 2,
-         "offset_h": -72,
+         "landing_utc": "2024-03-21T00:00:00Z",
+         "slip_margin_days": 1,
+         "offset_h": -60,
          "tried": 25,
          "span_h": 72,
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 0.44,
-         "fragile": false
+         "min_clearance_deg": 0.1,
+         "fragile": true
         }
        },
        {
@@ -9469,7 +9338,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.96,
+         "min_clearance_deg": 0.94,
          "fragile": false
         }
        },
@@ -9558,7 +9427,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.96,
+         "min_clearance_deg": 2.95,
          "fragile": false
         }
        }
@@ -9579,7 +9448,7 @@
        "step_h": 6,
        "planned_margin_days": -1,
        "tie_with_planned": false,
-       "min_clearance_deg": 2.12,
+       "min_clearance_deg": 1.38,
        "fragile": false
       },
       "sites_yes": 1,
@@ -9675,7 +9544,7 @@
          "step_h": 6,
          "planned_margin_days": -1,
          "tie_with_planned": false,
-         "min_clearance_deg": 2.12,
+         "min_clearance_deg": 1.38,
          "fragile": false
         }
        },
@@ -9716,7 +9585,8 @@
         "at_window": "no",
         "at_window_margin": -1,
         "fails_on": [
-         "sunlight"
+         "sunlight",
+         "Earth contact"
         ],
         "best_hour": {
          "found": false,
@@ -10113,5 +9983,5 @@
    }
   ]
  },
- "seconds": 118.4
+ "seconds": 147.3
 }

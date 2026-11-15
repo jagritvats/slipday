@@ -66,19 +66,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   };
 
   const openFold = async (id) => { await page.evaluate((id) => { const d = document.getElementById(id); if (d) { d.open = true; } window.dispatchEvent(new Event('resize')); }, id); await sleep(1200); };
-  await page.addStyleTag({ content: 'nav.jump { position: static !important; }' });   /* the sticky bar would cover zoomed regions */
+  await page.addStyleTag({ content: 'nav.jump, .jump, header.top { position: static !important; }' });   /* the sticky bar would cover zoomed regions */
+  /* the page folds its later sections; open the ones the scenes show (not the slip grid, compare-over-time or home folds) */
+  await page.evaluate(() => { ['foldMissions', 'foldSites', 'foldSafety', 'foldPrecise', 'foldRelay', 'foldRegions', 'foldAtlas', 'foldGame', 'foldListen'].forEach((id) => { const d = document.getElementById(id); if (d) { d.open = true; } }); });
+  await sleep(1500);
   // 1. the question: title, challenge, the plain intro, the jump bar and the input sentence
+  await page.waitForFunction(() => /Yes|No|Not sure/.test((document.getElementById('nvVerdict') || {}).textContent || ''), { timeout: 120000 }).catch(() => {});
   await page.evaluate(() => window.scrollTo(0, 0));
-  await film('question', ['header h1', '#intro', '#jumpBar', '.sentence'], 12);
-  // 2. the answer and the slip margin
-  await film('card', ['#missionOut .verdict', '#fineNote', '#vstrip', '#vstrip2'], 14);
-  // 3. the challenge objective in numbers, and the skyline chart
-  await film('objective', ['#objLine', '#why .whyHead', '#why svg.whySvg', '#why .whyLegend'], 12);
+  await film('question', ['#h-nav', '#nvStart', '#nvPresets'], 12);
+  // 2. the answer and the slip margin (the navigator's verdict)
+  await film('card', ['#nvSiteName', '#nvVerdict', '#nvSentence'], 12);
+  // 3. the challenge objective in numbers, on the skyline chart
+  await film('objective', ['#nvChart', '#nvTags'], 12);
   // 4. launch slipped by 9 days: the strip, the day banner and the reason
   await page.evaluate(() => { const e = document.getElementById('mSlip'); e.value = '9'; e.dispatchEvent(new Event('change')); });
   await page.waitForFunction(() => /slip of 9 day/.test((document.querySelector('#why .whyHead') || {}).textContent || ''), { timeout: 60000 }).catch(() => {});
   await sleep(800);
-  await film('slipped', ['.slipBy', '#missionOut .verdict', '#dayBanner', '#why .whyFlip'], 12);
+  await film('slipped', ['#dayBanner', '#why .whyHead', '#why svg.whySvg', '#why .whyFlip'], 12);
   await page.evaluate(() => { const e = document.getElementById('mSlip'); e.value = '0'; e.dispatchEvent(new Event('change')); });
   await sleep(2500);
   // 5. next windows, other sites and hours, and Download

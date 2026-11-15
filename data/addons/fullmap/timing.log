@@ -1,0 +1,4 @@
+grid 304 x 304 = 92416 points at 2000 m; 6 chunks (384 points) to do; terrain ldem_80s_80m+ldem_75s_240m+ldem_64_south+ldem_16 (76de51d5e9+35bc39a609+cdb14f87ee+feb25e8376)
+64/384 points  24 s  0.367 s/point (wall, 6 procs)  eta 2.0 min  [chunk 5: 0.36 s/point/proc]
+384/384 points  25 s  0.064 s/point (wall, 6 procs)  eta 0.0 min  [chunk 0: 0.38 s/point/proc]
+done: 384 points in 24.7 s

@@ -23,7 +23,7 @@ const require = createRequire(path.join(NODETOOLS, 'package.json'));
 const puppeteer = require('puppeteer-core');
 
 const PORT = parseInt(process.env.ADDON_PORT || '8131', 10);
-if (!process.env.ADDON_BASE && (PORT < 8130 || PORT > 8139)) { throw new Error('use a port from 8130 to 8139'); }
+if (!process.env.ADDON_BASE && !((PORT >= 8130 && PORT <= 8139) || (PORT >= 8180 && PORT <= 8189))) { throw new Error('use a port from 8130 to 8139 or 8180 to 8189'); }
 const BASE = process.env.ADDON_BASE || `http://127.0.0.1:${PORT}`;
 const BROWSERS = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   'C:/Program Files/Microsoft/Edge/Application/msedge.exe'];
@@ -175,59 +175,66 @@ async function main() {
     check('Escape stops the sound', /^Stopped/.test(esc), esc);
     void dur;
 
-    // ---- 4. the game: five rounds, every verdict checked against the API
+    // ---- 4. the game: a five-scenario campaign, every answer shown checked against the API
     await page.click('#sd-game-start');
-    let rounds = 0, verdictsChecked = 0, mismatches = [], plannedEachRound = true, reasonsChecked = 0;
+    let rounds = 0, verdictsChecked = 0, mismatches = [], reasonsChecked = 0, optionsOk = true;
     const reasonBad = [];
     for (let r = 0; r < 5; r++) {
-      await page.waitForSelector('.sd-choice:not([disabled])', { timeout: 180000 });
-      const names = await page.evaluate(() => Array.from(document.querySelectorAll('.sd-choice')).map((b) => b.textContent));
-      if (!names.some((n) => n.includes('(the planned site)')) || names.length !== 3) { plannedEachRound = false; }
+      await page.waitForSelector('input[name="sd-game-opt"]:not([disabled])', { timeout: 180000 });
+      const sc = await page.evaluate(() => window.SlipdayGame.state().sc);
+      const grules = await page.evaluate(() => window.SlipdayGame.state().rules);
+      if (sc.options.length < 3 || sc.options.length > 4) { optionsOk = false; }
+      const k = r % sc.options.length;
       if (r === 0) {                                     // the first pick is made with the keyboard
-        await page.focus('.sd-choice[data-i="1"]');
+        await page.focus('input[name="sd-game-opt"][value="0"]');
+        await page.keyboard.press('Space');
+        for (let j = 0; j < k; j++) { await page.keyboard.press('ArrowDown'); }
+        await page.focus('#sd-game-commit');
         await page.keyboard.press('Enter');
       } else {
-        await page.click(`.sd-choice[data-i="${r % 3}"]`);
+        await page.click(`.sd-opt[data-i="${k}"]`);
+        await page.click('#sd-game-commit');
       }
-      await page.waitForFunction(() => document.querySelectorAll('.sd-ans').length === 3, { timeout: 240000 });
-      const ans = await page.evaluate(() => Array.from(document.querySelectorAll('.sd-ans')).map((li) => ({
-        site: JSON.parse(li.getAttribute('data-site')), slip: +li.getAttribute('data-slip'), verdict: li.getAttribute('data-verdict'),
-        landing: li.getAttribute('data-landing'), text: li.textContent })));
-      for (const a of ans) {
-        const body = { ...plan, site: a.site, slip_days: 30 }; delete body.day;
+      await page.waitForSelector('#sd-game-outcome', { timeout: 240000 });
+      const ans = await page.evaluate(() => Array.from(document.querySelectorAll('.sd-cmp tbody tr')).map((tr) => ({
+        site: JSON.parse(tr.getAttribute('data-site')), verdict: tr.getAttribute('data-verdict'), landing: tr.getAttribute('data-landing'),
+        mine: tr.classList.contains('sd-mine') })));
+      const outText = await page.evaluate(() => document.getElementById('sd-game-outcome').textContent.replace(/\s+/g, ' '));
+      for (let i = 0; i < ans.length; i++) {
+        const a = ans[i], o = sc.options[i];
+        const body = { ...grules, need_sun_h: sc.need.need_sun_h, need_earth_h: sc.need.need_earth_h, window_days: sc.need.window_days,
+          site: { id: o.site }, landing: o.landing, slip_days: 30 };
         const m = await api('/api/mission', body);
-        const d = m.days[a.slip];
+        const d = m.days[0];
         verdictsChecked++;
-        if (!d || d.verdict !== a.verdict || d.landing_utc !== a.landing) { mismatches.push(`${JSON.stringify(a.site)} slip ${a.slip}: page ${a.verdict}, API ${d && d.verdict}`); continue; }
+        if (a.verdict !== m.verdict || a.landing !== m.landing_utc || a.site.id !== o.site) { mismatches.push(`${o.site} ${o.landing}: page ${a.verdict}, API ${m.verdict}`); continue; }
+        if (!a.mine) { continue; }
         // the reason's numbers and direction come from the API too
-        const t = a.text.replace(/\s+/g, ' ');
+        const t = outText;
         const sunM = /only (\d+) hours of sunlight/.exec(t), earthM = /for only (\d+) hours; it needs/.exec(t);
-        if (sunM && +sunM[1] !== d.sunlit_h) { reasonBad.push(`${a.site.id}: sunlight ${sunM[1]} vs ${d.sunlit_h}`); }
-        if (earthM && +earthM[1] !== d.earth_h) { reasonBad.push(`${a.site.id}: Earth ${earthM[1]} vs ${d.earth_h}`); }
-        if (a.verdict === 'yes' && !(t.includes(`${d.sunlit_h} hours of sunlight`) && t.includes(`${d.earth_h} hours of radio contact`))) { reasonBad.push(`${a.site.id}: yes numbers`); }
+        if (sunM && +sunM[1] !== d.sunlit_h) { reasonBad.push(`${o.site}: sunlight ${sunM[1]} vs ${d.sunlit_h}`); }
+        if (earthM && +earthM[1] !== d.earth_h) { reasonBad.push(`${o.site}: Earth ${earthM[1]} vs ${d.earth_h}`); }
+        if (a.verdict === 'yes' && !(t.includes(`${d.sunlit_h} hours of sunlight`) && t.includes(`${d.earth_h} hours of radio contact`))) { reasonBad.push(`${o.site}: yes numbers`); }
         const dir = /behind the ground (?:[\d]+ km away )?to the ([a-z-]+)/.exec(t);
         if (dir) {
-          const g = await api('/api/why', { ...body, day: a.slip, earth_stations: false });
+          const g = await api('/api/why', { ...body, day: 0, earth_stations: false });
           const dirs = [...g.sun_hidden, ...g.earth_hidden].map((s) => s.terrain && s.terrain.compass);
-          if (!dirs.includes(dir[1])) { reasonBad.push(`${a.site.id}: direction ${dir[1]} not in ${dirs.join('/')}`); }
+          if (!dirs.includes(dir[1])) { reasonBad.push(`${o.site}: direction ${dir[1]} not in ${dirs.join('/')}`); }
         }
         reasonsChecked++;
       }
-      console.log(`      round ${r + 1}: slip ${ans[0].slip} d -> ` + ans.map((a) => `${a.site.id || a.site.name}: ${a.verdict}`).join(', '));
-      const eg = ans.map((a) => a.text.replace(/\s+/g, ' ').trim()).find((t) => /: No/.test(t));
-      if (eg) { console.log('        ' + eg); }
+      console.log(`      scenario ${r + 1} (${sc.id}, slip ${sc.slip} d) -> ` + ans.map((a) => `${a.site.id}: ${a.verdict}${a.mine ? ' (picked)' : ''}`).join(', '));
       rounds++;
       await page.click('#sd-game-next');
     }
     await page.waitForSelector('#sd-game-end', { timeout: 10000 });
     const end = await page.evaluate(() => document.getElementById('sd-game-end').textContent + ' | ' + document.getElementById('sd-game-score').textContent);
-    check('the game runs five rounds to a final score (rounds where no site works do not count)', rounds === 5 && (/of 5/.test(end) || /did not count/.test(end)), end);
-    check('each round offers the planned site and two others', plannedEachRound);
-    check('every reason sentence uses the API numbers and the direction of the hiding ground', reasonsChecked === 15 && reasonBad.length === 0,
+    check('the game runs five scenarios to a final campaign score', rounds === 5 && /Campaign complete: \d+ points/.test(end), end);
+    check('each scenario offers three or four options', optionsOk);
+    check('every outcome reason uses the API numbers and the direction of the hiding ground', reasonsChecked === 5 && reasonBad.length === 0,
       `${reasonsChecked} checked` + (reasonBad.length ? '; ' + reasonBad.join('; ') : ''));
-    check('every verdict in the game equals the API answer for that site and slip', verdictsChecked === 15 && mismatches.length === 0,
+    check('every verdict in the game equals the API answer for that site and landing', verdictsChecked >= 15 && mismatches.length === 0,
       `${verdictsChecked} checked` + (mismatches.length ? '; ' + mismatches.join('; ') : ''));
-
     // ---- 4b. pressed early (before the page has asked for its skyline view), Listen still uses the card's site
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForSelector('#missionOut .verdict', { timeout: 180000 });
@@ -245,15 +252,15 @@ async function main() {
     // ---- 5. phone width, reduced motion
     await page.setViewport({ width: 375, height: 800 });           // isMobile would reload the page
     await page.click('#sd-game-start');
-    await page.waitForSelector('.sd-choice', { timeout: 180000 });
+    await page.waitForSelector('.sd-opt', { timeout: 180000 });
     const phone = await page.evaluate(() => {
-      const over = Array.from(document.querySelectorAll('#addon-listen *, #addon-game *')).filter((e) => e.getBoundingClientRect().right > window.innerWidth + 1).length;
-      const xs = Array.from(document.querySelectorAll('.sd-choice')).map((b) => Math.round(b.getBoundingClientRect().left));
+      const over = Array.from(document.querySelectorAll('#addon-listen *, #addon-game *')).filter((e) => { if (e.closest('.sd-tablewrap')) { return false; } return e.getBoundingClientRect().right > window.innerWidth + 1; }).length;
+      const xs = Array.from(document.querySelectorAll('.sd-opt')).map((b) => Math.round(b.getBoundingClientRect().left));
       return { over, oneColumn: new Set(xs).size === 1 };
     });
     check('at 375 px nothing in the add-ons is wider than the screen, and the choices stack', phone.over === 0 && phone.oneColumn, JSON.stringify(phone));
     await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
-    const rm = await page.evaluate(() => getComputedStyle(document.querySelector('.sd-choice')).transitionDuration);
+    const rm = await page.evaluate(() => getComputedStyle(document.querySelector('.sd-opt')).transitionDuration);
     check('reduced motion: no transitions in the add-ons', /^0s/.test(rm), rm);
 
     check('no script errors on the page', errors.length === 0, errors.join(' | ').slice(0, 300));

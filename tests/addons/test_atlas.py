@@ -167,7 +167,9 @@ def test_drift_is_measured_and_close_to_the_expected_value(doc):
 @needs_atlas
 def test_one_site_rejudged_from_scratch_in_2033_matches_the_stored_flags(flags):
     old = os.environ.get("SLIPDAY_DEM_DIR")
-    os.environ["SLIPDAY_DEM_DIR"] = REAL_DEM
+    # rejudge on the stack the atlas was built on: the live one (5 m, the full 20 m mosaic, 80 m) when installed
+    live = os.path.join(ROOT, "data", "dem_live")
+    os.environ["SLIPDAY_DEM_DIR"] = live if os.path.exists(os.path.join(live, "dems.json")) else REAL_DEM
     demstore.reload()
     sites._terrain_profile.cache_clear()
     try:

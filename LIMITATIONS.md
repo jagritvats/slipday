@@ -17,11 +17,11 @@ Every number here is in LOCAL_PASS_2_RESULTS.md with the command that produced i
   points, 8 days of margin on both grids), so only one of 18 candidates was tried and nothing is known
   about the other 17 on the finer grid. It is not a published site and the feature was not looked up.
   Its margin is ended by the Earth-contact need (95 of 100 hours on day 9), which is an illustrative
-  figure; the card says so. It is a seasonal place: 41 clear-yes landing dates in a year (3 not sure; 42 and 2 without the station rule), none from
+  figure; the card says so. It is a seasonal place: 39 clear-yes landing dates in a year (4 not sure, with or without the station rule), none from
   January to August 2027. A first visit opens on that fixed example (landing 18 Nov 2026), not on
-  today's date. The 20 m answer is an off-line check stored in a file; the page itself computes on 80 m.
-- **The best-known ridge example does not survive a finer grid unchanged.** The page computes on NASA's
-  80 m mosaic. The former opening example (Shackleton connecting ridge, landing 18 Nov 2026, 240 sunlit
+  today's date. The page now computes on the finest grid that covers the site: the LOLA 5 m site model here.
+- **The best-known ridge example does not survive a finer grid unchanged.** The page now computes on the finest grid
+  that covers the site (here the LOLA 5 m site model, where it reads Not sure); the history follows. The former opening example (Shackleton connecting ridge, landing 18 Nov 2026, 240 sunlit
   hours and 100 hours of Earth contact in 14 days; now site 2) was worked out off-line on a terrain stack whose finest grid is the
   71.7 km square around the pole from NASA's 20 m mosaic (`scripts/fetch_ldem20_crop.py`,
   `scripts/ridge_20m.py`). On the 80 m grid: Yes, 13 of 13 touchdown points, 7 days of margin. On the
@@ -217,7 +217,7 @@ Every number here is in LOCAL_PASS_2_RESULTS.md with the command that produced i
   warning below 1 m. At 2 m the effect is under 1.2 points at C1, and at random non-crest points it does
   not matter.
 - **Position sensitivity.** Moving 80 m on a ridge can change illumination by tens of points. Catalogue
-  coordinates for regions (Artemis III candidates) are IAU feature centres, not landing points; three of
+  coordinates for regions (NASA's south-pole candidate landing regions, chosen in 2024 for Artemis III, now for Artemis IV) are IAU feature centres, not landing points; three of
   them are permanently shadowed crater floors. The "Malapert massif, Earth-facing shoulder" site was chosen
   by this project on the DEM and is labelled as such.
 - **Between LOLA tracks** the 80 m mosaic is an interpolated surface; away from the pole the gaps are wider.
@@ -237,7 +237,8 @@ Every number here is in LOCAL_PASS_2_RESULTS.md with the command that produced i
   topography itself between tracks, the 80 m smoothing of every crest, lander tilt. A "Yes" means the model
   is stable, not that the mission is safe.
 - **A "Yes" is conditional on the landing scatter, and the headline now says so.** The default is 100 m.
-  At the default example (connecting ridge C1, 18 Nov 2026, 240 sunlit hours and 100 hours of Earth
+  At the Shackleton connecting ridge C1 (the former default example; these figures are on the 80 m grid;
+  18 Nov 2026, 240 sunlit hours and 100 hours of Earth
   contact in 14 days) the card reads Yes with 7 days of margin at 100 m, Not sure at 150 m (11 of 13
   points pass), and Not sure with no clear-yes date in 60 at 200 m and 250 m. IM-2 came down about 250 m
   from its target. The **landing circles** under the card put a number on this: the share of a circle of
@@ -252,7 +253,7 @@ Every number here is in LOCAL_PASS_2_RESULTS.md with the command that produced i
   240 m fallback (two ridge sites read "Yes" with 7 and 8 days of margin where the 80 m grid says "Not
   sure"). The scatter is now never smaller than one cell of the grid under the site (80, 240, 474 or
   1896 m), and the card says when it was widened. With that, the two sites read "Not sure" on the
-  fallback as on the 80 m grid. The cost: on the fallback the default example C1 also reads "Not sure",
+  fallback as on the 80 m grid. The cost: on the fallback the former default example C1 also reads "Not sure",
   with no clear-yes date in 60, where the 80 m grid says "Yes, 7 days". The fallback cannot confirm
   anything about a 100 m scatter, and it now says so instead of guessing. A first visit to a fallback
   server opens on the first date that is not a clear no, with a note saying that no date is a clear yes
@@ -284,7 +285,7 @@ Every number here is in LOCAL_PASS_2_RESULTS.md with the command that produced i
   relay satellites.
 - **"The slip margin is set by the Earth, not the Sun"** holds for the dates on the default page and from
   August to January generally. For 365 landing dates from 18 Nov 2026 at C1 with the default need there
-  are 62 clear-yes dates, none of them from February to June 2027 and one in July; from March to June
+  are 62 clear-yes dates on the 80 m grid, none of them from February to June 2027 and one in July (35 in all on the live 5 m model); from March to June
   the Sun fails on 15 to 23 dates a month, alone or together with the Earth. The page does not make the
   general claim; DISCOVERIES.md did, and is corrected.
 - **"Usable"** means Sun and Earth above the skyline by the chosen rules. It ignores lander tilt, panel

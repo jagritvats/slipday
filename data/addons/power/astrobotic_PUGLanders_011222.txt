@@ -1,0 +1,1829 @@
+ASTROBOTIC LUNAR LANDERS
+
+             Payload User's Guide
+
+Publicly available document, please contact  © Astrobotic 2021
+  Astrobotic Technology for more details.
+
+        August 20211// Version 5.0
+TABLE OF CONTENTS                                                                               Electrical Interfaces...................................................46
+                                                                                                Release Mechanisms.................................................47
+ABOUT US...................................................... 3                                Data Interfaces..........................................................48
+                                                                                                Ground Segment.......................................................49
+      What We Do..............................................................4
+      Service Overview......................................................5             MISSION OPERATIONS................................... 50
+      Payload Experience...................................................6
+      Astrobotic Lunar Services..........................................7                      Landing Site..............................................................51
+      Lunar Orbit Delivery Locations..................................8                         Mission Profile...........................................................52
+      Lunar Surface Delivery Locations...............................9                          Trajectory..................................................................53
+      Lunar Landers............................................................10               Descent Profile..........................................................54
+                                                                                                Power Services..........................................................55
+PEREGRINE.................................................... 11                                Data Services............................................................56
+                                                                                                Egress Procedures.....................................................57
+      Peregrine Lander.......................................................12
+      Structure...................................................................15      PAYLOAD INTEGRATION................................ 59
+      Propulsion.................................................................16
+      Guidance, Navigation, and Control...........................17                            Mission Timeline.......................................................60
+      Power........................................................................18           Integration................................................................61
+      Avionics....................................................................19
+      Communications.......................................................20             GLOSSARY...................................................... 62
+      Thermal Control........................................................21
+                                                                                                Glossary of Units.......................................................63
+  GRIFFIN....................................................... 22                             Glossary of Terms......................................................64
+                                                                                                Glossary of Documentation.......................................65
+      Griffin Lander............................................................23              Glossary of Milestones..............................................66
+      Structure...................................................................25
+      Propulsion.................................................................26       CONTACT US.................................................. 66
+      Guidance, Navigation, and Control...........................27
+      Power........................................................................28           Questionnaire...........................................................67
+      Avionics....................................................................29
+      Communications.......................................................30
+      Thermal Control........................................................31
+
+ENVIRONMENTS............................................ 32
+
+      Mechanical Environment...........................................33
+      Thermal Environment................................................35
+      Pressure and Humidity Environment..........................37
+      Contamination Control..............................................38
+      Radiation Environment..............................................39
+      Electromagnetic Environment...................................40
+
+INTERFACES................................................... 41
+
+      Payload Types...........................................................42
+      Payload Mounting Accommodations.........................43
+      Payload Mounting Decks...........................................44
+      Adapter Plates..........................................................45
+
+                                                                                       2  © Astrobotic 2021
+ABOUT ASTROBOTIC
+
+                                             3
+WHAT WE DO
+
+Astrobotic is a lunar logistics company providing end-to-end delivery services for payloads to the Moon.
+
+                                                              PAYLOAD INTEGRATION
+
+                                                                          On each mission, Astrobotic works with payload
+                                                                          customers to integrate their payloads onto a single
+                                                                          Astrobotic lunar lander.
+
+                                                              LUNAR DELIVERY
+
+                                                                          Astrobotic's lander is launched on a commercially
+                                                                          procured launch vehicle and safely delivers payloads to
+                                                                          lunar orbit and the lunar surface.
+
+PAYLOAD SERVICES
+
+Astrobotic's lander provides power and data services to
+payloads during transit to the Moon and on the lunar
+surface.
+
+Each payload customer receives comprehensive support from contract signature to end-of-mission.
+Astrobotic's Payload Customer Service Program equips the customer with the latest information on the
+mission and facilitates technical exchanges with Astrobotic payload managers and engineers to ensure
+payload compatibility with Astrobotic's lunar landers and overall mission success.
+
+4  © Astrobotic 2021
+SERVICE OVERVIEW
+
+Companies, governments, universities, non-profits, and individuals can send payloads to the Moon at
+$300K, $1.2M, or $4.5M per kilogram of payload delivered to lunar orbit, to the lunar surface, or on a rover,
+respectively.
+
+Standard payload delivery options include lunar orbit and the lunar surface where payloads may remain
+attached to the lander, deploy from the lander for an independent mission, or hitch a ride on an Astrobotic
+lunar rover.
+
+             LUNAR SURFACE                             LUNAR ORBIT
+                     $1,200,000/kg                     $300,000/kg
+
+DELIVERY ON ROVER
+             $4,500,000/kg
+
+FOR EVERY KILOGRAM OF PAYLOAD, ASTROBOTIC'S LANDER PROVIDES:
+
+1.0 Watts                                   10 kbps    Additional power and bandwidth are
+                                                       available for purchase upon request.
+POWER                                       BANDWIDTH
+                                                       Please contact Astrobotic to learn more.
+
+Payloads less than 1 kg may be subject to      DELIVERY ON A ROVER
+integration fees. DHL MoonBox offers an
+affordable alternative to send small items     The CubeRover is a modular vehicle designed
+to the Moon. Prices start at $460.             to provide affordable mobility for scientific
+                                               instruments and other payloads to operate on
+Check it out at astrobotic.com.                the surface of the Moon. Because CubeRover
+                                               is so light -- four kilograms -- it dramatically
+                                               reduces flight costs, making the Moon more
+                                               accessible.
+
+                                               Download the CubeRover PUG
+                                               at astrobotic.com
+
+                                            5                                                    © Astrobotic 2021
+PAYLOAD EXPERIENCE
+
+   SERVICES AGREEMENT
+
+   Following contract signature, the
+
+1  payload customer is connected
+   with their payload manager to begin
+
+   development of a schedule and
+
+   an Interface Control Document.
+
+   TECHNICAL SUPPORT
+
+   Astrobotic supports the payload
+
+2  customer by hosting regular integration
+
+   working group meetings, participating
+
+   in payload design cycle reviews,
+
+   and facilitating payload testing with
+
+   simulated lander interfaces.
+
+   INTEGRATION
+
+3  The payload is sent to the Astrobotic
+   integration facility. Astrobotic accepts the
+
+   payload and integrates it onto the lander.
+
+   MISSION
+
+   The integrated lander is launched and
+
+4  commences its mission. The Astrobotic
+
+   Mission Control Center connects the
+
+   customer to their payload during the flight
+
+   to the Moon and on the lunar surface.
+
+   6                                             © Astrobotic 2021
+ASTROBOTIC LUNAR SERVICES
+
+Astrobotic is here to support the success of your payload mission. The standard payload interfaces and
+services are defined to enable nominal payload missions. This Payload User's Guide (PUG) provides an
+overview of these standard interfaces and services.
+Astrobotic can accommodate payloads with needs outside of the standard interfaces and services at
+additional cost. Please contact Astrobotic to discuss any nonstandard requests such as custom interfaces,
+accommodation of large or unusual geometries, specific trajectory or landing site requirements, payload
+design consulting services, etc.
+The Payload Customer Service Program is a standard service for all payload customers to provide the tools
+necessary to design a payload that successfully interfaces with Astrobotic landers.
+The following features are included as part of the program:
+
+PAYLOAD CUSTOMER SERVICE PROGRAM
+
+                                Availability for general and technical inquiries.
+                                Bi-weekly technical exchanges with Astrobotic mission engineers.
+                                Access to the Astrobotic library of payload design resources and standards.
+                                Technical feedback through payload milestone design reviews.
+                                Facilitation of lander-payload interface compatibility testing.
+
+Access to materials within the Astrobotic library is not always restricted to signed customers. Please contact
+Astrobotic for more information on obtaining the latest version of any document referenced within this PUG.
+
+7  © Astrobotic 2021
+LUNAR ORBIT DELIVERY LOCATIONS
+
+Astrobotic's landers can deliver payloads to lunar orbit as well as the lunar surface. While the trajectory can
+change from mission to mission, Peregrine and Griffin typically hold in three distinct Lunar Orbits (LO's), and
+two are available for payload deployment. The periapsis is consistent at 100 km while the apoapsis decreases
+through Lunar Orbit Insertion (LOI) maneuvers from 8700 km to a circular 100 km. The orbital inclination is
+typically determined by the surface landing site.
+
+LO1               LO2              LO3
+
+100 km x 8700 km  100 km x 750 km  100 km x 100 km
+
+LUNAR ORBIT 1 (LO1)
+
+The initial lunar orbit, LO1 is a highly elliptical orbit. Peregrine and Griffin nominally spend 12 hours in LO1.
+Nonstandard payload deployment may be available in this orbit upon request.
+
+LUNAR ORBIT 2 (LO2)
+
+The next lunar orbit, LO2 is a stable elliptical orbit. The time Peregrine and Griffin spend in LO2 depends on the
+launch date and subsequent trajectory as well as the orbital deployment schedule. All payload deployments are
+nominally planned for this orbit.
+
+LUNAR ORBIT 3 (LO3)
+
+The final lunar orbit, LO3 is a circular orbit. Peregrine and Griffin nominally spend 72 hours in LO3 for descent
+preparations. Payload deployment is not supported in this orbit.
+
+                  8                © Astrobotic 2021
+LUNAR SURFACE DELIVERY LOCATIONS
+
+Astrobotic's landers are capable of supporting payload missions to locations of interest from the lunar equator
+to the poles. For example, Peregrine Mission One (PM1) will deliver payloads to a landing site near Lacus Mortis,
+(44°N, 25°E) and Griffin Mission One (GM1) will deliver payloads to a landing site near the South Pole.
+Astrobotic's landers incorporate technology such as Astrobotic's Optical Precision Autonomous Landing (OPAL)
+Sensor, a terrain relative navigation system for precision landing. These systems enable polar landings and other
+missions requiring precision landing capabilities.
+
+                                                              POLAR
+
+                                 PM1:
+
+                            LACUS MORTIS
+
+  SKYLIGHTS,
+PITS, OR CAVES
+
+                EQUATORIAL
+
+                                          FAR SIDE
+
+                            MID-LATITUDE
+
+                CRATERS
+
+                            POLAR         © Astrobotic 2021
+
+                            9
+LUNAR LANDERS
+
+PEREGRINE:
+
+Peregrine is a small-class lander that precisely and
+safely delivers payloads to lunar orbit and the lunar
+surface. Payloads can be mounted above or below
+the decks, inside or outside of enclosures, and can
+remain attached or deployed according to their
+needs.
+
+GRIFFIN:
+
+Griffin is a medium-class lander with flexible
+mounting options to accommodate a variety of
+rovers and other large payloads. Its autonomous
+sensor systems provide a safe and precise landing
+in even rugged and hazardous terrain, enabling
+it to support robotic missions such as resource
+prospecting, polar volatile characterization, and
+skylight exploration.
+
+                                                       10  © Astrobotic 2021
+PEREGRINE
+
+                        11
+PEREGRINE LANDER
+
+ Astrobotic has designed a core set of systems, known as the bus, that are common across our Peregrine and
+ Griffin landers. The lander bus design enables safe payload delivery to lunar orbit and any latitude on the lunar
+ surface. The bus can be arranged, augmented, and adapted to the various payload delivery locations. We have
+ applied this common bus to our Peregrine lander. A configuration that accommodates a variety of payload
+ types for science, exploration, marketing, resources, and commemoration. Other alterations to the lander bus,
+ such as additional sensors for precision landing or a satellite communications relay for far-side operations, may
+ be necessary depending on the specific mission.
+
+ The Peregrine Lander is comprised of the following systems.
+
+                           STRUCTURES
+
+                                Provides mounting locations for payloads and lander systems.
+
+                           PROPULSION
+
+                                Maneuvers lander after separation from the launch vehicle.
+
+                           GUIDANCE, NAVIGATION, AND CONTROL
+
+                                Controls, orients, and flies the lander throughout the mission.
+
+                           POWER
+
+                                Generates, stores, and distributes power to payloads and lander systems.
+
+                           AVIONICS
+
+                                Performs all command and data handling for the lander.
+
+                           COMMUNICATIONS
+
+                                Provides communication services between ground stations and the lander.
+
+                           THERMAL CONTROL
+
+                                Regulates and controls thermal interfaces for lander systems.
+
+ The following pages highlight the mid-latitude and polar configurations of Peregrine and explore each system
+ in more detail. Additional configurations for lunar orbit, equatorial, far side, and many more delivery locations
+ are possible. Contact Astrobotic for more details on specific configurations.
+
+12  © Astrobotic 2021
+MID-LATITUDE CONFIGURATION
+
+Peregrine's mid-latitude configuration is designed to land and operate at latitudes between 40° and 50° North
+or South. The lander features side radiators and a top mounted solar panel. This configuration will be flown on
+Astrobotic's Mission One as a co-manifested payload aboard ULA's Vulcan Centaur launch vehicle.
+
+Top-Mounted                                                      Propellant Tanks
+Solar Panel
+                                                                            Payload
+Medium                                                           Mounting Decks
+Gain Antenna
+                                                                 Attitude Control
+Side-Mounted                                                              Thrusters
+Radiators
+
+                                        MID-LATITUDE  70-90 kg
+Lunar Surface Payload Delivery Capacity               192 hours
+Surface Operations Duration
+
+              13                                                 © Astrobotic 2021
+POLAR CONFIGURATION
+
+Missions to the polar regions of the lunar surface feature side-mounted solar panels to produce sufficient power
+at higher latitudes and support payload needs. Lander avionics are mounted to a radiator at the top of the lander.
+
+Medium Gain                                                     High Gain Antenna
+Antenna
+                                                                    Attitude Control
+Radiator                                                                    Thrusters
+Sun Shield
+
+Stretched                                                       Side-Mounted
+Propellant Tanks                                                  Solar Panels
+
+Payload
+Mounting Decks
+
+                                             POLAR  100 kg
+Lunar Surface Payload Delivery Capacity             192+ hours
+Surface Operations Duration
+
+NOTE: Some polar landing sites have periods of continuous sunlight that last longer than a lunar day at mid-latitude.
+
+                  14                                            © Astrobotic 2021
+STRUCTURE
+
+Peregrine's structure is strong, stiff, and lightweight for survivability during launch and landing. The bus structure
+is manufactured out of aluminum alloy and is comprised of three primary components, the launch vehicle
+adapter cone, isogrid shear panels, and two aluminum honeycomb enclosures. The standard physical mounting
+interface for the payloads is optimized for the specific mission profile. For missions to the lunar surface, four
+landing legs, designed to absorb shock and stabilize the craft on touchdown, are fastened to the bus structure.
+
+                                        Peregrine Structural Bus
+
+LAUNCH VEHICLE ADAPTER CONE
+
+The launch vehicle adapter cone houses the main engines. Additionally, it serves as the adapter to the launch
+vehicle where a releasable clamp band mates Peregrine to the launch vehicle and enables separation.
+
+ISOGRID SHEAR PANELS
+
+The aluminum isogrid shear panels support the secondary elements of the lander such as fuel tanks, payload
+mounting decks, and the solar panel. An internal truss structure ties the four shear panels together and serves as
+a central column for the structure.
+
+ENCLOSURES
+
+The aluminum honeycomb enclosures provide mounting surfaces and protection for lander avionics. In some
+configurations these enclosures are also the primary radiators for the lander's thermal system. In other
+configurations they are converted to mounting surfaces for solar panels.
+
+15  © Astrobotic 2021
+PROPULSION
+
+The Peregrine propulsion system features five main engines and twelve Attitude and Control System (ACS)
+engines powered by a pressure-fed hypergolic bipropellant, which does not require ignition because the fuel and
+oxidizer combust on contact. The system features a proven hydrazine derivative, Mono-Methyl-Hydrazine (MMH),
+as the fuel. The oxidizer is a solution of nitric oxide in dinitrogen tetroxide/nitrogen dioxide, 25% Mixed Oxides
+of Nitrogen (MON-25).
+Two tanks each of the fuel and oxidizer are spaced evenly about the craft with a fifth tank for the Helium
+pressurant in the center. Peregrine's main engines, located within the cone, are used for all major maneuvers.
+Each of the engines produces 667 N of thrust and is pulsed for throttling. The ACS thrusters, grouped in clusters
+of three and placed about the lander to ensure control with six degrees of freedom, maintain lander orientation
+throughout the mission. The ACS engines each generate 45 N of thrust.
+
+                                                                                                                  ACS Thrusters
+
+         Fuel Tanks
+
+Peregrine Propulsion Bus                                                      Five Main Engines
+                                                                          16
+                                                                                               © Astrobotic 2021
+GUIDANCE, NAVIGATION,
+AND CONTROL
+
+Peregrine's Guidance, Navigation, and Control (GNC) system orients and flies the lander throughout
+the mission to facilitate operations. GNC processes the inputs from an array of sensors, correcting for
+idiosyncrasies, and uses them to revise the internal estimate of the lander's position, attitude, and velocity
+during flight Commands to maneuver the lander are updated based on this estimate of the spacecraft's
+state. Earth-based ranging informs position and velocity state estimates for orbital and trajectory correction
+maneuvers.
+
+Input from the star tracker, sun sensors, and inertial measurement unit aid the GNC system in maintaining a
+sun-pointing orientation, with the solar panel facing the Sun, during nominal cruise operations. During landing
+operations, a Doppler LiDAR provides range and range rate information that guides the lander to a safe
+landing at the target site.
+
+OPAL Sensor Assembly
+
+OPTICAL PRECISION AUTONOMOUS LANDING SENSOR
+
+Astrobotic leads a team comprised of Moog Space and Defense, Moog Broad Reach, NASA Jet Propulsion
+Laboratory (JPL), and NASA Johnson Space Center (JSC) developing the Optical Precision Autonomous
+Landing (OPAL) Sensor. The OPAL Sensor is an imaging-based terrain relative navigation package that will
+be flown as a technology demonstration on Mission One and then incorporated with the GNC system on the
+following missions. The OPAL Sensor consists of a camera and high performance computer, which uses images
+from the camera and maps stored in the lander memory to estimate the pose of the lander in real time.
+
+                      17  © Astrobotic 2021
+POWER
+
+The lander power system is responsible for power storage, generation, distribution, and management. The
+system is designed to be power positive, generating more power than it uses, for all phases of flight except for
+descent to the lunar surface where the lander relies on battery power for a short period.
+
+Peregrine stores energy in a space-grade lithium-ion battery. A panel of GaInP/GaAs/Ge triple junction solar
+cells with heritage in orbital and deep space missions generates the lander's power. The battery feeds into
+a 28 Vdc power rail from which unregulated and regulated power is distributed to all lander subsystems and
+payloads. The battery is utilized during quick discharge activities, such as engine burns and attitude maneuvers,
+and during phases of the mission where the solar panel is not generating power, such as in lunar shadow.
+
+While in orbit, the solar panel is nominally pointed towards the Sun to enable maximum power generation. The
+solar panel is utilized to provide battery charge and maintain lander and payload operations. After descent to
+the lunar surface the power system continues to provide reliable power services to payloads through the end of
+mission.
+
+                                                   Peregrine Mid-Latitude Solar Panel Configuration
+
+SOLAR PANEL CONFIGURATIONS
+
+Missions to different latitudes on the lunar surface require that the solar panels used on Peregrine be
+reconfigured to optimize power generation. Mid-latitude and equatorial landers utilize top-mounted panels
+whereas polar missions utilize side-mounted panels. Landers with side-mounted panels perform a thermal control
+roll during transit to ensure consistent power generation.
+
+18  © Astrobotic 2021
+AVIONICS
+
+Peregrine's avionics perform all command and data handling for the lander, managing the various inputs and
+outputs of the lander's subsystems. The Integrated Avionics Unit (IAU) houses ten modules, or boards, with
+distinct functionalities encompassing the major aspects of the avionics system like the power management
+systems and the flight computer.
+
+Other aspects, such as GNC flight sensor drivers and propulsion control units, are enclosed separately near the
+relevant subsystem hardware. Peregrine's flight computer consists of a 32-bit high-performance dual-core LEON
+3 FT microprocessor. The computer employs radiation hardened integrated circuits as well as fault-tolerant and
+SEU-proof characteristics.
+
+Integrated Avionics Unit (IAU) Enclosure
+
+THE PAYLOAD COMPUTER
+
+The payload computer, a pair of radiation-tolerant FPGAs, is also housed within the IAU and manages the
+individual payloads as well as their contractual services. The payload computer monitors payload power
+consumption and communicates directly with the payloads. Commands from the payload ground software are
+sent to the payload via the payload computer and payload telemetry is packaged for downlink to Earth. The
+payload computer features Error Detection And Correction, upset monitoring, and robust software with proven
+networking standards.
+
+FLIGHT HERITAGE
+
+Peregrine's avionics system is designed to be modular and reusable; this enables future Peregrine missions
+to leverage the lessons learned and hardware developed for Mission One. While missions will utilize different
+lander configurations, the core command and data handling system remains the same, maintaining reliability for
+the product line.
+
+19                                        © Astrobotic 2021
+COMMUNICATIONS
+
+Peregrine's communications system provides for lander commanding and telemetry. The communications system
+also relays data between the payload customer and their payload throughout the mission. The lander houses
+a high-powered and flight-heritage transponder to communicate with Earth. The lander-Earth connection uses
+different frequencies within the X-Band range for uplink and downlink space communications.
+
+The lander utilizes multiple low gain antennas for optimal coverage during cruise and lunar orbit operations
+and then switches to an actuated medium or high gain antenna following touchdown on the lunar surface for
+increased bandwidth. The lander-payload connection is provided via Serial RS-422 or SpaceWire for wired
+communication throughout the mission. Following landing, a 2.4 GHz IEEE 802.11n compliant WLAN modem
+enables wireless communication between the lander and deployed payloads on the lunar surface. Peregrine
+relays payload telecommands and telemetry in near real-time.
+
+                                                                              Low Gain Antenna
+
+Medium
+Gain Antenna
+
+WLAN Antenna
+
+Peregrine Communications Bus                                                  © Astrobotic 2021
+                                                                          20
+THERMAL CONTROL
+
+The lander is designed to implement mainly passive methods to regulate its thermal environment. Radiators are
+used to amass excess heat and radiate it out into space. Passive heat pipes are employed to direct excess heat
+to colder regions of the lander where it is needed. Layers and coatings, such as Multi-Layer Insulation (MLI), are
+used to protect components from undesired external thermal effects.
+
+Some active thermal control methods, heating or cooling, may be implemented to maintain particularly stringent
+thermal conditions of sensitive critical components. The overall thermal design is highly mission-specific as the
+lander may be either hot or cold-biased depending on the extreme thermal case of each mission profile.
+
+Avionics                                                                            Avionics
+Radiator                                                                            Radiator
+MLI Blankets
+
+                                                             Peregrine Thermal Bus
+
+21                                                                                  © Astrobotic 2021
+GRIFFIN
+
+                22
+GRIFFIN LANDER
+
+ Griffin also utilizes the Astrobotic common spacecraft bus, which acts as the base for every Griffin configuration.
+ Similar to Peregrine, the Griffin lander is arranged, augmented, and adapted to the various payload delivery
+ locations, however Griffin is sized to accomodate a larger class of payload. This flexibility allows Griffin to
+ accommodate a variety of payload types for science, exploration, marketing, resources, and commemoration.
+ In order to do this griffin utilizes upgraded communication systems, structures, propulsion systems, and thermal
+ control solutions to ensure the lander meets the most demanding of payload requirements. Other alterations to
+ the lander, such as rovers, egress ramps, or additional sensors for precision landing, a satellite communications
+ relay for far-side operations, may be necessary depending on the specific mission.
+
+ The Griffin Lander is comprised of the following systems.
+
+                           STRUCTURES
+
+                                Provides mounting locations for payloads and lander systems.
+
+                           PROPULSION
+
+                                Maneuvers lander after separation from the launch vehicle.
+
+                           GUIDANCE, NAVIGATION, AND CONTROL
+
+                                Controls, orients, and flies the lander throughout the mission.
+
+                           POWER
+
+                                Generates, stores, and distributes power to payloads and lander systems.
+
+                           AVIONICS
+
+                                Performs all command and data handling for the lander.
+
+                           COMMUNICATIONS
+
+                                Provides communication services between ground stations and the lander.
+
+                           THERMAL CONTROL
+
+                                Regulates and controls thermal interfaces for lander systems.
+
+ The following pages highlight the polar configuration of the Griffin bus as utilized on Griffin Mission One to
+ deliver the NASA VIPER rover to the lunar South Pole. Additional configurations for lunar orbit, equatorial,
+ far side, and many more delivery locations are possible. Contact Astrobotic for more details on specific
+ configurations.
+
+23  © Astrobotic 2021
+POLAR CONFIGURATION
+
+Missions to the polar regions of the lunar surface feature side-mounted solar panels to produce sufficient power
+at higher latitudes and support payload needs. Lander avionics are mounted on the underside of radiators that
+form the decks of the lander. The lander also features side radiators that provide additional thermal control
+capabilities.
+
+Griffin's side-mounted solar panels produce sufficient power at higher latitudes and support payload needs. This
+configuration will be flown on Astrobotic's Griffin Mission One with NASA's VIPER rover as a payload aboard
+SpaceX's Falcon Heavy launch vehicle.
+
+                                             POLAR  625 kg
+Lunar Surface Payload Delivery Capacity             Up to 14 Days
+Surface Operations Duration
+
+NOTE: Some polar landing sites have periods of continuous sunlight that last longer than a lunar day at mid-latitude.
+
+24                                                                                                                     © Astrobotic 2021
+STRUCTURE
+
+Griffin's structure is strong, stiff, and lightweight for survivability during launch and landing. The bus structure is
+manufactured out of aluminum alloy and is comprised of three primary components, the launch vehicle adapter
+cone, solid deck panels, and four radiator panels for directly mounting payloads or avionics. The standard
+physical mounting interface for the payloads is optimized for the specific mission profile. In the figure below, the
+upper cone was specifically designed to accomodate the NASA VIPER rover. For missions to the lunar surface,
+four landing legs, designed to absorb shock and stabilize the craft on touchdown, are fastened to the bus
+structure.
+
+LAUNCH VEHICLE ADAPTER CONE
+
+The launch vehicle adapter cone serves as the connection to the launch vehicle where a releasable clamp band
+mates Griffin and enables separation.
+
+25  © Astrobotic 2021
+PROPULSION
+
+The Griffin propulsion system features five 700 lbf pulsed main engines and twelve 25 lbf Attitude Control
+System (ACS) engines powered by a pressure-fed hypergolic bipropellant, which does not require ignition
+because the fuel and oxidizer combust on contact. The system features a proven hydrazine derivative, M20
+as the fuel, and a MON3 Oxidizer. This combination offers enhanced performance for missions requiring the
+maximum amount of Delta-V
+
+Two tanks each of the fuel and oxidizer are spaced evenly about the craft. Griffin's main engines, located within
+the cone, are used for all major maneuvers. Each of the engines is pulsed for throttling similar to the engines on
+Peregrine. The ACS thrusters, grouped in clusters of three and placed about the lander to ensure control with six
+degrees of freedom, maintain lander orientation throughout the mission.
+
+26  © Astrobotic 2021
+GUIDANCE, NAVIGATION,
+AND CONTROL
+
+Griffin uses the same overall Guidance, Navigation, and Control (GNC) architecture that Astrobotic will fly
+for Peregrine Mission One as the system orients and flies the lander throughout each mission to facilitate
+operations. GNC processes the inputs from an array of sensors, correcting for idiosyncrasies, and uses them to
+revise the internal estimate of the lander's position, attitude, and velocity during flight. Commands to maneuver
+the lander are updated based on this estimate of the spacecraft's state. Earth-based ranging informs position
+and velocity state estimates for orbital and trajectory correction maneuvers.
+
+Input from the star tracker, sun sensors, and inertial measurement unit aid the GNC system in maintaining a
+sun-pointing orientation, with the side-mounted solar panels facing the Sun, during nominal cruise operations.
+During landing operations, a Doppler LiDAR provides range and range rate information that guides the lander to
+a safe landing at the target site.
+
+OPAL Sensor Assembly
+
+OPTICAL PRECISION AUTONOMOUS LANDING SENSOR
+
+Astrobotic leads a team comprised of Moog Space and Defense, Moog Broad Reach, NASA Jet Propulsion
+Laboratory (JPL), and NASA Johnson Space Center (JSC) developing the Optical Precision Autonomous Landing
+(OPAL) Sensor. The OPAL Sensor is an imaging-based terrain relative navigation package that will be flown as a
+technology demonstration on Peregrine Mission One and will be incorporated with the GNC system on Griffin
+Mission One. The OPAL Sensor consists of a camera and high-performance computer, which uses images from
+the camera and maps stored in the lander memory to estimate the pose of the lander in real time.
+
+                      27  © Astrobotic 2021
+POWER
+
+The lander power system is responsible for power storage, generation, distribution, and management. The
+system is designed to be power positive, generating more power than it uses, for all phases of flight except for
+descent to the lunar surface where the lander relies on battery power for a short period.
+
+Griffin stores energy in a space-grade lithium-ion battery. A panel of GaInP/GaAs/Ge triple junction solar cells
+with heritage in orbital and deep space missions generates the lander's power. Griffin utilizes the same battery
+and solar cells as Peregrine, however Griffin can be configured to carry larger solar arrays and additional
+batteries to maximize power capabilities during transit and on the lunar surface. The battery feeds into a 28 Vdc
+power rail from which unregulated and regulated power is distributed to all lander subsystems and payloads.
+The battery is utilized during quick discharge activities, such as engine burns and attitude maneuvers, and during
+phases of the mission where the solar panel is not generating power, such as in lunar shadow.
+
+While in orbit, Griffin's fixed solar panels are nominally pointed towards the Sun to enable maximum power
+generation. The solar panel is utilized to provide battery charge and maintain lander and payload operations.
+After descent to the lunar surface the power system continues to provide reliable power services to payloads
+through the end of mission.
+
+SOLAR PANEL CONFIGURATIONS
+
+Missions to different latitudes on the lunar surface require that the solar panels used on Griffin be reconfigured
+to optimize power generation. Mid-latitude and equatorial landers utilize top-mounted panels whereas polar
+missions utilize side-mounted panels. Landers with side-mounted panels perform a thermal control roll during
+transit to ensure consistent power generation. Griffin is also capable of carrying deployable solar panels which
+can greatly expand its potential power generation.
+
+28  © Astrobotic 2021
+AVIONICS
+
+Griffin's avionics are part of the same common spacecraft core utilized by Peregrine, which perform all command
+and data handling for the lander, managing the various inputs and outputs of the lander's subsystems. The
+Integrated Avionics Unit (IAU) houses ten modules, or boards, with distinct functionalities encompassing the
+major aspects of the avionics system like the power management systems and the flight computer.
+
+Other aspects, such as GNC flight sensor drivers and propulsion control units, are enclosed separately near the
+relevant subsystem hardware. Griffin's flight computer consists of a 32-bit high-performance dual-core LEON 3
+FT microprocessor. The computer employs radiation hardened integrated circuits as well as fault-tolerant and
+SEU-proof characteristics.
+
+Integrated Avionics Unit (IAU) Enclosure
+
+THE PAYLOAD COMPUTER
+
+The payload computer, a pair of radiation-tolerant FPGAs, is also housed within the IAU and manages the
+individual payloads as well as their contractual services. The payload computer monitors payload power
+consumption and communicates directly with the payloads. Commands from the payload ground software are
+sent to the payload via the payload computer and payload telemetry is packaged for downlink to Earth. The
+payload computer features Error Detection And Correction, upset monitoring, and robust software with proven
+networking standards.
+
+FLIGHT HERITAGE
+
+The Griffin avionics system is designed to be modular and reusable; this enables future Griffin missions to
+leverage the lessons learned and hardware developed for Mission One. While missions will utilize different
+lander configurations, the core command and data handling system remains the same, maintaining reliability for
+the product line.
+
+29                                        © Astrobotic 2021
+COMMUNICATIONS
+
+Griffin's communications system provides for lander commanding and telemetry. This system can be configured
+to the same specifications as Peregrine or can be upgraded to enhance data services between the lander and
+Earth. The commuications system relays data between the payload customer and their payload throughout
+the mission. The lander houses a high-powered and flight-heritage transponder to communicate with Earth.
+The lander-Earth connection uses different frequencies within the X-Band range for uplink and downlink space
+communications.
+
+The lander utilizes multiple low gain antennas for optimal coverage during cruise and lunar orbit operations
+and then switches to an actuated medium or high gain antenna following touchdown on the lunar surface for
+increased bandwidth. The lander-payload connection is provided via Serial RS-422 or SpaceWire for wired
+communication throughout the mission. Following landing, a 2.4 GHz IEEE 802.11n compliant WLAN modem
+enables wireless communication between the lander and deployed payloads on the lunar surface. Griffin relays
+payload telecommands and telemetry in near real-time.
+
+30  © Astrobotic 2021
+THERMAL CONTROL
+
+The lander is designed to implement mainly passive methods to regulate its thermal environment. Radiators are
+used to amass excess heat and radiate it out into space. Passive heat pipes are employed to direct excess heat
+to colder regions of the lander where it is needed. Layers and coatings, such as Multi-Layer Insulation (MLI), are
+used to protect components from undesired external thermal effects.
+
+Some active thermal control methods, heating or cooling, may be implemented to maintain particularly stringent
+thermal conditions of sensitive critical components. The overall thermal design is highly mission-specific as the
+lander may be either hot or cold-biased depending on the extreme thermal case of each mission profile.
+
+31  © Astrobotic 2021
+ENVIRONMENTS
+
+                                   32
+MECHANICAL ENVIRONMENT
+
+Astrobotic's landers' mechanical environments are enveloped by those of the launch phase. These environments,
+presented below, apply to the majority of payload mounting locations. However, mission-specific configurations
+and payload placement may impact expected loads. We will work with you to characterize payload-specific
+environments for relevant analysis and testing prior to integration.
+
+SINE VIBRATION LOADS
+
+We perform a coupled loads analysis with the launch vehicle provider and develops sine vibration load profiles
+for each payload based on the mounting location, payload mass properties, launch vehicle, and specific lander
+configuration. Please contact us for more details.
+
+RANDOM VIBRATION LOADS
+
+Random vibration loads on payloads can arise from unsteady engine combustion, exhaust noise, and turbulent
+flows along the launch vehicle. The plot below shows the limiting loads for random vibration along all axes.
+A duration of two minutes per axis may be assumed.
+
+                                                                                                                                          14.1 Grms
+
+Acceleration Spectral Density (G2/Hz)
+
+                                       Frequency (Hz)  © Astrobotic 2021
+                                           33
+ACOUSTIC LOADS
+
+Payloads are subjected to sound pressure loads that reach peak levels during lift-off and transonic flight. The
+plot below shows limiting acoustic qualification loads. The expected duration of these loads is less than two
+minutes.
+
+Sound Pressure Level (dB, ref: 20 kPa)
+
+                                                                1/3 Octave Band Center Frequency (Hz)
+
+SHOCK LOADS
+
+Payloads also encounter multiple shock events during launch and injection. Shock events include the
+launch vehicle fairing release, lander separation, and landing itself. Payloads should be prepared to endure a few
+shock events with limiting loads as shown in the plot below.
+
+Shock Response (G peak)
+
+                                                                                 Frequency (Hz)  © Astrobotic 2021
+
+NOTE: Payloads may reference GSFC-STD-7000A (GEVS) for more details on random, shock,
+and acoustic environments and testing.
+
+                                                                                34
+THERMAL ENVIRONMENT
+
+Astrobotic's landers encounter the following approximate thermal environments on a typical mission.
+
+PRE-LAUNCH (0°C TO 27°C)
+
+The integration and launch facilities are climate-controlled to provide this specific temperature range.
+
+LAUNCH (0°C TO 27°C)
+
+Throughout the launch phase, the integrated lander is encapsulated in an environmentally controlled launch
+vehicle payload fairing.
+
+CRUISE (-40°C TO 60°C)
+
+During cruise, the thermal environment is significantly colder for objects in shadow and much hotter for objects
+in direct sunlight. Throughout flight, the landers are nominally oriented with the top-mounted solar panel facing
+the Sun. As a result, the lander's top-side receives the most incident solar radiation, and resulting heat, during
+the Cruise and Lunar Orbit phases. Polar configurations by contrast perform a thermal control roll during Cruise
+and Lunar Orbit, evenly heating the spacecraft and pointing the solar panels at the Sun.
+
+    Mid-Latitude  Polar
+
+35                © Astrobotic 2021
+LUNAR ORBIT (-120°C TO 100°C)
+
+The thermal environment is significantly colder for objects in shadow, particularly during lunar eclipse, and much
+hotter for objects in direct sunlight, which can be compounded by light and infrared radiation from the lunar
+surface.
+
+The most extreme thermal environments occur during the Lunar Orbit phase when the lander cycles through
+cold and hot as it passes through the Moon's shadow, shown in the representative diagram below. Peregrine
+nominally spends up to 24 hours in LO1 and 72 hours in LO3. The duration in LO2 is dependent on the trajectory
+and orbital deployment concept of operations.
+
+                 LO1                       LO2                             LO3
+
+    100 km x 8700 km            100 km x 750 km                 100 km x 100 km
+    ~11.5 hours in Sun     ~120 minutes in Sun               ~75 minutes in Sun
+~0.5 hours in shadow    ~40 minutes in shadow           ~45 minutes in shadow
+
+LUNAR SURFACE (-30°C TO 80°C)
+
+The thermal environment is significantly colder for objects in shadow and much hotter for objects in direct
+sunlight. This range is relevant for the nominal lunar surface operations duration and does not include lunar
+night or missions to equatorial latitudes.
+
+For example, Peregrine on the lunar surface is nominally oriented such that the avionics in Enclosure A are
+pointed towards the lunar north pole where it is mostly or completely shadowed for the duration of lunar surface
+operations. The movement of the Sun throughout the lunar day and the reflection of light from the lunar surface
+creates thermal environments highly specific to the payload's mounting locations.
+
+                                                                                               B
+
+                                                     C  A
+
+                                                                                               D
+
+NOTE: The corresponding thermal environments of the payload depend on mounting location and the incident sunlight at that location
+throughout the mission. Astrobotic works with each customer to develop payload-specific environments for relevant system testing prior to
+payload integration.
+
+                                                 36                              © Astrobotic 2021
+PRESSURE AND
+HUMIDITY ENVIRONMENT
+
+Astrobotic's landers encounter the following approximate pressure and humidity environments
+on a typical mission.
+
+Pressure Environment
+
+PRE-LAUNCH
+
+The average atmospheric pressure at sea level is 101.25 kPa. The actual value experienced by the lander will
+depend on the exact locations of the integration and launch facilities.
+
+LAUNCH
+
+The plot below shows a typical pressure drop curve for launch, which envelopes the pressure drop for all other
+mission phases. The drop is expected to surpass ­2.5 kPa/s only briefly during transonic flight as the launch
+vehicle exceeds the speed of sound, and will not exceed -5.0 kPa/s.
+
+Pressure (kPa)
+
+                                                                         Time(s)
+
+REMAINING MISSION
+
+For the remaining mission phases the lander will be exposed to the vacuum of the space environment, with
+a pressure of 3.2 x 10-5 kPa.
+
+Humidity Environment
+
+LAUNCH
+
+The integration and launch facilities are climate-controlled to 50% ± 15% humidity. The higher humidity
+values may occur during transportation and depend on the local climate of the facilities' locations.
+
+REMAINING MISSION
+
+The vacuum of the space environment has 0% humidity.
+
+                37  © Astrobotic 2021
+CONTAMINATION CONTROL
+
+PRE-LAUNCH
+
+Astrobotic maintains two ISO-Class 8 clean rooms for use during payload and lander integration. For payloads
+with enhanced cleanliness requirements, Astrobotic can also provide a modular ISO-Class 7 integration
+environment. All launch vehicle integration facilities utilized by Astrobotic also provide cleanrooms that meet
+these standards.
+
+ Astrobotic's Lunar Logistics Headquarters contains two ISO Class 8 cleanrooms capable of hosting four concurrent spacecraft for payload
+ and lander integration and has an adjoining mission control center.
+
+CRUISE, LUNAR ORBIT, DESCENT, AND LANDING
+
+Astrobotic in coordination with the launch vehicle and all payloads will perform contamination analysis for
+all phases of the mission through landing and operations on the Moon. Our engineering team is capable of
+performing assessments for particulate, molecular, and other contamination sources that sensitive payloads may
+require protection from.
+A contamination control plan will be maintained throughout the mission to ensure all customer contamination
+requirements are met.
+
+38  © Astrobotic 2021
+RADIATION ENVIRONMENT
+
+Astrobotic's landers are subject to an ionizing radiation environment that varies along their path to the Moon.
+This environment can be roughly divided into two regions: near-Earth and interplanetary. The boundary between
+the two is the outer edge of the Van Allen radiation belts, a set of bands containing energetic protons and
+electrons trapped by the Earth's magnetic field. The Van Allen belts' overall structure is illustrated in the highly
+simplified figure below.
+
+Low Earth Orbit (<2,000 km)  Outer Belt (20,000 ­ 40,000 km)
+
+                             NEAR EARTH ENV.  INTERPLANETARY ENV.
+
+Inner Belt (1,600 ­ 12,000 km)                Lunar Orbit (385,000 km)
+
+NEAR-EARTH ENVIRONMENT
+
+The near-Earth radiation environment is defined by the radiation trapped by the Earth's magnetic field. It can
+reach as high as 20 rads/day when the lander is directly passing through the Van Allen belts. This ionizing
+dosage is based on expected electron as well as heavy ion and proton radiation per Earth day. Our lander may
+spend anywhere from 1 to 15 days in this environment, depending on the specific mission trajectory, from the
+launch through cruise phase.
+
+INTERPLANETARY ENVIRONMENT
+
+The interplanetary radiation environment occurs in the region outside of the shielding effects of Earth's magnetic
+field. An ionizing dosage of 1 rad/day is predicted there based on the expected electron radiation per Earth day.
+
+TOTAL IONIZING DOSAGE
+
+The total ionizing dosage is not expected to exceed 1 krad for most missions. Astrobotic's landers are designed
+to mitigate destructive events within its own electronics caused by nominal radiation for a period of eight
+months.
+
+                             39                                    © Astrobotic 2021
+ELECTROMAGNETIC ENVIRONMENT
+
+Astrobotic's landers and all payloads must be designed in compliance with radiated and conducted
+electromagnetic emissions (EMI) standards. The table below shows the appropriate testing to perform based
+on payload type (see Page X), as defined in the Requirements for the Control of Electromagnetic Interference
+Emissions and Susceptibility (MIL-STD-461G) document. These tests characterize the interference, susceptibility,
+and compatibility of the lander and payloads to ensure appropriate electrical interfacing that does not induce
+significant interference, noise, or performance degradation into the integrated system.
+
+EMI CATEGORY              REQUIREMENT  APPLICABILITY
+
+Conducted Emissions       CE102        Active Payloads
+
+Conducted Susceptibility  CS101        Active Payloads
+                          CS114
+                          CS115
+                          CS116
+
+Radiated Emissions        RE102        Active Payloads
+
+Radiated Susceptibility   RS103        Payloads with Antennas
+
+Additionally, these tests inform compliance with other external standards and regulations such as Range Safety.
+Please contact Astrobotic for the latest version of the relevant Range Safety User Requirements Manual Volume
+3 (AFSCMAN91-710V3) document.
+
+                          40           © Astrobotic 2021
+INTERFACES
+
+                          41
+PAYLOAD TYPES
+
+A payload may be either passive or active as well as either static or deployable; this results in the four distinct
+payload types detailed below. The standard payload interfaces, services, and operations are informed by the
+payload type.
+
+         STATIC                                DEPLOYABLE
+
+PASSIVE  Static Passive                        Deployable Passive
+         · Remains attached to lander          · Detaches from lander
+         · Does not perform mission tasks      · Does not perform mission tasks
+
+         Example: Memorabilia                  Example: Surface time capsule
+
+ACTIVE   Static Active                         Deployable Active
+         · Remains attached to lander          · Detaches from lander
+         · Performs mission tasks              · Performs mission tasks
+
+         Example: Science instrument           Example: Rover
+
+Astrobotic's landers provide payloads with standard and well-defined interfaces to support their missions.
+The following pages outline the standard physical, functional, and ground segment interfaces for payloads.
+The service interfaces, which provide power and data to payloads, vary both by payload type and mission
+phase. Service interfaces are described in the Mission Operations section. Astrobotic is able to accommodate
+nonstandard interfaces upon request.
+
+Please contact Astrobotic for additional information or the latest version of the Interface Definition Document
+(IDD), which provides a comprehensive description of the standard interfaces.
+
+                                           42                                    © Astrobotic 2021
+PAYLOAD MOUNTING
+ACCOMMODATIONS
+
+Peregrine and Griffin can accommodates a wide range of payloads by providing a flexible mounting solution
+to accommodate payload pointing and mounting requirements. Two open isogrid aluminum decks serve as
+the standard payload mounting structure, a smaller deck is utilized for some deployable payloads. Alternate
+mounting locations, such as on the vertical enclosures or internal shear panels, are available as a nonstandard
+service; please contact Astrobotic for additional information.
+
+Above Deck
+Below Deck
+
+                Enclosure Deck
+
+Peregrine - Standard Payload Mounting Envelopes
+
+Astrobotic provides a volume about the payload mounting decks designated for safe and simple accommodation
+of payloads, known as the payload envelope. The envelope ensures safe stowage during flight and sufficient
+ground clearance upon landing for payloads. Astrobotic works with each payload customer to define a section of
+this envelope, which the payload may use as desired.
+
+Payload operations outside of the envelope are permitted during the Surface phase. Such operations must be
+discussed and scheduled with Astrobotic. Egress procedures may also be performed during the Lunar Orbit
+phase as discussed and scheduled with Astrobotic.
+
+            43  © Astrobotic 2021
+PAYLOAD MOUNTING DECKS
+
+The payload mounting decks are the primary mounting location for payloads, featuring a standardized bolt
+pattern for simplified payload mounting. Most lander configurations feature two standard decks and a deck
+below one avionics enclosure for smaller payloads.
+
+Each standard deck offers approximately 0.5 m2 of mounting area per side. The same bolt pattern is provided on
+both sides of these decks. Locking helicoil inserts are sized for standard M5 bolts and are spaced 75 mm apart,
+from center to center. The small deck features approximately 0.2 m2 of mounting area and payloads may only
+mount below the deck.
+
+                                                               0.65 m                               0.36 m
+
+                                               0.11 m
+
+                  0.21 m  0.67 m
+0.22 m
+                                               0.41 m
+
+                                  0.075 m
+
+                                  0.075 m      0.07 m
+
+                                                       0.32 m          R 0.30 m                                0.075 m
+                                                                                                            0.075 m
+
+Please contact Astrobotic for more detailed drawings and dimensions of the payload mounting decks.
+
+Astrobotic assigns specific bolt holes to every
+payload based on their size and mounting location
+requirements. Astrobotic provides a suitable number of
+helicoil inserts to each payload as determined by the
+payload size and allotted number of bolt holes.
+
+The appropriate method for attaching a payload to its
+assigned helicoil inserts is illustrated in the diagram
+to the right. The lander deck and Astrobotic-supplied
+helicoil inserts are shown in gray whereas customer
+supplied components are shown in blue. Two payloads
+may utilize the same bolt hole from opposite sides of
+the deck as each side of the payload mounting deck is
+provided its own locking helicoil insert.
+
+                                           44                                                       © Astrobotic 2021
+ADAPTER PLATES
+
+Payload placement on the lander is an iterative and cooperative process between Astrobotic and the payload
+customer. The final assignment of bolt holes to each payload occurs once the manifest is filled and ICD's are
+signed. Astrobotic recommends payloads utilize an adapter plate, which allows the payload design to progress
+independently of the assignment of bolt holes. The diagram below illustrates a typical payload adapter plate
+design. Adapter plates are considered part of a payload's mass allocation.
+
+Payload                                 Payload
+                                    Mounting Deck
+
+   Thermal and          Payload
+Vibration Isolation  Adapter Plate
+
+Additionally, the adapter plate can be utilized to dampen loads as experienced by the payload. It can also
+simplify the provision of the required thermal characteristics as well as the implementation of the required
+grounding, bonding, and isolation techniques at the payload mounting interface to the lander.
+
+THERMAL INTERFACES
+
+The payload must implement a thermally isolating connection to the lander, defined as a conductance of < 0.1
+W/K. This allows the payload to more effectively regulate its own thermal environment using passive methods,
+such as radiators and coatings, or active methods, such as internal heaters.
+
+GROUNDING, BONDING, AND ISOLATION INTERFACES
+
+The landers operate with a single-point ground architecture. Payloads must conform to this approach by
+employing proper grounding, bonding, and isolation schemes within their own payload design and by providing
+contact points for the payload structural and conductive elements as well as internal electrical circuit common
+ground, which Astrobotic connects to the lander chassis for grounding.
+
+                     45                            © Astrobotic 2021
+ELECTRICAL INTERFACES
+
+Astrobotic provides power and data services through a Standard Electrical Connector (SEC). The SEC
+is a Glenair SuperNine connector of the MIL-DTL-38999 Series III screw type connector. The connector
+is available in a regular and small size, each with a standard pin configuration providing the contacts
+illustrated below. Please contact Astrobotic for the specific SEC part number for your payload.
+
+               REGULAR SEC
+
+Power                       SMALL SEC
+Power Signal
+Data
+Timing
+Power Return
+Not Connected
+
+POWER
+
+Payloads are allocated two power circuits as a standard service. One is used for payload operations and
+if necessary, heater power. The other power circuit is used to perform deployments or actuations within
+the payload. The power provided is 28 ± 5% Vdc and the power circuits are current regulated, current-
+monitored, reverse-voltage protected, and over-voltage-protected.
+
+DATA
+
+Data circuits are available in either Serial RS-422 or SpaceWire configurations. Both data circuits support
+time at the tone, a time synchronization service that enables payloads to synchronize their internal clock
+with the lander and by extension UTC time. Payloads requiring the use of SpaceWire for additional data
+bandwidth must use the regular size SEC.
+
+               46           © Astrobotic 2021
+RELEASE MECHANISMS
+
+Payloads may deploy from the Astrobotic landers in lunar orbit or on the lunar surface. Deployable payloads
+require a release mechanism to detach from the lander. The customer is responsible for the selection,
+procurement, testing, and integration of the release mechanism they deem most suitable for their payload
+design in accordance with the Astrobotic guidelines and requirements.
+
+LUNAR SURFACE DEPLOYMENTS
+
+For lunar surface deployable payloads, Astrobotic recommends the use of hold-down and release mechanism
+style devices, but the customer may select the device most suited to the payload design if it meets the following
+requirements:
+
+·  Non-pyrotechnic
+
+·  Creates minimal debris
+
+·  Imparts no shocks greater than 300 g's on the lander upon actuation
+
+LUNAR ORBIT DEPLOYMENTS
+
+Due to the mission-critical nature of orbital payload deployments prior to landing, Astrobotic requires the use
+of a proven release mechanism design for lunar orbit deployable payloads. Please contact Astrobotic for more
+details on lunar orbit deployable payloads.
+
+The landers provide power services and power release signal services to the SEC interface. The payload
+customer is responsible for integrating the release mechanism into their payload design such that it correctly
+interfaces with these provided services and employs the appropriate arm and fire techniques to satisfy Range
+Safety requirements. Please contact Astrobotic for the latest version of the Range Safety document.
+
+                           47                                           © Astrobotic 2021
+DATA INTERFACES
+
+Peregrine and Griffin use standard, well-defined data interfaces to simplify payload integration. Wired data
+services are provided through the SEC. Therefore, wired data services are available only while the payload is
+attached to the lander. Wireless data services are available to surface deployable payloads following separation
+from the lander. Orbit deployable payloads must establish an independent communication connection with Earth
+following separation from the lander.
+
+NETWORK PROTOCOLS
+
+Payloads may select between the three networking protocols to interface with the lander. Surface deployable
+payloads are recommended to select a wired data interface for communications prior to separation from the
+lander in addition to the wireless data interface.
+
+·     Serial RS-422, Serial Line IP (SLIP), and User Datagram Protocol (UDP)
+
+·     SpaceWire high-speed wired communication
+
+NETWORK ARCHITECTURE
+
+Payload telemetry and telecommands are transmitted from the lander to the Astrobotic Mission Control Center
+and then to the Payload Mission Control Centers without modification of payload data. Astrobotic contracts
+ground stations to communicate with the landers using X-Band for uplink and downlink. One-way latency in the
+connection between the customer and their payload on the Moon is nominally 4 seconds, although increases in
+latency may occur during some mission events.
+
+                                                Serial RS-422/                     802.11n
+                                                     SpaceWire                     WLAN
+
+                                                  Attached
+                                                   Payload
+
+                                                                              PM1                 Deployed
+
+                                                                                                  Payload
+
+PMCC                                                                               X-Band Uplink
+                                                                                   X-Band
+                                                                                   Downlink
+
+PMCC  Virtual Private                           Ground Station
+      Network (VPN)
+
+                        AMCC
+
+                                                48                                                © Astrobotic 2021
+GROUND SEGMENT
+
+The Astrobotic Mission Control Center (AMCC) serves as the data hub for all missions, providing standardized,
+transparent, and safe networking to payload customers.
+
+Payload Mission Control Centers (PMCCs) may be located adjacent to or remotely from the AMCC. Payload
+customers are given access to a secure and private part of the AMCC network via Virtual Private Network (VPN).
+Payloads that choose to operate their payloads adjacent to the AMCC do so from the Payload Operations Area.
+Customers may implement custom PMCC applications using whatever hardware or software is necessary to
+monitor and control the payload.
+
+Rendering of the Astrobotic Mission Control Center in Pittsburgh, PA.
+
+Astrobotic delivers payload telecommands and telemetry without modification. This system means the customer
+does not need to consider the different mediums and channels traversed by their data packets.
+
+All payload telecommands and telemetry are securely addressed, and the AMCC and lander verify each packet's
+meta-data for compliance, ensuring safe transmissions. Customer data is not opened or reformatted allowing for
+payloads to implement encryption or other data security techniques.
+
+Each payload customer is required to provide an on-site representative at the AMCC during mission operations
+for rapid response to off-nominal situations. This requirement may be waived for static passive payload types.
+
+49  © Astrobotic 2021
+MISSION OPERATIONS
+
+                                                50
+LANDING SITE
+
+PRECISION LANDING
+
+Each mission targets a landing ellipse in a region of interest based on the mission and payload requirements.
+Starting with Griffin Mission One, Astrobotic will utilize the Optical Precision Autonomous Landing (OPAL) Sensor
+to dramatically improve the landing accuracy from a 24 km x 6 km ellipse to a 100 m x 100 m ellipse. Since GPS
+is not available at the Moon and other planets, the OPAL Sensor uses on-board cameras and computer vision
+algorithms to detect features on the lunar surface and match these features to onboard maps to provide position
+updates during landing. Robust, high-speed image processing allows the lander to accurately determine its pose
+as it descends towards the surface.
+
+    Early version of the OPAL sensor autonomously selects a hazard-free landing site
+    for the Masten Space Systems Xombie Rocket.
+
+EFFECTIVE SLOPES
+
+Potential landing sites are analyzed based on a wide array of variables; one of the most important being
+effective slope. The effective slope takes into account natural slopes in the topography and the presence of
+rocks. Sites are typically selected with an effective slope 10°. Sites with a maximum expected rock height of 0.3
+m are preferred. Improvements to the lander system such as the terrain relative navigation system will enable
+Astrobotic to select many more landing sites that meet these criteria.
+
+LOCAL LANDING TIME
+
+Once a landing site has been selected, Astrobotic plans a mission to maximize payload operation time on the
+lunar surface. For Mission One, Peregrine will land 55-110 hours after sunrise. A lunar day, from local sunrise
+to sunset on the Moon, is equivalent to 354 hours, or approximately 14 Earth days. At mid-latitudes, Peregrine
+nominally operates for 192 hours, or 8 Earth days, following landing. Some polar missions may take advantage of
+unique lighting conditions to operate for longer than a single lunar day.
+
+51  © Astrobotic 2021
+MISSION PROFILE
+
+The Astrobotic mission profile encompasses five distinct phases, beginning with payload integration
+to the lander and concluding at the end of the mission.
+
+                                         Payload Integration
+
+5 ­ 9 Months  PRE-LAUNCH PHASE
+
+              Includes preparation activities for launch including lander acceptance testing, arrival
+              at the launch site, and integration with the launch vehicle.
+
+              Launch Vehicle Lift-Off
+
+1 ­ 3 Hours   LAUNCH PHASE
+
+              Includes transit from the Earth's surface to a highly elliptical Earth orbit onboard the
+              launch vehicle.
+
+              Separation from Launch Vehicle
+
+3 ­ 33 Days   CRUISE PHASE
+
+              Includes the lander's Earth orbit, Trans-Lunar Injection (TLI), and other lander
+              maneuvers while preparing to enter lunar orbit.
+
+              Insertion into Lunar Orbit
+
+4 ­ 25 Days   LUNAR ORBIT PHASE
+
+              Includes all lunar orbit injection maneuvers, orbital payload deployments, and
+              descent to the lunar surface.
+
+              Touchdown on the Lunar Surface
+
+8+ Days       SURFACE PHASE
+
+              Includes all surface activities such as surface rover deployments, payload data
+              acquisition, and imaging of the lunar surface.
+
+              End of Mission
+
+                                          52  © Astrobotic 2021
+TRAJECTORY
+
+Astrobotic selects a specific trajectory for every mission based on launch profile and landing
+site. A generic trajectory, typical for Lander missions, is shown below.
+
+          Launch to High Elliptical Orbit Aboard the Launch Vehicle
+          Separation from the Launch Vehicle
+          Perigee Raise Maneuver
+          TLI Maneuver
+          Cruise Through Cislunar Space
+          Lunar Orbit Insertion (LOI) Maneuver
+          Lunar Orbit Hold
+          Autonomous Descent Operations
+          Landing on the Lunar Surface
+
+53                                                                                              © Astrobotic 2021
+DESCENT PROFILE
+
+Descent operations take Peregrine and Griffin from lunar orbit safely to the surface.
+This phase of flight is completed autonomously by the lander.
+
+UNPOWERED               POWERED                    TERMINAL                            TERMINAL
+DESCENT                 DESCENT                    DESCENT                             DESCENT NADIR
+
+The lander initiates    As the lander              The OPAL Sensor                     The lander descends
+descent with a braking  approaches the             and Doppler LiDAR                   vertically and
+maneuver and then       surface, guided by         inform targeted                     maintains constant
+coasts, using only      the OPAL Sensor            guidance activity to the            vertical velocity from
+attitude control        and Doppler LiDAR,         landing site, reducing              30 m altitude until
+thrusters to maintain   powered descent            horizontal velocity.                touchdown.
+orientation.            commences; here
+                        the main engines fire
+                        continuously to slow
+                        down the lander.
+
+100 km ­ 15 km
+
+                        15 km to 1 m
+
+                                                   1 km to 300 m
+
+                                                                                       300 m to Touchdown
+
+                                               54                                      © Astrobotic 2021
+POWER SERVICES
+
+Our landers allocate power services based on payload mass, with several modes available to fit the payload
+concept of operations. Additional power services are available for purchase; please contact Astrobotic for more
+details. Astrobotic defines the following service modes for payloads.
+
+                         OFF No power is provided to payloads.
+                 NOMINAL 1.0 W per kilogram of payload.
+
+                       PEAK 2.5 W per kilogram of payload as scheduled by Astrobotic.
+                   RELEASE 30 W peak payload power for approximately 60 seconds.
+
+Power service modes provided to payloads change by mission phase as described below.
+
+         PRE-LAUNCH    LAUNCH            CRUISE     LUNAR ORBIT SURFACE
+
+                                     < 20 minutes   < 20 Minutes
+
+OFF      As Scheduled  Entire Phase  per lander     per Lander     N/A
+
+                                     maneuver       Maneuver 1
+
+NOMINAL As Scheduled   N/A           Default State  Default State  Default State
+
+PEAK     As Scheduled  N/A               N/A        N/A            As Scheduled
+
+RELEASE  As Scheduled  N/A               N/A        As Scheduled 2 As Scheduled 3
+
+                    1Powered descent lasts two hours and is the only lander maneuver to last more than 20 minutes.
+                    2Only payloads delivered to lunar orbit are provided release power services in lunar orbit.
+                    3Only payloads with deployable or actuated elements on the lunar surface are provided release
+
+Power services are available only while the payload is attached to the lander. Deployable payloads take full
+control of their own power generation and consumption following release from the lander.
+
+                                     55                            © Astrobotic 2021
+DATA SERVICES
+
+Data services also feature a base allocation by payload mass, with a nominal data rate mode on the lunar
+surface and a limited data-rate heartbeat mode while in transit. Additional data services are available for
+purchase; please contact Astrobotic for more details. Astrobotic defines the following service modes for
+payloads. The lander typically cycles between modes as it switches between ground stations.
+
+                         OFF No data services are provided to payloads.
+               HEARTBEAT 10 bps per payload.
+
+                   RELEASE 10 kbps per kilogram of payload.
+
+Data service modes provided to payloads change by mission phase as described below.
+
+     PRE-LAUNCH         LAUNCH            CRUISE     LUNAR ORBIT SURFACE
+
+OFF  As Scheduled       Entire Phase       4 Hours    4 Hours    1 Hour
+                                          per Cycle  per Cycle  per Cycle
+
+HEARTBEAT As Scheduled  N/A                4 Hours    4 Hours   N/A
+                                          per Cycle  per Cycle
+
+NOMINAL As Scheduled    N/A               N/A        N/A         7 Hours
+                                                                per Cycle
+
+     Unlike power services, data services are dependent on lander contact with ground stations. For payloads the
+     landers typically provide data services over an 8 hour cycle. Part of that cycle is spent in LOS and the rest is in
+
+Wired services are available only while the payload is attached to the lander. Wireless data services are available
+to surface deployable payloads following separation from the lander. Orbit deployable payloads must establish
+an independent communication connection with Earth following separation from the lander.
+
+                                      56                        © Astrobotic 2021
+EGRESS PROCEDURES
+
+Each deployable payload is given a time window to perform deployment and any payload-specific
+preparations. Astrobotic informs the payload customer once their egress window is open. The following
+compliant safe, arm, and fire techniques must be implemented in the payload design.
+
+                           SAFE
+
+                                The payload deployment mechanism is disconnected from the power (release) signal
+                                circuit inside the payload, and the circuit is unpowered.
+
+                           ARM
+
+                                The payload deployment is armed by means of a specific customer command to
+                                ready the payload for deployment and internally distribute power services to the
+                                release mechanism.
+
+                           FIRE
+
+                                The power (release) signal serves as the fire command. Upon customer request,
+                                Astrobotic provides the defined power signal to the Standard Electrical Connector
+                                (SEC) interface.
+
+The lander maintains power authority over attached payloads and can, by the removal of nominal power
+services, render payload release mechanism devices inert.
+
+A sample egress procedure guideline is provided below.
+
+                                The payload charges its batteries with power provided by the lander. The payload
+                                customer performs any necessary system diagnostic checks and firmware or software
+                                updates to prepare the payload for deployment.
+
+                                Astrobotic and the payload customer enable restricted payload functionality,
+                                allowing the use of internal power systems and onboard radios. A diagnostic check
+                                may be performed by the payload customer to verify internal power sources and
+                                wireless communication.
+
+                                Upon request of the payload customer, Astrobotic commands the lander to send
+                                the power (release) signal to the payload. Lander-provided power and wired
+                                communication are discontinued to the SEC.
+
+                                Astrobotic and the payload customer confirm successful separation of the payload
+                                from the lander.
+
+NOTE: For orbit deployable payloads, Astrobotic may interface directly with the release mechanism and apply the arm and fire signals
+with customer confirmation of payload readiness. If desired, this also allows the payload to deploy in an unpowered state until separation
+from the lander.
+
+57  © Astrobotic 2021
+Astrobotic provides the following forms of                                     con-
+
+confirmation of payload separation.
+
+Confirmation of provision of the power (release) signal to the SEC interface.
+
+Visual confirmation of payload separation using the lander status cameras.
+
+Following deployment, all payloads are responsible for their own power management. Orbit deployable
+payloads also need to ensure separate communications with Earth. Please contact Astrobotic for
+recommendations on an independent power and communications concept of operations for payloads.
+
+LUNAR ORBIT EGRESS
+
+Lunar orbit deployments introduce distinct complexities that require additional precautions to be enacted.
+Payloads are deployed in either the velocity or anti-velocity direction; this results in orbital dynamics that appear
+to loop back relative to the lander orbit. Astrobotic requires that these loop backs occur outside of a 1 km radius
+keep-out zone. To be compliant, payloads must provide at least 0.04 m/s velocity relative to the lander upon
+separation.
+
+0.04 m/s
+
+                                                                                   0.04 m/s
+
+The lander nominally holds in several different lunar orbits during the Lunar Orbit phase; not all lunar orbits
+are available for orbital payload deployment as some may be less stable than others. Astrobotic identifies
+the available and preferred lunar orbits for payload customer orbital deployments for each mission. To ensure
+safe lunar orbit operations for all payloads, orbital deployments may occur at slightly varied altitudes for each
+payload.
+
+                                            58                                 © Astrobotic 2021
+PAYLOAD INTEGRATION
+
+                                                    59
+MISSION TIMELINE
+
+The diagram below provides a high-level overview of the mission timeline. Astrobotic works with the
+customer to appropriately tailor this timeline to develop a payload-specific schedule based on payload type
+and complexity.
+
+Kick-off Activities                        Acceptance and Integration  Surface Operations
+               Interface Control Document                              Launch
+
+                                           L-12      L-4               L-0 L+1
+
+Integration Working Groups
+
+Following contract signature, Astrobotic begins hosting regular Integration Working Group meetings
+with each payload customer. These meetings, led by an Astrobotic Payload Manger, are the primary forum
+for technical and programmatic interchanges between the payload team and Astrobotic engineers. Topics
+for these meetings change as the mission gets closer to launch. Integration Working Group meetings
+continue until the end of mission.
+
+During the kick-off Activities phase, Astrobotic works to familiarize the payload customer with the
+lander interfaces and concept of operations. Astrobotic maintains a comprehensive library of payload
+documentation to aid in this process. The Interface Definition Document (IDD) explains the standard
+payload interfaces and environments. The Payload Integration Plan (PIP) describes the deliverables and
+analyses performed by the customer and Astrobotic teams. Astrobotic then works with payload customers
+to develop an Interface Control Document (ICD), which defines the interface between the payload and the
+lander.
+
+Payload milestone reviews such as the System Requirements Review, Preliminary Design Review, and
+Critical Design Review are scheduled by the payload teams and supported by Astrobotic engineers acting
+as reviewers. The only design review led by Astrobotic is the Payload Acceptance Review.
+
+                                                 60                             © Astrobotic 2021
+INTEGRATION
+
+PAYLOAD ACCEPTANCE REVIEW
+
+The Payload Acceptance Review (PAR) determines whether the payload is fit for integration with the lander.
+The PAR is nominally scheduled no later than 9 months prior to launch. Additional flexibility can be afforded
+to less complex payloads utilizing fully standard interfaces and services. The PAR nominally takes place at the
+Astrobotic integration facility located at the company headquarters in Pittsburgh, PA and is led by the Astrobotic
+payload management team.
+
+The customer delivers the fully-assembled flight-configuration payload to Astrobotic. To be considered safe to
+integrate with the lander, the payload must complete all verification and validation activities without failures. The
+final agenda for the review is tailored to the specific payload type and complexity.
+
+PAYLOAD INTEGRATION
+
+Following a successful Payload Acceptance Review, Astrobotic Integrates the payload with the lander.
+Integration is nominally scheduled between 9 and 5 months prior to launch. Additional flexibility can be afforded
+to less complex payloads utilizing fully standard interfaces and services. The integration schedule developed by
+Astrobotic also takes overall accessibility requirements for integration and testing into account.
+
+Integration nominally takes place at the Astrobotic integration facility located at the company headquarters in
+Pittsburgh, PA and is led by the Astrobotic payload management team.
+
+Astrobotic integrates the accepted payload with the lander. The integration specialists follow the
+payload-specific guidelines for integration provided by each payload customer in a Payload Operations
+Plan. Additional verification and validation activities are undertaken to confirm a successful integration
+between payload and lander. The final agenda is tailored to the specific payload type and complexity.
+
+The Payload Integration Plan provides further details on the Integration schedule and procedures. Please contact
+Astrobotic for the latest version of this document.
+
+INTEGRATED LANDER TESTING
+
+The fully integrated lander system is functionally tested, and several environmental tests such as thermal and
+vibration are performed. Once the fully integrated lander is certified, the lander is delivered to the launch site
+where payloads may perform final functional tests and the lander is integrated with the launch vehicle.
+
+NOTE: The customer may request or require additional time between the PAR and Integration. Astrobotic reserves the right to repeat
+aspects of the PAR to ensure any changes to the payload in that time did not impact Astrobotic's ability to accept the payload for
+integration.
+
+61  © Astrobotic 2021
+GLOSSARY
+
+                      62
+GLOSSARY
+
+UNITS   bits per second [data rate]
+        decibel [sound pressure level referenced to 20x10-6 Pa]
+bps     degree [angle, latitude, longitude]
+dB      degree Celsius [temperature]
+°       Earth gravitational acceleration [9.81 m/s2]
+°C      Hertz [frequency]
+g's     kilogram [mass]
+Hz      Kilopascal [pressure]
+kg      meter [length]
+kPa     Newton [force]
+m       percent [part of whole]
+N       rad [absorbed radiation dose]
+%       second [time]
+rad     United States dollars [currency]
+s       Volt (direct current) [voltage]
+$       Watt [power]
+V (dc)
+W
+
+TERMS   Astrobotic Mission Control Center
+        Astrobotic Payload Requirement
+AMCC    Electro-Magnetic Interference
+APR     Field Programmable Gate Array
+EMI     Guidance, Navigation, and Control
+FPGA
+GNC
+
+                                           63                    © Astrobotic 2021
+IAU     Integrated Avionics Unit
+
+IWG     Integration Working Groups
+
+LOI     Lunar Orbit Insertion
+
+M1      Mission One
+
+M2      Mission Two
+
+MMH     MonoMethylHydrazine
+
+MON-    Mixed Oxides of Nitrogen - 25% nitric oxide
+25
+
+PMCC    Payload Mission Control Center
+
+SEC     Standard Electrical Connector
+
+SEU     Single Event Upset
+
+UDP/IP  User Datagram Protocol / Internet Protocol
+
+TLI     Trans-Lunar Injection
+
+VPN     Virtual Private Network
+
+DOCUMENTATION
+
+ICD     Interface Control Document
+IDD
+PIP     The document defines the final lander-payload interfaces and is signed by Astrobotic and the customer; the
+POP     IDD is used as a template for this document.
+PSA
+        Interface Definition Document
+
+        The document defines the standard lander-payload interfaces.
+
+        Payload Integration Plan
+
+        The document details the Payload Acceptance Review and Integration schedules as well as verification and
+        validation procedures.
+
+        Payload Operations Plan
+
+        The document details the appropriate handling of the payload system; it is produced in part by the payload
+        customer and guides Astrobotic operations.
+
+        Payload Services Agreement
+
+         The document serves as the initial contract between Astrobotic and the payload
+         customer; it defines programmatic expectations.
+
+                                                     64                                                             © Astrobotic 2021
+PUG  Payload User's Guide
+
+     The document provides a high-level overview of the vehicle, mission, as well as the
+     interfaces and services provided to payloads. (this document)
+
+SOW  Statement of Work
+
+     The document outlines the responsibilities of Astrobotic and the payload customer; it
+     is part of the PSA.
+
+MILESTONES
+
+     Critical Design Review
+
+CDR  The review focuses on the final design of the lander/payload and determines
+
+     readiness to proceed with fabrication and testing.
+
+     Flight Readiness Review
+
+FRR  The review focuses on the integrated launch vehicle and determines readiness to
+
+     proceed with launch operations.
+
+     Launch Readiness Review
+
+LRR  The review focuses on the integrated launch vehicle and determines readiness to fuel
+
+     the vehicle and proceed with launch operations.
+
+     Operational Readiness Review
+
+ORR  The review focuses on the ground segment and determines end-to-end mission
+     operations readiness.
+
+     Payload Acceptance Review
+
+PAR  The review focuses on the flight-model payload and determines readiness to integrate
+
+     with the lander.
+
+     Preliminary Design Review
+
+PDR  The review focuses on the preliminary design of the lander/payload and determines a
+     feasible design solution to meet mission requirements exists.
+
+     System Integration Review
+
+SIR  The review focuses on the flight lander/payload systems and determines readiness to
+
+     proceed with assembly and testing.
+
+     Test Readiness Review
+
+TRR  The review focuses on the integrated lander and determines readiness to proceed
+
+     with testing.
+
+                                         65                                                 © Astrobotic 2021
+CONTACT US
+
+Astrobotic provides several points of contact to address the
+varied needs of payload customers.
+
+BUSINESS DEVELOPMENT
+
+Our Business Development team is available to current and potential
+customers for questions on the products and services we provide.
+
+CUSTOMER RELATIONS
+
+Our Customer Relations team is available to signed customers for general
+programmatic inquiries.
+
+PAYLOAD MANAGEMENT
+
+Our Payload Management team is available to signed customers for any
+mission-specific or technical needs.
+
+To begin your payload journey,  Email us at:
+please contact us and we will
+be happy to direct you to the   PAYLOAD@ASTROBOTIC.COM
+appropriate Astrobotic team
+member.
+
+We can also be reached using the following contact information:
+
+                           1016 N. LINCOLN AVENUE
+                           PITTSBURGH, PA 15233
+                           412-682-3282
+                           WWW.ASTROBOTIC.COM
+                           CONTACT@ASTROBOTIC.COM
+
+                                66                                        © Astrobotic 2021
+QUESTIONNAIRE
+
+For a more personalized experience, please include your
+
+specific payload needs when you contact us.
+
+Payload Name
+
+Payload Point of Contact: Name, Email/Phone
+
+Payload Mission Objectives
+
+Payload Preferred Launch Date
+
+Payload Delivery Location: Lunar Destination [Orbit/Surface], Additional Parameters (e.g., orbital altitude, orbital
+inclination, surface region, proximity to a lunar surface feature)
+
+Payload Mass
+
+Payload Dimensions: Length x Width x Height, Description of Shape
+
+Payload Power Needs: Nominal Power [Yes/No], Power (Release) Signal [Yes/No], Additional Needs
+
+Payload Communications Needs: Wired Communication [Yes/No], Wireless Communication [Yes/No], Nominal Surface
+Bandwidth [Yes/No], Heartbeat Bandwidth [Yes/No], Additional Needs
+
+Payload Concept of Operations
+
+ Additional Requirements
+
+NOTE: You can also share your payload mission details with us through our website:
+           Configure Your Mission
+
+                                             67                                                 © Astrobotic 2021
+

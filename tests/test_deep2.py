@@ -1,4 +1,4 @@
-"""Deep pass 2 (15 Nov 2026): the LOLA team's 5 m site models against 80 m and 20 m, Artemis III candidate regions
+"""Deep pass 2 (15 Nov 2026): the LOLA team's 5 m site models against 80 m and 20 m, south-pole candidate landing regions
 as options in missed windows (now on the published sites of Wueller et al. 2026), and plain wording on what a judge sees.  Figures as in
 DEEP_PASS_2.md."""
 import json
@@ -71,10 +71,11 @@ def test_artemis_regions_are_nasas_nine_on_the_published_sites():
     assert sum(a["n_sites"] for a in d["anchors"]) == 78 and all(n in pub for a in d["anchors"] for n in a["sites"])
     for a in d["anchors"]:
         assert all(pub[n]["region"] == a["code"] for n in a["sites"])
-    assert [r["regions_yes_within_72h"] for r in d["opening"]["rows"]] == [8, 6, 5]
+    # on the full 20 m mosaic (every region's sites on 20 m): December 8 -> 7 regions, at the window in February 3 -> 2
+    assert [r["regions_yes_within_72h"] for r in d["opening"]["rows"]] == [7, 6, 5]
     assert [r["regions_yes_not_fragile"] for r in d["opening"]["rows"]] == [6, 5, 4]
     assert [r["regions_yes_within_72h"] for r in d["im1"]["rows"]] == [9, 8, 7]
-    assert [r["regions_yes_at_window"] for r in d["opening"]["rows"]] == [5, 5, 3]
+    assert [r["regions_yes_at_window"] for r in d["opening"]["rows"]] == [5, 5, 2]
     assert [g["sites_yes"] for g in d["opening"]["rows"][0]["regions"]][-1] == 0          # Slater Plain: no site in December
     r = client.get("/api/artemis-regions").json()
     assert r["available"] and len(r["anchors"]) == 9

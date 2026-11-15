@@ -1,4 +1,4 @@
-"""Artemis III candidate regions as the option list for missed windows, on published landing sites.
+"""NASA's nine south-pole landing regions (chosen for the first crewed landing, now planned for Artemis IV) as the option list for missed windows, on published landing sites.
 
     python scripts/artemis_regions.py
 
@@ -79,7 +79,7 @@ def main():
     t = time.time()
     pub = regions.load_sites()
     by_region = {code: [s for s in pub if s["region"] == code] for code, _ in regions.REGIONS}
-    doc = {"what": "Artemis III candidate regions (NASA, 28 Oct 2024) on the published candidate landing sites of Wueller et al. 2026, judged in each missed window",
+    doc = {"what": "NASA's nine south-pole landing regions (named 28 Oct 2024; the first crewed landing is now planned for Artemis IV, early 2028) on the published candidate landing sites of Wueller et al. 2026, judged in each missed window",
            "source": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/ (data/reference/sources/artemis3_regions_2024.html)",
            "sites_source": regions.CITATION,
            "anchor_rule": "every published candidate landing site of Wueller et al. 2026 in the region (5 to 11 per region); not NASA's landing sites; replaces our earlier single best-lit point per region",

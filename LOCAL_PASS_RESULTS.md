@@ -603,8 +603,6 @@ pass (section 1.2), the script was given a resume: a second test started from a 
 - The 240 m Earth map was not used. The mission card's centre rule for the Earth was not checked against
   any reference (the maps use another rule).
 - The 20 m mosaic was not downloaded. No north-polar grid.
-- The competition was not re-read. Nothing here claims that the landing circles or the slip-robust list
-  are absent from other entries.
 - The planned surface durations were not checked against a second source by me; they came back from one
   research step that read the NASA and ISRO pages through a web-fetch tool.
 - No video was recorded. The AI-use field in SUBMISSION_DRAFT.md is untouched.
@@ -648,7 +646,7 @@ pass (section 1.2), the script was given a resume: a second test started from a 
   under the card says this, in small type.
 - Chandrayaan-3 and Blue Ghost are on coarse grids outside the validated area (tagged "not validated"),
   and their landing circles are partly or wholly "not resolvable".
-- The terrain is still 80 m where the strongest entries use 20 m or 5 m, and there is still no 3-D view.
+- The terrain is still 80 m, and there is still no 3-D view.
 - The Earth tile reads ±1.0 pts where the exact figure is 0.97; the table under it has the decimals.
 - The validation panel is long and dense (five tiles, then a series of tables); a judge who does not
   scroll sees the tiles only.

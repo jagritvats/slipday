@@ -1,4 +1,4 @@
-"""How many of NASA's nine Artemis III regions must stay open: availability on published landing sites.
+"""How many of NASA's nine south-pole landing regions (now for Artemis IV) must stay open: availability on published landing sites.
 
 An addition beside the rest of the page; nothing else in the app depends on it.  The sites are the 130 candidate
 landing sites of Wueller et al. 2026 (JGR Planets 131(3) e2025JE009434, CC BY 4.0; data: Zenodo record

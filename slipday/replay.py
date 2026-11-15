@@ -33,7 +33,7 @@ MISSIONS = [
      "need_note": "IM-1 was planned for about seven days of surface operations before lunar night, and NASA reports "
                   "that its instruments stopped seven days after landing, as projected before launch: this example "
                   "asks for 168 sunlit hours. NASA's press kit gives approximately 10 days; with 240 hours the "
-                  "answer here is No, because the terrain leaves 208 sunlit hours at this site and landing hour. "
+                  "answer here is No, because the terrain leaves 207 sunlit hours at this site and landing hour on NASA's 20 m terrain (208 on the 80 m grid). "
                   "The 100 hours of Earth contact are illustrative.", **_EARTH},
     {"id": "chandrayaan3", "label": "Chandrayaan-3", "site": "chandrayaan3", "landing": "2023-08-23T12:00:00Z",
      "landed_utc": "2023-08-23T12:33:00Z", "source": "https://en.wikipedia.org/wiki/Chandrayaan-3", "relayed": True,

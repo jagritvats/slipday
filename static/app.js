@@ -9,6 +9,11 @@
      the first scatter-robust map point whose full card is a clear Yes on the 80 m grid and on NASA's 20 m grid.
      The second site is the opposite case, kept on the page on purpose: Yes on 80 m, Not sure on 20 m. */
   var DEFAULT_SITES = ['robust_pick', 'shackleton', 'im2', 'im1'];
+  /* A slip layer for the whole 80 S view, on a coarser grid, can be plugged in here (endpoint and field names).
+     While endpoint is null the slip layers exist for the close-up only, and choosing one moves the map there. */
+  var FULL_SLIP = { endpoint: '/api/addons/fullmap' };
+  /* which slip layers the whole-map data has, and its field for each */
+  var FULL_LAYERS = { margin: 'slip_margin_days', good: 'good_dates' };
   var OPENING = { date: '2026-11-18', hour: 0 };
   var state = {
     catalog: [], selected: [], data: [], idx: 0, playing: null, slip: null,
@@ -216,6 +221,42 @@
       legend: 'Hours with Sun and Earth both up after the worst of the candidate landing dates. Darker: more hours.' }
   };
   function curMap() { return state.maps[state.zoom] || null; }
+  /* ---------- the slip layer for the whole map, on a coarser grid (slipday/addons/fullmap.py) ---------- */
+  function fullKey(cfg) { return [cfg.opts.earth_stations, cfg.start, $('slipDates').value, cfg.need.need_sun_h, cfg.need.need_earth_h, cfg.need.window_days].join('|'); }
+  function loadFullMap(onDone) {
+    var cfg = state.lastCfg;
+    if (!cfg || !FULL_SLIP.endpoint || !FULL_LAYERS[state.layer]) { if (onDone) { onDone(null); } return; }
+    var k = fullKey(cfg);
+    if (state.fullKey === k && state.fullmap) { if (onDone) { onDone(state.fullmap); } return; }
+    if (state.fullKey === k && state.fullBusy) { return; }
+    state.fullKey = k; state.fullmap = null; state.fullBusy = true;
+    var q = 'earth_stations=' + cfg.opts.earth_stations + '&start=' + encodeURIComponent(cfg.start) + '&n_dates=' + $('slipDates').value +
+      '&need_sun_h=' + cfg.need.need_sun_h + '&need_earth_h=' + cfg.need.need_earth_h + '&window_days=' + cfg.need.window_days;
+    api(FULL_SLIP.endpoint + '?' + q).then(function (r) {
+      if (state.fullKey !== k) { return; }
+      state.fullBusy = false; state.fullmap = r; state.fullUrl = {}; renderPolar(); if (onDone) { onDone(r); }
+    }).catch(function () { if (state.fullKey !== k) { return; } state.fullBusy = false; state.fullmap = { available: false }; if (onDone) { onDone(state.fullmap); } });
+  }
+  function fullOverlayUrl(fm, layerId) {
+    state.fullUrl = state.fullUrl || {};
+    if (state.fullUrl[layerId]) { return state.fullUrl[layerId]; }
+    var vals = fm.layers[FULL_LAYERS[layerId]], n = fm.n, url;
+    if (layerId === 'margin') {
+      var K = 2, c = document.createElement('canvas'); c.width = n * K; c.height = n * K;
+      var ctx = c.getContext('2d');
+      for (var i = 0; i < vals.length; i++) {
+        var v = vals[i]; if (v === null || v === undefined || v < 0) { continue; }
+        ctx.fillStyle = ROBUST_STEPS[robustClass(v)][1]; ctx.fillRect((i % n) * K, Math.floor(i / n) * K, K, K);
+      }
+      url = c.toDataURL('image/png');
+    } else {
+      var clean = vals.map(function (v) { return v === null || v === undefined ? 0 : v; }), vmax = 0;
+      clean.forEach(function (v) { if (v > vmax) { vmax = v; } });
+      url = overlayUrl(clean, n, 0, vmax);
+    }
+    state.fullUrl[layerId] = url;
+    return url;
+  }
   function overlayUrl(vals, n, zero, vmax) {
     var c = document.createElement('canvas'); c.width = n; c.height = n;
     var ctx = c.getContext('2d'), img = ctx.createImageData(n, n);
@@ -258,7 +299,7 @@
   function robustLegend(rm) {
     var c = rm.counts, hist = c.surviving_margin_histogram, cls = [0, 0, 0, 0, 0];
     Object.keys(hist).forEach(function (k) { cls[robustClass(parseInt(k, 10))] += hist[k]; });
-    var h = '<span class="lhead">Days of slip that all ' + rm.members + ' touchdown points survive</span>';
+    var h = '<span class="lhead">Blue = a good place to land even if the launch slips. Darker blue = more days of slip it survives, at all ' + rm.members + ' touchdown points:</span>';
     for (var i = ROBUST_STEPS.length - 1; i >= 0; i--) {
       h += '<span class="lsw" style="background:' + ROBUST_STEPS[i][1] + '"></span><span>' + ROBUST_STEPS[i][2] + ' <small>(' + cls[i] + ')</small></span>';
     }
@@ -308,6 +349,18 @@
     var psr = state.mapPsr && m.permanent_shadow && m.permanent_shadow.available ? m.permanent_shadow : null;
     if (psr) { svg.appendChild(el('image', { x: 0, y: 0, width: S, height: S, href: psr.image, preserveAspectRatio: 'none', 'class': 'psr' })); }
     var legend = '';
+    /* the whole map, coarse, under the detailed close-up square */
+    var fm = state.fullmap, fullOn = false, fullNo = false;
+    if (slipLayer && FULL_LAYERS[state.layer] && FULL_SLIP.endpoint && state.lastCfg && half > 2 * (sm && sm.available ? sm.half_km : 30)) {
+      if (state.fullKey !== fullKey(state.lastCfg)) { loadFullMap(); }
+      else if (fm && !fm.available && fm.reason) { fullNo = true; }
+      else if (fm && fm.available) {
+        fullOn = true;
+        var sp = fm.grid_spacing_m / 1000, fw = fm.n * sp / half * (S / 2);
+        svg.appendChild(el('image', { x: px(fm.first_centre_km.x - sp / 2), y: py(fm.first_centre_km.y + sp / 2), width: fw, height: fw, href: fullOverlayUrl(fm, state.layer),
+          preserveAspectRatio: 'none', 'class': 'overlay crisp fulllayer' }));
+      }
+    }
     if (slipLayer && sm && sm.available) {
       var vals = sm.layers[slipLayer.key], vmax = slipLayer.zero;
       vals.forEach(function (v) { if (v > vmax) { vmax = v; } });
@@ -324,8 +377,22 @@
     } else if (slipLayer) {
       legend = '<span class="small">' + (sm && !sm.available ? 'Not available on this installation: ' + esc(sm.reason) : 'Working out ' + (state.mapPts || 'thousands of') + ' skylines against the landing dates…') + '</span>';
     }
+    if (fullOn) {
+      /* the shared points: how the 13-point close-up check changes the single-spot margin (from the API) */
+      var agAll = fm.agreement_with_close_up || {}, ag = agAll[fm.earth_rule] || null;
+      if (!ag) { Object.keys(agAll).forEach(function (k2) { if (!ag && agAll[k2] && agAll[k2].close_up_13_point_check) { ag = agAll[k2]; } }); }
+      var c13 = ag && ag.close_up_13_point_check;
+      legend += '<span class="small lfull"><b>Whole map: one point every ' + (fm.grid_spacing_m / 1000) + ' km, each checked at its own spot only; the close-up (' + Math.round(2 * (sm && sm.available ? sm.half_km : 30)) +
+        ' km square, one point every ' + (sm && sm.available ? sm.step_m : 500) + ' m, drawn on top) checks 13 touchdown points.</b> ' +
+        (c13 ? 'Where the two overlap, at the ' + c13.coloured_at_the_point + ' shared points that pass, the 13-point check keeps the margin at ' + c13.same_margin_at_all_13_points +
+          ', shortens it at ' + c13.shorter_margin_at_all_13_points + ' and loses it at ' + c13.margin_lost_at_13_points + ': the whole-map layer is optimistic, so read it as where to look, then check a site on the card. ' : '') +
+        esc(fm.coverage_words || '') + '</span>';
+    } else if (fullNo) {
+      legend += '<span class="small lfull"><b>The whole-map layer is not available for this plan.</b> ' + esc(fm.reason || '') + ' <button type="button" id="fullToClose">Show the close-up</button></span>';
+    }
     if (psr) { legend += '<span class="lsw psrsw"></span><span title="' + esc(psr.note) + '">permanent shadow: average sunlight zero on the LOLA team’s map, in 480 m cells</span>'; }
     $('mapLegend').innerHTML = legend;
+    if ($('fullToClose')) { $('fullToClose').addEventListener('click', function () { state.zoom = 'pole'; $('mapZoom').value = 'pole'; state.zoomMoved = false; loadMap(); saveHash(); }); }
     var rings = half > 150 ? [-88, -86, -84, -82] : (half > 60 ? [-89, -88] : [-89.75, -89.5, -89.25]);
     rings.forEach(function (lat) {
       var r = polarXY(lat, 0)[1] / half * (S / 2);
@@ -422,6 +489,12 @@
     if (psr) { note += ' Purple: ' + psr.note; }
     if (off) { note += ' ' + off + ' selected site' + (off > 1 ? 's are' : ' is') + ' outside this map; see the whole-Moon grid.'; }
     $('mapNote').textContent = note;
+    /* say why the map area changed by itself, and that a slip layer covers only the middle of the wider view */
+    var mv = $('mapMoved');
+    if (mv) {
+      mv.textContent = slipLayer && state.zoomMoved ? 'The map moved to the close-up because this layer is worked out only for the ' + (sm && sm.available ? Math.round(2 * sm.half_km) : 60) + ' km square around the pole, one point every ' + (sm && sm.available ? sm.step_m : 500) + ' m.' :
+        (slipLayer && sm && sm.available && half > 2 * sm.half_km && !fullOn && !fullNo ? 'This layer covers only the small square in the middle (' + Math.round(2 * sm.half_km) + ' km across). Choose Close-up of the pole to see it.' : '');
+    }
   }
   function loadMap() {
     var z = state.zoom;
@@ -436,8 +509,8 @@
         (m.layers || []).forEach(function (l) { html += '<option value="' + esc(l.id) + '">published average sunlight (LOLA team map)</option>'; });
         if (m.slip_field && m.slip_field.available) {
           state.mapPts = (m.slip_field.n * m.slip_field.n).toLocaleString('en-US');
-          if (state.firstVisit && !state.layer) { state.layer = 'margin'; state.zoom = 'pole'; $('mapZoom').value = 'pole'; }
-          Object.keys(SLIP_LAYERS).forEach(function (k) { html += '<option value="' + k + '">' + esc(SLIP_LAYERS[k].label) + '</option>'; });
+          if (state.firstVisit && !state.layer) { state.layer = 'margin'; state.zoom = 'pole'; $('mapZoom').value = 'pole'; saveHash(); }
+          Object.keys(SLIP_LAYERS).forEach(function (k) { html += '<option value="' + k + '">' + esc(SLIP_LAYERS[k].label) + (FULL_LAYERS[k] && FULL_SLIP.endpoint ? '' : ' (close-up only)') + '</option>'; });
         }
         $('mapLayer').innerHTML = html;
         $('mapLayer').value = state.layer;
@@ -1117,6 +1190,7 @@
           renderMission();
         }
         renderSlip();
+        emitUpdate();
       }).catch(function (e) {
         if (k !== state.mi || req !== state.reqId) { return; }
         $('missionOut').innerHTML = '<p class="note">' + esc(e.message) + '</p>';
@@ -1155,7 +1229,8 @@
       var dd = Math.round((Date.parse(m.next_good_dates[0]) - Date.parse(m.landing_utc)) / 86400000);
       sub = 'next good landing date: <b>' + esc(fmtDate(m.next_good_dates[0])) + '</b> (' + plural(dd, 'day') + ' later)';
     } else { sub = 'no clear-yes landing date in the ' + m.days.length + ' days checked'; }
-    var h = '<div class="verdict v-' + cls + '"><span class="vIcon" aria-hidden="true">' + v[0] + '</span><span class="vWord">' + v[1] + '</span><span class="vSub">' + sub + '</span></div>';
+    var h = '<div class="verdict v-' + cls + '"><span class="vIcon" aria-hidden="true">' + v[0] + '</span><span class="vWord">' + v[1] + '</span><span class="vSub">' + sub + '</span>' +
+      (m.terrain_grid && m.terrain_grid.resolution_m ? '<span class="vb-grid" title="' + esc(m.terrain_grid.product || '') + '">on ' + m.terrain_grid.resolution_m + ' m terrain</span>' : '') + '</div>';
     /* this very example was also worked out on a finer grid: say what that grid answers, right under the verdict */
     if (m.finer_grid_check) {
       h += '<p class="fineNote' + (m.finer_grid_check.agrees ? ' agree' : '') + '" id="fineNote" title="' + esc(m.finer_grid_check.text) + '">' + esc(m.finer_grid_check.short) + '</p>';
@@ -1283,9 +1358,25 @@
   function dayBanner() {
     var b = $('dayBanner'), m = state.missions[state.mi], i = state.whyDay;
     if (!b || !m || !m.days[i]) { return; }
-    if (!i) { b.hidden = true; b.textContent = ''; return; }
+    var vb = document.querySelector('#missionOut .verdict');
+    if (vb && vb.getAttribute('data-plan-html') === null) { vb.setAttribute('data-plan-html', vb.innerHTML); vb.setAttribute('data-plan-class', vb.className); }
+    if (!i) {
+      b.hidden = true; b.textContent = '';
+      if (vb && vb.getAttribute('data-plan-html') !== null) { vb.innerHTML = vb.getAttribute('data-plan-html'); vb.className = vb.getAttribute('data-plan-class'); }
+      emitUpdate(); return;
+    }
     var d = m.days[i], word = { yes: 'Yes', no: 'No', 'not sure': 'Not sure', 'n/a': 'Not computed' }[d.verdict] || d.verdict;
     var why = d.verdict === 'yes' ? '' : ((d.reasons && d.reasons.length ? d.reasons[0] : '') || ((d.unsure_because || [])[0] || ''));
+    /* with a slip set, the big verdict is the slipped answer; the planned one becomes the small line */
+    if (vb) {
+      var plan = vb.getAttribute('data-plan-html') || '', tmp = document.createElement('div'); tmp.innerHTML = plan;
+      var pw = tmp.querySelector('.vWord'), ps = tmp.querySelector('.vSub');
+      vb.className = 'verdict v-' + d.verdict.replace(' ', '').replace('/', '') + ' slipped';
+      vb.innerHTML = '<span class="vIcon" aria-hidden="true">' + VERDICT[d.verdict][0] + '</span><span class="vSlip">Slipped ' + plural(i, 'day') + ', landing ' + esc(fmtDate(d.landing_utc)) + ':</span><span class="vWord">' + word + '</span>' +
+        '<span class="vSub">' + esc(why || (d.sunlit_h !== null ? d.sunlit_h + ' sunlit h, ' + d.earth_h + ' h of Earth contact' : '')) + '</span>' +
+        '<span class="vPlan">As planned (' + esc(fmtDate(m.landing_utc)) + '): ' + (pw ? esc(pw.textContent) : '') + (ps ? ', ' + esc(ps.textContent) : '') + '</span>';
+    }
+    emitUpdate();
     b.hidden = false;
     b.textContent = 'Land on ' + fmtDay(Date.parse(d.landing_utc) / 1000) + ' (launch slipped ' + plural(i, 'day') + '): ' + word + (why ? ': ' + why : '') + '.';
   }
@@ -1438,17 +1529,24 @@
     }
     svg.appendChild(el('line', { x1: x0, x2: x1, y1: sy(0), y2: sy(0), 'class': 'sphl' }));
     /* labels are placed last, each moved clear of those already placed, so none overlaps another */
-    var placed = [];
+    var placed = [], obst = [];
     function label(x, y, anchor, cls, text, optional) {
-      var wd = text.length * (cls === 'tiny' ? 5.0 : 5.7) + 4, ht = 12;
+      var wd = text.length * (cls === 'tiny' ? 5.0 : 5.9) + 4, ht = 12;
+      /* keep the whole label inside the plot: flip its side when it would run off an edge */
+      if (anchor === 'start' && x + wd > x1) { anchor = 'end'; x = Math.min(x, x1 - 2); }
+      if (anchor === 'end' && x - wd < x0) { anchor = 'start'; x = Math.max(x, x0 + 2); }
+      if (anchor === 'middle') { x = Math.max(x0 + wd / 2, Math.min(x1 - wd / 2, x)); }
       var bx = function (yy) { var l = anchor === 'end' ? x - wd : (anchor === 'middle' ? x - wd / 2 : x); return [l, yy - ht + 2, l + wd, yy + 2]; };
-      var hits = function (b) { return placed.some(function (q) { return b[0] < q[2] && b[2] > q[0] && b[1] < q[3] && b[3] > q[1]; }); };
-      var tries = optional ? [0, -11, 11] : [0, 13, -13, 26, -26, 39, -39], yy = y;
+      var hits = function (b) {
+        return placed.some(function (q) { return b[0] < q[2] && b[2] > q[0] && b[1] < q[3] && b[3] > q[1]; }) ||
+          obst.some(function (p) { return p[0] > b[0] - 1 && p[0] < b[2] + 1 && p[1] > b[1] - 1 && p[1] < b[3] + 1; });
+      };
+      var tries = optional ? [0, -11, 11] : [0, 13, -13, 26, -26, 39, -39, 52, -52], yy = y, found = false;
       for (var k = 0; k < tries.length; k++) {
         yy = Math.max(y0 + 9, Math.min(y1 - 3, y + tries[k]));
-        if (!hits(bx(yy))) { break; }
-        if (k === tries.length - 1) { if (optional) { return; } }
+        if (!hits(bx(yy))) { found = true; break; }
       }
+      if (!found) { if (optional) { return; } yy = Math.max(y0 + 9, Math.min(y1 - 3, y)); }
       placed.push(bx(yy));
       svg.appendChild(el('text', { x: x, y: yy, 'text-anchor': anchor, 'class': cls }, text));
     }
@@ -1457,6 +1555,7 @@
       var seg = { 1: '', 0: '' }, prevX = null, prevUp = null;
       for (var k = 0; k < az.length; k++) {
         var xx = sx(az[k]), yy = sy(elv[k]), u = up[k] ? 1 : 0;
+        if (elv[k] >= lo - 0.01 && u) { obst.push([xx, yy]); }
         var jump = prevX !== null && Math.abs(xx - prevX) > (x1 - x0) / 2, off = elv[k] < lo - 0.01;
         if (prevX === null || jump || off) { seg[u] += 'M' + xx.toFixed(1) + ' ' + yy.toFixed(1); }
         else {
@@ -1708,10 +1807,10 @@
         });
         return t + '</table></div>';
       };
-      h += '<h3>Artemis III candidate regions in each window</h3><p class="note">NASA keeps nine candidate regions so that a launch date can be matched to a region (NASA, 28 Oct 2024). NASA names the regions but publishes no points, so <b>each region here is the set of published candidate landing sites of Wueller et al. 2026</b> (JGR Planets, 5 to 11 sites per region, 78 in all; CC BY 4.0), not NASA’s own sites. They replace the single best-lit point per region this table used before. A region’s cell shows its best site (point at it for the name): a clear Yes that is not fragile first, then the largest margin. A cell is ✓ when some landing within 72 hours of the window (every 6 h) is a clear Yes, with its margin; * marks a fragile margin.</p>' +
+      h += '<h3>NASA’s candidate landing regions in each window</h3><p class="note">NASA keeps nine candidate regions so that a launch date can be matched to a region (NASA, 28 Oct 2024). NASA names the regions but publishes no points, so <b>each region here is the set of published candidate landing sites of Wueller et al. 2026</b> (JGR Planets, 5 to 11 sites per region, 78 in all; CC BY 4.0), not NASA’s own sites. They replace the single best-lit point per region this table used before. A region’s cell shows its best site (point at it for the name): a clear Yes that is not fragile first, then the largest margin. A cell is ✓ when some landing within 72 hours of the window (every 6 h) is a clear Yes, with its margin; * marks a fragile margin.</p>' +
         mat(ar.opening, 'Opening example’s windows (240 / 100 h)') + mat(ar.im1, 'IM-1’s windows (168 / 100 h; January modelled)');
     }
-    h += '<p class="cap">Sources, read first-hand and kept with URL and sha256 (data/reference/sources): Spaceflight Now 27 Oct 2023; Space.com Feb 2024; NASA 19 Sep 2025 (VIPER on Blue Moon MK1); NASA SVS 4937 (VIPER site); NASA 28 Oct 2024 and George et al., LPSC 2026 (Artemis III regions: sites chosen after the launch dates, several regions kept for launch-timing flexibility, surface stay about 5.75 to 6.25 days). Worst of 13 touchdown points within 100 m; station rule on; night and outage are whole runs.</p>';
+    h += '<p class="cap">Sources, read first-hand and kept with URL and sha256 (data/reference/sources): Spaceflight Now 27 Oct 2023; Space.com Feb 2024; NASA 19 Sep 2025 (VIPER on Blue Moon MK1); NASA SVS 4937 (VIPER site); NASA 28 Oct 2024 and George et al., LPSC 2026 (NASA’s landing regions: sites chosen after the launch dates, several regions kept for launch-timing flexibility, surface stay about 5.75 to 6.25 days). Worst of 13 touchdown points within 100 m; station rule on; night and outage are whole runs.</p>';
     box.innerHTML = h;
     Array.prototype.forEach.call(box.querySelectorAll('[data-real]'), function (b) {
       b.addEventListener('click', function () {
@@ -1890,7 +1989,7 @@
     var none = monthRange(r.months_without_a_yes.filter(function (k) { var m = r.months.filter(function (q) { return q.month === k; })[0]; return m && m.dates >= 10; }));
     box.innerHTML = '<p class="ribHead" title="' + esc(r.what) + '"><b>A year of landing dates:</b> ' + r.yes + ' clear yes of ' + r.days + ' (' + r.not_sure + ' not sure)' +
       (none ? '; <b>none in ' + esc(none) + '</b>' : '') + '</p>';
-    var W = 730, H = 25, cw = W / r.days, svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, 'class': 'ribSvg', role: 'img', preserveAspectRatio: 'none',
+    var W = 730, H = 17, cw = W / r.days, svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, 'class': 'ribSvg', role: 'img', preserveAspectRatio: 'none',
       'aria-label': 'One cell per landing date for a year: ' + r.yes + ' clear yes, ' + r.not_sure + ' not sure, ' + r.no + ' no' });
     var t0 = Date.parse(r.start_utc), colour = { y: 'ribY', u: 'ribU', n: 'ribN' }, hgt = { y: 13, u: 8, n: 3 };
     for (var i = 0; i < r.days; i++) {
@@ -1898,11 +1997,12 @@
       if (ch === '-') { continue; }
       svg.appendChild(el('rect', { x: (i * cw).toFixed(2), y: 13 - hgt[ch], width: Math.max(cw, 1).toFixed(2), height: hgt[ch], 'class': colour[ch] }));
     }
+    var monthsHtml = '';
     for (i = 0; i < r.days; i++) {
       var d = new Date(t0 + i * 86400000);
       if (d.getUTCDate() === 1) {
         svg.appendChild(el('line', { x1: i * cw, x2: i * cw, y1: 0, y2: 16, 'class': 'ribTick' }));
-        svg.appendChild(el('text', { x: i * cw + 2, y: 24, 'class': 'ribLab' }, MONTHS[d.getUTCMonth()] + (d.getUTCMonth() === 0 ? ' ' + d.getUTCFullYear() : '')));
+        monthsHtml += '<span style="left:' + (100 * i / r.days).toFixed(2) + '%"' + (d.getUTCMonth() === 0 ? ' title="' + d.getUTCFullYear() + '"' : '') + '>' + MONTHS[d.getUTCMonth()] + '</span>';
       }
     }
     var names = { y: '✓ Yes', u: '? Not sure', n: '✕ No', '-': 'not computed' };
@@ -1915,6 +2015,8 @@
     svg.addEventListener('pointerleave', hideTip);
     svg.addEventListener('click', function (ev) { hideTip(); setPlan(new Date(t0 + at(ev) * 86400000).toISOString().slice(0, 19) + 'Z'); });
     box.appendChild(svg);
+    var mh = document.createElement('div'); mh.className = 'ribMonths'; mh.setAttribute('aria-hidden', 'true'); mh.innerHTML = monthsHtml;
+    box.appendChild(mh);
   }
 
   /* ---------- landing circles: what the answer becomes if the landing is less precise ---------- */
@@ -2166,7 +2268,7 @@
       var circ = function (x) { return x.landing_circles_planned_pct['within 250 m'][0]; };
       var op = f.opening_example, ch = op && op.chosen && op.tried.filter(function (c) { return c.rank === op.chosen.rank; })[0];
       if (ch) {
-        $('validTiles').insertAdjacentHTML('beforeend', tile('The opening example on both grids (20 m checked separately; the page computes on 80 m)',
+        $('validTiles').insertAdjacentHTML('beforeend', tile('Stored check: the opening example on the 80 m and 20 m grids (worked out before the live card moved to finer terrain)',
           word[ch.card_20m.verdict] + ' on both', 'The first of the map’s ' + op.candidates +
           ' scatter-robust points (5 or more days of margin at all 13 touchdown points) whose full card is a clear Yes on both grids; ' + op.tried.length +
           ' candidate' + (op.tried.length === 1 ? '' : 's') + ' tried. 80 m: ' + word[ch.card_80m.verdict] + ', ' + ch.card_80m.points_passing_by_day[0] + ' of ' + ch.card_80m.points + ', ' +
@@ -2174,12 +2276,23 @@
           ch.card_20m.slip_margin_days + ' days. Rule: the card’s own (half the Sun’s disc, the Earth’s centre). One site, one landing date.',
           '<span class="mtag syn">terrain (' + esc(f.fine_grid.split(';')[0]) + '), checked separately</span>'));
       }
-      $('validTiles').insertAdjacentHTML('beforeend', tile('Why resolution matters: the Shackleton connecting ridge on NASA’s 20 m grid (checked separately; the page computes on 80 m)',
+      $('validTiles').insertAdjacentHTML('beforeend', tile('Why resolution matters: the Shackleton connecting ridge on 80 m and 20 m (stored check; the live answer is in the next tile)',
         word[b.verdict] + ': ' + b.points_passing_by_day[0] + ' of ' + b.points,
-        esc(e.text) + ' Clear-yes landing dates in 365: ' + b.clear_yes_dates_of_365 + ' on 20 m, ' + a.clear_yes_dates_of_365 + ' on 80 m. Within a 250 m circle the plan holds at ' +
+        esc(String(e.text).replace(/80 m grid used here/g, '80 m grid')) + ' Clear-yes landing dates in 365: ' + b.clear_yes_dates_of_365 + ' on 20 m, ' + a.clear_yes_dates_of_365 + ' on 80 m. Within a 250 m circle the plan holds at ' +
         circ(b) + '% on 20 m and ' + circ(a) + '% on 80 m. Longest darkness at the point: ' + b.longest_darkness_h.at_the_point + ' h on 20 m, ' +
-        a.longest_darkness_h.at_the_point + ' h on 80 m (published for this ridge: 112 h). Rule: the card’s own (half the Sun’s disc, the Earth’s centre). This is not what the page serves: every other number here is computed on 80 m.',
+        a.longest_darkness_h.at_the_point + ' h on 80 m (published for this ridge: 112 h). Rule: the card’s own (half the Sun’s disc, the Earth’s centre). These are stored figures; the live card now uses the finest grid at each site (next tile).',
         '<span class="mtag syn">terrain (' + esc(f.fine_grid.split(';')[0]) + '), checked separately</span>'));
+      /* the live answer now, as the card computes it, with the terrain grid it used */
+      [['robust_pick', 'The opening example'], ['shackleton', 'Shackleton connecting ridge (C1)']].forEach(function (q) {
+        api('/api/mission', { site: { id: q[0] }, landing: OPENING.date + 'T00:00:00Z', slip_days: 30, earth_stations: true }).then(function (mm) {
+          var g = mm.terrain_grid, d0 = mm.days[0];
+          $('validTiles').insertAdjacentHTML('beforeend', tile('Live answer now: ' + q[1] + ', landing ' + fmtDate(mm.landing_utc) + ' (opening plan)',
+            word[mm.verdict] + ': ' + d0.points_passing + ' of ' + d0.points, (mm.verdict === 'yes' ? 'Slip margin ' + plural(mm.slip_margin_days, 'day') + '. ' : '') +
+            'Worked out by the server now, on ' + (g && g.resolution_m ? g.resolution_m + ' m terrain (' + g.label + ')' : String(mm.horizon.dem_label || '').split(';')[0]) + ', coarser beyond. ' +
+            'Checked at 13 touchdown points, on a coarser grid and with a finer sampling of the nearest ground.',
+            '<span class="mtag ter">' + esc(g && g.resolution_m ? 'terrain (LOLA, ' + g.resolution_m + ' m), live' : modelTag(mm.horizon)) + '</span>'));
+        }).catch(function () {});
+      });
     }).catch(function () {});
     api('/api/hindcast').then(function (h) {
       $('hindNote').textContent = h.horizon + ' A positive difference means the prediction is later than the report. ' + h.size_rule;
@@ -2261,6 +2374,7 @@
     loadMissions();
     loadSlip();
     if (!state.autoPlan) { loadSlipMap(); }
+    emitUpdate();
     api('/api/compare', compareBody(cfg)).then(function (res) {
       if (req !== state.reqId) { return; }
       state.data = res.sites;
@@ -2274,6 +2388,46 @@
       loadPairs();
     }).catch(showError);
   }
+  /* ---------- a small bridge for the navigator (static/navigator.js): read and set the site list and the plan ---------- */
+  function emitUpdate() {
+    try { document.dispatchEvent(new CustomEvent('slipday:update')); } catch (e) { /* old browser: the navigator stays as it is */ }
+  }
+  window.SlipdayApp = {
+    catalog: function () { return state.catalog; },
+    selected: function () { return state.selected; },
+    current: function () { return state.mi; },
+    cfg: function () { return state.lastCfg; },
+    mission: function (i) { return state.missions[i] || null; },
+    replays: function () { return state.replays; },
+    body: function (s) { return missionBody(state.lastCfg, s); },
+    api: api,
+    pick: function (s) { addSite(s); },
+    select: function (i) {
+      if (i < 0 || i >= state.selected.length) { return; }
+      state.mi = i; $('mSite').value = String(i); renderMission(); renderSlip(); renderPolar(); saveHash(); emitUpdate();
+    },
+    remove: function (i) {
+      state.selected.splice(i, 1);
+      if (state.mi >= state.selected.length) { state.mi = 0; }
+      refreshAll();
+    },
+    setSites: function (ids, mi, iso) {
+      var list = [];
+      ids.forEach(function (id) {
+        var s = state.catalog.filter(function (x) { return x.id === id; })[0];
+        if (s && list.length < MAX_SITES) { list.push({ id: s.id, name: s.name, lat: s.lat, lon: s.lon }); }
+      });
+      if (!list.length) { return; }
+      state.selected = list; state.mi = Math.min(mi || 0, list.length - 1); state.autoNote = '';
+      if (iso) { setPlan(iso); } else { refreshAll(); }
+    },
+    setPlan: function (iso) { state.autoNote = ''; setPlan(iso); },
+    setSlip: function (n) { $('mSlip').value = String(n); $('mSlip').dispatchEvent(new Event('change')); },
+    slip: function () { return state.whyDay || 0; },
+    /* the precomputed map grids, for an instant first answer at a clicked point */
+    grids: function () { return { slipmap: state.slipmap, fullmap: state.fullmap, fullKey: state.fullKey, cfgFullKey: state.lastCfg ? fullKey(state.lastCfg) : null }; },
+    polarXY: polarXY
+  };
   function togglePlay() {
     var b = $('play');
     if (state.playing) { clearInterval(state.playing); state.playing = null; b.textContent = 'Play'; b.setAttribute('aria-pressed', 'false'); return; }
@@ -2440,7 +2594,7 @@
         if (c) { addSite({ id: c.id, name: c.name, lat: c.lat, lon: c.lon }); }
         return;
       }
-      state.mi = parseInt(v, 10) || 0; renderMission(); renderSlip(); renderPolar(); saveHash();
+      state.mi = parseInt(v, 10) || 0; renderMission(); renderSlip(); renderPolar(); saveHash(); emitUpdate();
     });
     /* your own coordinates on the card: latitude in degrees south (a minus sign is accepted and read the same way) */
     var southLat = function (inp, warnEl) {
@@ -2481,10 +2635,14 @@
     });
     $('slipMetric').addEventListener('change', function () { renderSlip(); saveHash(); });
     $('slipStat').addEventListener('change', function () { renderSlip(); saveHash(); });
-    $('mapZoom').addEventListener('change', function () { state.zoom = $('mapZoom').value; loadMap(); saveHash(); });
+    $('mapZoom').addEventListener('change', function () { state.zoom = $('mapZoom').value; state.zoomMoved = false; loadMap(); saveHash(); });
     $('mapLayer').addEventListener('change', function () {
       state.layer = $('mapLayer').value;
-      if (SLIP_LAYERS[state.layer] && state.zoom !== 'pole') { state.zoom = 'pole'; $('mapZoom').value = 'pole'; loadMap(); }
+      var toCloseUp = function () { if (SLIP_LAYERS[state.layer] && state.zoom !== 'pole') { state.zoom = 'pole'; $('mapZoom').value = 'pole'; state.zoomMoved = true; loadMap(); saveHash(); } };
+      if (SLIP_LAYERS[state.layer] && state.zoom !== 'pole') {
+        /* the whole-map layer, where it exists for this plan, keeps the wide view; otherwise go to the close-up */
+        if (FULL_LAYERS[state.layer] && FULL_SLIP.endpoint) { loadFullMap(function (r) { if (!r || !r.available) { toCloseUp(); } }); } else { toCloseUp(); }
+      }
       loadSlipMap(); renderPolar(); saveHash();
     });
     $('mapScatter').addEventListener('change', function () { state.mapScatter = $('mapScatter').checked; loadSlipMap(); renderPolar(); });

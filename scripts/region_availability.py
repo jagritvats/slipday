@@ -1,4 +1,4 @@
-"""How many of NASA's nine Artemis III regions must stay open, on the published sites of Wueller et al. 2026.
+"""How many of NASA's nine south-pole landing regions must stay open, on the published sites of Wueller et al. 2026.
 
     SLIPDAY_HORIZON_CACHE=<scratch dir> python scripts/region_availability.py
 
@@ -101,7 +101,7 @@ def main():
               + f" ({time.time() - t:.1f} s)", flush=True)
 
     times = [iso(h0 + int(h) * 3600) for h in starts]
-    doc = {"what": "How many of NASA's nine Artemis III regions must stay open: availability on the published landing sites "
+    doc = {"what": "How many of NASA's nine south-pole landing regions (chosen for the first crewed landing, now planned for Artemis IV, early 2028) must stay open: availability on the published landing sites "
                    "of Wueller et al. 2026, 2027 to 2030",
            "citation": regions.CITATION,
            "nasa_quote": ("End-to-end mission availability analyses demonstrate that individual regions typically provide limited "

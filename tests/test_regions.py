@@ -1,4 +1,4 @@
-"""Feature build (15 Nov 2026): how many of NASA's nine Artemis III regions must stay open, on the published landing
+"""Feature build (15 Nov 2026): how many of NASA's nine south-pole landing regions must stay open, on the published landing
 sites of Wueller et al. 2026.  An addition: the rest of the app keeps working for any site (DEEP_PASS_3.md)."""
 import json
 import os
@@ -164,13 +164,14 @@ def test_artemis_panel_uses_the_published_sites():
 def test_the_figures_quoted_in_the_documents():
     d = json.load(open(AV, encoding="utf-8"))
     m, so = d["main"]["curve"], d["sun_only"]["curve"]
-    assert [c["coverage"] for c in m] == [0.2805, 0.3679, 0.4011, 0.4261, 0.4362, 0.4399, 0.4405, 0.4406, 0.4406]
-    assert [c["coverage"] for c in so][:3] == [0.4784, 0.7474, 0.911] and so[-1]["coverage"] == 0.9203
-    assert [c["added"] for c in m][:3] == ["Nobile Rim 1", "Peak near Cabeus B", "Malapert Massif"]
+    # live finer terrain: 5 m site models, NASA's full 20 m mosaic to 80 S (every region's sites on 20 m), 80 m beyond
+    assert [c["coverage"] for c in m] == [0.2601, 0.3479, 0.3696, 0.3852, 0.3925, 0.3972, 0.3984, 0.399, 0.399]
+    assert [c["coverage"] for c in so][:3] == [0.4482, 0.7298, 0.8937] and so[-1]["coverage"] == 0.9108
+    assert [c["added"] for c in m][:3] == ["Nobile Rim 1", "Peak near Cabeus B", "Slater Plain"]
     assert [c["added"] for c in so][:3] == ["Nobile Rim 1", "Peak near Cabeus B", "Slater Plain"]
     assert all(abs(c["best_coverage"] - c["coverage"]) < 1e-9 for c in m + so)          # greedy is the best set here
     assert d["sample_check"]["agree"] == d["sample_check"]["pairs"] == 48
-    assert [d["cross_check"]["summary"][y]["within_1_day"] for y in ("2027", "2028", "2029", "2030")] == [40, 54, 60, 52]
+    assert [d["cross_check"]["summary"][y]["within_1_day"] for y in ("2027", "2028", "2029", "2030")] == [39, 53, 60, 52]
     dr = d["drift"]
     assert all(y["midsummer_first"] == y["paper_first"] and y["midsummer_last"] == y["paper_last"] for y in dr["years"])
     assert dr["mean_shift_per_year_days"] == 18.4 and dr["expected_shift_days"] == 18.63

@@ -7,12 +7,12 @@ You give it a site, a landing date and what the mission needs (sunlit hours for 
 Earth above the skyline for a direct radio link). It answers Yes, Not sure or No, says how many days the
 landing can slip before the answer changes, and lists the next good dates.
 
-The skyline is real: it is ray-cast over the curved Moon from LRO LOLA elevation grids (80 m near the
-pole), the Sun is treated as a disc, and every number is shown beside the smooth-sphere answer. The grid
-here is coarser than the 20 m and 5 m grids some other entries use, so Slipday does not compete on terrain
-detail. It shows what that limit does to the answer instead: each verdict is worked out at 13 points
-within 100 m of the target, again on a 240 m grid, and again with a finer sampling of the nearest ground,
-and is only "Yes" when all agree. The headline states the landing scatter the "Yes" assumes, and the card
+The skyline is real: it is ray-cast over the curved Moon from LRO LOLA elevation grids, always the finest one
+that covers each piece of ground: the LOLA team's 5 m site models at two places near Shackleton, the 20 m mosaic
+near the pole, 80 m out to 80 S, and coarser grids beyond. The Sun is treated as a disc, and every number is
+shown beside the smooth-sphere answer. Each verdict is worked out at 13 points within 100 m of the target, again
+on the next coarser grid, and again with a finer sampling of the nearest ground, and is only "Yes" when all
+agree. The API says which grid each answer used (`terrain_grid` in `/api/mission` and `/api/why`). The headline states the landing scatter the "Yes" assumes, and the card
 shows what a less precise landing (250 m, 500 m, 1 km) would do to it.
 
 Four things lead the pitch:
@@ -22,23 +22,6 @@ Four things lead the pitch:
    touchdown points, a coarser grid, a finer near-field sampling);
 3. a **slip-margin map** of the ground within 30 km of the pole;
 4. the **same site on five terrain resolutions**, so the effect of terrain detail is on screen.
-
-How these compare with other entries comes from a scan of public repositories for the challenge on
-14 Nov 2026, not from our own search (542 candidates, 398 READMEs keyword-scanned; live apps and code were
-not opened):
-
-| Feature | In other public entries, per that scan |
-|---|---|
-| Slip-margin map | not matched; only site-by-date heat maps were found |
-| Slip margin in days | partly matched: one entry reports a delay margin in hours and "safe landing days", one says how many days a schedule can slip, two name a slip or delay tolerance without defining it |
-| Three-state verdict that needs an ensemble to agree | partly matched: one entry counts a date only if it is safe at all 17 of its points (two states); several give go / marginal / no-go from a score, without an ensemble |
-| The same site on several terrain resolutions | partly matched: two entries compare two grids |
-| Landing circles | partly matched: five entries describe landing dispersion; none gives a share of several circles for each day of slip |
-| Earth visibility checked against the LOLA Earth maps | matched: at least nine entries report a number, two of them 0.53 and 0.6 points |
-
-So one of the four (the map) was found nowhere else, and three have partial matches. The same scan lists
-what other entries have that this one does not: among them 20 m and 5 m terrain, battery or thermal
-survival models and link budgets.
 
 The main pieces, each on the real LOLA terrain:
 
@@ -52,16 +35,16 @@ The main pieces, each on the real LOLA terrain:
 
 - **A verdict for every day of slip.** A site counts as Yes only if all 13 touchdown points within the
   landing scatter get enough sunlight and Earth contact, on two terrain grids. The page opens on a ridge
-  point at 89.010 S, 122.764 E, landing 18 Nov 2026: Yes, with 8 days of slip margin on the 80 m grid and on
-  NASA's 20 m grid. The date is fixed, so the page keeps opening on it after it has passed. Site 2, the
-  Shackleton connecting ridge, shows a case where the two grids disagree.
+  point at 89.010 S, 122.764 E, landing 18 Nov 2026: Yes, with 8 days of slip margin on the live terrain (NASA's 5 m site model
+  here), and also on the 20 m and 80 m grids. The date is fixed, so the page keeps opening on it after it has passed. Site 2, the
+  Shackleton connecting ridge, shows a case where the grids disagree: Yes on 80 m, Not sure on 20 m and 5 m.
 - **Why it flips.** The Sun and the Earth against the terrain skyline for any day of slip, with the time
   left to sunset and Earthset and the ground that ends the margin.
 - **Next launch windows.** A lander gets a launch window of a few days each month. We infer that a missed
   window moves the landing about one synodic month (29.5 days). The card shows what the next three windows
   give, which need fails in each, and, on request, which other site and landing hour still work.
 - **Real missions.** IM-1's windows (the flown one, and the January one it missed, at a modelled date) and
-  VIPER's late-2027 windows on an illustrative point, with first-hand sources. NASA's nine Artemis III regions in each missed
+  VIPER's late-2027 windows on an illustrative point, with first-hand sources. NASA's nine south-pole landing regions (chosen for the first crewed landing, now planned for Artemis IV, early 2028) in each missed
   window, judged on the published candidate landing sites of Wueller et al. 2026 (they replace one point per
   region that we had picked ourselves).
 - **Hours to ride through.** The longest night and the longest Earth outage a lander meets, for every day of
@@ -78,39 +61,41 @@ The main pieces, each on the real LOLA terrain:
   6 hours from 2027 to 2030. Each site gets the card's 13-point check for a 6.25-day stay (NASA:
   "approximately 5.75 to 6.25 days"), with the Sun up for the whole stay and 100 hours of Earth contact. A
   region is open when one of its sites is a clear Yes that is not fragile.
-  - On the 80 m grid, the best single region (Nobile Rim 1) is open at 28 % of the landing times, the best
-    three at 40 % and all nine at 44 %. With sunlight only: 48 %, 91 % and 92 %.
-  - The 44 % ceiling is set by the 100-hour Earth-contact need, which is an illustrative figure.
+  - On the live terrain (every site on NASA's 20 m mosaic), the best single region (Nobile Rim 1) is open at
+    26.0 % of the landing times, the best three at 37.0 % and all nine at 39.9 %. With sunlight only: 44.8 %,
+    89.4 % and 91.1 %.
+  - The 39.9 % ceiling is set by the 100-hour Earth-contact need, which is an illustrative figure.
   - The shares count landing times every 6 hours, not real launch opportunities.
   - Regions are added one at a time, each time the one that covers the most new landing times; trying every
-    set gives the same answer. Finer terrain would give fewer opportunities.
-  - The panel also shows a calendar of the nine regions, and the season coming 18.4 days earlier each year on
-    average (18.6 expected).
+    set gives the same answer. On the 80 m grid the shares were higher (28 %, 40 %, 44 %): finer terrain gives
+    fewer opportunities.
+  - The panel also shows a calendar of the nine regions. As a check of the geometry, the season moves 18.65
+    days earlier each year against 18.63 expected from the 346.6-day eclipse year.
   - Cross-check against the paper's sunlight figures: of 312 comparisons, about two in three agree within a
-    day and about three in ten differ by more than 3 days, nearly always with ours longer. Our terrain model
-    (80 m) is coarser than the paper's (60 m).
+    day and about three in ten differ by more than 3 days, nearly always with ours longer.
 
   The rest of the page works for any site, as before.
 - **Which years suit a landing, 2027 to 2035.** The same check as the region calendar, run for nine years
-  on the 78 published sites and the page's own south-pole sites. All nine regions together are open at 47 % of
-  landing times in the best year (2028) and 39 % in the worst (2032); with sunlight only, 90 to 92 % in every
-  year. The good season comes about 18 to 19 days earlier each year. Shares count landing times every 6 hours,
+  on the 78 published sites and the page's own south-pole sites. All nine regions together are open at 42 % of
+  landing times in the best year (2028) and 36 % in the worst (2032); with sunlight only, 89 to 92 % in every
+  year (live terrain, every site on the 20 m mosaic). Shares count landing times every 6 hours,
   not real launch opportunities.
-- **Listen to the landing window.** A button turns the card's 14 days into about 22 seconds of sound: a high
+- **Listen to the landing window.** A button turns the card's 14 days into about 20 seconds of sound: a high
   tone for the Sun, a low tone for the Earth, going quiet when the ground hides them. The same window can be
   read as text, and the card's answer is read out to screen readers. Nobody has tested it with a real screen
   reader yet.
 - **Flat enough to land?** For the site on the card, the slope at each of the 13 touchdown points, against
   NASA's limit for its crewed lander: it must stand within 8 degrees of upright (5 is the goal). That limit is
   about how far the lander may lean; site studies use it for ground slope too. The opening example is flat
-  enough at all 13 points, but its steepest point is about 5 degrees on 5 m terrain, right at the 5-degree
+  enough at all 13 points, and its steepest point is 4.9 degrees on 5 m terrain, just inside the 5-degree
   goal: moving it by one 5 m cell gives 4.4 to 5.8 degrees, and NASA's own slope maps give about 2 degrees of
   uncertainty per point. IM-1's target reads 12.2 degrees,
   too steep; IM-1 landed on a slope and tipped over. 76 of the 78 published Artemis region sites have only 80 m
   terrain here, too coarse for slope. A map switch shows which slip-tolerant points are also flat enough.
 - **Chance of a safe touchdown.** Where the 5 m terrain covers the site, the chance that the ground under the
-  lander is within NASA's 8-degree limit, for three assumed lander accuracies. For the opening example: over
-  99.9 % for a precision lander, 94 % for a CLPS-class lander and 83 % for an unguided one. Slope only, no
+  lander is within NASA's 8-degree limit, for three assumed lander accuracies. For the opening example: 100 %
+  for a precision lander, 93.7 % for a CLPS-class lander and 82.9 % for an unguided one (the panel itself rounds
+  them to "over 99.9 %", 94 % and 83 %). Slope only, no
   boulder data; a 2-degree error in NASA's slope map changes the 5-degree figures a lot.
 - **Relay satellites.** How many hours a relay satellite circling the Moon could add when the Earth is hidden,
   using a representative orbit from NASA's LCRNS Reference Constellation 3.1 (not final, not a live service).
@@ -219,9 +204,10 @@ Data under `data/` (see REALDATA.md):
 - `horizon_cache/` (19 MB, about 1,550 files): skylines for the default and replay sites including their
   landing circles and lander-class rings, on both grid configurations, so a fresh server answers at once.
   Rebuild with `python3 scripts/warm_cache.py` and `python3 scripts/warm_cache.py --no-80m`.
-- `dem20/` (optional, git-ignored, 51 MB): the 71.7 km square around the pole from NASA's 20 m mosaic,
-  fetched by `python3 scripts/fetch_ldem20_crop.py` (49 tiles by range request, about 30 MB of a 2.7 GB
-  file). It is not part of the default terrain stack. `python3 scripts/ridge_20m.py --save` works the
+- `dem20/` (optional, git-ignored): `ldem_80s_20m_f32.npy` (3.7 GB), NASA's whole 20 m mosaic from 80° S to the
+  pole, made by `python3 scripts/build_live_stack.py --convert` from `reference/LDEM_80S_20MPP_ADJ.TIF`; with it,
+  `build_live_stack.py` writes `dem_live/dems.json`, the stack the app uses by default (5 m site models, 20 m,
+  80 m and coarser). Also the older 71.7 km square around the pole (`scripts/fetch_ldem20_crop.py`). `python3 scripts/ridge_20m.py --save` works the
   default example out on it and stores the comparison the page shows
   (`validation/finer_grid_check.json`); `SLIPDAY_DEM_DIR=data/dem20` runs the whole app on it.
 - `validation/`: stored validation results shown in the app.
@@ -281,10 +267,14 @@ One Python process, no database; it serves the API and the static page.
   (this is the `Procfile`; `render.yaml` sets the variable in its own list; the Docker image sets it and
   listens on port 8000 unless `PORT` is given). The health check path is `/api/health`.
 
-**The public link must serve the 80 m grid.** Every example in the storyboard, the slides and the
-submission draft is on it (the opening example reads "Yes, 8 days"; the connecting ridge "Yes, 7 days").
-To check a deployment: the badge reads "Real Moon terrain: NASA LOLA laser heights, one every 80 m (80 m/px)", and
-`/api/health` gives `terrain.label` starting "LOLA, 80 m/px".
+**The public link should serve the live terrain stack** (`data/dem_live/`, see `dem20/` above). Every example in
+the storyboard, the slides and the submission draft is on it (the opening example reads "Yes, 8 days" on 5 m
+terrain; the connecting ridge "Not sure", 12 of 13). With the 80 m grid alone the opening example is the same
+but the ridge reads "Yes, 7 days" and other figures differ.
+To check a deployment: the badge names the finest grid installed, "Real Moon terrain: NASA LOLA laser heights, one
+every 5 m" on the live stack (each answer names the grid it used beside the verdict, which depends on the site:
+"on 5 m terrain" at the opening example, "on 20 m terrain" at IM-1), and `/api/mission` for the opening example
+gives `terrain_grid.resolution_m` 5. A server with the 80 m grid alone shows "one every 80 m".
 
 **Every container figure in the table below belongs to earlier code and data (14 Nov 2026).** Since it was
 measured, the code gained the scatter skylines (42 MB, memory-mapped), the 3-D
@@ -466,7 +456,7 @@ The challenge page lists four resources. What each one did here:
 - **LROC and NSSDCA** pages: coordinates of landed hardware. **USGS/IAU Gazetteer of Planetary
   Nomenclature**: feature centres.
 - **NASA's Artemis III site-selection update** (George, Rubio, Lawrence, Curell, LPSC 2026 abstract, NTRS
-  20250011660): the nine regions, the 5.75 to 6.25-day stay and the statement that more than one region must
+  20250011660; those regions are now planned for Artemis IV): the nine regions, the 5.75 to 6.25-day stay and the statement that more than one region must
   be kept. **Candidate landing sites: Wueller et al. 2026**, "Assessing Potential Landing Sites With
   Favorable Illumination and Accessible, Potentially Volatile-Rich Permanently Shadowed Regions Within
   Artemis Candidate Landing Regions", JGR Planets 131(3) e2025JE009434, https://doi.org/10.1029/2025JE009434,
@@ -477,7 +467,7 @@ The challenge page lists four resources. What each one did here:
   the planned surface durations behind the need of three real-landing examples.
 
 How the files reached this build: the first builds ran in a sandbox that could not reach the NASA hosts
-and used untouched copies from public GitHub repositories. On 14 Nov 2026 every file was downloaded again
+and used untouched copies of the NASA files from public mirrors. On 14 Nov 2026 every file was downloaded again
 from its official host (pgda.gsfc.nasa.gov, pds-geosciences.wustl.edu, imbrium.mit.edu, svs.gsfc.nasa.gov,
 ssd.jpl.nasa.gov), every recorded sha256 matched, and the working arrays, the 14,400-skyline field and the
 stored validation were rebuilt from the official downloads. The rebuilt field is byte-identical to the

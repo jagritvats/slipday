@@ -2,112 +2,110 @@
 
 Seven slides including the title, the limit in last year's submission guide. Each slide below is the text
 that goes on it (the title, at most five lines, one picture), followed by a short speaker note in italics.
-Every figure was measured on NASA's LOLA grids; the commands are in the project's results files. Pictures
-are frames of the screen recording and the screenshots in `../screenshots/`.
+Every figure was measured on NASA's LOLA terrain, on the finest grid that covers each place (5 m site
+models, the 20 m mosaic out to 80° S, 80 m beyond), on 15 Nov 2026. Pictures are frames of the screen
+recording (`slipday_draft_voiceover.mp4`) and the screenshots in `../screenshots/`.
 `[TEAM NAME]` and `[MEMBER NAMES]` are placeholders for the participant.
 
-## 1. Slipday: can this mission still land if the launch slips?
+## 1. Slipday: if the launch slips, can we still land here?
 
-**A go / no-go check for lunar south-pole landing sites, on real LOLA terrain.**
+**Pick a south-pole site on the map, pick a date: see the Sun and the Earth over the real skyline, and how many days the launch can slip.**
 
 - `[TEAM NAME]` · `[MEMBER NAMES]`
 - Lunar Landing Site Navigator · NASA Space Apps Challenge 2026
-- Live link: once the app is deployed
+- Live link: `[PUBLIC LINK]`
 
-Picture: `../screenshots/desktop_1280x800_top.png` (the card: "Yes, it survives a slip of up to 8 days").
+Picture: `../screenshots/overhaul/after_1280_light.png` (the first screen: map, date, sky chart, "Yes, and the
+launch can slip up to 8 days").
 
-*Note: one sentence of what it is: you type a site, a landing date and what the mission needs; it says Yes,
-Not sure or No, for every day and every launch window the date could move to.*
+*Note: one sentence: you choose a site and a landing date; it says Yes, Not sure or No, and for how many days of
+launch delay that stays true.*
 
-## 2. The problem: the date moves, and near the pole that changes everything
+## 2. Map first: the Sun and the Earth over the real skyline
 
 - "Hardware development challenges, launch delays, or other factors often force mission planners to
   reconsider their original landing date and location." (official challenge text)
-- Its firm objective: "Display the positions of the Sun and Earth relative to the horizon at a selected
-  landing site on a chosen date." Slipday's first screen draws exactly that.
-- Near the pole the Sun and the Earth skim the horizon: a ridge 130 km away can end Earth contact for 13 days.
-- NASA picks Artemis III sites only "after it identifies the mission's target launch dates", and keeps
-  several regions "to increase flexibility in launch timing" (NASA 2024; LPSC 2026).
+- Its objective: "Display the positions of the Sun and Earth relative to the horizon at a selected landing site on
+  a chosen date." Slipday's first screen: click the south-polar map or search, pick a date and time, read the chart.
+- At the opening example (89.010 S, 122.764 E, 18 Nov 2026), on NASA's 5 m terrain: "Sun 2.3° high, 1.0° over the
+  skyline; Earth -0.2° high, 0.6° over the skyline".
+- A time slider, a sky view (what you would see standing there) and a 3-D view of the ground with its shadows.
+- Near the pole the Sun and the Earth skim the horizon, so ground 131 km away can decide the answer.
 
-Picture: `../screenshots/desktop_1280x800_why_flip.png` (Sun and Earth against the terrain skyline).
+Picture: the sky chart (recording, 5 to 10 s).
 
-*Note: the question a planner asks after a slip is not "where is the Sun", but "does our plan still work".*
+*Note: the page says which terrain grid each answer used: "on 5 m terrain", "on 20 m terrain" or "on 80 m terrain".*
 
-## 3. Real slips step a month at a time, and the card follows them
+## 3. One decision path: Answer, How sure, Why, What to do
 
-- A lander gets a launch window of a few days each month, built around the landing: "each month has a window
-  around three to six days" (Intuitive Machines on IM-1, Spaceflight Now, Oct 2023).
-- A slip inside the window leaves the landing fixed (IM-1 launched on day 2 of three and still landed on
-  22 Feb); a missed window moves it about 29.5 days (our inference from these sources, not a published rule).
-- The card: "Dec 17 ✓ 6 d · Jan 16 ✕ sunlight · Feb 14 ✕ Sun down, sunlight" for the opening example
-  (89.010 S, 122.764 E, landing 18 Nov 2026: Yes, 8 days of slip margin).
-- Why January and February fail: sunlight, 217 and 151 hours against 240 needed: the polar season moves
-  the light (Earth contact stays above its 100 hours). In January no hour within 3 days works there, but 13
-  of 20 other sites have a Yes hour within 3 days, 11 of them fragile (Sun under 0.27 degrees above the
-  skyline at a touchdown point). Steadiest: a map point at 89.498 S, 137.663 W, 15 Jan, 4 days.
+- **Answer**: landing 18 Nov works, and the launch can slip up to **8 days**.
+- **How sure**: 13 of 13 touchdown points within 100 m pass on 5 m terrain; the 20 m grid and a finer sampling agree; slope 4.9°.
+- **Why**: a slip of 9 days fails: only 95 of the 100 hours of Earth contact needed, because the Earth goes behind
+  ground 131.4 km away (the 100 hours are an illustrative need, and the page says so).
+- **What to do**: wait for a later good date or move to another south-pole site, ranked, with verdicts and distances;
+  and the real missions facing this choice: VIPER lands at Mons Mouton by late 2027, 167 km from this site.
+- Next monthly windows: "Dec 17 ✓ 6 d · Jan 16 ✕ sunlight · Feb 14 ✕ Sun down, sunlight": January and
+  February fail on sunlight, 217 and 148 hours against 240 needed (the polar season).
 
-Picture: the card's window line (recording, 0 to 5 s).
+Picture: the decision path (recording, 14 to 17 s).
 
-*Note: day-by-day slips measure how much of the lunar day is usable; monthly windows are how real dates move.*
+*Note: "Compare sites side by side" puts up to four sites in one table, the same "launch slipped by N days" applied to all.*
 
-## 4. Proof on a real landing: IM-1 Odysseus
+## 4. Is it safe to land there? Slope and the chance of a safe touchdown
 
-- Planned about seven days on the surface (168 sunlit hours): the card says Yes, one day of slip margin, for
-  the February window it flew (22 Feb 2024).
-- The January window it missed: Yes at the same time of the lunar day (a modelled date); across the days of
-  the window IM-1 published, Yes from 21 Jan, No on 17 to 20 Jan (before local sunrise).
-- With the roughly ten days in NASA's press kit (240 hours) the answer is No: terrain leaves 208 sunlit hours.
-- Chandrayaan-3's published 14 days would give No too. These are replays of published plans, not
-  predictions and not a confirmation of the model.
+- Slope at the 13 touchdown points against NASA's limit for its crewed lander (8° from upright; 5° is the goal):
+  4.9° at the opening example, on 5 m terrain.
+- Chance the ground under the lander is under 8°, for three assumed lander accuracies: 100 % (precision lander),
+  93.7 % (CLPS-class) and 82.9 % (unguided) at the opening example.
+- Real landing replayed: IM-1 Odysseus planned about seven days (168 sunlit hours): Yes, 1 day of slip margin, on
+  NASA's 20 m terrain. With the roughly ten days in NASA's press kit (240 hours): No, terrain leaves 207 hours.
+- Chandrayaan-3's published 14 days would give No too. These are replays of published plans, not a confirmation of the model.
 
-Picture: `../screenshots/desktop_1280x800_real_missions.png` (IM-1 table).
+Picture: "Flat enough to land?" (recording, 17 to 20 s).
 
-*Note: Earth-contact hours are illustrative in every example; the page says so.*
+*Note: slope only; no boulder data. The three lander accuracies are assumptions sized from one published figure each.*
 
-## 5. How many of NASA's nine regions must stay open, and VIPER in late 2027
+## 5. The slip-day map: whole map and close-up
 
-- NASA: "more than one landing regions must be maintained" (LPSC 2026 abstract).
-- 78 published candidate sites (Wueller et al. 2026), landing times every 6 h, 2027 to 2030, 6.25-day stay:
-  the best region is open at 28 % of them, the best three 40 %, all nine 44 %.
-- That 44 % ceiling comes from the illustrative 100-hour Earth need; with sunlight only: 48 %, 91 %, 92 %.
-- The season comes 18.4 days earlier each year; our ephemeris gives the paper's midsummer dates to the day.
-- VIPER, on an illustrative point of Nobile's west rim at local sunrise: every window from September to December
-  2027 is No (Earth behind the skyline at touchdown); next clear yes 31 Dec 2027.
+- **Whole map**, 80° S to the pole, a point every 2 km (92,416 points): for the opening plan 95.4 % cannot land on
+  the planned date; 84 points survive 5 days of slip or more; the largest margin is 8 days.
+- **Close-up**, 14,400 points 500 m apart, each re-checked at 13 touchdown points: 574 of 733 passing points keep a
+  margin at all 13; 159 lose it; 343 survive at least one day of slip.
+- Re-checked on NASA's 20 m grid: 639 of 733 points agree (87.2 %); the 94 that differ are marked with a red cross.
+- **Our finding: coarse terrain is optimistic, not noisy.** Over 14 weekly dates, 452 of the 454 points where 80 m
+  and 20 m disagree are called landable on 80 m and rejected on 20 m. Shackleton ridge, longest darkness: 194 h on
+  80 m, 110 h on 20 m, 112 h published. (5 m covers only two sites.)
 
-Picture: `../screenshots/desktop_1280x800_regions.png` (calendar of the nine regions).
+Picture: the close-up slip-day map with its legend (recording, 24 to 27 s).
 
-*Note: shares of landing times every 6 hours, not real launch opportunities; 80 m grid. Against the paper's own
-sunlight figures, about two in three of 312 comparisons agree within a day and about three in ten differ by more
-than 3 days (our terrain model is coarser than the paper's).*
+*Note: the whole map is checked at each point only; the close-up adds the landing scatter.*
 
-## 6. The map only Slipday draws: slip margin with landing scatter, on two grids
+## 6. Plan ahead: regions, missions, relay, years
 
-- Each of 14,400 points 500 m apart, re-checked at 13 touchdown points: 574 of 733 passing points still pass at
-  all 13 on the planned date (100 m scatter), 159 lose it; 343 survive at least one day of slip.
-- Re-checked on NASA's 20 m grid: 87 % agree (86.6 % over 14 weekly dates); 452 of 454 disagreements are the
-  80 m map being optimistic. Worked out for any date on request.
-- Hours to ride through: slip 8 days and the night the lander meets grows from 20 to 179 hours (whole runs;
-  not a battery model).
-- 20 points survive a slip beside permanent shadow (dark ground, not proven ice).
+- NASA keeps several of its nine south-pole landing regions "to increase flexibility in launch timing". On 78
+  published candidate sites, 2027 to 2030, with sunlight alone the best single region allows a 6.25-day stay at 45 %
+  of landing times, the best three at 89 %; with the illustrative 100 hours of Earth contact added, 26 % and 37 %.
+- **Missions board**: Griffin-1 (late 2026), IM-4 (2027), VIPER (late 2027), Artemis IV (early 2028): what a week
+  or a month of slip does to each. VIPER: a week's slip keeps 14 of its 124 good landing times, a month keeps 102.
+- **Relay**: with the Earth alone, 311 hours of contact in 14 days; with two relay satellites, 336 of 336.
+- **Atlas**: which years from 2027 to 2035 suit a landing in each region.
 
-Picture: `../screenshots/desktop_1280x800_map_scatter.png` (red crosses: where 20 m disagrees).
+Picture: the nine-region calendar (recording, 20 to 24 s).
 
-*Note: this is the part judges will not have seen elsewhere: how many slip days each spot survives, with scatter.*
+*Note: shares of landing times every 6 hours, not real launch opportunities; the Earth need is illustrative; the
+relay orbit is NASA's reference design, not a live service.*
 
-## 7. What was checked, what it does not do, next
+## 7. Can you trust it, what it does not do, and play
 
-- Sun and Earth directions against JPL Horizons: 0.00001°; DSN station geometry: 0.0006°; sunlight against
-  the LOLA team's maps: 0.8 points on ordinary terrain.
-- Finer terrain: on the LOLA team's 5 m site models the opening example is still Yes with 8 days; the
-  Shackleton ridge is Not sure, as on 20 m.
-- Extra checks beside the answer: slope at the 13 touchdown points against NASA's 8° lean limit (opening example about
-  5°, right at the 5° goal; IM-1 12.2°, too steep), the chance of a safe touchdown, relay satellites (311 h of contact
-  with the Earth alone, 336 of 336 with two), a 2027 to 2035 region atlas, sound, and a student game.
-- Limits: 80 m terrain by default (20 m and 5 m checked separately); no power or thermal model; the Earth margin of the opening
-  Yes is 0.64° and no published lander-side mask exists; a Yes holds for the stated landing scatter only.
-- Next: the 20 m grid as default, each mission's landing ellipse and window dates, a north-polar grid.
+- Every answer names the NASA terrain grid it used, and is checked against the LOLA team's own maps: sunlight within
+  0.8 points, Earth view within 0.97. Sun and Earth directions match JPL Horizons to 0.00001°.
+- 92,416 terrain skylines, 720 rays each out to 300 km, on four LOLA grids (80 m to 1.9 km); a worked-out answer
+  comes back in 0.04 s.
+- Computes on the finest LOLA grid at each place: 5 m at two sites near Shackleton, 20 m out to 80° S, 80 m beyond.
+- Limits: no power or thermal model; no boulder data; the Earth margin of the opening Yes is 0.64° and no published
+  link mask exists; a Yes holds for the stated landing scatter only.
+- **Be the mission planner**: a five-scenario game for students, from a small slip to a low-Sun January.
 
 Picture: `../screenshots/desktop_1280x800_valid.png`.
 
-*Note: open source (Apache-2.0), one Python process; the public link must serve the 80 m grid (badge says
-"80 m/px").*
+*Note: open source (Apache-2.0), one Python process.*

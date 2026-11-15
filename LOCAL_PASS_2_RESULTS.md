@@ -21,7 +21,7 @@ and was not re-measured after this pass's changes.**
 | A2 IM-1 and Chandrayaan-3, the other figure | done (helper): storyboard caption, draft, README, slides and replay note give both; tests pin it |
 | A3 slide 2 quotes | done (helper): the official words; the paraphrase is marked as one |
 | A4 "could not be obtained" | done (helper), and in REALDATA.md (here) |
-| A5 README competition claim | done (helper): the review's table, attributed to the review |
+| A5 README comparison text | later removed: the README describes Slipday on its own terms |
 | A6 which Earth rule | done: the Earth tile names its rule and the card's stricter one (3.5 points lower, measured); the card names the rule beside each number |
 | A7 both Earth figures; ridge range | done (helper): 0.97 and 1.31 (53 points); 0.69 and 1.11 (76 points); ridge Sun 3.77 to 5.25 over ten seeds, correlation 0.41 to 0.75 |
 | A8 landing-circle range | done: 62.1 % (54.2 to 70.0), 26.9 % (19.4 to 36.3), 12.9 % (7.3 to 19.4) |
@@ -108,9 +108,7 @@ in 20 seconds instead of waiting. Not measured: a host with a fraction of a CPU,
 - **A3**: slide 2 quotes "Hardware development challenges, launch delays, or other factors often force
   mission planners to reconsider their original landing date and location." and the firm objective, and
   marks "respond quickly when the schedule changes" as a paraphrase.
-- **A5**: the README table states, per the review's scan: slip-margin map not matched; slip margin in
-  days, ensemble verdict, resolution ladder and landing circles partly matched; Earth-map validation
-  matched by at least nine entries.
+- **A5**: the comparison table was later removed from the README.
 - **A9**: `SUBMISSION_DRAFT.md` ends the form text with `END OF TEXT FOR THE FORM`; the notes for the
   team sit below, in a fenced section headed "NOT FOR PASTING". The AI statement is
   `[PARTICIPANT TO WRITE: statement of AI use]` in the draft and in the README.

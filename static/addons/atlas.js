@@ -25,7 +25,7 @@
     '.atl .atl-bar{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}',
     '.atl button{font:inherit;font-size:13px;padding:6px 10px;min-height:36px;border-radius:6px;cursor:pointer;',
     'border:1px solid var(--line,#dddbd3);background:var(--page,#f4f3ef);color:var(--text,#0b0b0b)}',
-    '.atl button[aria-pressed="true"]{background:var(--accent,#0e3f7e);border-color:var(--accent,#0e3f7e);color:#fff}',
+    '.atl button[aria-pressed="true"]{background:var(--accent,#0e3f7e);border-color:var(--accent,#0e3f7e);color:var(--surface,#fff)}',
     '.atl .atl-legend{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2,#52514e);margin:6px 0 12px;flex-wrap:wrap}',
     '.atl .atl-legend i{display:inline-block;width:22px;height:12px;border-radius:2px}',
     '.atl .atl-years{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}',
@@ -92,7 +92,7 @@
     var m = s.variants.main, so = s.variants.sun_only;
     var py = function (v, y) { return v.per_year.filter(function (r) { return r.year === y; })[0]; };
     var best = py(m, m.best_year), worst = py(m, m.worst_year);
-    return 'This chart shows when NASA’s nine Artemis III landing regions, each judged on its published candidate ' +
+    return 'This chart shows when NASA’s nine south-pole landing regions (for the first crewed landing, Artemis IV, early 2028), each judged on its published candidate ' +
       'sites, let a lander touch down and stay 6.25 days with the Sun up the whole time and at least 100 hours with the ' +
       'Earth in view for radio contact. Each row is a region, each column a month, and the stronger the colour, the larger the ' +
       'share of landing times in that month that work. Landing times are tried every 6 hours, so the shares count landing ' +

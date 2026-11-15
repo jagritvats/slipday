@@ -1,0 +1,676 @@
+          CLPS 2022
+
+                Commercial Lunar Payload Services
+
+OvernightPower&Thermal Solutionsfor
+Lunar Landers
+
+Compass Team
+Steven Oleson*, Anthony Colozza^, and
+Nicholas Uguccini*
+*NASAGlennResearchCenter
+^HX5, LLC
+
+Survive The Night Technology Workshop
+Dec.6, 2022
+
+                                                                                                                                                                                                                        1
+                Compass Team
+
+· The Compass concurrent engineering team was formed in 2006, and over
+   250 designs have been produced to-date
+
+· The team includes experts from each discipline of space vehicle and
+   mission design, collected from their respective discipline-area branches
+   (matrix)
+
+      ­ Branch knowledge and experience is leveraged through review of their
+         representative's product(s)
+
+· The experts are gathered in the Compass Lab and collaborate in real time to
+   perform analyses. Includes capability to include remote members
+
+· This approach results in quickly achieving high quality engineering Please visit us in the Compass Lab during the Poster Session
+   designs without inefficiencies experienced by isolated teams
+
+Recent Hybrid Compass Session (2-4 weeks long)  2
+3                                                                                                               · During daytime operation near the equator
+                                                                                                                    the surface regolith will reach a
+  Lunar Thermal Environment                                                                                         temperature of ~385 K
+
+   Night-Time Temps 50-90K                                                                                      · Nighttime temperatures at the equator are
+   Day-Time Temps 150-385K                                                                                          similar to those at other latitudes including
+                                                                                                                    the poles dropping below 100 K at
+ · The temperature curves for other Latitudes shows                                                                 nighttime.
+      that the maximum surface temperature decreases
+      as the latitude increase but the nighttime                                                                · Due to the large temperature swings the
+      temperatures are similar at under 100 K                                                                       equator has the worst operational thermal
+                                                                                                                    environment.
+ · The lower daytime surface temperature will make
+      operation at these latitudes easier thermally than at                  450     Lunar Day-Night Sur face Tempera ture Swing Fr oEmqutahtoe r to 89°N Latit ude (LRO Data)
+      the equator.
+                                                                                     0° Latitude  10° Latitude 20°L atitude 30°Latit ude 40° Latitude  50° Latitude 60° Latitude 70° Latitude 80°Latit ude 89° Latitude
+
+                                                                             400
+
+                                                                             350
+
+                                                                             300
+
+                                                                             250
+
+                                                             Temperture (K)  200
+
+                                                                             150
+
+                                                                             100
+
+                                                                             50                                                                             Minimum Temperature ~50 K
+
+                                                                              Maximum
+
+                                                                             Temperature ~150 K
+
+                                                                             0
+
+                                                                                  0               50  100  150  200                                    250  300  350                   400
+
+                                                                                                                Time (Earth Days)                                               3
+       Lander Power and Thermal Solutions for the Lunar
+                                  Night
+
+· Survive the Lunar Night
+
+    ­ Surveyor landers survived lunar nights until equipment damaged
+
+           · Had a much earlier class of electronics that could handle freezing better than some
+              current IC devices
+
+           · Batteries damaged
+
+    ­ Much work is underway to develop/qualify electronics and energy storage
+       to survive <80K lunar night temperatures
+
+· Operate during the Lunar Night
+
+    ­ While just surviving the lunar night allows for extended operations some
+       missions like science, exploration, and ISRU require night-time operations;
+       indeed operating during the lunar night would halve the time it takes to
+       perform a mission
+
+· Two Recent Compass Designs explored Night Operations
+
+    ­ Solar Array / Battery and Thermal Vault approach for science collection
+       during lunar night-time
+
+    ­ Radioisotope power and heat source for Lunar Surface Relay operations
+
+                                                                                                                                                                                                                           4
+      Generic Night-Time Science Lander
+
+· Potential landing latitude ±45° latitude
+· ~100 kg of science
+
+    ­ Some on surface and subsurface
+
+· >5 year life
+· Night-time power reqt's ~ 40W
+
+                                                                                                                                                                                                                           5
+              Power Source, Storage, Thermal Trades
+
+                            Power Storage                     Batteries
+                                                           Fuel Cells. (too
+                  Solar     Heat Source for                                  Study focused
+                              Lunar Night                     low TRL)       on impact of
+              Radioisotope                                   Super Caps      not using
+                  Power     Power Storage                                    radioisotopes
+                                                               heaters
+
+                                                                RHUs
+
+Power Source                                 Equipment
+                                             waste heat /
+
+                                               heaters
+
+                            Heat Source for                Batteries for
+                              Lunar Night                  load leveling
+
+                                                           Radioisotope
+                                                           Waste Heat
+
+                                                              Heaters
+
+                                                                                                              6
+Lunar Night Approach Trade
+
+Components for the Lunar Night  1. All lander Subsystems/Payload  Big Battery: Requires large, heavy              Heaviest option
+                                              kept > -40C           batteries and Larger Solar arrays
+                                                                                                        Lighter than option 1. ? but may
+                                   2. Subset of Instruments and    Stand-alone Lunar night Systems:    be more expensive due to adding
+                                  dedicated support equipment        Requires additional but smaller
+                                                                       payload support equipment                    components
+                                              kept >-40C                 (C&DH, comms, power)
+                                                                                                       Assumes comms, solar arrays, and
+                                Thermal Vault approach chosen       Reuse of Some Lander systems:      daytime only science probes (not
+                                           for this study              Nighttime payload and data      science electronics) be allowed to
+                                                                      controller kept >-40C, Mix of
+                                                                                                              freeze during the night
+                                                                     reusing lander subsystems that
+                                                                    can survive night and dedicated                                      7
+
+                                                                            nighttime systems
+Systems and the Lunar Day/Night
+
+                                                                   (equatoria to 45° latitude)
+
+Subsystem       Sub-Elements Exposed to Lunar        Sub-Elements Protectable in a thermal
+                Day/Night (400K/80K)                 Vault Day/Night (55C to -40C)
+Science         Sensors (some on or below surface),  Electronics/controllers
+                Actuators, power/data lines
+Power           Solar Arrays, power lines to users   Batteries, PMAD
+Communications  Antennas, gimbals                    Transceivers, Switches....
+C&DH            Data/Control lines to users          Computers, controllers, Data storage
+Thermal         Radiators                            Heaters, RHUs
+Propulsion      Thrusters/Valves/ Feed Sys           Lines to power/Controllers
+GN&C            Landing Sensors, Star trackers...    IMUs, lines to sensors
+
+                Assumed some external components (science sensors, cameras,
+                     comm antennas/gimbals...) can survive the lunar night
+
+                                                                                                8
+                                Schematic
+
+· External                                    Approach put
+                                              `lander only'
+   Power/Data/Control                       (propulsion and
+
+   Connections from                              Attitude
+                                           Determination and
+   Thermal Vault
+                                                 Control)
+      · Science                            Controllers outside
+             · Beneath Surface             of thermal vault in
+                 (3)
+             · On surface (5)                order to reduce
+             · On deck (5)                    vault size and
+                                             number of heat
+      · Comms Antenna
+      · Solar Arrays                               leaks
+      · Radiators
+      · Nav cameras, star-                                            9
+
+           trackers (2)
+      · Feed System,
+
+           Actuators
+       · Structure
+                    Heat Leak Summary for Thermal Vault
+
+Daytime: Operating Temperature: 323 K, Sink Temperature: 354 K
+Nighttime: Operating Temperature: 250 K, Sink Temperature: 64 K
+
+Item                 Dimensions                 Material           Thermal       Insulated  #         Heat Leak in    Heat Loss out at
+                                                                   Conductivity  Length               during the Day  Night
+Insulation (direct   Surface Area 4.08 m2       Aluminized Mylar                            25
+heat loss)                                                         0.0009 W/mK   NA         Layers            0.7 W          0.8 W
+                                                                   (effective)
+                                                                                                               8W            9.4 W
+Insulation Seams     Surface Area ~4 m2 , with  Aluminized Mylar   0.0009 W/mK   NA         25
+and Passthrough      5% seam and                S-Glass Composite  (effective)   0.95 m     Layers           0.01 W          0.19 W
+Heat Loss            passthrough effected
+                     area                                          0.75 W/mK                8
+Structure Standoffs
+                     OD: 1.5 cm, Wall 0.5 cm
+
+Power In Wires       Diameter 0.8 mm (20        Copper             401 W/mK      1m         40          0.8 W           1.5 W
+Data Wires           gauge)                     Aluminum           177 W/mK      1m         116         1.0 W
+Power Out Wires                                 Copper             401 W/mK      1m         2           0.1 W           1.9 W
+Heat Pipes           Diameter 0.8 mm (20        Titanium           6.7 W/mK      0.5 m      8          0.15 W
+                     gauge)                                                                                             0.6 W
+                                                                                               Total  10.53 W
+                     Diameter 1.36 mm (16                                                                               0.3 W
+                     gauge)
+                                                                                                                      14.69 W
+                     OD: 1 cm, Wall 0.5 mm
+                                                                                                                             110
+      Lunar Night Lander Internal Components
+
+Thermal Vault Radiator
+ (Externally Mounted)
+
+               RIU (Command And Data
+                         Handling)
+
+Thermal Vault
+
+                                              11
+      Lunar Night Lander Thermal Vault Concept
+
+     Thermal Vault Radiator
+Externally Mounted To the Top
+
+   Deck Of The Lander (Not
+                Shown)
+
+ Lander Thrust Tube (Supports   Insulation Shown as
+  Additional Landers on Top at        Transparent
+
+                Launch)
+
+ Thermal Vault Insulation
+
+ Thermal Vault Low Thermal
+Conductivity Support Strut (8
+
+                 Total)
+
+                                                     12
+Science Lander Thermal Vault Components
+
+                   X-Band Diplexers  (Science)                                             Deck for Mounting Components
+                          (Comm)                                                                Inside the Thermal Vault
+                                             Switches and WGs
+Avionics Enclosure                                   (Comm)
+        (C&DH)
+
+                                              X-Band SDR Radios
+                                                      (Comm)
+
+                                   (Science)                           (Science)
+                                                               (Science)
+Power Electronics Box
+   (Electrical Power)                                                             Battery  Frame for
+                                                                                           Mounting
+                                                                                           Insulation
+
+                                                                                                               13
+Thermal Vault Operation on the Surface at Night
+
+Sky           Effective Sink     Radiator is used for operation
+Temperature   Temperature: 64 K  during daytime only. It is located
+4K            ( Thermal Vault)   outside of the thermal vault and
+              33 K (Radiator)    allowed to freeze during
+                                 nighttime operation.
+              View to Sky:
+              0.5                                Radiator is automatically
+                                                 `switched off' by use of variable
+Surface: 80K                                     conductance heat pipes
+
+                                                              Variable Conductance Heat Pipe System
+
+              View to
+              Surface: 0.5
+
+                                 14                                                                  141
+                  Battery Design
+
+· Sizing requirements driven by Night Operations
+
+· Lunar Night is 354 hours long
+
+­ Operational nighttime power is ~40 W, EPS losses total ~6W
+
+     · Assume battery-tied bus to remove battery discharge unit efficiency drop
+     · Assume all Terma cards are disconnected during night (no parasitic consumption), except 2x PDUs
+
+­ Use 90% DoD to reduce battery mass
+
+     · (only expect 125 charge/discharge cycles, so this is acceptable)
+
+· Li-ion Battery
+
+­ 1568 cells in 8s-196p configuration, ~20 kWh capacity
+
+     · 1 spare string
+
+­ LG 18650 MJ1 cells used
+
+­ 28 V nominal, assume loads can operate over voltage range
+
+­ Battery pack is 28x28 cells across, 2 cells high           Battery inside Thermal
+­ Specific energy of ~200 Whr/kg                                         Vault
+
+                                                                                     15
+Solar Array Angle Trade
+
+· Steep angle (90° tilt)                            Power (kW)  90°                                                 State of Charge (%)
+
+    ­ Battery power is used during the noon                     45°
+       hours as array output drops
+                                                                15°
+    ­ Battery won't be fully charged at end of
+       day without larger array; increases area by                Time (Earth hr; 0 = sunset)
+       at least 1 m2 and mass by 2.5 kg (per wing)                                                             161
+
+Medium angle (45° tilt)
+
+    ­ No battery power required over entire
+       insolation period
+
+· Shallow angle (15° tilt)
+
+    ­ Batteries continue to discharge past dawn,
+       begin dusk at <99% SoC
+
+    ­ Can shrink array size, but requires larger
+       battery to satisfy max DoD; increases mass
+       by at least 10 kg
+Mass Added for ~40W Operations at Night
+
+· Assuming a Science mass ~100 kg, many currently                                Night-time Equipment Added
+  planned CLPS landers could perform the mission during                                      to Lander
+  daylight
+                                                                                                                                    17
+· But the Additional equipment needed for a lunar night
+
+    ­ 140 kg ­Night-Time Electrical Power
+
+           · Added Batteries, PMAD used for payload, Increased solar array area
+              to charge batteries
+
+    ­ 23 kg ­ Thermal Vault Thermal control
+
+           · heaters, radiators, heat pipes
+
+    ­ 34 kg ­ Thermal vault and secondary structure
+
+           · brackets, booms, etc.
+
+    ­ 18 kg ­ Command & Data Handling
+
+           · Added science computer, storage, etc. into Vault
+
+   ­ ~280 kg ­ Total Additions
+
+           · (incl 30% growth) more mass delivered for night-time
+
+· This would change the class of the CLPS lander from
+  the 100 kg lander to the ~500 kg range landers
+               Lessons Learned
+
+· A solar/battery design with a thermal `vault' to minimize
+  Lunar night heat leak was developed
+
+    ­ Kept the night-time instruments operating as well as the science
+       electronics alive
+
+    ­ Have ~ 40W of night-time power operations ­ only leak ~ 15Wth of
+       heat ­ have thermal margin in the design
+
+· The waste heat from the science electronics and C&DH was
+  sufficient to keep the thermal vault warm without the need
+  for RHUs
+
+· Rule of thumb
+
+    ­ For every 1 W of 2 weeks Lunar Overnight Power / Thermal
+       Protection you need ~7 kg of support equipment
+
+· CLPS Class Lander
+
+    ­ Roughly 400 kg of payload and night-time support mass is needed for
+       each lander
+
+                                                                                                                                                                                                                         18
+      Impact of Radioisotope Power
+
+· Use of Radioisotope power systems can greatly increase the
+  night-time power / thermal capabilities for the same heavy
+  CLPS lander as the previous example: usable payload instead of
+  large battery pack / thermal vault
+
+· Next Generation RTG ~ 60 kg and provides ~170-190 W of power for 13 yrs
+   (dependent on environment)
+
+       ­ ~ 200Wth heat easily available for keeping components warm
+       ­ Up to 3500 Wth heat could be used (keep rovers warm during the night?)
+
+· Radioisotope Powered CLPS class lander example
+
+       ­ Mission: Lunar Surface Relay to provide
+
+                  · 5G, UHF, and Navigation for lunar surface users
+                  · Trunk of up to 10 video streams( 8 hrs every 24 hrs, day & night), communications,
+
+                      controls, science, housekeeping
+
+       ­ Heavy Class CLPS lander (~500 kg payload)
+       ­ Power: Single, Next-generation RTG ~ 170We day and ~190We night power
+
+                  · Batteries for peak video power links
+
+       ­ Thermal: Variable Conductance Heat Pipes take waste heat from RTG and heat
+           Relay payload box during night operations
+
+· Payload Mass ~ 475 kg
+
+                                                                                                                                                                                                                         19
+    Sample Compass Customers
+
+                                      Your
+                                   Company
+
+Applied Research Laboratory
+NATIONAL ACADEMY OF SCIENCES
+
+                                                                                                                                                                                                         20
+                  Compass Design Process
+
+Establishing the Study Definition                                 Design Study with Concurrent Team
+
+       Customer meetings:                             Prework     Initial cut at   Brainstorming
+      FOMS, Requirements                            Gather the       design
+                                                                                    Iteration and
+  Mission                                               team                           design         Post Work
+architecture                                                                                         Final design
+                                                   Improve tools                   improvements
+  studies                                                                                              products
+                                                   Establish the
+Configuration: Mass Properties:                      schedule                       Final design     Final design
+                                                                                      meeting        presentation
+Initial cut       Initial cut                                                        customer
+                                                                                                     Final report
+                                                                                   requirements       generation
+
+                                        Pre-Work                  Design Sessions          Post-Work
+                  Mission Analysis Pre-study work
+                                                                                               Draft Charts to Customer
+                             Week 2
+Customer Meeting                                   Week 3         Week 4           Week 5            Week 6
+        Week 1                                                                                                          21
+         Compass Design Products
+
+· Compass Products/Analyses are tailored to support the customer
+
+     ­ A large suite of Compass products are available for selection
+     ­ The customer establishes the depth, fidelity, and scope of the study and products, prior to study kickoff
+
+· Compass Products have supported proposals, implementation/assessment of
+  technologies, Design Reference Missions, and project reviews per NPR 7123.1A (ex: MCRs & SRRs)
+
+                                                                     Compass Products
+
+                                                                                                                                                                                                                         22
+               Design Experience
+
+· Compass has produced more than 200 designs
+
+    ­ Designs span in size from cubesats to ISS-scale deep space human exploration spacecraft
+    ­ Destinations include all the planets, many moons, small bodies and their surfaces
+    ­ Mission Types include technology demonstrator missions, to science missions, to design
+
+      reference missions (DRMs)
+
+Microsats  Smallsats Technology           Sample Return Science Sats Landers, Rovers,                                  Crewed  Launchers/Stages
+                           Demonstrators
+                                                                                                     Extraterrestrial
+                                                                                                     Submarines
+
+                                                                                                                               223
+     Compass CisLunar Space Experience
+
+· Cis-Lunar Orbiters
+
+    ­ Cislunar relays, tankers,
+      depots, crewed vehicles
+      (pre-Gateway and Power
+      and Propulsion Element),
+      cubesats
+
+· Lunar Surface
+
+    ­ Crew landers/ascent
+      vehicles, rovers (big and
+      small),Large solar and
+      Fission Power systems, ISRU
+
+· Many Fission systems:
+
+    ­ Nuclear Electric Propulsion
+    ­ Fission Surface Systems
+
+                                                                                                                                                                                                                         24
+Sample Customer Feedback
+
+"Compared to other government                                         "The team followed a well-
+and contractor studies, the                                           structured systems engineering
+Compass team's process provided                                       process ensuring that the customer
+results at a greatly reduced cost                                     needs and expectations were met
+and time."                                                            throughout the process."
+- Crane Division                                                      - Exploration Missions and Systems
+ Naval Surface Warfare Center                                         Office, NASA Johnson Space Center
+
+                                   NASA Systems Engineering Award
+
+                                      "With the Compass team, the
+                                      time-savings is multiplied and
+                                      greatly enhances ATK
+                                      competitiveness."
+
+                                            - ATK Space Systems
+
+Space Flight Awareness Team Award                                         NASA Honor Award:
+                                                                      Group Achievement Award
+
+                                                                                                                       25
+Low Overnight Power Lunar Science Lander
+
+· Generic Science lander:                                         Science Lander
+
+          ­ ~ 100 kg science payload Day & Night-time operations                  Inert Mass ~ 1500 kg
+          ­ ~ 40 We night-time power for data collection/storage                  Wet Mass ~ 4000 kg
+
+· Science: 24/7 base science operations with surface              Thermal Vault for
+   and subsurface components                                      Lunar Night
+                                                                  operations
+· Thermal: Innovative `Thermal Vault' design to
+   minimize night-time heat leaks and keep                                                                                                                                  26
+   science/C&DH/Comms electronics warm (>-40°C)
+   during lunar night, 25 layers MLI, Variable
+   conductance heat pipes, minimized cabling leaks, low
+   conductivity struts to hold thermal vault. Night-time
+   electronics waste heat sufficient to keep vault warm,
+   NO RHUs needed
+
+· Power: Fixed East/West 45° solar arrays, ~ 100 kg of
+   Li-ion batteries to keep electronics warm
+
+· Structures: low thermal conductivity struts for
+   thermal vault
+
+· C&DH: two computers, one inside thermal vault, 128
+   GB of storage for science
+
+· Comms: X-band comms, 1 hr daily to DSN
+DRPS Rover for PSRs: Executive Summary
+
+· Overview: Rover will demonstrate a Dynamic Radioisotope Power System                        MEL Summary: Case 1_DRPS_DRM_Rover CD-        Rover
+   (DRPS) while providing long duration, 18 month exploration of Permanently                  2021-182
+   Shadowed Regions on the south pole of the moon                                                                                        Basic Mass
+                                                                                                                  Main Subsystems             (kg)
+· Mission:                                                                                                                                    96.4
+                                                                                              Radioisotope Power                              4.7
+        ­ Launch, lander, rover equipment/science using Astrobotics/VIPER solar rover,        Attitude Determination and Control              18.4
+            assume that reuse of VIPER components will reduce costs                           Command & Data Handling                         10.7
+                                                                                              Communications and Tracking                     13.4
+        ­ Install DRPS vertically through fairing door using beam/crane, switch to rover      Electrical Power Subsystem                      34.8
+            installed controller, cool in fairing                                             Thermal Control (Non-Propellant)                40.0
+                                                                                              Science                                         67.0
+· Science: Drill and three spectrometers, search for water                                    Mobility                                        42.1
+                                                                                              Structures and Mechanisms                      327.3
+        ­ DRPS will heat up areas behind the rover in DRPS so science focus needs to stay in  Element Total
+            front of thermally shielded part of rover
+                                                                                              Element Dry Mass (no prop,consum)          327.3
+        ­ Additional TBD science instrument also carried                                      Element Propellant                          0.0
+                                                                                              Element Mass Growth Allowance (Aggregate)   53.5
+· Power: Representative ~ 330We, 6 GPHS DRPS, batteries for peak loads                                                                   16%
+   (roving and drilling)                                                                      MGA as a %'age                             380.9
+
+· Mobility: same wheel/motors as Viper ~ 10cm/s avg speed, up to 15° slope                    Predicted Mass (Basic + MGA)                49.1
+                                                                                              Recommended Mass Margin (Additional
+· Thermal: Adiabatic walls and struts to isolate waste heat from DRPS, Rover                  System Level Growth) 15%                   15%
+   bus insulated and heated using avionics waste heat, louvered radiator during               Margin as a %'age                          430.0
+   sunlit operations                                                                          Element Dry Mass (Basic+MGA+Margin)        430.0
+                                                                                              Element Inert Mass (Basic+MGA+Margin)      430.0
+· Comms: Ka band (high gain: 250 kbps and omni) up to Gateway for relay with                  Total Wet Mass (Allowable Mass)
+   earth, option for DTE when in sight
+
+· C&DH: Control of all mobility/science, 1 TB data storage, performs waypoint
+   driving based on earth commands
+
+· AD&CS: IMU, startracker, Gateway tracking, surface recognition
+
+· Structures: Al bus with low conductivity materials to keep heat in rover, 5 g
+   launch loads
+
+                                                                                                                                                     27
+AmDRPS Rover for PSRs: Executive Summary
+
+· Overview: A comparison design using a conceptual Am241 Dynamic Radioisotope Power                                      MEL Summary: Case 3_AmDRPS_DRM_Rover           Rover
+    System (DRPS) which provides long duration, 18 month exploration of Permanently Shadowed                             CD-2021-182
+    Regions on the south pole of the moon                                                                                                                           Basic Mass
+                                                                                                                                              Main Subsystems            (kg)
+         ­ This 216WDC Am241 DRPS weighs about 110 kgs. Operating next to the thermal barrier, the AmDRPS                                                               109.7
+              produces 213 We, allowing conops of 8 hours driving, 1 hour science drilling, and 14.25 hours recharge in  Radioisotope Power                               4.7
+              standby.                                                                                                   Attitude Determination and Control              18.4
+                                                                                                                         Command & Data Handling                         10.7
+         ­ This AmDRPS rover can spend long durations in permanently shadowed craters and could traverse                 Communications and Tracking                     20.0
+              >100km in 18 months                                                                                        Electrical Power Subsystem                      34.8
+                                                                                                                         Thermal Control (Non-Propellant)                40.0
+· Mission:                                                                                                               Science                                         67.0
+                                                                                                                         Mobility                                        42.7
+         ­ Launch, lander, rover equipment/science using Astrobotics/VIPER solar rover, assume that reuse of VIPER       Structures and Mechanisms                      347.8
+              components will reduce costs                                                                               Element Total
+
+         ­ Install AmDRPS vertically through fairing door using beam/crane, switch to rover installed controller, cool   Element Dry Mass (no prop,consum)          347.8
+              in fairing                                                                                                 Element Propellant                          0.0
+                                                                                                                         Element Mass Growth Allowance (Aggregate)  58.0
+· Science: Drill and three spectrometers, search for water
+                                                                                                                         MGA as a %'age                             17%
+         ­ DRPS will heat up areas behind the rover in AmDRPS so science focus needs to stay in front of thermally       Predicted Mass (Basic + MGA)
+              shielded part of rover                                                                                     Recommended Mass Margin (Additional        405.8
+                                                                                                                         System Level Growth) 15%
+         ­ Additional TBD science instrument carried (same assumption as PuDRPS design)                                  Margin as a %'age                          52.2
+                                                                                                                         Element Dry Mass (Basic+MGA+Margin)
+· Power: Representative 216We (213We accounting for thermal barrier), 4 ELHS heat sources, 6                                                                        15%
+    DRPS Stirlings, batteries for peak loads (roving and drilling)
+                                                                                                                                                                    458.0
+· Mobility: same wheel/motors as VIPER ~ 10cm/s avg speed, up to 15° slope
+· Thermal: Adiabatic walls and struts to isolate waste heat from DRPS, Rover bus insulated and
+
+    heated using avionics waste heat, louvered radiator during sunlit operations
+
+· Comms: Ka band (high gain: 250 kbps and omni) up to Gateway for relay with earth, option for
+    DTE when in sight
+
+· C&DH: Control of all mobility/science, 1 TB data storage, performs waypoint driving based on
+    earth commands
+
+· AD&CS: IMU, startracker, Gateway tracking, surface recognition
+
+· Structures: Al bus with low conductivity materials to keep heat in rover, 5 g launch loads
+
+                                                                                                                                                                                28
+

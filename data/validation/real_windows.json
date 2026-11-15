@@ -1,6 +1,6 @@
 {
  "rule": "R10 in DEEP_PASS.md",
- "made_utc": "2026-11-15T00:53:48Z",
+ "made_utc": "2026-11-15T15:37:01Z",
  "im1": {
   "available": true,
   "site": {
@@ -18,7 +18,7 @@
     "points": 13,
     "sunlit_h": 213,
     "earth_h": 328,
-    "night_met_h": 422,
+    "night_met_h": 425,
     "outage_met_h": 1,
     "night_in_window_h": 129,
     "outage_in_window_h": 1,
@@ -33,15 +33,15 @@
     "slip_margin_days": 1,
     "points_passing": 13,
     "points": 13,
-    "sunlit_h": 208,
+    "sunlit_h": 207,
     "earth_h": 319,
-    "night_met_h": 431,
+    "night_met_h": 435,
     "outage_met_h": 2,
     "night_in_window_h": 134,
     "outage_in_window_h": 2,
     "next_good_utc": null,
     "fails_on": [],
-    "reasons": "A landing at IM-1 Odysseus (Malapert A) on 22 Feb 2024 23:00 UTC gives 208 sunlit hours and 319 hours of Earth contact; the mission needs 168 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
+    "reasons": "A landing at IM-1 Odysseus (Malapert A) on 22 Feb 2024 23:00 UTC gives 207 sunlit hours and 319 hours of Earth contact; the mission needs 168 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
     "k": 0
    },
    {
@@ -52,7 +52,7 @@
     "points": 13,
     "sunlit_h": 197,
     "earth_h": 322,
-    "night_met_h": 445,
+    "night_met_h": 448,
     "outage_met_h": 2,
     "night_in_window_h": 142,
     "outage_in_window_h": 2,
@@ -69,7 +69,7 @@
     "points": 13,
     "sunlit_h": 190,
     "earth_h": 325,
-    "night_met_h": 456,
+    "night_met_h": 458,
     "outage_met_h": 1,
     "night_in_window_h": 149,
     "outage_in_window_h": 1,
@@ -100,7 +100,7 @@
     "fails_on": [
      "Sun at touchdown"
     ],
-    "sunlit_h": 260
+    "sunlit_h": 258
    },
    {
     "landing_utc": "2024-01-18T10:00:00Z",
@@ -109,7 +109,7 @@
     "fails_on": [
      "Sun at touchdown"
     ],
-    "sunlit_h": 284
+    "sunlit_h": 282
    },
    {
     "landing_utc": "2024-01-19T10:00:00Z",
@@ -118,7 +118,7 @@
     "fails_on": [
      "Sun at touchdown"
     ],
-    "sunlit_h": 305
+    "sunlit_h": 303
    },
    {
     "landing_utc": "2024-01-20T10:00:00Z",
@@ -127,7 +127,7 @@
     "fails_on": [
      "Sun at touchdown"
     ],
-    "sunlit_h": 305
+    "sunlit_h": 303
    },
    {
     "landing_utc": "2024-01-21T10:00:00Z",
@@ -176,144 +176,144 @@
   },
   "rows": [
    {
-    "landing_utc": "2027-09-01T07:00:00Z",
+    "landing_utc": "2027-09-01T08:00:00Z",
     "verdict": "no",
     "slip_margin_days": -1,
     "points_passing": 0,
     "points": 13,
     "sunlit_h": 336,
-    "earth_h": 42,
-    "night_met_h": 0,
-    "outage_met_h": 300,
-    "night_in_window_h": 0,
-    "outage_in_window_h": 300,
+    "earth_h": 39,
+    "night_met_h": 358,
+    "outage_met_h": 302,
+    "night_in_window_h": 2,
+    "outage_in_window_h": 302,
     "next_good_utc": null,
     "fails_on": [
      "Earth at touchdown",
      "Earth contact"
     ],
-    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 1 Sep 2027 07:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (5.0 deg under it); only 42 hours of Earth contact of the 100 needed.",
+    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 1 Sep 2027 08:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (5.2 deg under it); only 39 hours of Earth contact of the 100 needed.",
     "long": {
      "days": 100,
      "hours": 2400,
-     "sunlit_h_min": 1412,
-     "earth_h_min": 947,
-     "sun_and_earth_h_min": 449,
-     "night_met_h_max": 336,
-     "outage_met_h_max": 381
+     "sunlit_h_min": 1346,
+     "earth_h_min": 927,
+     "sun_and_earth_h_min": 431,
+     "night_met_h_max": 358,
+     "outage_met_h_max": 388
     },
     "k": 0
    },
    {
-    "landing_utc": "2027-09-30T10:00:00Z",
+    "landing_utc": "2027-09-30T11:00:00Z",
     "verdict": "no",
     "slip_margin_days": -1,
     "points_passing": 0,
     "points": 13,
     "sunlit_h": 336,
-    "earth_h": 89,
+    "earth_h": 86,
     "night_met_h": 0,
-    "outage_met_h": 252,
+    "outage_met_h": 254,
     "night_in_window_h": 0,
-    "outage_in_window_h": 252,
+    "outage_in_window_h": 254,
     "next_good_utc": null,
     "fails_on": [
      "Earth at touchdown",
      "Earth contact"
     ],
-    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 30 Sep 2027 10:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (6.8 deg under it); only 89 hours of Earth contact of the 100 needed.",
+    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 30 Sep 2027 11:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (7.0 deg under it); only 86 hours of Earth contact of the 100 needed.",
     "long": {
      "days": 100,
      "hours": 2400,
-     "sunlit_h_min": 1403,
-     "earth_h_min": 998,
-     "sun_and_earth_h_min": 673,
-     "night_met_h_max": 345,
-     "outage_met_h_max": 381
+     "sunlit_h_min": 1338,
+     "earth_h_min": 980,
+     "sun_and_earth_h_min": 655,
+     "night_met_h_max": 366,
+     "outage_met_h_max": 387
     },
     "k": 1
    },
    {
-    "landing_utc": "2027-10-29T19:00:00Z",
+    "landing_utc": "2027-10-29T20:00:00Z",
     "verdict": "no",
     "slip_margin_days": -1,
     "points_passing": 0,
     "points": 13,
     "sunlit_h": 336,
-    "earth_h": 144,
+    "earth_h": 140,
     "night_met_h": 0,
-    "outage_met_h": 198,
+    "outage_met_h": 200,
     "night_in_window_h": 0,
-    "outage_in_window_h": 198,
+    "outage_in_window_h": 200,
     "next_good_utc": null,
     "fails_on": [
      "Earth at touchdown"
     ],
-    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 29 Oct 2027 19:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (7.4 deg under it).",
+    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 29 Oct 2027 20:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (7.5 deg under it).",
     "long": {
      "days": 100,
      "hours": 2400,
-     "sunlit_h_min": 1355,
-     "earth_h_min": 1058,
-     "sun_and_earth_h_min": 875,
-     "night_met_h_max": 372,
-     "outage_met_h_max": 381
+     "sunlit_h_min": 1289,
+     "earth_h_min": 1040,
+     "sun_and_earth_h_min": 861,
+     "night_met_h_max": 395,
+     "outage_met_h_max": 386
     },
     "k": 2
    },
    {
-    "landing_utc": "2027-11-28T12:00:00Z",
+    "landing_utc": "2027-11-28T13:00:00Z",
     "verdict": "no",
     "slip_margin_days": -1,
     "points_passing": 0,
     "points": 13,
     "sunlit_h": 336,
-    "earth_h": 206,
+    "earth_h": 202,
     "night_met_h": 0,
-    "outage_met_h": 135,
+    "outage_met_h": 137,
     "night_in_window_h": 0,
-    "outage_in_window_h": 135,
+    "outage_in_window_h": 137,
     "next_good_utc": null,
     "fails_on": [
      "Earth at touchdown"
     ],
-    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 28 Nov 2027 12:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (6.2 deg under it).",
+    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 28 Nov 2027 13:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (6.3 deg under it).",
     "long": {
      "days": 100,
      "hours": 2400,
-     "sunlit_h_min": 1283,
-     "earth_h_min": 1102,
-     "sun_and_earth_h_min": 984,
-     "night_met_h_max": 400,
-     "outage_met_h_max": 380
+     "sunlit_h_min": 1214,
+     "earth_h_min": 1078,
+     "sun_and_earth_h_min": 938,
+     "night_met_h_max": 425,
+     "outage_met_h_max": 385
     },
     "k": 3
    },
    {
-    "landing_utc": "2027-12-28T12:00:00Z",
+    "landing_utc": "2027-12-28T14:00:00Z",
     "verdict": "no",
     "slip_margin_days": -1,
     "points_passing": 0,
     "points": 13,
-    "sunlit_h": 332,
-    "earth_h": 275,
-    "night_met_h": 372,
-    "outage_met_h": 67,
-    "night_in_window_h": 14,
-    "outage_in_window_h": 67,
-    "next_good_utc": "2027-12-31T12:00:00Z",
+    "sunlit_h": 327,
+    "earth_h": 273,
+    "night_met_h": 395,
+    "outage_met_h": 68,
+    "night_in_window_h": 15,
+    "outage_in_window_h": 68,
+    "next_good_utc": "2027-12-31T14:00:00Z",
     "fails_on": [
      "Earth at touchdown"
     ],
-    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 28 Dec 2027 12:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (3.2 deg under it).",
+    "reasons": "A landing at Nobile crater west rim (illustrative point for VIPER) on 28 Dec 2027 14:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Earth is behind the skyline at touchdown (3.3 deg under it).",
     "long": {
      "days": 100,
      "hours": 2400,
-     "sunlit_h_min": 1199,
-     "earth_h_min": 1113,
-     "sun_and_earth_h_min": 933,
-     "night_met_h_max": 433,
-     "outage_met_h_max": 377
+     "sunlit_h_min": 1129,
+     "earth_h_min": 1088,
+     "sun_and_earth_h_min": 871,
+     "night_met_h_max": 451,
+     "outage_met_h_max": 383
     },
     "k": 4
    }
@@ -344,15 +344,15 @@
      "slip_margin_days": 8,
      "points_passing": 13,
      "points": 13,
-     "sunlit_h": 314,
+     "sunlit_h": 306,
      "earth_h": 311,
-     "night_met_h": 20,
-     "outage_met_h": 323,
-     "night_in_window_h": 20,
-     "outage_in_window_h": 27,
+     "night_met_h": 21,
+     "outage_met_h": 326,
+     "night_in_window_h": 21,
+     "outage_in_window_h": 30,
      "next_good_utc": null,
      "fails_on": [],
-     "reasons": "A landing at Slip-robust ridge point (89.010 S, 122.764 E) on 18 Nov 2026 gives 314 sunlit hours and 311 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
+     "reasons": "A landing at Slip-robust ridge point (89.010 S, 122.764 E) on 18 Nov 2026 gives 306 sunlit hours and 311 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
      "k": 0
     },
     {
@@ -363,10 +363,10 @@
      "points": 13,
      "sunlit_h": 259,
      "earth_h": 253,
-     "night_met_h": 78,
-     "outage_met_h": 313,
-     "night_in_window_h": 78,
-     "outage_in_window_h": 84,
+     "night_met_h": 79,
+     "outage_met_h": 316,
+     "night_in_window_h": 79,
+     "outage_in_window_h": 87,
      "next_good_utc": null,
      "fails_on": [],
      "reasons": "A landing at Slip-robust ridge point (89.010 S, 122.764 E) on 17 Dec 2026 13:00 UTC gives 259 sunlit hours and 253 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
@@ -381,9 +381,9 @@
      "sunlit_h": 217,
      "earth_h": 204,
      "night_met_h": 132,
-     "outage_met_h": 306,
+     "outage_met_h": 310,
      "night_in_window_h": 120,
-     "outage_in_window_h": 135,
+     "outage_in_window_h": 138,
      "next_good_utc": null,
      "fails_on": [
       "sunlight"
@@ -397,18 +397,18 @@
      "slip_margin_days": -1,
      "points_passing": 0,
      "points": 13,
-     "sunlit_h": 151,
+     "sunlit_h": 147,
      "earth_h": 154,
-     "night_met_h": 635,
-     "outage_met_h": 301,
+     "night_met_h": 638,
+     "outage_met_h": 306,
      "night_in_window_h": 124,
-     "outage_in_window_h": 185,
+     "outage_in_window_h": 188,
      "next_good_utc": null,
      "fails_on": [
       "Sun at touchdown",
       "sunlight"
      ],
-     "reasons": "A landing at Slip-robust ridge point (89.010 S, 122.764 E) on 14 Feb 2027 14:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (0.7 deg under it); only 151 sunlit hours of the 240 needed.",
+     "reasons": "A landing at Slip-robust ridge point (89.010 S, 122.764 E) on 14 Feb 2027 14:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (0.8 deg under it); only 147 sunlit hours of the 240 needed.",
      "k": 3
     }
    ],
@@ -425,33 +425,33 @@
    "rows": [
     {
      "landing_utc": "2026-11-18T00:00:00Z",
-     "verdict": "yes",
-     "slip_margin_days": 7,
-     "points_passing": 13,
+     "verdict": "not sure",
+     "slip_margin_days": -1,
+     "points_passing": 12,
      "points": 13,
      "sunlit_h": 336,
      "earth_h": 295,
-     "night_met_h": 0,
-     "outage_met_h": 352,
-     "night_in_window_h": 0,
-     "outage_in_window_h": 47,
-     "next_good_utc": null,
+     "night_met_h": 2,
+     "outage_met_h": 385,
+     "night_in_window_h": 2,
+     "outage_in_window_h": 60,
+     "next_good_utc": "2026-11-19T00:00:00Z",
      "fails_on": [],
-     "reasons": "A landing at Shackleton connecting ridge (C1) on 18 Nov 2026 gives 336 sunlit hours and 295 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
+     "reasons": "A landing at Shackleton connecting ridge (C1) on 18 Nov 2026 gives 336 sunlit hours and 295 hours of Earth contact at the stated point, but the answer is not robust: 12 of 13 points within 100 m pass.",
      "k": 0
     },
     {
      "landing_utc": "2026-12-17T13:00:00Z",
      "verdict": "yes",
-     "slip_margin_days": 5,
+     "slip_margin_days": 4,
      "points_passing": 13,
      "points": 13,
      "sunlit_h": 336,
      "earth_h": 238,
-     "night_met_h": 0,
-     "outage_met_h": 350,
-     "night_in_window_h": 0,
-     "outage_in_window_h": 103,
+     "night_met_h": 21,
+     "outage_met_h": 383,
+     "night_in_window_h": 21,
+     "outage_in_window_h": 116,
      "next_good_utc": null,
      "fails_on": [],
      "reasons": "A landing at Shackleton connecting ridge (C1) on 17 Dec 2026 13:00 UTC gives 336 sunlit hours and 238 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
@@ -459,36 +459,36 @@
     },
     {
      "landing_utc": "2027-01-16T01:00:00Z",
-     "verdict": "yes",
-     "slip_margin_days": 3,
-     "points_passing": 13,
+     "verdict": "not sure",
+     "slip_margin_days": -1,
+     "points_passing": 11,
      "points": 13,
      "sunlit_h": 336,
      "earth_h": 188,
-     "night_met_h": 7,
-     "outage_met_h": 345,
-     "night_in_window_h": 7,
-     "outage_in_window_h": 153,
+     "night_met_h": 115,
+     "outage_met_h": 377,
+     "night_in_window_h": 115,
+     "outage_in_window_h": 166,
      "next_good_utc": null,
      "fails_on": [],
-     "reasons": "A landing at Shackleton connecting ridge (C1) on 16 Jan 2027 01:00 UTC gives 336 sunlit hours and 188 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
+     "reasons": "A landing at Shackleton connecting ridge (C1) on 16 Jan 2027 01:00 UTC gives 336 sunlit hours and 188 hours of Earth contact at the stated point, but the answer is not robust: 11 of 13 points within 100 m pass.",
      "k": 2
     },
     {
      "landing_utc": "2027-02-14T14:00:00Z",
      "verdict": "not sure",
      "slip_margin_days": -1,
-     "points_passing": 9,
+     "points_passing": 6,
      "points": 13,
-     "sunlit_h": 308,
+     "sunlit_h": 305,
      "earth_h": 137,
-     "night_met_h": 174,
-     "outage_met_h": 342,
-     "night_in_window_h": 174,
-     "outage_in_window_h": 204,
+     "night_met_h": 297,
+     "outage_met_h": 375,
+     "night_in_window_h": 297,
+     "outage_in_window_h": 218,
      "next_good_utc": null,
      "fails_on": [],
-     "reasons": "A landing at Shackleton connecting ridge (C1) on 14 Feb 2027 14:00 UTC gives 308 sunlit hours and 137 hours of Earth contact at the stated point, but the answer is not robust: 9 of 13 points within 100 m pass.",
+     "reasons": "A landing at Shackleton connecting ridge (C1) on 14 Feb 2027 14:00 UTC gives 305 sunlit hours and 137 hours of Earth contact at the stated point, but the answer is not robust: 6 of 13 points within 100 m pass.",
      "k": 3
     }
    ],
@@ -506,14 +506,14 @@
     {
      "landing_utc": "2026-11-18T00:00:00Z",
      "verdict": "yes",
-     "slip_margin_days": 2,
+     "slip_margin_days": 1,
      "points_passing": 13,
      "points": 13,
      "sunlit_h": 309,
      "earth_h": 336,
-     "night_met_h": 363,
+     "night_met_h": 372,
      "outage_met_h": 0,
-     "night_in_window_h": 46,
+     "night_in_window_h": 55,
      "outage_in_window_h": 0,
      "next_good_utc": null,
      "fails_on": [],
@@ -526,15 +526,15 @@
      "slip_margin_days": 1,
      "points_passing": 13,
      "points": 13,
-     "sunlit_h": 304,
+     "sunlit_h": 303,
      "earth_h": 330,
-     "night_met_h": 374,
-     "outage_met_h": 134,
-     "night_in_window_h": 50,
+     "night_met_h": 383,
+     "outage_met_h": 141,
+     "night_in_window_h": 59,
      "outage_in_window_h": 5,
      "next_good_utc": null,
      "fails_on": [],
-     "reasons": "A landing at IM-2 Athena (Mons Mouton) on 17 Dec 2026 13:00 UTC gives 304 sunlit hours and 330 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
+     "reasons": "A landing at IM-2 Athena (Mons Mouton) on 17 Dec 2026 13:00 UTC gives 303 sunlit hours and 330 hours of Earth contact; the mission needs 240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown.",
      "k": 1
     },
     {
@@ -545,9 +545,9 @@
      "points": 13,
      "sunlit_h": 291,
      "earth_h": 274,
-     "night_met_h": 392,
-     "outage_met_h": 140,
-     "night_in_window_h": 59,
+     "night_met_h": 399,
+     "outage_met_h": 144,
+     "night_in_window_h": 66,
      "outage_in_window_h": 62,
      "next_good_utc": null,
      "fails_on": [],
@@ -557,14 +557,14 @@
     {
      "landing_utc": "2027-02-14T14:00:00Z",
      "verdict": "yes",
-     "slip_margin_days": 1,
+     "slip_margin_days": 0,
      "points_passing": 13,
      "points": 13,
      "sunlit_h": 282,
      "earth_h": 223,
-     "night_met_h": 410,
-     "outage_met_h": 136,
-     "night_in_window_h": 70,
+     "night_met_h": 415,
+     "outage_met_h": 140,
+     "night_in_window_h": 75,
      "outage_in_window_h": 114,
      "next_good_utc": null,
      "fails_on": [],
@@ -589,17 +589,17 @@
      "slip_margin_days": -1,
      "points_passing": 0,
      "points": 13,
-     "sunlit_h": 305,
+     "sunlit_h": 303,
      "earth_h": 336,
-     "night_met_h": 420,
+     "night_met_h": 424,
      "outage_met_h": 0,
-     "night_in_window_h": 32,
+     "night_in_window_h": 35,
      "outage_in_window_h": 0,
      "next_good_utc": "2026-11-20T00:00:00Z",
      "fails_on": [
       "Sun at touchdown"
      ],
-     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 18 Nov 2026 does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (3.6 deg under it).",
+     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 18 Nov 2026 does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (3.7 deg under it).",
      "k": 0
     },
     {
@@ -608,17 +608,17 @@
      "slip_margin_days": -1,
      "points_passing": 0,
      "points": 13,
-     "sunlit_h": 299,
+     "sunlit_h": 297,
      "earth_h": 335,
-     "night_met_h": 429,
+     "night_met_h": 434,
      "outage_met_h": 1,
-     "night_in_window_h": 35,
+     "night_in_window_h": 38,
      "outage_in_window_h": 1,
      "next_good_utc": "2026-12-19T13:00:00Z",
      "fails_on": [
       "Sun at touchdown"
      ],
-     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 17 Dec 2026 13:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (4.0 deg under it).",
+     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 17 Dec 2026 13:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (4.2 deg under it).",
      "k": 1
     },
     {
@@ -627,17 +627,17 @@
      "slip_margin_days": -1,
      "points_passing": 0,
      "points": 13,
-     "sunlit_h": 284,
+     "sunlit_h": 281,
      "earth_h": 335,
-     "night_met_h": 443,
+     "night_met_h": 446,
      "outage_met_h": 1,
-     "night_in_window_h": 42,
+     "night_in_window_h": 45,
      "outage_in_window_h": 1,
      "next_good_utc": "2027-01-18T01:00:00Z",
      "fails_on": [
       "Sun at touchdown"
      ],
-     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 16 Jan 2027 01:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (5.0 deg under it).",
+     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 16 Jan 2027 01:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (5.2 deg under it).",
      "k": 2
     },
     {
@@ -646,22 +646,22 @@
      "slip_margin_days": -1,
      "points_passing": 0,
      "points": 13,
-     "sunlit_h": 271,
+     "sunlit_h": 268,
      "earth_h": 331,
-     "night_met_h": 455,
+     "night_met_h": 458,
      "outage_met_h": 1,
-     "night_in_window_h": 48,
+     "night_in_window_h": 51,
      "outage_in_window_h": 1,
-     "next_good_utc": "2027-02-16T14:00:00Z",
+     "next_good_utc": null,
      "fails_on": [
       "Sun at touchdown"
      ],
-     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 14 Feb 2027 14:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (6.0 deg under it).",
+     "reasons": "A landing at IM-1 Odysseus (Malapert A) on 14 Feb 2027 14:00 UTC does not meet the need (240 sunlit hours and 100 hours of Earth contact in the first 14 days, landing in sunlight, with the Earth in view at touchdown): the Sun is behind the skyline at touchdown (6.2 deg under it).",
      "k": 3
     }
    ],
    "rule": "Window k lands k synodic months (29.53 days) after the planned landing, at the same solar phase, as real monthly launch windows do; each is judged with the card's rules and need."
   }
  },
- "seconds": 1.4
+ "seconds": 51.9
 }

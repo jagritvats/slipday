@@ -1,0 +1,139 @@
+/* ===== Slipday add-on: "Be the mission planner" campaign (planner_game.js) =====
+   Scoped to .sd-game.  Colours come from the page's tokens (style.css, light and dark) with fallbacks for the demo page. */
+.sd-game { --sd-sun: var(--sun, #c2560f); --sd-earth: var(--earth, #2364c4); --sd-off: var(--grid, #e6e9ee);
+  --sd-yes-bg: var(--yes-bg, #e3f3e8); --sd-yes-ink: var(--yes-ink, #0f5a2e); --sd-ns-bg: var(--ns-bg, #fdf1d6); --sd-ns-ink: var(--ns-ink, #6b4500);
+  --sd-no-bg: var(--no-bg, #fde7e4); --sd-no-ink: var(--no-ink, #9b1c12); }
+@media (prefers-color-scheme: dark) {
+  .sd-game { --sd-yes-bg: var(--yes-bg, #12291a); --sd-yes-ink: var(--yes-ink, #8fe0aa); --sd-ns-bg: var(--ns-bg, #33270b); --sd-ns-ink: var(--ns-ink, #f3d38a);
+    --sd-no-bg: var(--no-bg, #3a1714); --sd-no-ink: var(--no-ink, #ffaaa0); }
+}
+.sd-game h3 { font-size: 18px; margin: 16px 0 6px; line-height: 1.3; }
+.sd-game h4 { font-size: 15px; margin: 0 0 10px; }
+.sd-game .sd-lead { max-width: 72ch; font-size: 15px; line-height: 1.55; }
+.sd-game .sd-score { font-size: 14px; color: var(--text2, #454d5a); }
+.sd-game .sd-wait { color: var(--text2, #454d5a); }
+.sd-game .sd-story { margin: 0 0 12px; max-width: 72ch; }
+.sd-game button { min-height: 44px; }
+
+/* the campaign: five steps, the current one marked */
+.sd-game .sd-camp { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 4px 0 8px; }
+.sd-game .sd-camp li { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text2, #454d5a);
+  border: 1px solid var(--line, #d3d8df); border-radius: 999px; padding: 4px 10px 4px 4px; }
+.sd-game .sd-camp-n { display: inline-flex; width: 22px; height: 22px; align-items: center; justify-content: center; border-radius: 50%;
+  background: var(--grid, #e6e9ee); color: var(--text, #141820); font-weight: 650; font-size: 12px; }
+.sd-game .sd-camp li.sd-now { border-color: var(--accent, #1d3f8f); color: var(--text, #141820); font-weight: 600; }
+.sd-game .sd-camp li.sd-now .sd-camp-n { background: var(--accent, #1d3f8f); color: var(--surface, #fff); }
+
+/* the briefing, like a mission-control board */
+.sd-game .sd-brief { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px; margin: 0 0 8px; }
+.sd-game .sd-bcell { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--r-sm, 8px);
+  background: var(--page, #eef0f3); border: 1px solid var(--line, #d3d8df); }
+.sd-game .sd-bk { font-size: 12px; color: var(--text2, #454d5a); font-weight: 600; }
+.sd-game .sd-bv { font-size: 16px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.sd-game .sd-bs { font-size: 13px; color: var(--text2, #454d5a); }
+.sd-game .sd-slipcell { border-color: var(--warn, #b7791f); background: var(--sd-ns-bg); }
+.sd-game .sd-slipcell .sd-bv, .sd-game .sd-slipcell .sd-bk, .sd-game .sd-slipcell .sd-bs { color: var(--sd-ns-ink); }
+
+/* options: native radios, one card each */
+.sd-game .sd-opts { border: 0; padding: 0; margin: 12px 0 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 8px; }
+.sd-game .sd-opts legend { font-weight: 650; font-size: 15px; padding: 0; margin-bottom: 8px; }
+.sd-game .sd-opt { position: relative; display: flex; flex-direction: column; gap: 2px; min-height: 44px; padding: 10px 12px 10px 38px; cursor: pointer;
+  border: 1px solid var(--line, #d3d8df); border-radius: var(--r-sm, 8px); background: var(--surface, #fff); color: var(--text, #141820);
+  font-size: 14px; transition: border-color .15s, box-shadow .15s; }
+.sd-game .sd-opt input { position: absolute; left: 12px; top: 13px; width: 18px; height: 18px; margin: 0; accent-color: var(--accent, #1d3f8f); }
+.sd-game .sd-opt:hover { border-color: var(--accent, #1d3f8f); }
+.sd-game .sd-opt:focus-within { outline: 3px solid var(--accent, #1d3f8f); outline-offset: 2px; }
+.sd-game .sd-opt.sd-sel { border-color: var(--accent, #1d3f8f); box-shadow: inset 0 0 0 1px var(--accent, #1d3f8f); }
+.sd-game .sd-opt-t { font-weight: 650; }
+.sd-game .sd-opt-s { color: var(--text2, #454d5a); font-size: 13px; line-height: 1.35; }
+.sd-game .sd-hint { font-size: 13px; color: var(--text2, #454d5a); }
+
+/* inspect panel */
+.sd-game .sd-inspect { border: 1px solid var(--line, #d3d8df); border-radius: var(--r, 12px); padding: 12px 14px; margin: 8px 0; min-height: 60px; }
+.sd-game .sd-ins-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.sd-game .sd-skybox { position: relative; height: 150px; border-left: 1px solid var(--line, #d3d8df); border-bottom: 1px solid var(--line, #d3d8df); margin-left: 30px; }
+.sd-game .sd-skybox svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.sd-game .sd-sky { fill: var(--skyfill, #cfd4dc); stroke: var(--sky, #8a93a1); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.sd-game .sd-level { stroke: var(--muted, #5d6573); stroke-dasharray: 2 3; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.sd-game .sd-trk { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.sd-game .sd-sun-t { stroke: var(--sun, #c2560f); } .sd-game .sd-earth-t { stroke: var(--earth, #2364c4); stroke-dasharray: 5 3; }
+.sd-game .sd-sun-h { stroke: var(--sun, #c2560f); opacity: .35; stroke-width: 1.25; stroke-dasharray: 1 3; }
+.sd-game .sd-earth-h { stroke: var(--earth, #2364c4); opacity: .35; stroke-width: 1.25; stroke-dasharray: 1 3; }
+.sd-game .sd-dot { position: absolute; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; border: 2px solid var(--surface, #fff); }
+.sd-game .sd-dsun { background: var(--sun, #c2560f); } .sd-game .sd-dearth { background: var(--earth, #2364c4); }
+.sd-game .sd-ylab { position: absolute; left: -30px; width: 26px; text-align: right; font-size: 12px; color: var(--text2, #454d5a); }
+.sd-game .sd-yt { top: -2px; } .sd-game .sd-yb { bottom: -2px; }
+.sd-game .sd-xaxis { display: flex; justify-content: space-between; margin-left: 30px; font-size: 12px; color: var(--text2, #454d5a); }
+.sd-game .sd-key { font-size: 12px; color: var(--text2, #454d5a); margin: 4px 0 0; line-height: 1.6; }
+.sd-game .sd-key i { display: inline-block; width: 16px; height: 0; vertical-align: middle; margin: 0 4px 0 6px; border-top: 2px solid; }
+.sd-game .sd-k-sun { border-color: var(--sun, #c2560f) !important; } .sd-game .sd-k-earth { border-color: var(--earth, #2364c4) !important; border-top-style: dashed !important; }
+.sd-game .sd-k-hid { border-color: var(--muted, #5d6573) !important; border-top-style: dotted !important; }
+.sd-game .sd-bar { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 2px 8px; align-items: center; margin: 0 0 10px; font-size: 13px; }
+.sd-game .sd-bar-l { font-weight: 600; }
+.sd-game .sd-bar-t { position: relative; height: 12px; border-radius: 6px; background: var(--sd-off); }
+.sd-game .sd-bar-f { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px; }
+.sd-game .sd-f-sun { background: var(--sun, #c2560f); } .sd-game .sd-f-earth { background: var(--earth, #2364c4); }
+.sd-game .sd-bar-n { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--text, #141820); }
+.sd-game .sd-bar-v { grid-column: 2; color: var(--text2, #454d5a); font-variant-numeric: tabular-nums; }
+.sd-game .sd-bar-v b { color: var(--text, #141820); }
+.sd-game .sd-short { color: var(--sd-no-ink); font-weight: 600; }
+.sd-game .sd-facts { margin: 0; padding-left: 1.2em; font-size: 13.5px; line-height: 1.45; }
+.sd-game .sd-facts li { margin: 0 0 4px; }
+
+/* outcome */
+.sd-game .sd-outcome { border-radius: var(--r, 12px); padding: 4px 16px 12px; margin: 12px 0 8px; border: 1px solid var(--line, #d3d8df); }
+.sd-game .sd-outcome.v-yes { background: var(--sd-yes-bg); border-color: var(--good, #1d7f45); }
+.sd-game .sd-outcome.v-notsure { background: var(--sd-ns-bg); border-color: var(--warn, #b7791f); }
+.sd-game .sd-outcome.v-no { background: var(--sd-no-bg); border-color: var(--crit, #c0362c); }
+.sd-game .sd-outcome h3 { display: flex; align-items: center; gap: 10px; }
+.sd-game .sd-outcome.v-yes h3 { color: var(--sd-yes-ink); } .sd-game .sd-outcome.v-notsure h3 { color: var(--sd-ns-ink); } .sd-game .sd-outcome.v-no h3 { color: var(--sd-no-ink); }
+.sd-game .sd-icon { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 16px; }
+.sd-game .v-yes .sd-icon { background: var(--sd-yes-ink); color: var(--surface, #fff); } .sd-game .v-notsure .sd-icon { background: var(--sd-ns-ink); color: var(--surface, #fff); }
+.sd-game .v-no .sd-icon { background: var(--sd-no-ink); color: var(--surface, #fff); }
+.sd-game .sd-outcome p { color: var(--text, #141820); }
+.sd-game .sd-outcome .sd-note { color: var(--text2, #454d5a); }
+.sd-game .sd-pts { font-size: 14px; }
+.sd-game .sd-tl { margin: 10px 0 0; }
+.sd-game .sd-tl-h { font-size: 13px; font-weight: 600; margin: 0 0 6px; }
+.sd-game .sd-tl-row, .sd-game .sd-tl-days { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; }
+.sd-game .sd-tl-k { flex: 0 0 3.4em; font-size: 12px; color: var(--text2, #454d5a); }
+.sd-game .sd-tl-bar { position: relative; flex: 1 1 auto; height: 18px; border-radius: 4px; }
+.sd-game .sd-tl-mark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text, #141820); }
+.sd-game .sd-tl-mark span { position: absolute; top: 100%; left: 4px; white-space: nowrap; font-size: 12px; color: var(--text, #141820); line-height: 1.4; }
+.sd-game .sd-tl-row + .sd-sr + .sd-tl-row { margin-top: 18px; }
+.sd-game .sd-tl-days { margin-top: 18px; }
+.sd-game .sd-tl-dn { flex: 1 1 auto; display: flex; }
+.sd-game .sd-tl-dn span { flex: 1 1 0; text-align: center; font-size: 12px; color: var(--text2, #454d5a); }
+.sd-game .sd-result { font-size: 15px; font-weight: 600; margin: 8px 0; }
+
+/* comparison table */
+.sd-game .sd-tablewrap { overflow-x: auto; }
+.sd-game .sd-cmp { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.sd-game .sd-cmp caption { text-align: left; font-weight: 600; padding: 4px 0 6px; }
+.sd-game .sd-cmp th, .sd-game .sd-cmp td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line, #d3d8df); vertical-align: top; }
+.sd-game .sd-cmp thead th { font-size: 12px; color: var(--text2, #454d5a); }
+.sd-game .sd-cmp th small { display: block; font-weight: 400; color: var(--text2, #454d5a); font-size: 12px; }
+.sd-game .sd-cmp tr.sd-mine th { box-shadow: inset 3px 0 0 var(--accent, #1d3f8f); padding-left: 8px; }
+.sd-game .sd-cmp tr.sd-best td:last-child { font-weight: 700; }
+.sd-game .sd-vchip { white-space: nowrap; font-weight: 600; }
+.sd-game .sd-row-yes .sd-vchip { color: var(--sd-yes-ink); } .sd-game .sd-row-notsure .sd-vchip { color: var(--sd-ns-ink); } .sd-game .sd-row-no .sd-vchip { color: var(--sd-no-ink); }
+.sd-game .sd-sum { margin: 4px 0 8px; padding-left: 1.4em; font-size: 14px; }
+.sd-game .sd-rules { margin-top: 12px; }
+
+@media (max-width: 700px) {
+  .sd-game .sd-ins-grid { grid-template-columns: 1fr; }
+  .sd-game .sd-opts { grid-template-columns: 1fr; }
+  .sd-game .sd-cmp, .sd-game .sd-cmp tbody, .sd-game .sd-cmp tr, .sd-game .sd-cmp th, .sd-game .sd-cmp td { display: block; }
+  .sd-game .sd-cmp thead { display: none; }
+  .sd-game .sd-cmp caption { display: block; }
+  .sd-game .sd-cmp tr { border: 1px solid var(--line, #d3d8df); border-radius: var(--r-sm, 8px); padding: 8px 10px; margin: 0 0 8px; }
+  .sd-game .sd-cmp th, .sd-game .sd-cmp td { border: 0; padding: 2px 0; }
+  .sd-game .sd-cmp td { display: flex; justify-content: space-between; gap: 8px; }
+  .sd-game .sd-cmp td::before { content: attr(data-l); color: var(--text2, #454d5a); font-size: 12px; }
+  .sd-game .sd-cmp tr.sd-mine { border-color: var(--accent, #1d3f8f); border-width: 2px; }
+  .sd-game .sd-cmp tr.sd-mine th { box-shadow: none; padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sd-game *, .sd-game *::before, .sd-game *::after { transition: none !important; animation: none !important; }
+}
+.sd-game .sd-tl-mark span.sd-tl-r { left: auto; right: 4px; }

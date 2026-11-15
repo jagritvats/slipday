@@ -1,15 +1,15 @@
 [
  {
   "id": "question",
-  "text": "Rocket launches often slip by a few days. Near the Moon's south pole, that can decide everything. Slipday asks: if the launch slips, can we still land here?",
-  "text_hash": "e895c8731df1c114",
-  "dur": 10.124
+  "text": "Rocket launches often slip by a few days. Near the Moon's south pole, that can decide everything. Pick a site and a date, and Slipday asks: if the launch slips, can we still land here?",
+  "text_hash": "4c60e7cae6f25e28",
+  "dur": 12.725
  },
  {
   "id": "card",
-  "text": "The answer is yes, not sure, or no. Here: yes, with eight days of slip margin, checked at thirteen touchdown points around the target.",
-  "text_hash": "bca9ba290865a431",
-  "dur": 8.638
+  "text": "The answer is yes, not sure, or no. Here: yes, with eight days of slip margin, on NASA's five-metre terrain, checked at thirteen touchdown points around the target.",
+  "text_hash": "027132c0cf33d1d1",
+  "dur": 11.285
  },
  {
   "id": "objective",
@@ -25,9 +25,9 @@
  },
  {
   "id": "windows",
-  "text": "Missed the window? December still works. Other sites can work in January, though most are fragile. And one click downloads the whole answer.",
-  "text_hash": "39f7b4f0229a25f7",
-  "dur": 9.52
+  "text": "Missed the window? December still works; January and February fall short on sunlight. The page checks other sites and hours, and one click downloads the whole answer.",
+  "text_hash": "4dd7ccc34cfa9af1",
+  "dur": 10.728
  },
  {
   "id": "view3d",
@@ -49,9 +49,9 @@
  },
  {
   "id": "grids",
-  "text": "Detail matters. At the Shackleton ridge, the eighty-metre map says yes. The twenty and five-metre maps say not sure.",
-  "text_hash": "69abf61a4991c999",
-  "dur": 7.895
+  "text": "Detail matters. At the Shackleton ridge the page uses NASA's five-metre terrain, and the planned date is not sure: the answer changes within the landing scatter.",
+  "text_hash": "edf532f0f6a38da9",
+  "dur": 10.82
  },
  {
   "id": "slope",
@@ -73,9 +73,9 @@
  },
  {
   "id": "regions",
-  "text": "NASA keeps nine Artemis regions, because one is not enough. The best one is open at twenty-eight point one percent of landing times.",
-  "text_hash": "5d66f434efa28538",
-  "dur": 8.916
+  "text": "NASA keeps nine south-pole landing regions, because one is not enough. The best one is open at twenty-six percent of landing times.",
+  "text_hash": "cf7dc9aa59f9647d",
+  "dur": 8.684
  },
  {
   "id": "atlas",
@@ -97,15 +97,15 @@
  },
  {
   "id": "game",
-  "text": "And a short game for students: the launch slips, you pick a site, and the app shows the real answer.",
-  "text_hash": "a53a65f1f2e3a3cd",
-  "dur": 6.548
+  "text": "And a game for students, in five scenarios: the launch slips, you pick an option, and the app shows the real answer.",
+  "text_hash": "d39f6f0f40cd00f9",
+  "dur": 7.477
  },
  {
   "id": "limits",
-  "text": "What it can't tell you: the eighty-metre terrain is coarse and can be too hopeful. The needs are examples, and fragile answers can flip.",
-  "text_hash": "f29d2d8b77d4c283",
-  "dur": 9.52
+  "text": "What it can't tell you: far from the pole the terrain is coarse and can be too hopeful. The needs are examples, and fragile answers can flip.",
+  "text_hash": "2a6fbcae304654a1",
+  "dur": 9.149
  },
  {
   "id": "closing",

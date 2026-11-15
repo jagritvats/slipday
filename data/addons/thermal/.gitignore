@@ -1,0 +1,4 @@
+# Raw Diviner downloads (over 50 MB each, or many of them). Re-fetch with the URLs in ADDON_thermal.md.
+raw/*.img
+raw/*.zip
+raw/*.tab

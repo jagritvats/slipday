@@ -1,0 +1,96 @@
+92416 points, 4294 yes
+features (92416, 29) in 2.3 s
+fold 0: 18772 test, 70714 train
+fold 1: 18772 test, 70719 train
+fold 2: 18772 test, 71058 train
+fold 3: 18772 test, 71051 train
+fold 4: 17328 test, 72832 train
+A {
+ "model": {
+  "points": 92416,
+  "truly_yes": 4294,
+  "verdict_accuracy": 0.9785,
+  "margin_error_days_mean": 0.058,
+  "margin_error_days_mean_where_truly_yes": 1.103,
+  "false_yes": 424,
+  "false_yes_share_of_true_no": 0.0048,
+  "missed_yes": 1559,
+  "missed_yes_share_of_true_yes": 0.3631
+ },
+ "nearest_neighbour_from_training_points": {
+  "points": 92416,
+  "truly_yes": 4294,
+  "verdict_accuracy": 0.938,
+  "margin_error_days_mean": 0.152,
+  "margin_error_days_mean_where_truly_yes": 1.792,
+  "false_yes": 2738,
+  "false_yes_share_of_true_no": 0.0311,
+  "missed_yes": 2993,
+  "missed_yes_share_of_true_yes": 0.697
+ },
+ "always_no": {
+  "points": 92416,
+  "truly_yes": 4294,
+  "verdict_accuracy": 0.9535,
+  "margin_error_days_mean": 0.102,
+  "margin_error_days_mean_where_truly_yes": 2.188,
+  "false_yes": 0,
+  "false_yes_share_of_true_no": 0.0,
+  "missed_yes": 4294,
+  "missed_yes_share_of_true_yes": 1.0
+ },
+ "nearest_neighbour_distance_km_median": 18.4
+}
+close-up: 14400 points, 900 on the 2 km grid, 900 agree
+B {
+ "close_up_points": 14400,
+ "on_2km_grid": 900,
+ "on_grid_same_margin": 900,
+ "off_grid_test_points": 13500,
+ "nearest_grid_point_distance_km_median": 0.71,
+ "model": {
+  "points": 13500,
+  "truly_yes": 692,
+  "verdict_accuracy": 0.9561,
+  "margin_error_days_mean": 0.12,
+  "margin_error_days_mean_where_truly_yes": 2.094,
+  "false_yes": 128,
+  "false_yes_share_of_true_no": 0.01,
+  "missed_yes": 465,
+  "missed_yes_share_of_true_yes": 0.672
+ },
+ "nearest_neighbour_from_full_2km_grid": {
+  "points": 13500,
+  "truly_yes": 692,
+  "verdict_accuracy": 0.9656,
+  "margin_error_days_mean": 0.13,
+  "margin_error_days_mean_where_truly_yes": 1.445,
+  "false_yes": 220,
+  "false_yes_share_of_true_no": 0.0172,
+  "missed_yes": 244,
+  "missed_yes_share_of_true_yes": 0.3526
+ },
+ "always_no": {
+  "points": 13500,
+  "truly_yes": 692,
+  "verdict_accuracy": 0.9487,
+  "margin_error_days_mean": 0.133,
+  "margin_error_days_mean_where_truly_yes": 2.591,
+  "false_yes": 0,
+  "false_yes_share_of_true_no": 0.0,
+  "missed_yes": 692,
+  "missed_yes_share_of_true_yes": 1.0
+ }
+}
+B2 {
+ "points": 13500,
+ "truly_yes": 692,
+ "verdict_accuracy": 0.9748,
+ "margin_error_days_mean": 0.086,
+ "margin_error_days_mean_where_truly_yes": 1.302,
+ "false_yes": 107,
+ "false_yes_share_of_true_no": 0.0084,
+ "missed_yes": 233,
+ "missed_yes_share_of_true_yes": 0.3367
+}
+{"ships_on_page": true, "model_file_bytes": 421795, "estimate_ms_per_point": 2.5, "seconds": 18.0}

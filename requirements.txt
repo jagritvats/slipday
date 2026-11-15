@@ -6,6 +6,9 @@ de421==2008.1
 pillow>=10
 pytest>=8
 httpx>=0.27
+# learned instant estimate (slipday/addons/estimate.py); pinned to the version the stored model was trained with
+scikit-learn==1.9.1
+joblib==1.6.0
 # only for scripts/prepare_dem.py and scripts/validate_terrain.py (reading the NASA GeoTIFF and JPEG2000 files)
 tifffile>=2024.1
 imagecodecs>=2024.1

@@ -7,7 +7,7 @@ sites_verified.json).  ``confidence`` says what kind of point each one is:
   DEM summit        highest point of a named feature in the LOLA 80 m mosaic
   model-selected point  a point this project chose on the DEM (not published anywhere)
   feature centre    IAU gazetteer centre of a named feature; NASA has published
-                    no landing coordinates for the Artemis III regions, so the
+                    no landing coordinates for its south-pole landing regions, so the
                     parent feature is used as an anchor
   definition        a reference point defined by its coordinates
 ``relayed`` is True where the source page was read through a web-fetch tool
@@ -25,7 +25,7 @@ _NSSDCA = "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
 _NSSDCA_ART = "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_artifact_impacts.html"
 _GLASER18 = "https://ntrs.nasa.gov/api/citations/20170007365/downloads/20170007365.pdf"
 _IAU = "http://planetarynames.wr.usgs.gov/Feature/"
-_ARTEMIS = "NASA Artemis III candidate region (Oct 2024 list); no coordinates published, IAU feature centre used. "
+_ARTEMIS = "NASA south-pole candidate landing region (Oct 2024 list, made for Artemis III; the first crewed landing is now planned for Artemis IV, early 2028); no coordinates published, IAU feature centre used. "
 
 
 def _s(id_, name, group, lat, lon, confidence, source, relayed=True, note=""):

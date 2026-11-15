@@ -1,0 +1,13 @@
+grid 304 x 304 = 92416 points at 2000 m; 1438 chunks (92032 points) to do; terrain ldem_80s_80m+ldem_75s_240m+ldem_64_south+ldem_16 (76de51d5e9+35bc39a609+cdb14f87ee+feb25e8376)
+64/92032 points  25 s  0.385 s/point (wall, 6 procs)  eta 590.1 min  [chunk 6: 0.38 s/point/proc]
+384/92032 points  25 s  0.066 s/point (wall, 6 procs)  eta 101.2 min  [chunk 8: 0.39 s/point/proc]
+704/92032 points  53 s  0.075 s/point (wall, 6 procs)  eta 113.7 min  [chunk 17: 0.42 s/point/proc]
+1024/92032 points  80 s  0.078 s/point (wall, 6 procs)  eta 118.0 min  [chunk 23: 0.42 s/point/proc]
+1344/92032 points  103 s  0.077 s/point (wall, 6 procs)  eta 116.0 min  [chunk 25: 0.38 s/point/proc]
+1664/92032 points  127 s  0.077 s/point (wall, 6 procs)  eta 115.4 min  [chunk 31: 0.38 s/point/proc]
+1984/92032 points  155 s  0.078 s/point (wall, 6 procs)  eta 117.3 min  [chunk 36: 0.44 s/point/proc]
+2304/92032 points  158 s  0.069 s/point (wall, 6 procs)  eta 102.8 min  [chunk 41: 0.44 s/point/proc]
+2624/92032 points  180 s  0.069 s/point (wall, 6 procs)  eta 102.5 min  [chunk 46: 0.38 s/point/proc]
+2944/92032 points  205 s  0.070 s/point (wall, 6 procs)  eta 103.5 min  [chunk 51: 0.40 s/point/proc]
+3264/92032 points  228 s  0.070 s/point (wall, 6 procs)  eta 103.4 min  [chunk 56: 0.37 s/point/proc]
+3584/92032 points  250 s  0.070 s/point (wall, 6 procs)  eta 102.8 min  [chunk 60: 0.36 s/point/proc]

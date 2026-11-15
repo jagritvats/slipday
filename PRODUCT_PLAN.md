@@ -20,8 +20,7 @@ hours needed, Earth-contact hours needed). Beside it the verdict in large type (
 slip margin in days, one strip with a cell per day of slip, the next three good dates as buttons, and a
 "how sure" line. The slip grid for four sites sits directly under it.
 
-Competing public entries compete on terrain resolution and 3-D views (two ray-cast 20 m and 5 m grids).
-Slipday does not try to match that. It competes on the decision: slip cost, and confidence.
+Slipday is built around the decision: what a slip costs, and how sure that answer is.
 
 ## One list, fixes and features together, ordered by value per hour
 
@@ -41,9 +40,9 @@ Slipday does not try to match that. It competes on the decision: slip cost, and 
 
 ## Deliberately not built
 
-- Finer terrain (20 m, 5 m): catch-up, and the files are not reachable from the sandbox.
-- 3-D globe, first-person sky, slope maps, power or thermal models, an AI assistant: other entries have
-  them; they do not sharpen the slip answer.
+- Finer terrain (20 m, 5 m): the files were not reachable from the sandbox at this stage.
+- 3-D globe, first-person sky, slope maps, power or thermal models, an AI assistant: they do not sharpen the
+  slip answer at this stage.
 - Cosmetic fixes a judge would not notice.
 
 Status at the end of the round: all eleven items are built; item 6 runs its comparison once the Earth maps are
@@ -64,8 +63,5 @@ downloaded (LOCAL_PASS.md).
 | 9 | Slip-robust site list from the map | feature | done, on demand |
 | 10 | Live Horizons cross-check | check | run once: 1.4e-05 degrees |
 
-Lead with what the round-3 review found in no other public description: a slip margin in days, a
-three-state verdict that needs an ensemble to agree, a slip-margin map, the same site on several grids.
-The "no public entry read gives a slip margin" in item 1 of the first table dates from an earlier reading
-of five entries; the round-3 reviewer read 63 and found nine with slip or re-plan features, none with
-those four. Not built: the 20 m mosaic, a deployment, a video.
+Lead with the slip margin in days, the three-state verdict that needs an ensemble to agree, the slip-margin
+map and the same site on several grids. Not built: the 20 m mosaic, a deployment, a video.

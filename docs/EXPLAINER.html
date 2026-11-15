@@ -65,7 +65,7 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
 <div class="video">
   <h2>Watch it (about 3 minutes)</h2>
   <video controls preload="metadata" src="../demo/slipday_explainer.mp4"></video>
-  <p class="terms">The video and this page follow the same order. Every number in them is on the app's screen.</p>
+  <p class="terms">The video and this page follow the same order.</p>
 </div>
 
 <dl class="terms">
@@ -126,18 +126,18 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
   <h2><span class="num">3</span>The challenge objective, in numbers</h2>
   <figure><img src="explainer/objective.jpg" alt="The objective line with the Sun and Earth directions and heights above the skyline, and the skyline chart" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>A line labelled &quot;Challenge objective&quot;: at touchdown the Sun stands at azimuth 315° (north-west), 1.2° above the skyline, and the Earth at azimuth 231° (south-west), 0.6° above it. Below it, the skyline all round with the paths of the Sun and the Earth.</p>
+  <p>A line labelled &quot;Challenge objective&quot;: at touchdown the Sun stands at azimuth 315° (north-west), 1.0° above the skyline, and the Earth at azimuth 231° (south-west), 0.6° above it. Below it, the skyline all round with the paths of the Sun and the Earth.</p>
   <h3>What it means</h3>
   <p>This is the challenge&#x27;s one firm goal: show the Sun and the Earth against the real horizon for a chosen place and time. Both are only just above the hills.</p>
   <h3 class="cant">What it can't tell you</h3>
-  <p class="cant">The skyline comes from an 80 m terrain map. Narrow ridges can come out a little too high or too low.</p>
+  <p class="cant">The skyline comes from the finest terrain map that covers the site (5 m here). Coarser maps can put narrow ridges a little too high or too low.</p>
 </section>
 
 <section class="feature" id="slipped">
   <h2><span class="num">4</span>Launch slipped by N days</h2>
   <figure><img src="explainer/slipped.jpg" alt="Launch slipped by 9 days: a banner says No, only 95 of the 100 hours of Earth contact" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>Type how many days the launch slipped. At 9 days a banner reads: &quot;Land on Nov 27 (launch slipped 9 days): No: only 95 hours of Earth contact of the 100 needed.&quot; The Earth goes behind ground 131.6 km away.</p>
+  <p>Type how many days the launch slipped. At 9 days a banner reads: &quot;Land on Nov 27 (launch slipped 9 days): No: only 95 hours of Earth contact of the 100 needed.&quot; The Earth goes behind ground 131.4 km away.</p>
   <h3>What it means</h3>
   <p>Clicking a day on the strip does the same. The plan and its monthly windows stay as they were.</p>
   <h3 class="cant">What it can't tell you</h3>
@@ -148,7 +148,7 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
   <h2><span class="num">5</span>Next windows, other sites, and Download</h2>
   <figure><img src="explainer/windows.jpg" alt="Next windows: Dec 17 yes, Jan 16 and Feb 14 no; other options; Download buttons" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>&quot;Missed the window? Next&quot;: Dec 17 ✓ 6 d, Jan 16 ✕ sunlight, Feb 14 ✕. &quot;Other sites, other hours&quot; finds that in January 13 of 20 other sites have a Yes hour within 3 days, 11 of them fragile. &quot;Download this answer&quot; saves it all as CSV or JSON.</p>
+  <p>&quot;Missed the window? Next&quot;: Dec 17 ✓ 6 d, Jan 16 ✕ sunlight, Feb 14 ✕. &quot;Other sites, other hours&quot; checks 20 other sites at every 6 hours within 3 days of each of the next three windows. &quot;Download this answer&quot; saves it all as CSV or JSON.</p>
   <h3>What it means</h3>
   <p>A lander can launch only a few days each month; miss them and the landing moves about a month later. Fragile means the Sun or the Earth is less than 0.27° above the skyline at a touchdown point, so a small error could flip it.</p>
   <h3 class="cant">What it can't tell you</h3>
@@ -163,7 +163,7 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
   <h3>What it means</h3>
   <p>The Sun circles low in the sky, so long shadows sweep across the ground. You can see which ridge blocks the Sun or the Earth.</p>
   <h3 class="cant">What it can't tell you</h3>
-  <p class="cant">It is a model of the same 80 m map, not a photograph. Heights are drawn twice as tall.</p>
+  <p class="cant">It is a model of the same LOLA terrain the answer uses (5 m at the opening site), not a photograph. Heights are drawn twice as tall.</p>
 </section>
 
 <section class="feature" id="custom">
@@ -189,14 +189,14 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
 </section>
 
 <section class="feature" id="grids">
-  <h2><span class="num">9</span>80, 20 and 5 m terrain</h2>
-  <figure><img src="explainer/grids.jpg" alt="Shackleton connecting ridge: Yes for up to 7 days on 80 m, Not sure on the 20 m and 5 m grids" loading="lazy"></figure>
+  <h2><span class="num">9</span>Finer terrain</h2>
+  <figure><img src="explainer/grids.jpg" alt="Shackleton connecting ridge on 5 m terrain: Not sure, next good date Nov 19" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>At the Shackleton connecting ridge the card says Yes, for up to 7 days. The line under it: on the 20 m grid, Not sure (11 of 13 touchdown points); 5 m: Not sure (12 of 13).</p>
+  <p>At the Shackleton connecting ridge the card computes on NASA's 5 m site model and says Not sure: 12 of 13 touchdown points pass. The next good date is Nov 19, 1 day later.</p>
   <h3>What it means</h3>
-  <p>Finer maps show small bumps that a coarse map smooths away. Here they turn a Yes into Not sure, so the app shows all three answers.</p>
+  <p>Finer maps show small bumps that a coarse map smooths away; on the 80 m grid alone this spot read Yes. The page uses the finest grid that covers each site.</p>
   <h3 class="cant">What it can't tell you</h3>
-  <p class="cant">The 20 m and 5 m maps cover only small areas, so most spots get the 80 m answer alone.</p>
+  <p class="cant">The 5 m models cover two small areas and the 20 m mosaic reaches 80° S; further out the page uses 80 m and says so.</p>
 </section>
 
 <section class="feature" id="slope">
@@ -205,7 +205,7 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
   <h3>What you see</h3>
   <p>&quot;Flat enough at all 13 touchdown points: the steepest is 4.9°, under NASA&#x27;s 8° limit.&quot; NASA&#x27;s crewed lander may lean at most 8° (5° is the goal).</p>
   <h3>What it means</h3>
-  <p>The opening example is flat enough, but only just: its steepest point is about 5°, right at the goal. Moving it by one 5 m cell gives 4.4° to 5.8°.</p>
+  <p>The opening example is flat enough: its steepest point is 4.9°, just inside the 5° goal. Moving it by one 5 m cell gives 4.4° to 5.8°.</p>
   <h3 class="cant">What it can't tell you</h3>
   <p class="cant">NASA&#x27;s slope maps are uncertain by about 2° per point, and 76 of the 78 published region sites have only 80 m terrain, too coarse for slope. No boulders are seen.</p>
 </section>
@@ -214,7 +214,7 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
   <h2><span class="num">11</span>Chance of a safe touchdown</h2>
   <figure><img src="explainer/touchdown.jpg" alt="Chance the ground under the lander is within 8 degrees, for three lander accuracies" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>For three assumed kinds of lander, the chance the ground under it is within 8°: over 99.9 % for a precision lander, 94 % for a CLPS-class lander (like the commercial landers NASA buys rides on).</p>
+  <p>For three assumed kinds of lander, the chance the ground under it is within 8°: 100 % for a precision lander (the panel shows &quot;over 99.9 %&quot;), 93.7 % for a CLPS-class lander (like the commercial landers NASA buys rides on; shown rounded as 94 %) and 82.9 % for an unguided one (83 %).</p>
   <h3>What it means</h3>
   <p>A lander does not come down exactly on target, so the slope that matters is spread over where it might land.</p>
   <h3 class="cant">What it can't tell you</h3>
@@ -233,10 +233,10 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
 </section>
 
 <section class="feature" id="regions">
-  <h2><span class="num">13</span>NASA&#x27;s nine Artemis regions</h2>
-  <figure><img src="explainer/regions.jpg" alt="Calendar of nine regions 2027 to 2030 and a table: best region 28.1 percent, three regions 40.1 percent" loading="lazy"></figure>
+  <h2><span class="num">13</span>NASA&#x27;s nine south-pole landing regions</h2>
+  <figure><img src="explainer/regions.jpg" alt="Calendar of nine regions 2027 to 2030 and a table: best region 26 percent, three regions 37 percent" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>A calendar of NASA&#x27;s nine possible Artemis landing regions from 2027 to 2030. The best region is open at 28.1% of landing times, three regions at 40.1%; with sunlight only, 47.8% and 91.1%.</p>
+  <p>A calendar of NASA&#x27;s nine south-pole landing regions (for the first crewed landing, Artemis IV, early 2028) from 2027 to 2030. The best region is open at 26% of landing times, three regions at 37%; with sunlight only, 44.8% and 89.4%.</p>
   <h3>What it means</h3>
   <p>NASA writes that more than one region must be kept, because one gives too few chances. The app shows it using 78 landing sites a research team published (Wueller et al. 2026).</p>
   <h3 class="cant">What it can't tell you</h3>
@@ -278,9 +278,9 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
 
 <section class="feature" id="game">
   <h2><span class="num">17</span>Be the mission planner</h2>
-  <figure><img src="explainer/game.jpg" alt="The game&#x27;s first round: the launch slips and you pick one of three sites" loading="lazy"></figure>
+  <figure><img src="explainer/game.jpg" alt="The game&#x27;s first scenario: the launch slips and you pick an option" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>A short game for students: the launch slips by a few days, you pick one of three sites, and the app shows the real answer for each, with one plain reason. Five rounds.</p>
+  <p>A game for students in five scenarios, harder each time: the launch slips, you inspect three or four options and pick one, and the app shows the real answer for each, with its reason.</p>
   <h3>What it means</h3>
   <p>It teaches the same idea as the card: a few days can move the Sun and the Earth behind the hills.</p>
   <h3 class="cant">What it can't tell you</h3>
@@ -289,13 +289,13 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
 
 <section class="feature" id="limits">
   <h2><span class="num">18</span>What it cannot tell you</h2>
-  <figure><img src="explainer/limits.jpg" alt="Can you trust it? Tiles comparing the model with NASA maps: within 0.8 points on ordinary terrain, 3.77 to 5.25 on ridges" loading="lazy"></figure>
+  <figure><img src="explainer/limits.jpg" alt="Can you trust it? Tiles comparing the model with NASA maps: within 0.8 points on ordinary terrain, 3.8 to 5.2 on ridges" loading="lazy"></figure>
   <h3>What you see</h3>
-  <p>&quot;Can you trust it?&quot; compares the app with published NASA maps. Sunlight agrees within 0.8 points on ordinary ground, and within 3.77 to 5.25 points on the bright ridges where landers would go.</p>
+  <p>&quot;Can you trust it?&quot; compares the app with published NASA maps. Sunlight agrees within 0.8 points on ordinary ground, and within 3.8 to 5.2 points on the bright ridges (the tile shows 3.77 to 5.25) where landers would go.</p>
   <h3>What it means</h3>
   <p>The model is close on average, and less exact on narrow ridges.</p>
   <h3 class="cant">What it can't tell you</h3>
-  <p class="cant">The 80 m terrain is coarse and can be too hopeful. The sunlight and contact needs are examples. There is no battery or heat model. Fragile answers can flip with a small change.</p>
+  <p class="cant">Far from the pole the terrain is 80 m, coarse, and can be too hopeful. The sunlight and contact needs are examples. There is no battery or heat model. Fragile answers can flip with a small change.</p>
 </section>
 
 <section class="feature" id="data">
@@ -306,7 +306,7 @@ can we still land at this spot? It answers yes, not sure or no, and says how man
     <li>Checking sunlight and Earth views: the LOLA team's average sunlight and Earth-visibility maps (<a href="https://imbrium.mit.edu/EXTRAS/ILLUMINATION/">illumination maps</a>).</li>
     <li>Where the Sun and the Earth are: NASA JPL's DE421 planetary positions, checked against <a href="https://ssd.jpl.nasa.gov/horizons/">JPL Horizons</a>.</li>
     <li>Deep Space Network stations: <a href="https://deepspace.jpl.nasa.gov/dsndocs/810-005/">DSN Telecommunications Link Design Handbook 810-005</a>.</li>
-    <li>Artemis regions: <a href="https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/">NASA's update on the Artemis III landing regions</a> and the <a href="https://ntrs.nasa.gov/citations/20250011660">LPSC 2026 site-selection abstract</a>.</li>
+    <li>Landing regions: <a href="https://www.nasa.gov/mission/artemis-iv/">NASA's Artemis IV page</a> (the first crewed south-pole landing, early 2028; nine candidate regions), <a href="https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/">NASA's 2024 update on the landing regions</a> and the <a href="https://ntrs.nasa.gov/citations/20250011660">LPSC 2026 site-selection abstract</a>.</li>
     <li>Landing sites in the regions: Wueller et al. 2026, <a href="https://doi.org/10.1029/2025JE009434">JGR Planets</a> (CC BY 4.0), data on <a href="https://doi.org/10.5281/zenodo.17084058">Zenodo</a>.</li>
   </ul>
   <h3>Challenge resources</h3>

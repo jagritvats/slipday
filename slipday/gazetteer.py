@@ -96,3 +96,66 @@ def containing(lat: float, lon: float) -> Optional[dict]:
             "centre_lat": f["lat"], "centre_lon": f["lon"], "km_from_centre": round(float(d[i]), 1),
             "share_of_radius": round(float(d[i] / rad[i]), 3),
             "link": f.get("link"), "source": "USGS / IAU Gazetteer of Planetary Nomenclature (centre point and diameter)"}
+
+
+# ------------------------------------------------------------------ friendly names (outreach)
+import re as _re
+
+_COORDS = _re.compile(r"\d+\.\d+\s*[NS],\s*\d+\.\d+\s*[EW]")
+
+
+def coords_text(lat: float, lon: float) -> str:
+    return f"{abs(lat):.3f} {'S' if lat < 0 else 'N'}, {abs(lon):.3f} {'W' if lon < 0 else 'E'}"
+
+
+def named_by_coordinates(name: str) -> bool:
+    """True when a site's name is only a description plus coordinates, e.g. "Slip-robust ridge point (89.010 S, ...)"."""
+    return bool(_COORDS.search(name or ""))
+
+
+def nearest(lat: float, lon: float) -> Optional[dict]:
+    """The named feature whose edge (centre distance minus radius) is closest to the point, with that distance."""
+    fs = features()
+    if not fs:
+        return None
+    la = np.array([f["lat"] for f in fs])
+    lo = np.array([f["lon"] for f in fs])
+    rad = np.array([f["diameter_km"] for f in fs]) / 2.0
+    d = _dist_km(lat, lon, la, lo)
+    i = int(np.argmin(d - rad))
+    return {"name": fs[i]["name"], "label": label(fs[i]), "kind": _kind(fs[i]), "km_from_centre": round(float(d[i]), 1),
+            "km_from_edge": round(max(0.0, float(d[i] - rad[i])), 1)}
+
+
+def friendly(lat: float, lon: float, name: str = "") -> dict:
+    """A short plain name for a point, from gazetteer names only, plus the coordinates as a subtitle.
+
+    The noun is "Ridge" when the old name calls the place a ridge, otherwise "Spot"; the place is the gazetteer
+    phrase when the point lies in or on the rim of a named feature (rule R7), otherwise "near <nearest feature>".
+    No name is made up: every proper name is the IAU one."""
+    noun = "Ridge" if "ridge" in (name or "").lower() else "Spot"
+    sub = coords_text(lat, lon)
+    c = containing(lat, lon)
+    if c:
+        fname = f"{noun} {c['phrase'].split(',')[0]}"
+        basis = c["phrase"]
+    else:
+        n = nearest(lat, lon)
+        if not n:
+            return {"friendly_name": name or sub, "subtitle": sub, "name_basis": None}
+        fname = f"{noun} near {n['label']}"
+        basis = f"{n['km_from_centre']:.0f} km from the centre of {n['label']}"
+        sub = f"{sub} · {basis}"
+    return {"friendly_name": fname, "subtitle": sub, "name_basis": basis}
+
+
+def naming_fields(site: dict) -> dict:
+    """Fields added to a site: friendly_name, subtitle, name_full (the old label, unchanged), name_source.
+
+    Sites with a real name keep it as the friendly name (their subtitle is the coordinates)."""
+    name, lat, lon = site.get("name", ""), float(site["lat"]), float(site["lon"])
+    if named_by_coordinates(name):
+        f = friendly(lat, lon, name)
+        return {"friendly_name": f["friendly_name"], "subtitle": f["subtitle"], "name_full": name,
+                "name_source": "USGS / IAU Gazetteer of Planetary Nomenclature (nearest named feature)"}
+    return {"friendly_name": name, "subtitle": coords_text(lat, lon), "name_full": name, "name_source": "site list"}

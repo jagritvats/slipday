@@ -7,7 +7,7 @@ Pins down the text fixes asked for by the local review:
           and the ridge-pixel Sun figure is a range over seeds, not one draw
   bug 3   wherever a replay's "Yes" is quoted, the other published figure is beside it
   bug 4   the slides quote the official challenge text, not a line that is not in it
-  bug 6   the README does not claim the lead features were found in no other entry
+  bug 6   the README describes Slipday on its own terms, with no comparison to other projects
   bug 10  the note for the team is fenced off from the text for the form; AI use is a marked placeholder
 """
 import calendar
@@ -198,13 +198,15 @@ def test_slides_quote_the_official_challenge_text():
 
 # ------------------------------------------------------------------ bug 6: no claim about what others lack
 
-def test_readme_states_what_is_and_is_not_matched_elsewhere():
+def test_readme_states_what_slipday_does_on_its_own_terms():
+    # the comparison with other projects was removed on purpose: the README says what Slipday does and does not do
     text = " ".join(_read("README.md").split())
-    assert "found them in none" not in text
-    assert "Slip-margin map | not matched" in text
-    for feature in ("Slip margin in days", "Three-state verdict", "terrain resolutions", "Landing circles"):
-        assert re.search(re.escape(feature) + r"[^|]*\| partly matched", text), feature
-    assert "at least nine entries" in text
+    for word in ("found them in none", "other entries", "public entries", "not matched", "partly matched", "competitor",
+                 "competition", "rival", "repositories for the challenge"):
+        assert word.lower() not in text.lower(), word
+    for feature in ("slip margin", "Three-state verdict", "slip-margin map", "terrain resolutions", "landing circles"):
+        assert feature.lower() in text.lower(), feature
+    assert "## What is on the page" in _read("README.md") and "LIMITATIONS.md" in text
 
 
 # ------------------------------------------------------------------ bug 10 and the storyboard limits

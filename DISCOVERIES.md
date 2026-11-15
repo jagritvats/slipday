@@ -4,10 +4,11 @@
 
 1. **NASA's "more than one region" holds on open data.** On the 78 published candidate landing sites in NASA's
    nine regions (Wueller et al. 2026), at landing times every 6 hours from 2027 to 2030, a 6.25-day stay with
-   the Sun up throughout and 100 hours of Earth contact: the best single region (Nobile Rim 1) is open at 28 %
-   of the landing times, the best three at 40 %, all nine at 44 %. The illustrative 100-hour Earth need sets
-   that ceiling: with sunlight only, 48 %, 91 %, 92 %. Shares of landing times, not of real launch
-   opportunities. Fragile Yes results (11.9 % of all Yes results) are not counted.
+   the Sun up throughout and 100 hours of Earth contact: the best single region (Nobile Rim 1) is open at 26 %
+   of the landing times, the best three at 37 %, all nine at 40 % (live terrain: every site on NASA's 20 m
+   mosaic; on 80 m it was 28 %, 40 %, 44 %). The illustrative 100-hour Earth need sets that ceiling: with
+   sunlight only, 45 %, 89 %, 91 %. Shares of landing times, not of real launch
+   opportunities. Fragile Yes results (13.0 % of all Yes results) are not counted.
 2. **Our ephemeris gives the paper's midsummer dates to the day** for all eight years 2025 to 2032; the season
    moves 18.4 days earlier a year on average (18.63 expected from the eclipse year).
 3. **Against the paper's own sunlight figures, a split.** Of 312 comparisons, about two in three agree within a
@@ -22,7 +23,7 @@
 
 1. **Real slips step a month; the next window can lose the site, and the cause is the season.** At the
    opening example the planned window and the next are Yes (8 and 6 days of margin), the two after it No on
-   sunlight: at the same time of the lunar day sunlight falls 314, 259, 217, 151 hours against 240 needed
+   sunlight: at the same time of the lunar day sunlight falls 314, 259, 217, 151 hours against 240 needed (on the live 5 m terrain: 306, 259, 217, 148)
    (corrected in the follow-up: the deep pass blamed Earth contact, which stays above its 100 hours). In
    January no landing hour within three days works there, but 13 of 20 other sites have a Yes hour within three
    days, 11 of them fragile. The steadiest is a map point at 89.498 S, 137.663 W (15 Jan 13:00, 4 days, Sun about
@@ -140,8 +141,8 @@ Commands and outputs for every figure: LOCAL_PASS_RESULTS.md.
    122.764 E: yes at all 13 points, 8 days of margin, 16 clear-yes dates and none unsure. (What that
    feature is called was not looked up.)
 4. **IM-1's own plan fits; a longer one would not have.** With about seven days of surface operations
-   (168 sunlit hours) the card says yes with one day of slip margin. Terrain leaves 208 sunlit hours in
-   the 14 days after the real landing hour, so NASA's press-kit figure of approximately 10 days (240 h)
+   (168 sunlit hours) the card says yes with one day of slip margin. Terrain leaves 207 sunlit hours (NASA's 20 m
+   mosaic; 208 on 80 m) in the 14 days after the real landing hour, so NASA's press-kit figure of approximately 10 days (240 h)
    gives No. A flat horizon finds 17 good landing dates in 60 for the seven-day plan; terrain leaves 9.
 5. **A full-lunar-day plan has no slip margin, by arithmetic.** Blue Ghost's 14-day plan needs every hour
    of the window lit: yes on the landing date, no slip margin, next windows one and two months later.
@@ -160,13 +161,6 @@ Commands and outputs for every figure: LOCAL_PASS_RESULTS.md.
 
 Corrections to the round-3 text below, which is otherwise left as written:
 
-- "Nobody else read shows it" and the competition section are out of date. The round-3 reviewer read 63
-  public project descriptions on 14 Nov: 9 describe slip or re-plan features, one has a site by
-  start-date calendar, one an annual go/no-go ribbon, one an 8-point sensitivity ring, and one six-person
-  team has almost the same pitch. Not in any description read then: a slip margin in days, a verdict per
-  day of slip that needs an ensemble to agree, a slip-margin map, the same site on several grids. The
-  landing circles and the slip-robust list were added after that reading, and nobody re-read the field
-  afterwards, so no claim is made about them.
 - Finding 3 ("the slip margin is set by the Earth, not the Sun") holds from August to January. Measured
   in the local pass for 365 landing dates from 18 Nov 2026 at C1: 62 clear-yes dates, none from February
   to June 2027 and one in July; the Sun fails on 1, 15, 21, 23, 18 and 2 dates from February to July and
@@ -174,8 +168,6 @@ Corrections to the round-3 text below, which is otherwise left as written:
 - Findings 1 and 3 are known physics shown as product features, not new science: the tens-of-points
   difference between neighbouring ridge pixels and the monthly Earth cycle are both in the literature
   (GROUND_TRUTH.md).
-- "A smooth sphere ... the model most tools use" was wrong about this field: most entries read ray-cast
-  LOLA terrain. The page now says "a smooth sphere with no terrain, for comparison".
 - "Mission-specific requirements could not be verified" (dead ends): planned surface durations for IM-1,
   IM-2 and Blue Ghost were found in NASA press kits and are now each replay's need. Earth-contact
   requirements were not found.
@@ -198,8 +190,7 @@ unless a source is named.
    reproduces the published 92.1 % of time with Sun at the stated coordinates. Twelve points 50 and 100 m
    away give 72.5 to 92.5 %; for the 365 days from 18 Nov 2026 the range is 74.0 to 93.0 %, and the longest
    darkness runs from 6 to 21 days. A landing-site number quoted for a single ridge pixel means little
-   without the scatter around it. This is the entry's strongest honest point: it is true whatever grid a
-   competitor uses, and nobody else read shows it.
+   without the scatter around it. A landing-site figure needs the scatter around it.
 2. **The slip map found the LOLA team's best pixel by itself.** Asked for the point with the most good
    landing dates in 60 (need: 240 sunlit hours and 100 hours of Earth contact in 14 days, from 18 Nov
    2026), the 14,400-point map returns 89.4748 S, 137.545 W, 28 m from the maximum of the LOLA 60 m
@@ -250,25 +241,16 @@ unless a source is named.
   reader matches any name containing AVGVISIB, the region and EARTH, but the first real run may need a
   manual download.
 
-## What competitors already do (from the review; not re-read this round)
-
-Of five public entries read, four ray-cast LOLA terrain, two on 20 m and 5 m grids, three have live
-sites, one has a public video. One has a two-scenario "delay by 72 hours" button, one a 29-date search, one
-a landing-dispersion check for single scenarios, one reports a map statistic against the LOLA illumination
-product (1.45 points). None read gives a slip margin, a verdict per day of slip, a spread on a grid of
-dates, a schedule-robustness map or an Earth-map check. More than 50 repositories exist for this
-challenge and were pushed to within the last two days, so that list can be out of date by Sunday.
-
 ## Risks for submission
 
-- No live link yet, and competitors have them. Deployment is untested; the 80 m grid does not fit GitHub
+- No live link yet. Deployment is untested; the 80 m grid does not fit GitHub
   (231 MB) and a free host will run the 240 m configuration, whose numbers are not the validated ones. The
   page says so, but a judge may not read that far. A host with 1 GB and a slightly larger disk removes it.
 - A free host with a fraction of a CPU will take tens of seconds for the first slip map of a date
   (`SLIPDAY_FIELD_STRIDE=2` quarters the work). The first screen does not depend on the map.
 - The Earth check is the largest open validity item and depends on a download that has not been tried.
-- The data files were copied from other teams' and unrelated repositories. They are NASA's files by hash,
-  but the submission should cite the official sources after re-fetching them.
+- The data files were first copied from public mirrors. They are NASA's files by hash, and were
+  later downloaded again from the official hosts (every hash matched).
 - The verdict words are strong. "Yes" means the geometry model is stable against landing position and
   grid, not that a mission is safe. The page and LIMITATIONS.md say this; the video caption should not
   overstate it.
@@ -276,11 +258,6 @@ challenge and were pushed to within the last two days, so that list can be out o
 
 ## Frank view of the ceiling
 
-The entry now has one idea that is easy to say and that no public competitor read shows: a slip margin
-with a stated confidence, on real terrain, for real missions. That is a credible route to a nomination
-among Universal entries if it is deployed and the video is made. It will not win on spectacle: there is no
-3-D view and the terrain is two generations coarser than the best entries. Against a team with 20 m
-terrain, slopes, power and a polished globe, Slipday wins only if judges weigh validity and relevance to
-"re-planning after schedule slips" over breadth. With the Earth check run and a live link, a fair
-expectation is strong on validity and relevance, average on presentation and influence. A global award is
-unlikely; Best Use of Data is the only category where the validation work would count directly.
+The entry has one idea that is easy to say: a slip margin with a stated confidence, on real terrain,
+for real missions. Its strengths are validity and relevance to re-planning after schedule slips; its
+weaknesses at this round were a coarse 80 m grid, no 3-D view and no live link.

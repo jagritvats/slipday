@@ -191,4 +191,4 @@ def test_follow_up_corrections_are_in_the_page_and_the_record():
     deep = open(os.path.join(ROOT, "DEEP_PASS.md"), encoding="utf-8").read()
     assert "## F0. Correction of the record for D3" in deep and "fixed before computing (05:52)" not in deep.split("# Follow-up")[0]
     slides = open(os.path.join(ROOT, "demo", "SLIDES.md"), encoding="utf-8").read()
-    assert "Earth contact there falls 311" not in slides and "217 and 151 hours against 240" in slides
+    assert "Earth contact there falls 311" not in slides and "217 and 148 hours against 240" in slides   # live 5 m terrain: February 151 -> 148 h

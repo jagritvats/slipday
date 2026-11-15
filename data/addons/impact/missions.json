@@ -1,0 +1,1897 @@
+{
+ "what": "Upcoming south-pole missions: does the published place work in the published period, and what a slip of a week or a month does",
+ "made_utc": "2026-11-15T15:43:40Z",
+ "rule": {
+  "step_hours": 6,
+  "week_days": 7,
+  "month_days": 29.5,
+  "check": "the card's: 13 touchdown points within 100 m, the coarser grid, the near-field sampling; Deep Space Network station rule on; Yes only when all agree",
+  "sites": "published candidate landing sites, Wueller et al. 2026 (CC BY 4.0), in NASA's nine regions",
+  "dates": "every 6 hours inside the published launch period; the trip to the Moon is not modelled",
+  "needs": {
+   "card": "240 sunlit hours and 100 hours of Earth contact in the 14 days after landing, the Sun and the Earth in view at touchdown (the page's default need; illustrative)",
+   "artemis": "a 6.25-day stay with the Sun up every hour, 100 hours of Earth contact, the Sun and the Earth in view at touchdown, not fragile (the region calendar's rule; 100 hours is illustrative)"
+  }
+ },
+ "citation": "Wueller, L., Berger, L. M., Christopher, H., Sugimoto, K., Thaker, A. D., Carton, L., Jo, W., Lee, S., Pedrelli, R., Sanchez, P., & Kring, D. A. (2026). Assessing Potential Landing Sites With Favorable Illumination and Accessible, Potentially Volatile-Rich Permanently Shadowed Regions Within Artemis Candidate Landing Regions. Journal of Geophysical Research: Planets, 131(3), e2025JE009434. https://doi.org/10.1029/2025JE009434 (CC BY 4.0). Data: https://doi.org/10.5281/zenodo.17084058",
+ "missions": [
+  {
+   "id": "griffin1",
+   "name": "Griffin-1",
+   "who": "NASA CLPS task order TO20A; lander by Astrobotic, listed by NASA as Voyager Griffin-1",
+   "launch_text": "Late 2026",
+   "span": [
+    "2026-11-15T00:00:00Z",
+    "2026-12-31T18:00:00Z"
+   ],
+   "span_note": "15 Nov (today) to 31 Dec 2026",
+   "place_text": "Mons Mouton",
+   "home_regions": [
+    "Mons Mouton"
+   ],
+   "home_sites": 10,
+   "need": "240 sunlit hours and 100 hours of Earth contact in the 14 days after landing, the Sun and the Earth in view at touchdown (the page's default need; illustrative)",
+   "long_days": 0,
+   "quotes": [
+    {
+     "source": "schedule",
+     "text": "Late 2026 Moon Base: Voyager Griffin-1",
+     "url": "https://www.nasa.gov/event-type/launch-schedule/"
+    },
+    {
+     "source": "to20a",
+     "text": "Voyager's Griffin-1 lander will deliver NASA's Lunar Retroreflector Array (LRA) to Mons Mouton (South Pole).",
+     "url": "https://science.nasa.gov/lunar-science/clps-deliveries/to20a-astrobotic/"
+    }
+   ],
+   "landing_times": 188,
+   "good_times": 62,
+   "good_share": 0.33,
+   "months_in_span": 2,
+   "months_with_a_good_time": 2,
+   "slip_week": {
+    "still_yes": 6,
+    "of": 62,
+    "share": 0.097,
+    "lost": {
+     "times": 56,
+     "any_other_open": 18,
+     "by_region": [
+      {
+       "region": "Peak near Cabeus B",
+       "open_times": 18
+      },
+      {
+       "region": "Haworth",
+       "open_times": 13
+      },
+      {
+       "region": "Malapert Massif",
+       "open_times": 12
+      },
+      {
+       "region": "Nobile Rim 1",
+       "open_times": 11
+      },
+      {
+       "region": "de Gerlache Rim 2",
+       "open_times": 11
+      },
+      {
+       "region": "Mons Mouton Plateau",
+       "open_times": 0
+      },
+      {
+       "region": "Nobile Rim 2",
+       "open_times": 0
+      },
+      {
+       "region": "Slater Plain",
+       "open_times": 0
+      }
+     ]
+    }
+   },
+   "slip_month": {
+    "still_yes": 48,
+    "of": 62,
+    "share": 0.774,
+    "lost": {
+     "times": 14,
+     "any_other_open": 14,
+     "by_region": [
+      {
+       "region": "Haworth",
+       "open_times": 10
+      },
+      {
+       "region": "Peak near Cabeus B",
+       "open_times": 9
+      },
+      {
+       "region": "Malapert Massif",
+       "open_times": 9
+      },
+      {
+       "region": "Nobile Rim 1",
+       "open_times": 7
+      },
+      {
+       "region": "Mons Mouton Plateau",
+       "open_times": 5
+      },
+      {
+       "region": "Nobile Rim 2",
+       "open_times": 5
+      },
+      {
+       "region": "de Gerlache Rim 2",
+       "open_times": 4
+      },
+      {
+       "region": "Slater Plain",
+       "open_times": 0
+      }
+     ]
+    }
+   },
+   "per_site": [
+    {
+     "site": "MMO01",
+     "region": "Mons Mouton",
+     "lat": -85.416,
+     "lon": 31.8506,
+     "yes_share": 0.037
+    },
+    {
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "yes_share": 0.314
+    },
+    {
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "yes_share": 0.16
+    },
+    {
+     "site": "MMO04",
+     "region": "Mons Mouton",
+     "lat": -85.4089,
+     "lon": 28.15,
+     "yes_share": 0.154
+    },
+    {
+     "site": "MMO05",
+     "region": "Mons Mouton",
+     "lat": -85.3439,
+     "lon": 28.5944,
+     "yes_share": 0.239
+    },
+    {
+     "site": "MMO06",
+     "region": "Mons Mouton",
+     "lat": -85.2614,
+     "lon": 30.1862,
+     "yes_share": 0.165
+    },
+    {
+     "site": "MMO07",
+     "region": "Mons Mouton",
+     "lat": -85.1953,
+     "lon": 32.9287,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO08",
+     "region": "Mons Mouton",
+     "lat": -85.513,
+     "lon": 35.7041,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO09",
+     "region": "Mons Mouton",
+     "lat": -85.4665,
+     "lon": 33.0398,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO10",
+     "region": "Mons Mouton",
+     "lat": -85.4608,
+     "lon": 31.4902,
+     "yes_share": 0.027
+    }
+   ],
+   "months": [
+    {
+     "month": "2026-11",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2026-11-16T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 3,
+     "week_later": {
+      "landing_utc": "2026-11-23T18:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2026-12-16T07:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2026-12",
+     "site": "MMO01",
+     "region": "Mons Mouton",
+     "lat": -85.416,
+     "lon": 31.8506,
+     "landing_utc": "2026-12-14T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 1,
+     "week_later": {
+      "landing_utc": "2026-12-21T18:00:00Z",
+      "verdict": "not sure",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2027-01-13T07:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 0,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    }
+   ],
+   "label": "Approximate: the place and the period are NASA's published ones (sources below); the sites are Wueller et al. 2026's published candidates; the landing times are spread over the period. Not the mission's own plan."
+  },
+  {
+   "id": "im4",
+   "name": "IM-4",
+   "who": "NASA CLPS task order CP-22; Intuitive Machines Nova-C lander; carries ESA's PROSPECT drill",
+   "launch_text": "2027",
+   "span": [
+    "2027-01-01T00:00:00Z",
+    "2027-12-31T18:00:00Z"
+   ],
+   "span_note": "all of 2027",
+   "place_text": "Mons Mouton",
+   "home_regions": [
+    "Mons Mouton"
+   ],
+   "home_sites": 10,
+   "need": "240 sunlit hours and 100 hours of Earth contact in the 14 days after landing, the Sun and the Earth in view at touchdown (the page's default need; illustrative)",
+   "long_days": 0,
+   "quotes": [
+    {
+     "source": "schedule",
+     "text": "2027 Moon Base: Intuitive Machines IM-4",
+     "url": "https://www.nasa.gov/event-type/launch-schedule/"
+    },
+    {
+     "source": "cp22",
+     "text": "The Intuitive Machines Nova-C lander (IM-4) will deliver six NASA CLPS science payloads to Mons Mouton.",
+     "url": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-22-science/"
+    },
+    {
+     "source": "cp22",
+     "text": "PROSPECT , developed by the European Space Agency (ESA)",
+     "url": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-22-science/"
+    }
+   ],
+   "landing_times": 1460,
+   "good_times": 203,
+   "good_share": 0.139,
+   "months_in_span": 12,
+   "months_with_a_good_time": 10,
+   "slip_week": {
+    "still_yes": 23,
+    "of": 203,
+    "share": 0.113,
+    "lost": {
+     "times": 180,
+     "any_other_open": 75,
+     "by_region": [
+      {
+       "region": "Haworth",
+       "open_times": 68
+      },
+      {
+       "region": "de Gerlache Rim 2",
+       "open_times": 66
+      },
+      {
+       "region": "Peak near Cabeus B",
+       "open_times": 60
+      },
+      {
+       "region": "Nobile Rim 1",
+       "open_times": 31
+      },
+      {
+       "region": "Malapert Massif",
+       "open_times": 23
+      },
+      {
+       "region": "Mons Mouton Plateau",
+       "open_times": 0
+      },
+      {
+       "region": "Nobile Rim 2",
+       "open_times": 0
+      },
+      {
+       "region": "Slater Plain",
+       "open_times": 0
+      }
+     ]
+    }
+   },
+   "slip_month": {
+    "still_yes": 149,
+    "of": 203,
+    "share": 0.734,
+    "lost": {
+     "times": 54,
+     "any_other_open": 42,
+     "by_region": [
+      {
+       "region": "Nobile Rim 1",
+       "open_times": 33
+      },
+      {
+       "region": "Nobile Rim 2",
+       "open_times": 24
+      },
+      {
+       "region": "Haworth",
+       "open_times": 19
+      },
+      {
+       "region": "Mons Mouton Plateau",
+       "open_times": 13
+      },
+      {
+       "region": "Malapert Massif",
+       "open_times": 12
+      },
+      {
+       "region": "Peak near Cabeus B",
+       "open_times": 9
+      },
+      {
+       "region": "de Gerlache Rim 2",
+       "open_times": 6
+      },
+      {
+       "region": "Slater Plain",
+       "open_times": 0
+      }
+     ]
+    }
+   },
+   "per_site": [
+    {
+     "site": "MMO01",
+     "region": "Mons Mouton",
+     "lat": -85.416,
+     "lon": 31.8506,
+     "yes_share": 0.017
+    },
+    {
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "yes_share": 0.079
+    },
+    {
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "yes_share": 0.058
+    },
+    {
+     "site": "MMO04",
+     "region": "Mons Mouton",
+     "lat": -85.4089,
+     "lon": 28.15,
+     "yes_share": 0.053
+    },
+    {
+     "site": "MMO05",
+     "region": "Mons Mouton",
+     "lat": -85.3439,
+     "lon": 28.5944,
+     "yes_share": 0.09
+    },
+    {
+     "site": "MMO06",
+     "region": "Mons Mouton",
+     "lat": -85.2614,
+     "lon": 30.1862,
+     "yes_share": 0.075
+    },
+    {
+     "site": "MMO07",
+     "region": "Mons Mouton",
+     "lat": -85.1953,
+     "lon": 32.9287,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO08",
+     "region": "Mons Mouton",
+     "lat": -85.513,
+     "lon": 35.7041,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO09",
+     "region": "Mons Mouton",
+     "lat": -85.4665,
+     "lon": 33.0398,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO10",
+     "region": "Mons Mouton",
+     "lat": -85.4608,
+     "lon": 31.4902,
+     "yes_share": 0.005
+    }
+   ],
+   "months": [
+    {
+     "month": "2027-01",
+     "site": "MMO01",
+     "region": "Mons Mouton",
+     "lat": -85.416,
+     "lon": 31.8506,
+     "landing_utc": "2027-01-11T00:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 2,
+     "week_later": {
+      "landing_utc": "2027-01-18T00:00:00Z",
+      "verdict": "not sure",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2027-02-09T13:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-02",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-02-14T06:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 1,
+     "week_later": {
+      "landing_utc": "2027-02-21T06:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-03-15T19:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": [
+       "Sun at touchdown"
+      ]
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-03",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-03-16T00:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 0,
+     "week_later": {
+      "landing_utc": "2027-03-23T00:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-04-14T13:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": [
+       "Sun at touchdown"
+      ]
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-04",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-04-14T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 0,
+     "week_later": {
+      "landing_utc": "2027-04-21T18:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "Earth at touchdown",
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-05-14T07:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 0,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-05",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-05-14T06:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 0,
+     "week_later": {
+      "landing_utc": "2027-05-21T06:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "Earth at touchdown",
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-06-12T19:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-08",
+     "site": "MMO06",
+     "region": "Mons Mouton",
+     "lat": -85.2614,
+     "lon": 30.1862,
+     "landing_utc": "2027-08-11T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 1,
+     "week_later": {
+      "landing_utc": "2027-08-18T18:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-09-10T07:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 2,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-09",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-09-08T06:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 3,
+     "week_later": {
+      "landing_utc": "2027-09-15T06:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-10-07T19:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 3,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-10",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-10-07T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 3,
+     "week_later": {
+      "landing_utc": "2027-10-14T18:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-11-06T07:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 3,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-11",
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "landing_utc": "2027-11-05T12:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 8,
+     "week_later": {
+      "landing_utc": "2027-11-12T12:00:00Z",
+      "verdict": "yes",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2027-12-05T01:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 6,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-12",
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "landing_utc": "2027-12-02T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 0,
+     "week_later": {
+      "landing_utc": "2027-12-09T18:00:00Z",
+      "verdict": "yes",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2028-01-01T07:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    }
+   ],
+   "label": "Approximate: the place and the period are NASA's published ones (sources below); the sites are Wueller et al. 2026's published candidates; the landing times are spread over the period. Not the mission's own plan."
+  },
+  {
+   "id": "viper",
+   "name": "VIPER on Blue Moon MK1",
+   "who": "NASA rover, NASA CLPS task order CS-7; Blue Origin Blue Moon MK1 lander",
+   "launch_text": "landing by late 2027",
+   "span": [
+    "2027-09-01T00:00:00Z",
+    "2027-12-31T18:00:00Z"
+   ],
+   "span_note": "1 Sep to 31 Dec 2027 (our reading of \"late 2027\")",
+   "place_text": "Mons Mouton",
+   "home_regions": [
+    "Mons Mouton"
+   ],
+   "home_sites": 10,
+   "need": "240 sunlit hours and 100 hours of Earth contact in the 14 days after landing, the Sun and the Earth in view at touchdown (the page's default need; illustrative)",
+   "long_days": 100,
+   "quotes": [
+    {
+     "source": "viper",
+     "text": "On September 19, 2025, NASA announced that VIPER and its instruments will be delivered to Mons Mouton by a Blue Origin Blue Moon MK-1 lander as part of task order CS-7.",
+     "url": "https://science.nasa.gov/mission/viper/"
+    },
+    {
+     "source": "viper_award",
+     "text": "The rover has a targeted science window for its 100-day mission that requires a landing by late 2027.",
+     "url": "https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/"
+    }
+   ],
+   "landing_times": 488,
+   "good_times": 124,
+   "good_share": 0.254,
+   "months_in_span": 4,
+   "months_with_a_good_time": 4,
+   "slip_week": {
+    "still_yes": 14,
+    "of": 124,
+    "share": 0.113,
+    "lost": {
+     "times": 110,
+     "any_other_open": 63,
+     "by_region": [
+      {
+       "region": "Haworth",
+       "open_times": 58
+      },
+      {
+       "region": "de Gerlache Rim 2",
+       "open_times": 56
+      },
+      {
+       "region": "Peak near Cabeus B",
+       "open_times": 49
+      },
+      {
+       "region": "Nobile Rim 1",
+       "open_times": 31
+      },
+      {
+       "region": "Malapert Massif",
+       "open_times": 21
+      },
+      {
+       "region": "Mons Mouton Plateau",
+       "open_times": 0
+      },
+      {
+       "region": "Nobile Rim 2",
+       "open_times": 0
+      },
+      {
+       "region": "Slater Plain",
+       "open_times": 0
+      }
+     ]
+    }
+   },
+   "slip_month": {
+    "still_yes": 102,
+    "of": 124,
+    "share": 0.823,
+    "lost": {
+     "times": 22,
+     "any_other_open": 22,
+     "by_region": [
+      {
+       "region": "Haworth",
+       "open_times": 19
+      },
+      {
+       "region": "Nobile Rim 1",
+       "open_times": 16
+      },
+      {
+       "region": "Nobile Rim 2",
+       "open_times": 13
+      },
+      {
+       "region": "Peak near Cabeus B",
+       "open_times": 9
+      },
+      {
+       "region": "Malapert Massif",
+       "open_times": 9
+      },
+      {
+       "region": "Mons Mouton Plateau",
+       "open_times": 9
+      },
+      {
+       "region": "de Gerlache Rim 2",
+       "open_times": 6
+      },
+      {
+       "region": "Slater Plain",
+       "open_times": 0
+      }
+     ]
+    }
+   },
+   "per_site": [
+    {
+     "site": "MMO01",
+     "region": "Mons Mouton",
+     "lat": -85.416,
+     "lon": 31.8506,
+     "yes_share": 0.029
+    },
+    {
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "yes_share": 0.199
+    },
+    {
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "yes_share": 0.123
+    },
+    {
+     "site": "MMO04",
+     "region": "Mons Mouton",
+     "lat": -85.4089,
+     "lon": 28.15,
+     "yes_share": 0.119
+    },
+    {
+     "site": "MMO05",
+     "region": "Mons Mouton",
+     "lat": -85.3439,
+     "lon": 28.5944,
+     "yes_share": 0.172
+    },
+    {
+     "site": "MMO06",
+     "region": "Mons Mouton",
+     "lat": -85.2614,
+     "lon": 30.1862,
+     "yes_share": 0.125
+    },
+    {
+     "site": "MMO07",
+     "region": "Mons Mouton",
+     "lat": -85.1953,
+     "lon": 32.9287,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO08",
+     "region": "Mons Mouton",
+     "lat": -85.513,
+     "lon": 35.7041,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO09",
+     "region": "Mons Mouton",
+     "lat": -85.4665,
+     "lon": 33.0398,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO10",
+     "region": "Mons Mouton",
+     "lat": -85.4608,
+     "lon": 31.4902,
+     "yes_share": 0.016
+    }
+   ],
+   "months": [
+    {
+     "month": "2027-09",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-09-08T06:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 3,
+     "week_later": {
+      "landing_utc": "2027-09-15T06:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-10-07T19:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 3,
+      "fails_on": []
+     },
+     "points": 13,
+     "long": {
+      "days": 100,
+      "hours": 2400,
+      "sunlit_h_min": 1268,
+      "earth_h_min": 1975,
+      "sun_and_earth_h_min": 1252,
+      "night_met_h_max": 381,
+      "outage_met_h_max": 131
+     },
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-10",
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "landing_utc": "2027-10-07T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 3,
+     "week_later": {
+      "landing_utc": "2027-10-14T18:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2027-11-06T07:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 3,
+      "fails_on": []
+     },
+     "points": 13,
+     "long": {
+      "days": 100,
+      "hours": 2400,
+      "sunlit_h_min": 1254,
+      "earth_h_min": 1974,
+      "sun_and_earth_h_min": 1244,
+      "night_met_h_max": 395,
+      "outage_met_h_max": 137
+     },
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-11",
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "landing_utc": "2027-11-05T12:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 8,
+     "week_later": {
+      "landing_utc": "2027-11-12T12:00:00Z",
+      "verdict": "yes",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2027-12-05T01:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 6,
+      "fails_on": []
+     },
+     "points": 13,
+     "long": {
+      "days": 100,
+      "hours": 2400,
+      "sunlit_h_min": 1579,
+      "earth_h_min": 1364,
+      "sun_and_earth_h_min": 1175,
+      "night_met_h_max": 352,
+      "outage_met_h_max": 312
+     },
+     "agrees_with_card": true
+    },
+    {
+     "month": "2027-12",
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "landing_utc": "2027-12-02T18:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 0,
+     "week_later": {
+      "landing_utc": "2027-12-09T18:00:00Z",
+      "verdict": "yes",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2028-01-01T07:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": []
+     },
+     "points": 13,
+     "long": {
+      "days": 100,
+      "hours": 2400,
+      "sunlit_h_min": 1362,
+      "earth_h_min": 1376,
+      "sun_and_earth_h_min": 990,
+      "night_met_h_max": 453,
+      "outage_met_h_max": 312
+     },
+     "agrees_with_card": true
+    }
+   ],
+   "label": "Approximate: the place and the period are NASA's published ones (sources below); the sites are Wueller et al. 2026's published candidates; the landing times are spread over the period. Not the mission's own plan."
+  },
+  {
+   "id": "artemis4",
+   "name": "Artemis IV",
+   "who": "NASA crewed landing; two crew members on the surface",
+   "launch_text": "Early 2028",
+   "span": [
+    "2028-01-01T00:00:00Z",
+    "2028-04-30T18:00:00Z"
+   ],
+   "span_note": "1 Jan to 30 Apr 2028 (our reading of \"early 2028\")",
+   "place_text": "NASA's nine candidate landing regions near the South Pole",
+   "home_regions": [
+    "Peak near Cabeus B",
+    "Haworth",
+    "Malapert Massif",
+    "Mons Mouton Plateau",
+    "Mons Mouton",
+    "Nobile Rim 1",
+    "Nobile Rim 2",
+    "de Gerlache Rim 2",
+    "Slater Plain"
+   ],
+   "home_sites": 78,
+   "need": "a 6.25-day stay with the Sun up every hour, 100 hours of Earth contact, the Sun and the Earth in view at touchdown, not fragile (the region calendar's rule; 100 hours is illustrative)",
+   "long_days": 0,
+   "quotes": [
+    {
+     "source": "artemis4",
+     "text": "Mission Type Crewed Surface Landing LAUNCH Early 2028",
+     "url": "https://www.nasa.gov/mission/artemis-iv/"
+    },
+    {
+     "source": "artemis4",
+     "text": "two crew members will descend to the surface and spend approximately a week near the South Pole of the Moon",
+     "url": "https://www.nasa.gov/mission/artemis-iv/"
+    },
+    {
+     "source": "artemis4",
+     "text": "the agency has identified nine candidate landing regions near the lunar South Pole",
+     "url": "https://www.nasa.gov/mission/artemis-iv/"
+    },
+    {
+     "source": "lpsc",
+     "text": "Surface stay duration varies approximately 5.75 to 6.25 days depending on mission epoch",
+     "url": "https://ntrs.nasa.gov/api/citations/20250011660/downloads/AIIIUpdateLPSC2026.docx"
+    }
+   ],
+   "landing_times": 484,
+   "good_times": 178,
+   "good_share": 0.368,
+   "months_in_span": 4,
+   "months_with_a_good_time": 4,
+   "slip_week": {
+    "still_yes": 62,
+    "of": 178,
+    "share": 0.348,
+    "lost": {
+     "times": 116,
+     "any_other_open": 0,
+     "by_region": []
+    }
+   },
+   "slip_month": {
+    "still_yes": 116,
+    "of": 178,
+    "share": 0.652,
+    "lost": {
+     "times": 62,
+     "any_other_open": 0,
+     "by_region": []
+    }
+   },
+   "per_site": [
+    {
+     "site": "PCB01",
+     "region": "Peak near Cabeus B",
+     "lat": -83.7633,
+     "lon": -69.9829,
+     "yes_share": 0.0
+    },
+    {
+     "site": "PCB02",
+     "region": "Peak near Cabeus B",
+     "lat": -83.6317,
+     "lon": -67.6339,
+     "yes_share": 0.0
+    },
+    {
+     "site": "PCB03",
+     "region": "Peak near Cabeus B",
+     "lat": -83.563,
+     "lon": -68.2009,
+     "yes_share": 0.006
+    },
+    {
+     "site": "PCB04",
+     "region": "Peak near Cabeus B",
+     "lat": -83.3691,
+     "lon": -67.6646,
+     "yes_share": 0.0
+    },
+    {
+     "site": "PCB05",
+     "region": "Peak near Cabeus B",
+     "lat": -83.5388,
+     "lon": -71.9419,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW01",
+     "region": "Haworth",
+     "lat": -86.7682,
+     "lon": -20.514,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW02",
+     "region": "Haworth",
+     "lat": -86.8076,
+     "lon": -21.7194,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW03",
+     "region": "Haworth",
+     "lat": -86.8596,
+     "lon": -19.8934,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW04",
+     "region": "Haworth",
+     "lat": -86.568,
+     "lon": -21.4727,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW05",
+     "region": "Haworth",
+     "lat": -86.6616,
+     "lon": -30.5483,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW06",
+     "region": "Haworth",
+     "lat": -87.0499,
+     "lon": -24.2402,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW_K2023",
+     "region": "Haworth",
+     "lat": -86.9895,
+     "lon": -24.2545,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW07",
+     "region": "Haworth",
+     "lat": -86.9324,
+     "lon": -23.0203,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW08",
+     "region": "Haworth",
+     "lat": -86.924,
+     "lon": -25.8094,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW09",
+     "region": "Haworth",
+     "lat": -86.623,
+     "lon": -26.0746,
+     "yes_share": 0.0
+    },
+    {
+     "site": "HW10",
+     "region": "Haworth",
+     "lat": -86.5272,
+     "lon": -14.8763,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMA01",
+     "region": "Malapert Massif",
+     "lat": -85.9425,
+     "lon": -0.94365,
+     "yes_share": 0.118
+    },
+    {
+     "site": "MMA_K2023",
+     "region": "Malapert Massif",
+     "lat": -85.9919,
+     "lon": 2.0564,
+     "yes_share": 0.041
+    },
+    {
+     "site": "MMA02",
+     "region": "Malapert Massif",
+     "lat": -86.0153,
+     "lon": 3.38206,
+     "yes_share": 0.002
+    },
+    {
+     "site": "MMA03",
+     "region": "Malapert Massif",
+     "lat": -85.9577,
+     "lon": -3.27827,
+     "yes_share": 0.045
+    },
+    {
+     "site": "MMA04",
+     "region": "Malapert Massif",
+     "lat": -86.3098,
+     "lon": -0.459283,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMP01",
+     "region": "Mons Mouton Plateau",
+     "lat": -85.1114,
+     "lon": 26.7102,
+     "yes_share": 0.035
+    },
+    {
+     "site": "MMP02",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.8055,
+     "lon": 24.8871,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMP03",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.9683,
+     "lon": 31.153,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMP04",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.6863,
+     "lon": 20.8866,
+     "yes_share": 0.004
+    },
+    {
+     "site": "MMP05",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.4159,
+     "lon": 28.2118,
+     "yes_share": 0.01
+    },
+    {
+     "site": "MMP06",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.5961,
+     "lon": 30.4525,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMP07",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.6834,
+     "lon": 37.3387,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMP08",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.2114,
+     "lon": 40.81,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMP09",
+     "region": "Mons Mouton Plateau",
+     "lat": -83.6844,
+     "lon": 32.8848,
+     "yes_share": 0.081
+    },
+    {
+     "site": "MMP10",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.1383,
+     "lon": 25.6422,
+     "yes_share": 0.097
+    },
+    {
+     "site": "MMP11",
+     "region": "Mons Mouton Plateau",
+     "lat": -84.269,
+     "lon": 36.6724,
+     "yes_share": 0.091
+    },
+    {
+     "site": "MMO01",
+     "region": "Mons Mouton",
+     "lat": -85.416,
+     "lon": 31.8506,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO02",
+     "region": "Mons Mouton",
+     "lat": -85.481,
+     "lon": 29.5494,
+     "yes_share": 0.037
+    },
+    {
+     "site": "MMO03",
+     "region": "Mons Mouton",
+     "lat": -85.4085,
+     "lon": 30.4056,
+     "yes_share": 0.11
+    },
+    {
+     "site": "MMO04",
+     "region": "Mons Mouton",
+     "lat": -85.4089,
+     "lon": 28.15,
+     "yes_share": 0.097
+    },
+    {
+     "site": "MMO05",
+     "region": "Mons Mouton",
+     "lat": -85.3439,
+     "lon": 28.5944,
+     "yes_share": 0.095
+    },
+    {
+     "site": "MMO06",
+     "region": "Mons Mouton",
+     "lat": -85.2614,
+     "lon": 30.1862,
+     "yes_share": 0.101
+    },
+    {
+     "site": "MMO07",
+     "region": "Mons Mouton",
+     "lat": -85.1953,
+     "lon": 32.9287,
+     "yes_share": 0.025
+    },
+    {
+     "site": "MMO08",
+     "region": "Mons Mouton",
+     "lat": -85.513,
+     "lon": 35.7041,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO09",
+     "region": "Mons Mouton",
+     "lat": -85.4665,
+     "lon": 33.0398,
+     "yes_share": 0.0
+    },
+    {
+     "site": "MMO10",
+     "region": "Mons Mouton",
+     "lat": -85.4608,
+     "lon": 31.4902,
+     "yes_share": 0.0
+    },
+    {
+     "site": "NR101",
+     "region": "Nobile Rim 1",
+     "lat": -85.295,
+     "lon": 36.9168,
+     "yes_share": 0.021
+    },
+    {
+     "site": "NR102",
+     "region": "Nobile Rim 1",
+     "lat": -85.2606,
+     "lon": 36.8888,
+     "yes_share": 0.097
+    },
+    {
+     "site": "NR103",
+     "region": "Nobile Rim 1",
+     "lat": -85.5456,
+     "lon": 37.5572,
+     "yes_share": 0.0
+    },
+    {
+     "site": "NR104",
+     "region": "Nobile Rim 1",
+     "lat": -85.0173,
+     "lon": 37.8745,
+     "yes_share": 0.029
+    },
+    {
+     "site": "NR105",
+     "region": "Nobile Rim 1",
+     "lat": -85.0722,
+     "lon": 37.555,
+     "yes_share": 0.194
+    },
+    {
+     "site": "NR106",
+     "region": "Nobile Rim 1",
+     "lat": -85.1557,
+     "lon": 36.986,
+     "yes_share": 0.017
+    },
+    {
+     "site": "NR107",
+     "region": "Nobile Rim 1",
+     "lat": -85.1978,
+     "lon": 37.1774,
+     "yes_share": 0.043
+    },
+    {
+     "site": "NR108",
+     "region": "Nobile Rim 1",
+     "lat": -85.1027,
+     "lon": 36.7514,
+     "yes_share": 0.136
+    },
+    {
+     "site": "NR109",
+     "region": "Nobile Rim 1",
+     "lat": -85.0405,
+     "lon": 37.4339,
+     "yes_share": 0.153
+    },
+    {
+     "site": "NR201",
+     "region": "Nobile Rim 2",
+     "lat": -84.0539,
+     "lon": 56.4813,
+     "yes_share": 0.116
+    },
+    {
+     "site": "NR202",
+     "region": "Nobile Rim 2",
+     "lat": -84.1553,
+     "lon": 59.8351,
+     "yes_share": 0.103
+    },
+    {
+     "site": "NR203",
+     "region": "Nobile Rim 2",
+     "lat": -83.6871,
+     "lon": 57.0082,
+     "yes_share": 0.151
+    },
+    {
+     "site": "NR204",
+     "region": "Nobile Rim 2",
+     "lat": -83.7847,
+     "lon": 57.683,
+     "yes_share": 0.043
+    },
+    {
+     "site": "NR205",
+     "region": "Nobile Rim 2",
+     "lat": -83.6185,
+     "lon": 59.0568,
+     "yes_share": 0.091
+    },
+    {
+     "site": "NR206",
+     "region": "Nobile Rim 2",
+     "lat": -83.7805,
+     "lon": 59.2824,
+     "yes_share": 0.021
+    },
+    {
+     "site": "NR2_K2023",
+     "region": "Nobile Rim 2",
+     "lat": -84.0737,
+     "lon": 59.1974,
+     "yes_share": 0.116
+    },
+    {
+     "site": "NR207",
+     "region": "Nobile Rim 2",
+     "lat": -83.9181,
+     "lon": 59.3265,
+     "yes_share": 0.095
+    },
+    {
+     "site": "NR208",
+     "region": "Nobile Rim 2",
+     "lat": -83.9064,
+     "lon": 57.8114,
+     "yes_share": 0.031
+    },
+    {
+     "site": "dGR201",
+     "region": "de Gerlache Rim 2",
+     "lat": -88.3891,
+     "lon": -68.8647,
+     "yes_share": 0.0
+    },
+    {
+     "site": "dGR202",
+     "region": "de Gerlache Rim 2",
+     "lat": -88.0371,
+     "lon": -75.0441,
+     "yes_share": 0.0
+    },
+    {
+     "site": "dGR203",
+     "region": "de Gerlache Rim 2",
+     "lat": -88.1408,
+     "lon": -71.6955,
+     "yes_share": 0.0
+    },
+    {
+     "site": "dGR204",
+     "region": "de Gerlache Rim 2",
+     "lat": -88.1377,
+     "lon": -74.333,
+     "yes_share": 0.0
+    },
+    {
+     "site": "dGR2_K2023",
+     "region": "de Gerlache Rim 2",
+     "lat": -88.45,
+     "lon": -67.8591,
+     "yes_share": 0.0
+    },
+    {
+     "site": "dGR205",
+     "region": "de Gerlache Rim 2",
+     "lat": -88.0646,
+     "lon": -62.0736,
+     "yes_share": 0.0
+    },
+    {
+     "site": "dGR206",
+     "region": "de Gerlache Rim 2",
+     "lat": -87.9467,
+     "lon": -62.0981,
+     "yes_share": 0.0
+    },
+    {
+     "site": "SP01",
+     "region": "Slater Plain",
+     "lat": -87.4783,
+     "lon": 124.521,
+     "yes_share": 0.021
+    },
+    {
+     "site": "SP02",
+     "region": "Slater Plain",
+     "lat": -87.3818,
+     "lon": 126.513,
+     "yes_share": 0.0
+    },
+    {
+     "site": "SP03",
+     "region": "Slater Plain",
+     "lat": -87.2825,
+     "lon": 123.748,
+     "yes_share": 0.0
+    },
+    {
+     "site": "SP04",
+     "region": "Slater Plain",
+     "lat": -87.1925,
+     "lon": 123.034,
+     "yes_share": 0.0
+    },
+    {
+     "site": "SP05",
+     "region": "Slater Plain",
+     "lat": -87.1818,
+     "lon": 119.703,
+     "yes_share": 0.0
+    },
+    {
+     "site": "SP06",
+     "region": "Slater Plain",
+     "lat": -87.073,
+     "lon": 126.131,
+     "yes_share": 0.045
+    },
+    {
+     "site": "SP07",
+     "region": "Slater Plain",
+     "lat": -87.1306,
+     "lon": 127.857,
+     "yes_share": 0.052
+    },
+    {
+     "site": "SP08",
+     "region": "Slater Plain",
+     "lat": -87.3275,
+     "lon": 130.054,
+     "yes_share": 0.0
+    },
+    {
+     "site": "SP09",
+     "region": "Slater Plain",
+     "lat": -87.1837,
+     "lon": 133.344,
+     "yes_share": 0.023
+    },
+    {
+     "site": "SP10",
+     "region": "Slater Plain",
+     "lat": -87.0319,
+     "lon": 130.702,
+     "yes_share": 0.039
+    },
+    {
+     "site": "SP11",
+     "region": "Slater Plain",
+     "lat": -86.9504,
+     "lon": 126.675,
+     "yes_share": 0.124
+    }
+   ],
+   "months": [
+    {
+     "month": "2028-01",
+     "site": "NR102",
+     "region": "Nobile Rim 1",
+     "lat": -85.2606,
+     "lon": 36.8888,
+     "landing_utc": "2028-01-01T00:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 8,
+     "week_later": {
+      "landing_utc": "2028-01-08T00:00:00Z",
+      "verdict": "yes",
+      "fails_on": []
+     },
+     "month_later": {
+      "landing_utc": "2028-01-30T13:00:00Z",
+      "verdict": "not sure",
+      "slip_margin_days": -1,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2028-02",
+     "site": "NR105",
+     "region": "Nobile Rim 1",
+     "lat": -85.0722,
+     "lon": 37.555,
+     "landing_utc": "2028-02-01T00:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 4,
+     "week_later": {
+      "landing_utc": "2028-02-08T00:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight",
+       "Earth contact"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2028-03-01T13:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 2,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2028-03",
+     "site": "NR105",
+     "region": "Nobile Rim 1",
+     "lat": -85.0722,
+     "lon": 37.555,
+     "landing_utc": "2028-03-01T00:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 3,
+     "week_later": {
+      "landing_utc": "2028-03-08T00:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "sunlight",
+       "Earth contact"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2028-03-30T13:00:00Z",
+      "verdict": "yes",
+      "slip_margin_days": 0,
+      "fails_on": []
+     },
+     "points": 13,
+     "agrees_with_card": true
+    },
+    {
+     "month": "2028-04",
+     "site": "NR203",
+     "region": "Nobile Rim 2",
+     "lat": -83.6871,
+     "lon": 57.0082,
+     "landing_utc": "2028-04-01T00:00:00Z",
+     "verdict": "yes",
+     "slip_margin_days": 0,
+     "week_later": {
+      "landing_utc": "2028-04-08T00:00:00Z",
+      "verdict": "no",
+      "fails_on": [
+       "Earth at touchdown",
+       "sunlight",
+       "Earth contact"
+      ]
+     },
+     "month_later": {
+      "landing_utc": "2028-04-30T13:00:00Z",
+      "verdict": "no",
+      "slip_margin_days": -1,
+      "fails_on": [
+       "Earth contact"
+      ]
+     },
+     "points": 13,
+     "agrees_with_card": true
+    }
+   ],
+   "label": "Approximate: the place and the period are NASA's published ones (sources below); the sites are Wueller et al. 2026's published candidates; the landing times are spread over the period. Not the mission's own plan."
+  }
+ ],
+ "listed_without_a_point": [
+  {
+   "name": "Artemis III",
+   "launch_text": "2027",
+   "why": "No landing. NASA now flies Artemis III as a test in low Earth orbit; the first crewed landing is Artemis IV.",
+   "quote": "On Artemis III, NASA will test one or both human landing systems in low Earth orbit, demonstrating rendezvous and docking operations.",
+   "url": "https://www.nasa.gov/mission/artemis-iii/"
+  },
+  {
+   "name": "Blue Moon MK1 first flight (CT-3)",
+   "launch_text": "2027",
+   "why": "NASA gives the destination only as \"the lunar south pole\"; no landing site on the pages read.",
+   "quote": "The Blue Origin Blue Moon Mark 1 (MK1) lander will deliver two NASA science payloads to the lunar south pole.",
+   "url": "https://science.nasa.gov/lunar-science/clps-deliveries/ct-3-science/"
+  },
+  {
+   "name": "Blue Ghost Mission 4 (CS-6)",
+   "launch_text": "not on NASA's launch schedule",
+   "why": "Destination given only as \"the lunar south pole\"; no site and no date on the pages read.",
+   "quote": "The Firefly Aerospace Blue Ghost Mission 4 lander will deliver four NASA CLPS science payloads to the lunar south pole.",
+   "url": "https://science.nasa.gov/lunar-science/programs/clps/cs-6-science/"
+  },
+  {
+   "name": "Nova-D (CT-4)",
+   "launch_text": "not on NASA's launch schedule",
+   "why": "Destination given only as \"the lunar south pole\"; no site and no date on the pages read.",
+   "quote": "The Intuitive Machines Nova-D lander will deliver six NASA CLPS science payloads to the lunar south pole.",
+   "url": "https://science.nasa.gov/lunar-science/clps-deliveries/"
+  },
+  {
+   "name": "LUPEX (JAXA with ISRO)",
+   "launch_text": "No earlier than 2028",
+   "why": "JAXA gives only \"lunar polar region\"; no landing site published on the page read.",
+   "quote": "Lunar Polar Exploration Mission No earlier than 2028",
+   "url": "https://www.exploration.jaxa.jp/e/program/#lupex"
+  },
+  {
+   "name": "Chang'e-7 (CNSA)",
+   "launch_text": "not found first-hand",
+   "why": "CNSA's English pages that we could reach give no landing site or date for it, so it is left out.",
+   "quote": null,
+   "url": "http://www.cnsa.gov.cn/english/"
+  }
+ ],
+ "sources": {
+  "schedule": {
+   "title": "NASA launch schedule",
+   "url": "https://www.nasa.gov/event-type/launch-schedule/",
+   "file": "data/addons/impact/sources/nasa_launches.html",
+   "sha256": "8c42c07f96cdd5c7872c6e7ff88679a41aa4e320b5a4953a380a2b4b4d7183f1"
+  },
+  "clps": {
+   "title": "NASA CLPS deliveries",
+   "url": "https://science.nasa.gov/lunar-science/clps-deliveries/",
+   "file": "data/addons/impact/sources/nasa_clps_deliveries.html",
+   "sha256": "c2477a797a5a9f9725a2c4f816e01eaef4a45259381ff390d6bfd8739de9ca10"
+  },
+  "to20a": {
+   "title": "NASA TO20A page",
+   "url": "https://science.nasa.gov/lunar-science/clps-deliveries/to20a-astrobotic/",
+   "file": "data/addons/impact/sources/clps_to20a.html",
+   "sha256": "0cc73dbf9ac0acb81521e451726aae753c33f93eef0638dcca0d77264ec77a1e"
+  },
+  "cp22": {
+   "title": "NASA CP-22 page",
+   "url": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-22-science/",
+   "file": "data/addons/impact/sources/clps_cp22.html",
+   "sha256": "0a29e8507abed39a5779b6ee34f5cf350dad43becf7ade5cc3bc0ad0e4f04fb8"
+  },
+  "viper": {
+   "title": "NASA VIPER mission page",
+   "url": "https://science.nasa.gov/mission/viper/",
+   "file": "data/addons/impact/sources/nasa_viper.html",
+   "sha256": "ddd9c9663e5fd02e69821e1a2f17754ff552813be004ec09d582526d02e04ab1"
+  },
+  "viper_award": {
+   "title": "NASA release, 19 Sep 2025",
+   "url": "https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/",
+   "file": "data/addons/impact/sources/nasa_viper_blue_origin.html",
+   "sha256": "2135fd5881228c1b0a4ce6a838d593587300dc7347081ef5ffe25437a0b1f2f3"
+  },
+  "artemis4": {
+   "title": "NASA Artemis IV page",
+   "url": "https://www.nasa.gov/mission/artemis-iv/",
+   "file": "data/addons/impact/sources/nasa_artemis4.html",
+   "sha256": "3d2779d207129d5103013e195600b9995169518a63f7208cc26d8cca9d08c898"
+  },
+  "artemis3": {
+   "title": "NASA Artemis III page",
+   "url": "https://www.nasa.gov/mission/artemis-iii/",
+   "file": "data/addons/impact/sources/nasa_artemis3.html",
+   "sha256": "13a326d88e1b70876f5eac2bc3c81bc5d83b9e88488e47a1ed1f5b57148e0c3d"
+  },
+  "ct3": {
+   "title": "NASA CT-3 page",
+   "url": "https://science.nasa.gov/lunar-science/clps-deliveries/ct-3-science/",
+   "file": "data/addons/impact/sources/clps_ct3.html",
+   "sha256": "35791c7165fd90ef4c26581f333d5a8cfe4634e7f8e62f085a41ec3ffe2f4074"
+  },
+  "cs6": {
+   "title": "NASA CS-6 page",
+   "url": "https://science.nasa.gov/lunar-science/programs/clps/cs-6-science/",
+   "file": "data/addons/impact/sources/clps_cs6.html",
+   "sha256": "1e867591c8155b6cc6e7ffdfddb77cc21bbea8d5b487af165af9469d57c012e7"
+  },
+  "lupex": {
+   "title": "JAXA exploration programme page",
+   "url": "https://www.exploration.jaxa.jp/e/program/#lupex",
+   "file": "data/addons/impact/sources/jaxa_lupex.html",
+   "sha256": "63e20e5f3b337d4dfcbb79b3a64f8491b899b5b9e725b62146eae0bd5aefd2d6"
+  },
+  "cnsa": {
+   "title": "CNSA English home page",
+   "url": "http://www.cnsa.gov.cn/english/",
+   "file": "data/addons/impact/sources/cnsa_en.html",
+   "sha256": "5dadd2baf248427ffae7e6f417af24a181ea9d76b717a157b9d1f0aabedce564"
+  },
+  "lpsc": {
+   "title": "NASA LPSC 2026 abstract (George et al., NTRS 20250011660), saved earlier for the entry",
+   "url": "https://ntrs.nasa.gov/api/citations/20250011660/downloads/AIIIUpdateLPSC2026.docx",
+   "file": "data/reference/sources/artemis3_update_lpsc2026.docx",
+   "sha256": "965fc9fae5ed07c65e6f9ab843fa14b53492f06b930781cf3bd7c6984e467f5f"
+  }
+ },
+ "first_time": "2026-11-15T00:00:00Z",
+ "n_times": 2252,
+ "seconds": 697.7
+}

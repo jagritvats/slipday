@@ -3,43 +3,158 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slipday: what a launch slip costs at a lunar landing site</title>
+<title>Slipday: the Sun and the Earth from a lunar landing site</title>
 <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/static/style.css">
 <link rel="stylesheet" href="/static/view3d.css">
 <link rel="stylesheet" href="/static/addons/addons.css">
+<link rel="stylesheet" href="/static/overhaul.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to the answer</a>
-<a class="skip" href="#h-sites">Skip to the site map</a>
+<a class="skip" href="#navigator">Skip to the Sun and the Earth</a>
+<a class="skip" href="#h-mission">Skip to "Launch slipped?"</a>
+<a class="skip" href="#h-site">Skip to the site map</a>
 <a class="skip" href="#foldGame">Skip to the game</a>
 <header class="top">
-  <div>
+  <div class="brand">
     <h1>Slipday</h1>
-    <p class="tag">NASA Space Apps 2026 &middot; Lunar Landing Site Navigator &middot; the Sun and the Earth against the real Moon horizon</p>
+    <p class="tag">Lunar Landing Site Navigator, NASA Space Apps 2026</p>
   </div>
   <p class="badge" id="horizonBadge" role="status">Checking terrain data…</p>
 </header>
-<div class="intro" id="intro">
-  <p>A robot lander is set to touch down near the Moon's south pole. There the Sun and the Earth stay low in the sky, so a hill
-  or a crater rim can hide them for days: the lander needs sunlight for power and the Earth in view to radio home.
-  Rockets often launch late, and that delay is called a slip; Slipday tells you whether the landing still works if the launch slips,
-  and by how many days.</p>
-</div>
 <nav class="jump" id="jumpBar" aria-label="Sections of this page">
-  <a href="#h-mission">Answer</a>
-  <a href="#h-sites">Where else</a>
-  <a href="#h-3d" data-open="3d">3-D view</a>
-  <a href="#h-precise">Precision</a>
-  <a href="#h-real" data-open="real">Real missions</a>
-  <a href="#h-regions">Artemis regions</a>
-  <a href="#h-valid">Can you trust it?</a>
-  <a href="#foldGame" data-open="fold">Game</a>
+  <a href="#navigator">Sun and Earth</a>
+  <a href="#h-decide">Decide</a>
+  <a href="#comparePanel">Compare</a>
+  <a href="#h-mission">Launch slipped?</a>
+  <a href="#h-missions">Missions</a>
+  <a href="#h-where">Where else</a>
+  <a href="#h-isSafe">Is it safe?</a>
+  <a href="#h-talk">Talking to Earth</a>
+  <a href="#h-plan">Plan ahead</a>
+  <a href="#h-found">Findings</a>
+  <a href="#h-valid">Proof</a>
+  <a href="#foldGame" data-open="fold">Play</a>
 </nav>
-<main id="main">
+<div class="builton" aria-label="What the answers are built on">
+  <span class="bo-h">Built on</span>
+  <a href="#h-valid">NASA LOLA terrain: 80, 20, 5 m</a>
+  <a href="#validMore">JPL ephemeris, checked with Horizons</a>
+  <a href="#h-valid">checked with LOLA Sun and Earth maps</a>
+  <a href="#foldRelay">NASA relay design (LCRNS)</a>
+  <a href="#h-safe">NASA slope limit</a>
+  <a href="#h-regions">NASA landing regions (Wueller et al. 2026)</a>
+</div><main id="main">
+
+<section class="nav-core" id="navigator" aria-labelledby="h-nav">
+  <div class="nv-head">
+    <p class="nv-hook" id="nvHook" hidden></p>
+    <h2 id="h-nav">Where are the Sun and the Earth, seen from a Moon landing site?</h2>
+    <p class="nv-lede" id="intro">A lander needs sunlight for power and the Earth in view to radio home. Near the south pole both stay low, so hills can hide them for days.</p>
+  </div>
+  <div class="nv-start" id="nvStart">
+    <ol class="nv-steps" aria-label="Start here">
+      <li><a href="#h-site">Pick a site</a></li>
+      <li><a href="#h-when">Pick a time</a></li>
+      <li><a href="#h-sky">Read the sky</a></li>
+      <li><a href="#h-decide">Decide</a></li>
+    </ol>
+    <button type="button" class="btn sm ghost" id="nvHideStart" aria-controls="nvStart" aria-label="Hide these steps">Hide</button>
+    <a class="btn primary nv-play" href="#foldGame">Play the mission game</a>
+    <div class="nv-presets" id="nvPresets" role="group" aria-label="Ready-made comparisons"></div>
+  </div>
+  <div class="nv-grid">
+    <div class="nv-controls card">
+      <h3 id="h-site"><span class="stepn" aria-hidden="true">1</span>Choose a site: click the map or search</h3>
+      <div class="nv-maptabs" role="group" aria-label="Colour the map">
+        <button type="button" class="btn sm" data-ml="margin" aria-pressed="true">Days of slip it survives</button>
+        <button type="button" class="btn sm" data-ml="slope" aria-pressed="false">Slope</button>
+        <button type="button" class="btn sm" data-ml="" aria-pressed="false">Plain relief</button>
+      </div>
+      <p class="nv-cap" id="nvMapSay">Coloured by the days of slip the planned landing survives at each point: darker blue keeps the landing longer.</p>
+      <div class="nv-map" id="nvMap">
+      <div id="polar" class="polar" aria-label="South polar map; click a point to check it as a site, or search for a site below the map"></div>
+      <div class="row mapCtl">
+        <label>Map area
+          <select id="mapZoom"><option value="">South pole to 80°S</option><option value="pole">Close-up of the pole</option></select>
+        </label>
+        <label class="wide">Colour the map by
+          <select id="mapLayer"><option value="">nothing (shaded relief)</option></select>
+        </label>
+        <label class="inline" title="The slip-margin map is one point per 500 m. With this on, every coloured point is re-checked at 13 touchdown points within 100 m and coloured by the days of slip that all 13 survive."><input id="mapScatter" type="checkbox" checked> re-check each coloured point at 13 touchdown points</label>
+        <label class="inline" title="Cells in which the LOLA team's average-illumination map reads zero: ground the Sun never reaches."><input id="mapPsr" type="checkbox"> mark permanent shadow</label>
+      </div>
+      <div class="mapLegend" id="mapLegend"></div>
+      <p class="nv-cap" id="mapMoved" role="status"></p>
+      <p class="nv-cap nv-compute" id="nvCompute" hidden></p>
+      </div>
+      <div id="nvSite"></div>
+    </div>
+    <div class="nv-sky card">
+      <div class="nv-whenbox">
+        <h3 id="h-when"><span class="stepn" aria-hidden="true">2</span>Choose a date and time</h3>
+        <div id="nvWhen"></div>
+      </div>
+      <h3 id="h-sky"><span class="stepn" aria-hidden="true">3</span>The skyline all around you, standing at <span id="nvSiteName">the chosen site</span></h3>
+      <div id="nvVerdict"></div>
+      <p class="nv-sentence" id="nvSentence" aria-live="off"></p>
+      <p class="nv-youhere"><svg class="you-ico" viewBox="0 0 16 22" width="12" height="17" aria-hidden="true"><circle cx="8" cy="4" r="3.2"/><path d="M3 21 L8 9 L13 21 Z"/></svg><b>You are here</b>, at the centre of this panorama. Left to right: every compass direction around you. Up: height above level ground.</p>
+      <p class="nv-cap nv-approx" id="nvApprox" hidden></p>
+      <div class="nv-chart" id="nvChart"></div>
+      <p class="nv-cap" id="nvRidge"></p>
+      <div class="nv-viewtabs" role="group" aria-label="How to show the sky">
+        <button type="button" class="btn sm" data-view="chart" aria-pressed="true">Skyline all round</button>
+        <button type="button" class="btn sm" data-view="sky" aria-pressed="false">Sky view</button>
+        <span class="nv-face" id="nvFace" hidden><button type="button" class="btn sm" data-face="sun" aria-pressed="true">Face the Sun</button>
+        <button type="button" class="btn sm" data-face="earth" aria-pressed="false">Face the Earth</button></span>
+      </div>
+      <p class="nv-tags" id="nvTags"></p>
+      <div class="nv-key" id="nvKey" aria-hidden="true"><span><i class="k-ground"></i>ground (real skyline)</span><span><i class="k-sun"></i>Sun path</span><span><i class="k-earth"></i>Earth path</span><span><i class="k-hid"></i>faint: hidden behind the ground</span><span><i class="k-level"></i>flat horizon (0°)</span></div>
+      <p class="nv-cap nv-lib">The Earth's path makes a small loop: the Earth wobbles slightly in the sky because the Moon's tilt and orbit make it rock (this is called libration).</p>
+      <div id="nvScrubBox" hidden></div>
+      <div id="nvStrip"></div>
+      <div id="nvTable"></div>
+      <div id="nvMetrics"></div>
+      <div class="nv-views">
+        <a class="btn" href="#h-mission">What if the launch slips?</a>
+        <a class="btn" href="#h-sites">See it on the map</a>
+        <a class="btn" href="#h-3d" id="nvOpen3d">Open the 3-D view</a>
+        <button type="button" class="btn" id="nvDl">Download this answer (CSV)</button>
+        <button type="button" class="btn" id="nvLink">Copy a link to this view</button>
+      </div>
+      <p class="sr" id="nvSay" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<details class="fold panel" id="foldContrast">
+  <summary><b>Not like Earth</b> <span class="foldSum">The same days at this site and at home, side by side.</span></summary>
+<section class="panel" id="contrastPanel" aria-labelledby="h-contrast" hidden>
+  <h2 id="h-contrast">Not like Earth: the same days at this site and at home</h2>
+  <div id="contrast"></div>
+</section>
+</details>
+
+<section class="panel decide" id="decidePanel" aria-labelledby="h-decide">
+  <h2 id="h-decide">If the launch slips: the answer, how sure it is, why, and what to do</h2>
+  <ol class="dp" id="nvDecide"></ol>
+  <div class="dp-brief" id="addon-brief"></div>
+  <details class="noteFold dp-planner" id="foldPlanner">
+    <summary>How sure, in more depth: descent lighting, the joint chance per lander, and other sites at the slipped date</summary>
+    <p class="nv-cap">Lighting and the joint chance load when this opens. "Other sites at the slipped date" runs only when you set a slip and press Check: it checks 30 sites and can take up to 2 minutes the first time.</p>
+    <div id="addon-planner"></div>
+  </details>
+</section>
+
+<section class="panel" id="comparePanel" aria-labelledby="h-cmp">
+  <h2 id="h-cmp">Compare sites side by side</h2>
+  <p class="note">Every site you pick joins this table, up to four. The best value in each row is shaded. Each site keeps its number, the same as its marker on the map.</p>
+  <div id="nvCompare"></div>
+</section>
+
 <section class="panel mission" aria-labelledby="h-mission">
   <div class="mIn">
-    <h2 id="h-mission">Can this mission still land if the launch slips?</h2>
+    <h2 id="h-mission">Launch slipped? Can this mission still land?</h2>
     <p class="sentence">
       Land at <select id="mSite" aria-label="Landing site"></select>
       on <input id="start" type="date" aria-label="Planned landing date (UTC)">
@@ -76,22 +191,25 @@
   <div class="mOut" id="missionOut" aria-live="off"><p class="note">Working it out…</p></div>
 </section>
 
+<h2 class="groupHead" id="h-missions">Real missions ahead</h2>
+<details class="fold panel" id="foldMissions">
+  <summary><b>Upcoming south-pole missions</b> <span class="foldSum">Griffin-1, IM-4, VIPER and Artemis IV: what a week or a month of slip does at each published place, who this helps, and the open data.</span></summary>
+<div id="addon-missions"></div>
+</details>
+
+<h2 class="groupHead" id="h-where">Where else could it land?</h2>
+<section class="panel" id="bestPanel" aria-labelledby="h-best">
+  <h2 id="h-best">Best 3 spots this month</h2>
+  <p class="note">Clear Yes answers only, none steeper than NASA's slope limit, for the month of the planned landing. The first look at a month takes 7 to 40 seconds, so it runs only when you ask.</p>
+  <button type="button" class="btn primary" id="nvBestGo">Find the best 3 spots this month</button>
+  <div id="nvBest" aria-live="polite"></div>
+</section>
+<details class="fold panel" id="foldSites">
+  <summary><b>More about the map, and the site list</b> <span class="foldSum">How the map is made, the best map points that stay a clear yes, landing beside permanent shadow, the site chips, the whole-Moon grid and the rules for "usable".</span></summary>
 <section class="panel" aria-labelledby="h-sites">
-  <h2 id="h-sites">Where else can it land? The map and the sites</h2>
+  <h2 id="h-sites">More about the map, and the site list</h2>
   <div class="sitesWrap">
     <div class="mapCol">
-      <div id="polar" class="polar" aria-label="South polar map; click to add a site, or type its coordinates in the Sites fields beside the map"></div>
-      <div class="row mapCtl">
-        <label>Map area
-          <select id="mapZoom"><option value="">South pole to 80°S</option><option value="pole">Close-up of the pole</option></select>
-        </label>
-        <label class="wide">Colour the map by
-          <select id="mapLayer"><option value="">nothing (shaded relief)</option></select>
-        </label>
-        <label class="inline" title="The slip-margin map is one point per 500 m. With this on, every coloured point is re-checked at 13 touchdown points within 100 m and coloured by the days of slip that all 13 survive."><input id="mapScatter" type="checkbox" checked> re-check each coloured point at 13 touchdown points</label>
-        <label class="inline" title="Cells in which the LOLA team's average-illumination map reads zero: ground the Sun never reaches."><input id="mapPsr" type="checkbox"> mark permanent shadow</label>
-      </div>
-      <div class="mapLegend" id="mapLegend"></div>
       <p class="note" id="mapNote"></p>
       <div class="row">
         <button id="robustBtn" type="button" title="The map is one point per 500 m with no landing scatter. This re-checks its 12 best points with 13 touchdown points each, a coarser grid and a finer sampling of the nearest ground.">Which of the best map points stay a clear yes?</button>
@@ -152,12 +270,42 @@
   <div id="robust" class="robust" aria-live="polite"></div>
   <div id="shadowSites" class="robust" aria-live="polite"></div>
 </section>
+</details>
 
+<details class="fold panel" id="fold3d">
+  <summary><b>The ground in 3-D</b> <span class="foldSum">The terrain around the site with the Sun, the Earth and the shadows at the chosen time.</span></summary>
 <section class="panel" id="view3dPanel" aria-labelledby="h-3d" hidden>
   <h2 id="h-3d">The ground around this site in 3-D, with the Sun, the Earth and the shadows at the chosen time</h2>
   <div id="view3d"></div>
 </section>
+</details>
 
+<section class="panel" id="realPanel" aria-labelledby="h-real" hidden>
+  <h2 id="h-real">Real missions: what a missed launch window does</h2>
+  <div id="real" aria-live="polite"></div>
+</section>
+
+<h2 class="groupHead" id="h-isSafe">Is it safe to land there?</h2>
+<details class="fold panel" id="foldSafety">
+  <summary><b>Is the ground flat enough?</b> <span class="foldSum">Slope at the 13 touchdown points against NASA's limit, and the chance of a safe touchdown for three lander accuracies.</span></summary>
+<section class="panel" id="safetyPanel" aria-labelledby="h-safe">
+  <h2 id="h-safe">Is the ground flat enough?</h2>
+  <div id="addon-safety"></div>
+  <details class="noteFold"><summary>How sure the slope figures are</summary><p class="note" id="slopeNote">NASA's own 5 m slope maps give about 2&deg; of uncertainty per point, so a slope within about
+    2&deg; of the 5&deg; goal or the 8&deg; limit is close to it. The opening example's steepest point is about 5&deg;, right at NASA's
+    5&deg; goal: moving it by one 5 m cell gives 4.4&deg; to 5.8&deg;. Of the 78 published Artemis region sites, 76 have only 80 m terrain here, which is too coarse to judge slope
+    well. On the map's slope layer, "slip-tolerant" means at least 1 day of slip at all 13 touchdown points; the map's own
+    legend also counts points that keep 0 days.</p></details>
+  <div id="addon-thermal"></div>
+  <div id="addon-safetouch"></div>
+  <details class="noteFold"><summary>What the safe-touchdown chances leave out</summary><p class="note" id="touchNote">The chances above use slope only: there is no boulder data. The three lander classes are
+    assumed accuracies, each taken from one published figure, not the specification of any real lander. A 2&deg; error in
+    NASA's slope map changes the 5&deg; figures a lot: for the opening example's precision lander, 90 % can fall to 23 %.</p></details>
+</section>
+</details>
+
+<details class="fold panel" id="foldPrecise">
+  <summary><b>How precise must the landing be?</b> <span class="foldSum">How the answer holds up for less precise landers, and for a wider landing scatter.</span></summary>
 <section class="panel precise" id="precisePanel" aria-labelledby="h-precise">
   <h2 id="h-precise">How precise must the landing be?</h2>
   <div class="preciseWrap">
@@ -165,59 +313,34 @@
     <div class="circles" id="circles" aria-live="polite"></div>
   </div>
 </section>
+</details>
 
-<section class="panel" id="safetyPanel" aria-labelledby="h-safe">
-  <h2 id="h-safe">Is the ground flat enough?</h2>
-  <div id="addon-safety"></div>
-  <p class="note" id="slopeNote">NASA's own 5 m slope maps give about 2&deg; of uncertainty per point, so a slope within about
-    2&deg; of the 5&deg; goal or the 8&deg; limit is close to it. The opening example's steepest point is about 5&deg;, right at NASA's
-    5&deg; goal: moving it by one 5 m cell gives 4.4&deg; to 5.8&deg;. Of the 78 published Artemis region sites, 76 have only 80 m terrain here, which is too coarse to judge slope
-    well. On the map's slope layer, "slip-tolerant" means at least 1 day of slip at all 13 touchdown points; the map's own
-    legend also counts points that keep 0 days.</p>
-  <div id="addon-safetouch"></div>
-  <p class="note" id="touchNote">The chances above use slope only: there is no boulder data. The three lander classes are
-    assumed accuracies, each taken from one published figure, not the specification of any real lander. A 2&deg; error in
-    NASA's slope map changes the 5&deg; figures a lot: for the opening example's precision lander, 90 % can fall to 23 %.</p>
+<h2 class="groupHead" id="h-talk">Talking to Earth</h2>
+<details class="fold panel" id="foldRelay">
+  <summary><b>Relay satellites</b> <span class="foldSum">How many hours a relay circling the Moon could add when the Earth is hidden.</span></summary>
+<div id="addon-relay"></div>
+</details>
+<section class="panel" id="contactPanel" aria-labelledby="h-contact" hidden>
+  <h2 id="h-contact">Earth contact hour by hour: which Deep Space Network station carries it</h2>
+  <div id="contact" aria-live="polite"></div>
 </section>
 
-<section class="panel" id="realPanel" aria-labelledby="h-real" hidden>
-  <h2 id="h-real">Real missions: what a missed launch window does</h2>
-  <div id="real" aria-live="polite"></div>
-</section>
-
+<h2 class="groupHead" id="h-plan">Plan ahead</h2>
+<details class="fold panel" id="foldRegions">
+  <summary><b>How many landing regions must stay open?</b> <span class="foldSum">NASA's nine south-pole landing regions, 2027 to 2030, on the published candidate sites.</span></summary>
 <section class="panel" id="regionsPanel" aria-labelledby="h-regions">
-  <h2 id="h-regions">How many regions must stay open? NASA's nine Artemis III regions, 2027 to 2030</h2>
+  <h2 id="h-regions">How many regions must stay open? NASA's nine south-pole landing regions (for the first crewed landing, Artemis IV, early 2028), 2027 to 2030</h2>
   <p class="note">NASA says one region gives too few chances to land and that more than one must be kept. This view checks the
     published candidate landing sites of Wueller et al. 2026 at every landing time from 2027 to 2030 and shows how much of the
     time 1, 2, 3 … 9 regions keep a landing open. It is separate from the rest of the page, which works for any site.</p>
   <button type="button" id="regionsGo">Show the calendar</button>
   <div id="regions" aria-live="polite"></div>
 </section>
-
+</details>
 <details class="fold panel" id="foldAtlas">
   <summary><b>Which years suit a landing, 2027 to 2035</b> <span class="foldSum">The region calendar run for nine years: the same 78 sites and check as the regions panel above, over 2027 to 2035 instead of 2027 to 2030, so its averages come out about a point lower.</span></summary>
 <div id="addon-atlas"></div>
 </details>
-
-<section class="panel" aria-labelledby="h-valid">
-  <h2 id="h-valid">Can you trust it?</h2>
-  <div class="tiles" id="validTiles"></div>
-  <details class="vt" id="validMore">
-  <summary>The tables behind these numbers: terrain checks, three real landings, JPL Horizons</summary>
-  <div id="terrainValid"></div>
-  <h3>Hindcast: predicted sunrise and sunset against three real landings</h3>
-  <p class="note" id="hindNote"></p>
-  <div class="tablewrap"><table id="hindTable" class="data"></table></div>
-  <h3>Sun and Earth directions against JPL Horizons (smooth sphere; says nothing about terrain)</h3>
-  <div class="tablewrap"><table id="validTable" class="data"></table></div>
-  <div class="row">
-    <button id="liveCheck" type="button">Run a live Horizons cross-check for the first site</button>
-    <span class="msg" id="liveMsg" role="status"></span>
-  </div>
-  </details>
-</section>
-
-<h2 class="groupHead" id="h-more">More tools (folded)</h2>
 <details class="fold panel" id="foldSlip">
   <summary><b>Slip grid</b> <span class="foldSum">Usable hours for every landing date, at up to four sites side by side, with a CSV download.</span></summary>
 <section class="panel" aria-labelledby="h-slip">
@@ -273,28 +396,40 @@
   <div id="pairs"></div>
 </section>
 </details>
-<details class="fold panel" id="foldRelay">
-  <summary><b>Relay satellites</b> <span class="foldSum">How many hours a relay circling the Moon could add when the Earth is hidden.</span></summary>
-<div id="addon-relay"></div>
+
+<h2 class="groupHead" id="h-found">What we found</h2>
+<details class="fold panel" id="foldFindings">
+  <summary><b>What we found</b> <span class="foldSum">The main results, each with its charts, its numbers and its caveats.</span></summary>
+<div id="addon-findings"></div>
 </details>
-<section class="panel" id="contactPanel" aria-labelledby="h-contact" hidden>
-  <h2 id="h-contact">Earth contact hour by hour: which Deep Space Network station carries it</h2>
-  <div id="contact" aria-live="polite"></div>
+
+<h2 class="groupHead" id="h-proof">Proof: can you trust it?</h2>
+<section class="panel" aria-labelledby="h-valid">
+  <h2 id="h-valid">Can you trust it?</h2>
+  <div class="tiles" id="validTiles"></div>
+  <details class="vt" id="validMore">
+  <summary>The tables behind these numbers: terrain checks, three real landings, JPL Horizons</summary>
+  <div id="terrainValid"></div>
+  <h3>Hindcast: predicted sunrise and sunset against three real landings</h3>
+  <p class="note" id="hindNote"></p>
+  <div class="tablewrap"><table id="hindTable" class="data"></table></div>
+  <h3>Sun and Earth directions against JPL Horizons (smooth sphere; says nothing about terrain)</h3>
+  <div class="tablewrap"><table id="validTable" class="data"></table></div>
+  <div class="row">
+    <button id="liveCheck" type="button">Run a live Horizons cross-check for the first site</button>
+    <span class="msg" id="liveMsg" role="status"></span>
+  </div>
+  </details>
 </section>
-<details class="fold panel" id="foldContrast">
-  <summary><b>Not like Earth</b> <span class="foldSum">The same days at this site and at home, side by side.</span></summary>
-<section class="panel" id="contrastPanel" aria-labelledby="h-contrast" hidden>
-  <h2 id="h-contrast">Not like Earth: the same days at this site and at home</h2>
-  <div id="contrast"></div>
-</section>
+
+<h2 class="groupHead" id="h-explore">Play, listen and compare with home</h2>
+<details class="fold panel" id="foldGame">
+  <summary><b>Be the mission planner</b> <span class="foldSum">A five-mission campaign on the real data: read the briefing, check the options, make the call.</span></summary>
+<div id="addon-game"></div>
 </details>
 <details class="fold panel" id="foldListen">
   <summary><b>Listen to the landing window</b> <span class="foldSum">The 14 days as sound, or read as text.</span></summary>
 <div id="addon-listen"></div>
-</details>
-<details class="fold panel" id="foldGame">
-  <summary><b>Be the mission planner</b> <span class="foldSum">A short game: the launch slips, you pick a site, the app shows the real answer.</span></summary>
-<div id="addon-game"></div>
 </details>
 </main>
 
@@ -307,11 +442,16 @@
 <script src="/static/links.js"></script>
 <script src="/static/contrast.js"></script>
 <script src="/static/app.js"></script>
+<script src="/static/navigator.js"></script>
+<script src="/static/addons/brief.js"></script>
+<script src="/static/addons/thermal.js"></script>
 <script src="/static/addons/atlas.js"></script>
 <script src="/static/addons/listen.js"></script>
 <script src="/static/addons/planner_game.js"></script>
 <script src="/static/addons/safety.js"></script>
 <script src="/static/addons/safetouch.js"></script>
 <script src="/static/addons/relay.js"></script>
+<script src="/static/addons/missions.js"></script>
+<script src="/static/addons/glossary.js" defer></script>
 </body>
 </html>

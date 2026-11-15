@@ -1,62 +1,119 @@
 {
- "note": "Scene script for demo/slipday_explainer.mp4 and docs/EXPLAINER.html (final layout, 15 Nov 2026). 'voice' is spoken (synthetic, ElevenLabs); 'caption' is shown under the picture. Every number in either is on screen in that scene.",
+ "note": "Scene script for demo/slipday_explainer.mp4 and docs/EXPLAINER.html (overhauled page, live terrain: 5 m site models, NASA's 20 m mosaic to 80 S, 80 m beyond; 15 Nov 2026, evening). 'voice' is spoken (synthetic, ElevenLabs); 'caption' is shown under the picture. Every number in either is on screen in that scene.",
  "scenes": [
-  {"id": "question", "title": "The question",
-   "caption": "A launch can slip by days. Type a site, a date and what the lander needs; Slipday tells you whether the landing still works.",
-   "voice": "Rocket launches often slip by a few days. Near the Moon's south pole, that can decide everything. Slipday asks: if the launch slips, can we still land here?"},
-  {"id": "card", "title": "Yes, not sure or no, and the slip margin",
-   "caption": "Yes, with 8 days of slip margin. A lander rarely lands exactly on target, so 13 touchdown points within 100 m must all pass.",
-   "voice": "The answer is yes, not sure, or no. Here: yes, with eight days of slip margin, checked at thirteen touchdown points around the target."},
-  {"id": "objective", "title": "The challenge objective, in numbers",
-   "caption": "The challenge's objective: at touchdown the Sun is 1.2° and the Earth 0.6° above the real skyline. The chart shows their paths.",
-   "voice": "This line is the challenge's goal: where the Sun and the Earth stand against the real horizon at touchdown, in numbers, with their paths drawn below."},
-  {"id": "slipped", "title": "Launch slipped by N days",
-   "caption": "Launch slipped by 9 days: No. Only 95 of the 100 hours of Earth contact; the Earth goes behind ground 131.6 km away.",
-   "voice": "Type how many days the launch slipped. Nine days: no. The Earth sinks behind distant ground, so radio contact falls short."},
-  {"id": "windows", "title": "Next windows, other sites, Download",
-   "caption": "Miss the window: Dec 17 still works (6 d). In January 13 of 20 other sites work, 11 of them fragile. Download saves the answer.",
-   "voice": "Missed the window? December still works. Other sites can work in January, though most are fragile. And one click downloads the whole answer."},
-  {"id": "view3d", "title": "The ground in 3-D",
+  {
+   "id": "question",
+   "title": "The question",
+   "caption": "Pick a site on the map, pick a date and time, read the Sun and the Earth over the skyline, then decide. Slipday asks: if the launch slips, can we still land?",
+   "voice": "Rocket launches often slip by a few days. Near the Moon's south pole, that can decide everything. Pick a site and a date, and Slipday asks: if the launch slips, can we still land here?"
+  },
+  {
+   "id": "card",
+   "title": "Yes, not sure or no, and the slip margin",
+   "caption": "Yes, and the launch can slip up to 8 days, on 5 m terrain. A lander rarely lands exactly on target, so 13 touchdown points within 100 m must all pass.",
+   "voice": "The answer is yes, not sure, or no. Here: yes, with eight days of slip margin, on NASA's five-metre terrain, checked at thirteen touchdown points around the target."
+  },
+  {
+   "id": "objective",
+   "title": "The challenge objective, in numbers",
+   "caption": "The challenge's objective: at touchdown the Sun is 1.0° and the Earth 0.6° above the real skyline, on 5 m terrain. The chart shows their paths.",
+   "voice": "This line is the challenge's goal: where the Sun and the Earth stand against the real horizon at touchdown, in numbers, with their paths drawn below."
+  },
+  {
+   "id": "slipped",
+   "title": "Launch slipped by N days",
+   "caption": "Launch slipped by 9 days: No. Only 95 of the 100 hours of Earth contact; the Earth goes behind ground 131.4 km away.",
+   "voice": "Type how many days the launch slipped. Nine days: no. The Earth sinks behind distant ground, so radio contact falls short."
+  },
+  {
+   "id": "windows",
+   "title": "Next windows, other sites, Download",
+   "caption": "Miss the window: Dec 17 still works (6 d); January and February fail on sunlight. Other sites and hours are checked too, and Download saves the answer.",
+   "voice": "Missed the window? December still works; January and February fall short on sunlight. The page checks other sites and hours, and one click downloads the whole answer."
+  },
+  {
+   "id": "view3d",
+   "title": "The ground in 3-D",
    "caption": "The real ground in 3-D, from the laser altimeter on NASA's Lunar Reconnaissance Orbiter (LOLA). The shadows move as the Sun circles.",
-   "voice": "Here is the real ground in 3-D, from NASA's laser measurements. The low Sun drags long shadows across it."},
-  {"id": "custom", "title": "Your own site",
+   "voice": "Here is the real ground in 3-D, from NASA's laser measurements. The low Sun drags long shadows across it."
+  },
+  {
+   "id": "custom",
+   "title": "Your own site",
    "caption": "Type your own spot on the card: 86.000 S, 160.000 W. No: at touchdown the Earth is 4.8° below the skyline.",
-   "voice": "You can type your own spot right on the card. Here the answer is no: the Earth is hidden when it lands."},
-  {"id": "map", "title": "The slip-margin map",
+   "voice": "You can type your own spot right on the card. Here the answer is no: the Earth is hidden when it lands."
+  },
+  {
+   "id": "map",
+   "title": "The slip-margin map",
    "caption": "The map colours the ground by days of slip each spot survives: 574 of 733 spots keep a margin at all 13 touchdown points; 159 lose it.",
-   "voice": "The map shows how many days of slip each spot survives. Red crosses mark where NASA's finer twenty-metre terrain disagrees."},
-  {"id": "grids", "title": "80, 20 and 5 m terrain",
-   "caption": "Terrain detail matters. At the Shackleton ridge the 80 m map says Yes; the finer 20 m and 5 m maps say Not sure.",
-   "voice": "Detail matters. At the Shackleton ridge, the eighty-metre map says yes. The twenty and five-metre maps say not sure."},
-  {"id": "slope", "title": "Is the ground flat enough?",
-   "caption": "Flat enough to land? The steepest touchdown point is 4.9°: inside NASA's 8° limit, right at its 5° goal.",
-   "voice": "Is the ground flat enough? Here, only just: the steepest spot sits right at NASA's goal for its crewed lander."},
-  {"id": "touchdown", "title": "Chance of a safe touchdown",
+   "voice": "The map shows how many days of slip each spot survives. Red crosses mark where NASA's finer twenty-metre terrain disagrees."
+  },
+  {
+   "id": "grids",
+   "title": "Finer terrain",
+   "caption": "Terrain detail matters. At the Shackleton ridge, on NASA's 5 m terrain, the planned date is Not sure; the next good date is Nov 19, 1 day later.",
+   "voice": "Detail matters. At the Shackleton ridge the page uses NASA's five-metre terrain, and the planned date is not sure: the answer changes within the landing scatter."
+  },
+  {
+   "id": "slope",
+   "title": "Is the ground flat enough?",
+   "caption": "Flat enough to land? The steepest touchdown point is 4.9°: inside NASA's 8° limit and just inside its 5° goal.",
+   "voice": "Is the ground flat enough? Here, only just: the steepest spot sits right at NASA's goal for its crewed lander."
+  },
+  {
+   "id": "touchdown",
+   "title": "Chance of a safe touchdown",
    "caption": "Chance the ground under the lander is within 8°: over 99.9 % for a precision lander, 94 % for a CLPS-class one. Slope only.",
-   "voice": "A lander does not come down exactly on target, so this gives the chance the ground under it is flat enough, for three kinds of lander."},
-  {"id": "im1", "title": "A real landing: IM-1",
+   "voice": "A lander does not come down exactly on target, so this gives the chance the ground under it is flat enough, for three kinds of lander."
+  },
+  {
+   "id": "im1",
+   "title": "A real landing: IM-1",
    "caption": "IM-1 planned about 7 days on the surface. Yes for the February window it flew, and Yes in the January window it missed.",
-   "voice": "A real test: the IM-1 lander. The app says yes for the February window it flew, and for the January one it missed."},
-  {"id": "regions", "title": "NASA's nine Artemis regions",
-   "caption": "One region is not enough. The best one is open at 28.1% of landing times, three at 40.1%. Sunlight only: 47.8% and 91.1%.",
-   "voice": "NASA keeps nine Artemis regions, because one is not enough. The best one is open at twenty-eight point one percent of landing times."},
-  {"id": "atlas", "title": "Which years suit a landing",
+   "voice": "A real test: the IM-1 lander. The app says yes for the February window it flew, and for the January one it missed."
+  },
+  {
+   "id": "regions",
+   "title": "NASA's nine south-pole landing regions",
+   "caption": "One region is not enough. The best one is open at 26% of landing times, three at 37%. Sunlight only: 44.8% and 89.4%.",
+   "voice": "NASA keeps nine south-pole landing regions, because one is not enough. The best one is open at twenty-six percent of landing times."
+  },
+  {
+   "id": "atlas",
+   "title": "Which years suit a landing",
    "caption": "The same check for every year from 2027 to 2035: the weak season comes a little earlier each year.",
-   "voice": "The atlas runs that check for nine years. The weak season comes a little earlier every year."},
-  {"id": "relay", "title": "Relay satellites",
+   "voice": "The atlas runs that check for nine years. The weak season comes a little earlier every year."
+  },
+  {
+   "id": "relay",
+   "title": "Relay satellites",
    "caption": "Relay satellites: with two relays of a NASA design (not built yet), contact covers 336 of 336 hours instead of 311 with the Earth alone.",
-   "voice": "When the Earth is hidden, a relay satellite circling the Moon could pass messages on. The main answer still counts the Earth alone."},
-  {"id": "listen", "title": "Listen to the landing window",
+   "voice": "When the Earth is hidden, a relay satellite circling the Moon could pass messages on. The main answer still counts the Earth alone."
+  },
+  {
+   "id": "listen",
+   "title": "Listen to the landing window",
    "caption": "Listen: the first 14 days as sound. A high tone for the Sun, a low tone for the Earth; it can also be read as text.",
-   "voice": "You can also listen to the landing window: a high tone for the Sun, a low one for the Earth, quiet when the ground hides them."},
-  {"id": "game", "title": "Be the mission planner",
-   "caption": "Be the mission planner: the launch slips, you pick one of three sites, and the app shows the real answer for each.",
-   "voice": "And a short game for students: the launch slips, you pick a site, and the app shows the real answer."},
-  {"id": "limits", "title": "What it cannot tell you",
-   "caption": "Limits: 80 m terrain is coarse and can be too hopeful; the needs are examples; no battery or heat model; fragile answers can flip.",
-   "voice": "What it can't tell you: the eighty-metre terrain is coarse and can be too hopeful. The needs are examples, and fragile answers can flip."},
-  {"id": "closing", "title": "Slipday",
+   "voice": "You can also listen to the landing window: a high tone for the Sun, a low one for the Earth, quiet when the ground hides them."
+  },
+  {
+   "id": "game",
+   "title": "Be the mission planner",
+   "caption": "Be the mission planner: five scenarios. The launch slips, you pick an option, and the app shows the real answer for each.",
+   "voice": "And a game for students, in five scenarios: the launch slips, you pick an option, and the app shows the real answer."
+  },
+  {
+   "id": "limits",
+   "title": "What it cannot tell you",
+   "caption": "Limits: far from the pole the terrain is coarse and can be too hopeful; the needs are examples; no battery or heat model; fragile answers can flip.",
+   "voice": "What it can't tell you: far from the pole the terrain is coarse and can be too hopeful. The needs are examples, and fragile answers can flip."
+  },
+  {
+   "id": "closing",
+   "title": "Slipday",
    "caption": "Slipday, by [TEAM NAME]. NASA Space Apps 2026: Lunar Landing Site Navigator.",
-   "voice": "Slipday. Know your margin before the date moves."}
+   "voice": "Slipday. Know your margin before the date moves."
+  }
  ]
 }

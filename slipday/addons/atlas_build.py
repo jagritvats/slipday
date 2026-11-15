@@ -4,7 +4,7 @@
 
 For every landing time every 6 hours from 2027-01-01 00:00 to 2035-12-31 18:00 UTC it judges, with the entry's own
 code (``regions.members_of`` and ``regions.site_flags``, the vectorised form of the mission card), each of the 78
-published candidate sites in NASA's nine Artemis III regions (Wueller et al. 2026) and the 14 curated south-pole
+published candidate sites in NASA's nine south-pole landing regions (Wueller et al. 2026) and the 14 curated south-pole
 sites of ``sites.py``.  The rule is the one of the existing 2027 to 2030 region calendar, unchanged: a 6.25-day stay,
 the Sun up for the whole stay, 100 hours of Earth contact, 13 touchdown points within 100 m plus the coarser grid and
 the near-field sampling; a region is open when one of its sites is a clear Yes that is not fragile.
@@ -284,7 +284,7 @@ def overlap_check(summ: dict) -> dict:
 
 def write_json(summ: dict, fl: dict, seconds: float) -> dict:
     from slipday import regions
-    doc = {"what": "Slip-tolerant atlas, 2027 to 2035: when each Artemis III region and each curated south-pole site has "
+    doc = {"what": "Slip-tolerant atlas, 2027 to 2035: when each of NASA's nine south-pole landing regions (now for Artemis IV) and each curated south-pole site has "
                    "workable landing times, and how many regions must stay open each year",
            "rule": {"step_hours": regions.STEP_H, "first": summ["times"]["first"], "last": summ["times"]["last"],
                     "n_times": summ["times"]["n"], "stay_hours": regions.STAY_H, "stay_days": regions.STAY_DAYS,

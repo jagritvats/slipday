@@ -1,0 +1,18 @@
+{
+ "n": 304,
+ "step_m": 2000.0,
+ "axis_first_m": -303750.0,
+ "axis_last_m": 302250.0,
+ "half_m_mosaic": 304000.0,
+ "mast_m": 2.0,
+ "n_az": 720,
+ "el_scale_deg": 0.002,
+ "max_km": 300.0,
+ "chunk": 64,
+ "order": "every 2nd point each way first (row-major), then the rest (row-major)",
+ "dem_dir": "data\\dem",
+ "dem_name": "ldem_80s_80m+ldem_75s_240m+ldem_64_south+ldem_16",
+ "dem_fingerprint": "76de51d5e9+35bc39a609+cdb14f87ee+feb25e8376",
+ "dem_label": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+ "projection": "south polar stereographic, true scale at the pole, R = 1737.4 km; row 0 is +y (longitude 0)"
+}

@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "inputs_key": "534b0d650e26293a8a7d9db2",
+ "n": 120,
+ "half_km": 30.0,
+ "step_m": 500.0,
+ "scatter_m": 100.0,
+ "built_utc": "2026-11-15T13:42:44Z",
+ "seconds": 1.0,
+ "grids": [
+  {
+   "name": "ldem_site01_5m",
+   "label": "LOLA 5 m site model Site01 (connecting ridge)",
+   "grid_m": 5.0,
+   "baseline_m": 10.0,
+   "product": "LOLA 5 m/px south-pole site model Site01 (Connecting ridge)"
+  },
+  {
+   "name": "ldem_site07_5m",
+   "label": "LOLA 5 m site model Site07 (peak near Shackleton)",
+   "grid_m": 5.0,
+   "baseline_m": 10.0,
+   "product": "LOLA 5 m/px south-pole site model Site07 (Peak near Shackleton)"
+  },
+  {
+   "name": "ldem_pole_20m",
+   "label": "LOLA 20 m south-pole mosaic",
+   "grid_m": 20.0,
+   "baseline_m": 20.0,
+   "product": "LDEM_80S_20MPP_ADJ (crop)"
+  },
+  {
+   "name": "ldem_80s_80m",
+   "label": "LOLA 80 m south-pole mosaic",
+   "grid_m": 80.0,
+   "baseline_m": 80.0,
+   "product": "LDEM_80S_80MPP_ADJ"
+  }
+ ],
+ "npz_sha256": "d1f06acacc51c760f2d226b7006ed39651020a6f967bdcb3856d3374658a2a01"
+}

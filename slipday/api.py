@@ -19,7 +19,7 @@ from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from . import contact, demstore, field, horizons, load, moonmap, replay, scatterfield, shadowsites, survival, windows, finer20
+from . import contact, demstore, field, gazetteer, horizons, load, moonmap, replay, scatterfield, shadowsites, survival, windows, finer20
 from .ephem import cache_samples, parse_utc
 from .geometry import Site
 from .hindcast import hindcast
@@ -168,6 +168,7 @@ def sites():
     out = []
     for s in SITES:
         d = dict(s)
+        d.update(gazetteer.naming_fields(s))       # friendly_name, subtitle, name_full (the old label stays in "name")
         d["terrain"] = bool(dem is not None and np.isfinite(dem.height_m(np.array([s["lat"]]), np.array([s["lon"]]))[0]))
         out.append(d)
     return {"sites": out, "terrain": demstore.status()}
@@ -278,6 +279,9 @@ def api_mission(req: MissionRequest):
                       req.sun_at_touchdown, req.earth_at_touchdown)
     out = run(work)
     out["terrain"] = demstore.status()
+    out["terrain_grid"] = demstore.grid_at(out["site"]["lat"], out["site"]["lon"])
+    if isinstance(out.get("site"), dict) and "lat" in out["site"]:
+        out["site"] = dict(out["site"], **gazetteer.naming_fields(out["site"]))
     fine = _finer_check(out["site"]["lat"], out["site"]["lon"], out["landing_utc"], req)
     if fine is not None:
         out["finer_grid_check"] = fine
@@ -418,6 +422,9 @@ def api_why(req: WhyRequest):
                       req.mask_deg, req.mast_m, req.scatter_m, req.slip_days, req.sun_at_touchdown,
                       req.earth_at_touchdown, req.day)
     out = dict(run(work))
+    out["terrain_grid"] = demstore.grid_at(out["site"]["lat"], out["site"]["lon"])
+    if isinstance(out.get("site"), dict) and "lat" in out["site"]:
+        out["site"] = dict(out["site"], **gazetteer.naming_fields(out["site"]))
     psr = moonmap.nearest_permanent_shadow(out["site"]["lat"], out["site"]["lon"])
     if psr is not None:
         out["permanent_shadow"] = psr
@@ -585,7 +592,7 @@ _OPTIONS_CACHE: dict = {}
 
 @app.get("/api/artemis-regions")
 def api_artemis_regions():
-    """NASA's nine Artemis III candidate regions, on the published candidate landing sites of Wueller et al. 2026,
+    """NASA's nine south-pole landing regions (now for Artemis IV), on the published candidate landing sites of Wueller et al. 2026,
     judged in each missed window of the opening plan and of IM-1 (scripts/artemis_regions.py)."""
     path = os.path.join(field.FIELD_DIR, "..", "validation", "artemis_regions.json")
     try:
@@ -597,7 +604,7 @@ def api_artemis_regions():
 
 @app.get("/api/region-availability")
 def api_region_availability():
-    """How many of NASA's nine Artemis III regions must stay open, 2027 to 2030, on the published candidate landing
+    """How many of NASA's nine south-pole landing regions must stay open, 2027 to 2030, on the published candidate landing
     sites of Wueller et al. 2026 (scripts/region_availability.py).  An addition: no other answer depends on it."""
     from . import regions
     d = regions.load()
@@ -1251,7 +1258,7 @@ def api_horizons_check(start: str, stop: str, site: Optional[str] = None,
         raise HTTPException(502, f"Horizons request failed: {exc}")
 
 
-for _extra in ("why", "scatterfield", "view3d", "contrast", "addons.atlas", "addons.safety", "addons.relay", "addons.safetouch"):
+for _extra in ("why", "scatterfield", "view3d", "contrast", "addons.atlas", "addons.safety", "addons.relay", "addons.safetouch", "addons.slopemap", "addons.impact", "addons.fullmap", "addons.planner", "addons.bestspots", "addons.findings", "addons.brief", "addons.thermal", "addons.power", "addons.darkness", "addons.trajwindows", "addons.rocks", "addons.estimate"):
     if importlib.util.find_spec("slipday." + _extra) is not None:
         _mod = importlib.import_module("slipday." + _extra)
         if hasattr(_mod, "router"):

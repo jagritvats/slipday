@@ -25,10 +25,13 @@ _cache: dict = {}
 
 
 def _default_edge_lat(dem) -> float:
-    """Outer latitude of the map: the edge of the finest south-polar grid installed, else 80 S."""
-    for m in getattr(dem, "members", [dem]):          # members are ordered finest first
-        if isinstance(m, PolarStereoDEM) and m.pole < 0:
-            return float(np.clip(m.edge_latitude(), -89.0, -60.0))
+    """Outer latitude of the map: the edge of the finest south-polar grid that reaches 80 S (the 80 m mosaic when it
+    is installed), else of the finest south-polar grid, else 80 S.  Finer grids that cover only a small area near
+    the pole (the 20 m crop, the 5 m site models) change the skylines, not the extent of the map."""
+    polar = [m for m in getattr(dem, "members", [dem]) if isinstance(m, PolarStereoDEM) and m.pole < 0]   # finest first
+    wide = [m for m in polar if m.edge_latitude() >= -80.5]
+    for m in (wide or polar):
+        return float(np.clip(m.edge_latitude(), -89.0, -60.0))
     return -80.0
 
 

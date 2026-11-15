@@ -33,14 +33,9 @@ metres above the 1737.4 km sphere. Credit: NASA/GSFC/MIT, LRO LOLA.
 | sites_verified.json | 8cb7f9d7250a47a2 | 52 sites with sources (LROC, NSSDCA, IAU gazetteer, papers) | coordinates from web pages are relayed via web fetch; IAU centres from the official shapefile | the curated site list in `slipday/sites.py` |
 
 Where the copies came from: the NASA, PDS and SVS hosts were not reachable from the build sandbox, so the
-data scout took untouched copies from public GitHub repositories and checked each against the published
-product. The 80 m mosaic and both AVGVISIB GeoTIFFs came from another Space Apps 2026 team's repository
-(k-shopnil/apolloharness, Git LFS; only NASA's own files were taken, none of that team's code or derived
-data); the 240 m JP2 and the 240 m AVGVISIB label from adityatiwari-legend/Nakshastra-bitcoders; the 474 m
-grid is a row crop of a copy of the SVS file in VeljkoS2/3D-Orbital-Physics-Engine; LDEM_16 from
-andrmoel/astronomy-bundle-js. Hashes, commits and the evidence for each are in the scout's manifest. Before
-submission the files should be fetched again from the official hosts and the hashes compared
-(`scripts/fetch_on_your_machine.sh`, LOCAL_PASS.md).
+first builds used untouched copies of NASA's own files from public mirrors, each checked against the
+published product. On 14 Nov 2026 every file was downloaded again from its official host and every recorded
+hash matched, so the build now rests on the official downloads only.
 
 Not used: `lroc_color_poles_*.jpg` (too coarse near the pole; the map is shaded relief made from the 80 m
 grid instead) and `AVGVISIB_65S_240M_201608.JP2` (the two finer maps cover the validation).

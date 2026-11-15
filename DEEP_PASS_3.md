@@ -367,3 +367,181 @@ Not done (with reasons):
 - `docs/EXPLAINER.html`: 18 sections in the same order with new stills from this recording; the "earlier
   layout" note is gone. All 18 images load at 390 and 1280 px, light and dark. Old clips of dropped scenes
   were removed from `demo/voiceover/explainer/`.
+
+## Visual polish, stopped at a clean point (18:43 to 18:55; front end handed to the overhaul agent)
+
+Done, in `static/style.css`, `static/app.js` and `static/addons/atlas.js` only:
+- Contrast: light `--muted` #7b7a74 -> #67665f (5.62:1 on the card, 5.19:1 on the footer); atlas selected
+  toggles use `var(--surface)` text (dark 9.2:1, light 10.07:1); slip-grid "No" in dark mode #ff8a80 (7.63:1).
+- Skyline chart: labels avoid the visible Sun and Earth tracks as well as each other, flip side instead of
+  running off the plot, and keep a halo; the chart is capped at 640 px wide so its text no longer grows to
+  about 22 px at 1920.
+- Year ribbon: month labels moved from the stretched SVG (7.5 px) to page text at 12 px.
+Not started: verdict band and objective table, quieter left column, trust tiles, add-on folds, shared
+button style, items 9 to 15. Full suite 385 passed; ui_check all passed; no sideways scroll at 1280, 768, 390.
+Server on 8101 stopped.
+
+## No comparison with other projects (19:10)
+
+Removed from README, DISCOVERIES, PRODUCT_PLAN, REALDATA, SLIDES, LOCAL_PASS_RESULTS and LOCAL_PASS_2_RESULTS:
+the comparison section and table, "coarser than ... some other entries use", "what other entries have", the
+competitor sections and risks, and the names of public repositories the first data copies came from (the build
+uses the official downloads only, every hash matched). The README test that pinned the table now checks that
+the README describes Slipday on its own terms with none of those words. A grep for rival, competitor,
+competition, other entr, public entr, matched, repositor, "none of the", "no other" over every .md and .html
+in the entry finds only unrelated uses (hashes matched, repository root, "none of the three sites").
+`realdata/lunar/MANIFEST.md`, outside the entry, keeps its historical provenance record.
+
+## Live finer terrain (from 19:12)
+
+- The live answer now uses the finest LOLA grid that covers each point. `data/dem_live/dems.json`
+  (`scripts/build_live_stack.py`): the 5 m site models Site07 and Site01, then 20 m, then the installed 80 m,
+  240 m, 64 px/deg and 16 px/deg grids. The engine already took the first grid with data at every ray sample
+  and starts each ray at the site grid's spacing, so nothing in the ray-cast changed. `demstore.dem_dir()`
+  uses `data/dem_live` when it exists and `SLIPDAY_DEM_DIR` is not set; the test suite still sets its own
+  stack, so the existing tests keep checking the 80 m engine and `tests/test_live_terrain.py` checks the live one.
+- 20 m coverage today: the 96 km square around the pole (to about 88.4 S) that was already on disk. The full
+  20 m mosaic (2,696,082,051 bytes, https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF) is
+  downloading at about 0.4 MB/s; `scripts/build_live_stack.py --convert` decodes it into a memory-mapped float32
+  .npy and switches the stack to it. Until then sites further out than 88.4 S use 80 m.
+- All grids are memory-mapped (.npy); only the pages a calculation touches are read.
+- API: `terrain_grid` in `/api/mission` and `/api/why`: {"resolution_m", "name", "product", "label"}, the grid
+  at the site point. The page's existing `horizon.dem_label` also names the stack.
+- Time and memory, main card, this machine, fresh skyline cache, one process each (`scripts/bench_live_terrain.py`):
+  80 m stack: cold 5.7 to 6.0 s, warm 0.03 s, peak working set 372 MB; live stack: cold 8.7 to 9.7 s at the
+  two 5 m sites (5.8 s at IM-1, still 80 m), warm 0.03 s, peak 542 MB. (A first run without other load: 3.6 to
+  3.8 s against 7.4 to 8.1 s.) Fast enough for the whole near field; no radius limit was needed.
+- Numbers that change (80 m to live):
+  - Opening example (5 m): verdict Yes, 8 days, 13 of 13, unchanged; sunlit hours in the window 314 to 306; the
+    objective line's Sun clearance 1.16 to 0.99 degrees (Earth 0.64 unchanged); the next good dates after the
+    margin Dec 17-19 to Dec 18-20 (the monthly windows Dec 17 Yes 6 d, Jan 16 and Feb 14 No are unchanged; Feb
+    sunlight 151 to 148 h, Dec 259 h, Jan 217 h); the ground that ends the margin 131.59 to 131.41 km; the year
+    ribbon 41 clear yes and 3 not sure to 39 and 4 (with or without the station rule); other sites: December
+    19 to 17 of 20 with a Yes hour (16 to 14 fragile), January 13 to 11 (11 to 5 fragile), steadiest now a map
+    point at 89.778 S, 45.000 E, 16 Jan 13:00, 3 days (was 89.498 S, 137.663 W, 15 Jan, 4 days); February 5 to 4.
+    The opening rule still picks this site (it is a clear Yes on the live grid).
+  - C1 (5 m): Yes, 7 days to Not sure on the planned date (12 of 13 touchdown points); ribbon 62 to 35 clear yes
+    (53 to 78 not sure); windows Dec Yes 5 d to Yes 4 d, Jan Yes 3 d to Not sure.
+  - IM-1 and VIPER: unchanged (80 m until the full 20 m mosaic is in).
+  - Regions (2027 to 2030): de Gerlache Rim 2 and Slater Plain sites now use 20 m. Best 1/2/3/4 regions
+    unchanged (28.1, 36.8, 40.1, 42.6 %); 5 to 9 regions 43.6 to 43.3, 44.0 to 43.7, 44.1 to 43.8 %; sunlight
+    only all nine 92.0 to 91.8 %; de Gerlache Rim 2 alone 14.4 to 12.9 % (sunlight only 34.4 to 32.1 %); fragile
+    share of Yes 11.9 to 12.2 %. Cross-check against the paper and the 48-pair re-check unchanged. Artemis panel:
+    IM-1 January not-fragile regions 9 to 8; everything else unchanged.
+  - Atlas (rebuilt, `overlap identical: True`): best year 2028 46.9 to 46.7 %, worst 2032 39.3 to 39.1 %, all nine
+    over 2027-2035 43.2 to 42.9 %; sunlight only 90.3-92.4 to 90.0-92.3 %.
+  - Slope inputs: unchanged (the slope add-on already used 5 m, 20 m and 80 m).
+  - Map: unchanged; it is built from the stored 80 m field of 14,400 skylines, with the 20 m re-check beside it.
+- Docs updated: README, draft, slides, LIMITATIONS, DISCOVERIES, explainer page text. The 30 s video, its
+  voiceover and the explainer video were recorded on the 80 m stack before this change (Sun 1.2 degrees above
+  the skyline, 131.6 km); their captions are kept as recorded, STORYBOARD and the explainer page say so, and they
+  should be re-recorded after the page overhaul.
+- Map fix (about 19:50): the live stack made `/api/map` a 30 km map with no layers. Causes: `moonmap._default_edge_lat`
+  took the edge of the finest south-polar grid (now a 5 m site model), and the layer list is read from the
+  stack's dems.json, which had no "layers" entry. Fixed: the map takes the finest polar grid that reaches 80 S
+  (the 80 m mosaic: 80 S to the pole, 608 km), and the live dems.json carries the same layers as data/dem.
+  New test in `tests/test_live_terrain.py`. The full-area slip map (`data/addons/fullmap/`) logs its terrain as
+  ldem_80s_80m+ldem_75s_240m+ldem_64_south+ldem_16, the 80 m stack it is designed for, so it was not affected.
+- Tests updated where the numbers legitimately changed: `tests/test_regions.py` (coverage of 5 to 9 regions and
+  the sunlight-only ceiling), `tests/test_deep.py` (February sunlight 151 to 148 h in the slides sentence).
+  The README comparison test was rewritten to check the README describes Slipday on its own terms.
+- Impact board rebuilt on the live stack: no mission figure changed.
+
+## Artemis wording (about 19:55)
+
+NASA's pages, re-read first-hand (stored in data/reference/sources, sha256 in DOWNLOADS.tsv): Artemis III "will
+carry out a series of objectives in low Earth orbit"; "On Artemis III, NASA will test one or both human landing
+systems in low Earth orbit, demonstrating rendezvous and docking operations." Artemis IV: crewed surface landing,
+launch early 2028; "the agency has identified nine candidate landing regions near the lunar South Pole".
+"Artemis III regions" is now "NASA's nine south-pole landing regions (chosen for the first crewed landing, now
+planned for Artemis IV, early 2028)" in README, draft, slides, explainer page, LIMITATIONS, the API text and the
+build scripts. The 2024 selection history (the Oct 2024 list was made for Artemis III; the LPSC abstract's title
+and quote) is kept as written. API text changed: `/api/artemis-regions` "what", `/api/region-availability`
+"what", `/api/addons/atlas` "what", and the region sites' `note` text in `/api/sites`.
+
+## The full 20 m mosaic (about 21:00 to 21:30)
+
+`LDEM_80S_20MPP_ADJ.TIF` (NASA PGDA; URL and sha256 in `data/reference/DOWNLOADS.tsv`) decoded by
+`python scripts/build_live_stack.py --convert` into `data/dem20/ldem_80s_20m_f32.npy` (30,400 x 30,400, 3.7 GB,
+memory-mapped; values checked against the 80 m grid) and put in the live stack under the 5 m site models: 20 m
+now reaches 80° S, not just the 71.7 km square around the pole. IM-1 (80.13 S) now computes on 20 m.
+
+Re-run on it: `slipday.addons.impact_build`, `scripts/region_availability.py`, `scripts/artemis_regions.py`,
+`slipday.addons.atlas_build`, the real windows (IM-1 and VIPER). `slipday.addons.slopemap` was not re-run: it uses
+the slope add-on's own grids, which the live stack does not change.
+
+What changed (the opening example and the Shackleton ridge are on 5 m and did not change):
+
+| Figure | Before (20 m square only) | Full 20 m mosaic |
+|---|---|---|
+| Regions: best one / three / all nine open | 28.1 / 40.1 / 43.8 % | 26.0 / 37.0 / 39.9 % |
+| Sunlight only, same | 47.8 / 91.1 / 91.8 % | 44.8 / 89.4 / 91.1 % |
+| Third region added | Malapert Massif | Slater Plain |
+| Paper cross-check within 1 day (2027 to 2030) | 40, 54, 60, 52 | 39, 53, 60, 52 |
+| Opening plan: regions with a Yes within 3 days, Dec / Jan / Feb | 8 / 6 / 5 | 7 / 6 / 5 |
+| Same, at the window hour | 5 / 5 / 3 | 5 / 5 / 2 |
+| Fragile share of Yes results | 12.2 % | 13.0 % |
+| Atlas, all nine, best year / worst year | 47 % (2028) / 39 % (2032) | 42 % (2028) / 36 % (2032) |
+| Missions board, good share: Griffin-1 / IM-4 / VIPER / Artemis IV | 38.3 / 17.3 / 31.1 / 43.6 % | 33.0 / 13.9 / 25.4 / 36.8 % |
+| VIPER: good times kept after a week / a month | 40 / 131 of 152 | 14 / 102 of 124 |
+| IM-1 February, sunlit hours (168 h need: Yes, 1 day) | 208 | 207 |
+| VIPER first window landing (sunrise at the rim point) | 2027-09-01 07:00 | 08:00 |
+
+Tests updated because the data legitimately changed: `tests/test_regions.py` (coverage, sunlight-only, third region,
+cross-check), `tests/test_deep2.py` (December 8 to 7 regions; at the window in February 3 to 2). Two rejudge tests
+(`tests/addons/test_impact.py::test_one_month_rejudged_from_scratch_matches`,
+`tests/addons/test_atlas.py::test_one_site_rejudged_from_scratch_in_2033_matches_the_stored_flags`) rejudged on the
+80 m stack while the stored data are built on the live one; they now rejudge on `data/dem_live` when it is installed
+(80 m otherwise). Same assertions.
+
+Docs: SUBMISSION_DRAFT (rewritten for the overhauled page) and the slides (seven, rewritten), README, STORYBOARD,
+DISCOVERIES, the explainer page and its scene script carry these figures. The 30 s video was re-recorded on the
+overhauled page (VIPER at Mons Mouton by late 2027 in step 4; the close-up slip-day map in step 7).
+
+## Pre-submission consistency fixes (about 21:50)
+
+- IM-1: the replay note (`slipday/replay.py`, `/api/replays`) said 208 sunlit hours, the 80 m figure. It now says 207 on
+  NASA's 20 m terrain (208 on the 80 m grid), the same as the card, the draft and slide 4.
+- "How sure" in the decision path (`static/navigator.js`) said "checked on three grids" and then "No finer-grid check
+  covers this case". It now states what was checked: the points passing and the grid the answer is on ("on 5 m
+  terrain"), the next coarser grid and the near-ground sampling with their answers, and "This is the finest LOLA terrain
+  there is for this spot" (or "No finer LOLA grid covers this spot" off the 5 m models). The draft and slide 3 match.
+  The 30 s video was re-cut (step 4 shows this panel): 29.5 s with the voice.
+- README and the explainer page now give one wording each for these figures:
+  - safe-touchdown chances: 100 / 93.7 / 82.9 %, with the panel's rounding noted;
+  - slope: 4.9°, just inside the 5° goal;
+  - the terrain badge: it depends on the site;
+  - the 3-D view: the same terrain as the answer, 5 m at the opening site;
+  - ridge agreement: 3.8 to 5.2 points;
+  - sound: about 20 s.
+- The explainer's slope caption was changed to "just inside" and the explainer rebuilt from the same recording.
+- Other docs:
+  - STORYBOARD notes: rewritten for the current recording (39 of 365, 4 not sure; live terrain).
+  - LIMITATIONS: C1 is "the former default example".
+  - README: the LPSC source is marked "those regions are now planned for Artemis IV".
+  - Slide 1: the link is `[PUBLIC LINK]`.
+
+## Outreach round and the hook (about 22:00 to 22:15)
+
+- `static/addons/glossary.js` (new, self-contained): plain-word definitions on the first use of 17 terms, as
+  keyboard-focusable buttons with a shared tooltip. It works on tap. The definitions for screen readers sit outside
+  the page's text. Checked in Chrome on the live page (see ADDON_outreach.md); not yet included by `index.html`.
+- Friendly site names: `gazetteer.naming_fields`. In `/api/sites`, `/api/mission` and `/api/why` each site now has
+  `friendly_name`, `subtitle`, `name_full` and `name_source`; `name` is unchanged. The opening site is "Ridge near
+  Shackleton crater".
+- `GET /api/addons/bestspots` (new router `slipday/addons/bestspots.py`, registered in the add-on loop): the best 3
+  spots for a month under the opening plan's need, from the site list and the re-checked slip-map points.
+- SUBMISSION_DRAFT summary opens with the hook. Its figures were re-checked against the API: regions 26 % and
+  37 % (`/api/region-availability`); VIPER 14 of 124 after a week's slip (`/api/addons/impact`).
+- 30 s video re-cut from the same recording with the hook first: the regions table with the caption "NASA must keep
+  several south-pole regions open for Artemis IV: one works at 26% of landing times, three at 37%". 29.5 s with the
+  voice; one clip at 1.064x.
+- Award-category wording (about 22:15). Every figure was re-checked against the API or the stored data:
+  - IM-1, February window: Yes, 1 day.
+  - VIPER: 14 of 124 good landing times survive a week's slip.
+  - Regions with sunlight only: 44.8 % and 89.4 %; with the Earth need: 26.0 % and 37.0 %.
+  - Paper comparisons: 93 of 312 differ by more than 3 days.
+  - 80 m against 20 m: 452 of the 454 disagreements, from `finer_map_dates.json`.
+  - Drift: measured 18.65 days a year against 18.63 expected (atlas subsolar fit).
+  - Whole map: 92,416 skylines, 720 rays to 300 km, on four LOLA grids from 80 m to 1.9 km, per
+    `fullmap_2000m.json` and `build_fullmap.py`. The brief said three grids; the build used four.

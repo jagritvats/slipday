@@ -6,7 +6,7 @@
   --grid: #e9e7e0;
   --text: #0b0b0b;
   --text2: #52514e;
-  --muted: #7b7a74;
+  --muted: #67665f;
   --sun: #eb6834;      /* categorical slot 2 (orange) */
   --earth: #2a78d6;    /* categorical slot 1 (blue) */
   --night: #e4e2da;
@@ -283,7 +283,7 @@ td .rng { display: block; }
 .warnnote { background: var(--warn-bg); color: var(--warn-ink); padding: 6px 10px; border-radius: 6px; }
 .yeart td, .yeart th { padding-right: 8px; }
 @media (prefers-color-scheme: dark) {
-  .sbest.v-yes { color: var(--good); } .sbest.v-notsure { color: var(--warn); }
+  .sbest.v-yes { color: var(--good); } .sbest.v-notsure { color: var(--warn); } .sbest.v-no { color: #ff8a80; }
 }
 @media (max-width: 900px) {
   .mission { grid-template-columns: 1fr; grid-template-areas: "in" "out" "more"; grid-template-rows: auto; gap: 10px; }
@@ -554,3 +554,9 @@ html { scroll-padding-top: 52px; }
 }
 /* 12 px floor for text that inherits a smaller size (<small>, em-sized notes) */
 small, .small, .rng, sub, sup { font-size: max(12px, 0.85em); }
+
+/* ---------- visual polish (UX_VISUAL) ---------- */
+#why svg.whySvg { max-width: 640px; }
+#why svg text { paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
+.ribMonths { position: relative; height: 16px; font-size: 12px; color: var(--muted); }
+.ribMonths span { position: absolute; top: 0; padding-left: 2px; white-space: nowrap; }

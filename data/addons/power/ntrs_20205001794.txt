@@ -1,0 +1,448 @@
+              Mission Overview
+
+Interplanetary Small Satellite Conference
+
+Ryan Vaughan, VIPER Mission Systems Engineer
+
+                                                                             May 11, 2020
+
+                                                                                                                    1
+Humans Return by 2024
+NASA-ARC Low-cost Lunar Missions
+             Lunar ProspPecotorr(tLafuonchleido1998, $63M*)
+
+                          · First global surface composition
+                          · Polar volatiles & global magnetic maps
+
+                                   LCROSS (Launched 2009, $79M*)
+
+                                         · Impacted lunar south pole
+                                         · Evidence for water ice in cold, shadowed regions
+
+                                               LADEE (Launched 2013, $250M*)
+
+                                                      · Lunar atmosphere and dust
+                                                      · First deep space laser communication
+
+                                                            VIPER1 (Launching FY23, ~$TBDM*)
+
+                                                                     · Robotic rover at lunar pole
+                                                                     · Resource mapping mission
+                                                                     · Commercial Lunar Payload Services
+
+                                         * Not including launch or lander
+                                         1 Volatiles Investigating Polar Exploration Rover
+VIPER Science Objectives
+
+The science objectives of the VIPER mission are to:
+
+   · Characterize the distribution and physical state of lunar polar water
+   and other volatiles in lunar cold traps and regolith to understand
+   their origin
+
+   · Provide the data necessary for NASA to evaluate the potential
+   return of In-Situ Resource Utilization (ISRU) from the lunar polar
+   regions
+
+                                                                                                                                                                                                                        4
+Lunar Polar Volatile Exploration: Science and Exploration
+
+Critical Observations Needed                       Lunar Polar Exploration
+· Volatile Distribution (concentration, including
+                                                                                                                       From "Committee for Mineral Reserves and
+   lateral and vertical extent and variability)                                                                        International Reporting Standards, 2013
+
+· Volatile Physical State (H2, OH, H2O, CO2, Ice
+
+   vs bound, etc).
+· The Context and Correlation, including:
+
+      Accessibility/Overburden: How much and
+
+        type of material needing to be removed to
+
+        get to ore?
+      Environment: Sun/Shadow fraction, soil
+
+        mechanics, trafficability, temperatures
+      Distribution and Form vs Environment
+      Extrapolates small scale distributions to
+
+        global data sets, critical for developing
+
+        "mineral/resource models"
+
+Distribution. Physical State. Context. Correlation.
+                                                                                                                                                                           5
+          The Big Picture of Lunar Resources
+
+US Lunar Goals:
+
+    Orbital      Orbital   Ground      Ground     Resource  ISRU & Mining                      Bulk
+Observations  Prospecting  Truthing  Prospecting  Mapping
+                                                            Demonstrations Production
+
+Missions:                            VIPER                            (future science
+  Clementine                                                              missions)
+                         LCROSS
+        Lunar                                               Industry
+     Prospector
+                                                                                    Industry
+                    LRO
+
+         Chandrayaan-I
+
+                         VIPER bridges Government and Industry missions, addressing volatiles
+                             mapping, in support of the Economic opportunity of the Moon
+VIPER Surface Segment (Rover + Instruments)
+
+ Subsurface excavation      Vision & Comm
+
+ TRIDENT Drill              Camera/Antenna Mast
+
+Power                               Heat Rejection
+
+Solar Array (3-sides)                 Radiator (on top)
+
+                                      Rover Control Flight
+
+                                       Avionics (internal)
+
+                            Prospecting
+
+                             Neutron Spectrometer
+                            System (NSS) Instrument
+
+Prospecting & Evaluation    Prospecting & Evaluation
+
+Mass Spectrometer           Near Infrared Volatiles
+Observing Lunar Operations  Spectrometer System
+(MSolo) Instrument          (NIRVSS) Instrument
+Historical Planetary Rovers & VIPER
+
+http://historicspacecraft.com/Probes_Mars.html
+
+*includes instruments
+
+                   (1996):                      Spirit & Opportunity                                    Curiosity  (2011):
+                                                                                      (2004):
+· 0.6m x0.5m x0.3m                                                                             · 3.0m x2.8m x2.1m
+· 11kg                                                   · 1.6m x2.3m x1.5m                    · 900kg
+· Top Speed: 5cm/s                                       · 180kg*                              · Top Speed: 4cm/s
+                                                         · Top Speed: 5cm/s
+
+                    (1970/1973):                                                       (1971/1972):                VIPER (2023):               Yutu (2013):
+
+· 1.3M x1.6m x1.5m, 840kg                       · 1.3M x1.6m x1.5m, 840kg                                          · 1.5m x1.5m x2.0m, 300kg  · 1.5m x1.1m, 140kg
+· Top Speed: 55cm/s                             · Top Speed: 500cm/s                                               · Top Speed: 20cm/s        · 5cm/s
+VIPER Instruments
+
+NSS (NASA ARC/Lockheed Martin ATC)                                                                                         NSS
+
+PI: Rick Elphic (NASA ARC)                                                                                                              NIRVSS
+· Instrument Type: Two channel neutron spectrometer
+                                                                                                                      TRIDENT
+· Key Measurements: NSS assesses hydrogen and bulk composition in the top meter of regolith, measuring down to                                      9
+    0.5% (wt) WEH to 3s while roving
+
+NIRVSS (ARC, Brimrose Corporation)
+
+PI: Anthony Colaprete (NASA ARC)
+· Instrument Type: NIR Spectrometer, 4Mpxl Imager with 7 banks of color LEDs, four channel thermal radiometer
+· Key Measurements: Volatiles including H2O, OH, and CO2 and, minerology, surface morphology and temperatures
+
+MSolo (KSC, INFICON, NSF­ SHREC Space Processor, & Blue Sun ­ Virtual Machine Language)
+
+PI: Janine Captain (NASA KSC)
+· Instrument Type: Quadrupole mass spectrometer
+· Key Measurements: Identify low-molecular weight volatiles between 1-100 amu, unit mass resolution to
+
+    measure isotopes including D/H and 018/016
+
+TRIDENT (Honeybee Robotics)                                                                                    MSolo
+PI: Kris Zacny (Honeybee Robotics)
+
+· Instrument Type: 1-meter percussive drill
+· Key Measurements: Excavation of subsurface material to 100 cm; Subsurface temperature vs depth; Strength
+
+    of regolith vs depth (info on ice-cemented ground vs. ice-soil mixture)
+Sampling: Demonstration
+
+Multiple tests at GRC demonstrated the TRIDENT, MSolo and NIRVSS systems ability to capture samples at
+depth and identify water (at concentrations <0.25%) in real-time
+
+                                          NIRVSS Spectra of cuttings piles
+
+                                   1.2
+
+DOC Composite                      1.1
+410, 740, 905nm
+                         Radiance  1
+
+                                   0.9  Bite 1
+
+                                   0.8  Bite 2
+                                        Bite 3
+
+                                   0.7  Bite 3
+
+                                   0.6
+                                     1700 1900 2100 2300 2500 2700 2900 3100 3300
+
+                                                         Wavelength (nm)
+
+                                   Water ice band depths calculated real time
+
+                                                  during VF13 testing
+
+TRIDENT installed at VF13
+TCAV facility
+
+                                                                                                                                                                                                                                   10
+     VIPER Performance Specs
+
+· Mass: ~430kg (950lbs) Power (peak): ~450W
+· Comms (DTE1): X-band (230kbps hi-gain / 2kbps omni)
+· Comms network: DSN 34m dishes
+
+                  Canberra, Goldstone, Madrid
+· Dimensions: 1.5m x 1.5m x 2.5m (5ft x 5ft x 8ft)
+· Top Speed: 20cm/s (0.5 MPH)
+· Prospecting Speed: 10cm/s (4in/s)
+· Distance Travelled (goal): 20km (~12mi)
+· Lunar delivery: CLPS2 commercial contract
+
+               1 DTE = Direct-To-Earth
+               2 CLPS = Commercial Lunar Payload Services
+      VIPER Science Specs
+
+· Mission Duration: 100+ earth days
+· Instruments: Neutron, Near-IR, and Mass Specs; 1m Drill
+· Detectable H2O Concentration: 0.5% (by weight)
+· Drill Depth: 1m (~3ft)
+· # of Surface Assays (drill sites): 30-40 sites (18 minimum)
+· Dark Survivability: 96hrs
+· PSR Working Duration: 6hrs
+· Surface Traverse Plan baselined: @CDR
+Spatial Proxies for Resource Maps and Models
+
+Primary environmental factor is temperature                                     Ice Stability Depth Map
+· At a minimum temperatures (surface or subsurface)
+                                                                Ice not stable  Ice stable at             Ice stable at
+     must be low enough to retain water ice                     at <1m          surface (PSR)             shallow depths
+· Secondary environmental factors may include
+                                                                                Ice Stability Region Map
+     geophysical properties (e.g., association with craters of
+
+     a certain size and age)
+· Also secondary is the ore extent, given regional data
+
+     sets only extend to ~1 meter deep (i.e., neutron
+
+     observations)
+
+Using temperatures from the surface to 1 meter deep as
+primary surface proxy
+· Four environments defined based on the predicted
+
+    thermal stability of ice with depth, the Ice Stability
+    Regions (ISRs):
+
+      1. Dry: Temperatures in the top meter expected to
+           be too warm for ice to be stable
+
+      2. Deep: Ice expected to be stable between 50-100
+           cm of the surface
+
+      3. Shallow: Ice expected to be stable within 50cm of
+           surface
+
+      4. Surface: Ice expected to be stable at the surface
+           (ie., within a Permanently Shadowed Region, PSR)
+
+                                                                                                          13
+Where to Land?                     Surface/Subsurface
+                                           volatiles
+
+          South Pole
+
+To Earth
+
+                        Direct to                      Traversable
+                      Earth (DTE)                         terrain
+
+                         comm
+
+                                   Sun illumination
+
+                      Candidate polar landing sites meet these four criteria:
+                         1. Plausible surface/subsurface volatiles
+                         2. Reasonable terrain for landing and traverse
+                         3. Direct view to Earth for communication
+                         4. Maximize sunlight for power (including safe havens)
+      Merging maps and operational constraints
+
+Traverse planning efficiency is enabled by generating maps that have operational constraints
+integrated into them
+
+Some examples
+
+     Slope & Navigability                Landing Sites                Sun Safety Margin        Lander line-of-site (Varies   Earth Comm Blockage (Time-                    ISRU Areas
+             (Static)                (Time-dependent)                 (Time-dependent)                 with lander)                     dependent)                           (Static)
+
+Color map pixels within the      Green pixels lie at center of a  Color pixels that will have  Given a landing site, color   Topographic maps generated         Identify 60 x 60 meter areas that
+slope limits of the lander       100 x 100 m landing error        less than 80% sun within 48  map pixels with line-of-site  from orbit have height errors,     are predominantly one thermal
+(green) and of the rover (green  ellipse completely within        hours yellow and within 24   between given lander and      e.g., LOLA DEMs have a reported    environment and < 5 deg slope.
+and yellow).                     slope limits of the lander that  hours, red                   rover antenna heights         error of 1 m 1. These errors       Each is large enough to generate
+LOLA roughness and Diviner       have sun and DSN access for                                                                 could result in planning to move   1000 kg of O2 if 0.5% water and
+blockiness products are also     at least 48 hours.                                                                          the rover to a location where DSN  10% extraction efficiency. These
+available                                                                                                                    stations are blocked by terrain.   are candidate locations for
+                                 Red pixels are in permanent                                                                 This map shows locations where     doing the required
+                                 shadow and have DSN station                                                                 the probability of the 2 deg       measurements
+                                 access                                                                                      horizon safety margin being
+                                                                                                                             exceeded is above a given risk                                   15
+                                                                                                                             threshold
+                        Rover Performance Model
+
+Traverse planning tools contain rover performance models covering alternatives      Time to
+as the rover's design has matured. Factors included are (not all in all models):       loss of mission
+                                                                                                                                     Min Batter y SOC
+· Model inputs
+ Solar cell efficiency  battery charge/discharge curve component and heater         Surface elapsed time                                                           Surface elapsed time
+ loads
+ potential energy       wheel slip                driver decision delays                                                           Activity  Duration Power  Avg Speed, slip vs slope
+ orientation policy     camera sun keepout zones  rover pose on slope                                                                                        Batte ry Capacity
+                                                                                    Idle (Safe Mode)                                         (min) (Watts)   Power Generation & Loads
+                                                                                    Idle (Stationary Mode)                                                   Activ ity Dictionary
+                                                                                    Recharge                                                    233
+                                                                                    Initial Checkout                                                         Ideal path
+                                                                                    NSS Calibration                                          N/A 242         Distance: 1,000 m
+                                                                                    NIRVSS Calibration
+                                                                                    LAVA Calibration                                         N/A 242                                 Actual path
+                                                                                    OVEN Calibration                                                                                 Distance: 2,000 m
+                                                                                    Roving / Direct Drive                                       494
+                                                                                    Prospecting                                                              Early human-in-loop sims
+                                                                                    Prospecting - DOC Image at Waypoint                         242          point toward 40-50%
+                                                                                    AIM - 4x8m                                                               obstacle avoidance
+                                                                                    AIM Prospecting                                             272          overhead
+                                                                                    AIM Prospecting - DOC Image at Waypoint
+· Activity Dictionary                                                               AIM Prospecting - DOC Priority Image at Waypoint            239                                        16
+ Major modes the rover and payload can be in; each typically lasting 5-120 minutes  Panorama
+ Gives power used and data generated                                                Drill Location Targeting                                    239
+ Determines the traverse planning level-of-detail                                   Drilling Preparation
+                                                                                    Subsurface Assay per 10 cm Bite                          N/A 397
+                                                                                    Quick Subsurface Assay (50 cm)
+                                                                                    Deep Subsurface Assay (90 cm)                            N/A 433
+                                                                                    Deep Subsurface Assay (100 cm)
+                                                                                    Stow Drill                                                  336
+                                                                                    Preheat LAVA
+                                                                                    Deep Subsurface Assay (90 cm)/Preheat LAVA               40 433
+                                                                                    Sample Collection and Transfer
+                                                                                    Volatile Analysis - Sample Heat Up (Ambient to 150C)        433
+                                                                                    Volatile Analysis - Sample Heat Up (150C to 350C)
+                                                                                    Volatile Analysis - Sample Heat Up (350C to 450C)           336
+                                                                                    Volatile Analysis - GC Analysis
+                                                                                    Water Droplet Demo                                          336
+                                                                                    Sample Dump
+                                                                                                                                             4.3 424
+                                                                                               Activity Dictionary
+                                                                                                                                             38 433
+
+                                                                                                                                             20.5 416
+
+                                                                                                                                             13 416
+
+                                                                                                                                             65 416
+
+                                                                                                                                             117 416
+
+                                                                                                                                             130 416
+
+                                                                                                                                             10 416
+
+                                                                                                                                             60 575
+
+· Model outputs                                                                                                                              117 511
+
+ (typical) battery state-of-charge, time-to-shadow, slope, sun-fraction, surface                                                             20 535
+ temperature
+                                                                                                                                             60 670
+
+                                                                                                                                             30 670
+
+                                                                                                                                             30 670
+
+                                                                                                                                             20 442
+
+                                                                                                                                             40 570
+
+                                                                                                                                             5  333
+                                          Planning Traverses
+
+      Thermal Environments
+
+Type                               Color
+
+PSR, ice depth = 0
+
+Shallow, ice depth (0, 0.5] m
+
+Deep, ice depth (0.5, 1] m
+
+Dry, ice depth (1, ] m, drivable
+
+Dry, ice depth (1, ] m, too steep
+
+      Lighting Environments
+
+Type                               Color
+
+[0, 24] hours of shadow
+
+(24, 96] hours of shadow
+
+                                                              17
+Dynamic Planning
+
+Near the pole, sun against topography casts long shadows
+
+Similar radio shadows are cast when using a line-of-site radio link
+to ground stations
+
+Sun and radio shadows move on a timescale similar to the time
+needed to take the required measurements
+
+   · Shadows cast by a peak 3.9 km away move at 1 cm/s
+
+Traverse plans must plan to avoid moving shadows
+
+The movie shows a red square representing the rover moving as the shadows move. The rover          grayscale=amount of sunlight, 20 meter pixels, circles=drill sites;
+starts at the center of the green circles. This example illustrates difficult sun and comm shadow  green=candidate landing site; red square=the rover, Timespan = ~8 days
+constraints and meets all mission requirements, not a complete traverse.
+                                                                                                                                                                                                           18
+Example Traverse Near Nobile
+
+Information contained in this presentation is not subject to Export  19
+
+Controls (ITAR/EAR)
+                         Powerful, fully-synthetic, lunar
+                         terrain sim based on Digital Elevation
+                         Maps (DEM)
+
+                           ­ Establishing driver decision-
+                              making times
+
+Rover Driving Simulator
+Capability
+NASA-ARC Lunar
+Operations Lab
+Notables  VIPER lunar-weight rover tested in
+                        lunar simulant soil bin
+
+                NASA-GRC, SLOPE laboratory
+
+                                                                     21
+Questions?
+
+                                                                                                                                           22
+

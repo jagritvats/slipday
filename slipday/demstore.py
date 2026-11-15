@@ -38,7 +38,27 @@ _state: dict = {"loaded": False, "dem": None, "members": [], "all": [], "missing
 
 
 def dem_dir() -> str:
-    return os.environ.get("SLIPDAY_DEM_DIR", os.path.join(ROOT, "data", "dem"))
+    """SLIPDAY_DEM_DIR if set; otherwise the live stack (data/dem_live: 5 m site models, then 20 m, then 80 m and
+    coarser) when it is installed, else the 80 m stack (data/dem)."""
+    env = os.environ.get("SLIPDAY_DEM_DIR")
+    if env:
+        return env
+    live = os.path.join(ROOT, "data", "dem_live")
+    if os.path.exists(os.path.join(live, "dems.json")):
+        return live
+    return os.path.join(ROOT, "data", "dem")
+
+
+def grid_at(lat: float, lon: float) -> Optional[dict]:
+    """The terrain grid the live answer uses at a point: the finest installed grid that covers it."""
+    dem = get_dem()
+    if dem is None:
+        return None
+    m = dem.member_at(lat, lon) if hasattr(dem, "member_at") else dem
+    if m is None:
+        return None
+    return {"resolution_m": float(m.resolution_m), "name": m.name, "product": getattr(m, "product", m.name),
+            "label": "LOLA " + ("%g" % float(m.resolution_m)) + " m" + (" site model" if float(m.resolution_m) <= 5 else "")}
 
 
 def _read_array(entry: dict, base: str) -> np.ndarray:

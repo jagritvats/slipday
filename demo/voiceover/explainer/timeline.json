@@ -2,115 +2,115 @@
  {
   "id": "question",
   "start": 0.0,
-  "secs": 11.42,
+  "secs": 14.03,
   "voice_start": 0.4
  },
  {
   "id": "card",
-  "start": 11.42,
-  "secs": 9.94,
-  "voice_start": 11.82
+  "start": 14.03,
+  "secs": 12.59,
+  "voice_start": 14.43
  },
  {
   "id": "objective",
-  "start": 21.36,
+  "start": 26.62,
   "secs": 10.45,
-  "voice_start": 21.76
+  "voice_start": 27.02
  },
  {
   "id": "slipped",
-  "start": 31.81,
+  "start": 37.07,
   "secs": 9.98,
-  "voice_start": 32.21
+  "voice_start": 37.47
  },
  {
   "id": "windows",
-  "start": 41.79,
-  "secs": 10.82,
-  "voice_start": 42.19
+  "start": 47.05,
+  "secs": 12.03,
+  "voice_start": 47.45
  },
  {
   "id": "view3d",
-  "start": 52.61,
+  "start": 59.08,
   "secs": 8.31,
-  "voice_start": 53.01
+  "voice_start": 59.48
  },
  {
   "id": "custom",
-  "start": 60.92,
+  "start": 67.39,
   "secs": 7.66,
-  "voice_start": 61.32
+  "voice_start": 67.79
  },
  {
   "id": "map",
-  "start": 68.58,
+  "start": 75.05,
   "secs": 9.89,
-  "voice_start": 68.98
+  "voice_start": 75.45
  },
  {
   "id": "grids",
-  "start": 78.47,
-  "secs": 9.2,
-  "voice_start": 78.87
+  "start": 84.94,
+  "secs": 12.12,
+  "voice_start": 85.34
  },
  {
   "id": "slope",
-  "start": 87.67,
+  "start": 97.06,
   "secs": 8.68,
-  "voice_start": 88.07
+  "voice_start": 97.46
  },
  {
   "id": "touchdown",
-  "start": 96.35,
+  "start": 105.74,
   "secs": 9.1,
-  "voice_start": 96.75
+  "voice_start": 106.14
  },
  {
   "id": "im1",
-  "start": 105.45,
+  "start": 114.84,
   "secs": 9.2,
-  "voice_start": 105.85
+  "voice_start": 115.24
  },
  {
   "id": "regions",
-  "start": 114.65,
-  "secs": 10.22,
-  "voice_start": 115.05
+  "start": 124.04,
+  "secs": 9.98,
+  "voice_start": 124.44
  },
  {
   "id": "atlas",
-  "start": 124.87,
+  "start": 134.02,
   "secs": 7.34,
-  "voice_start": 125.27
+  "voice_start": 134.42
  },
  {
   "id": "relay",
-  "start": 132.21,
+  "start": 141.36,
   "secs": 9.43,
-  "voice_start": 132.61
+  "voice_start": 141.76
  },
  {
   "id": "listen",
-  "start": 141.64,
+  "start": 150.79,
   "secs": 8.96,
-  "voice_start": 142.04
+  "voice_start": 151.19
  },
  {
   "id": "game",
-  "start": 150.6,
-  "secs": 7.85,
-  "voice_start": 151.0
+  "start": 159.75,
+  "secs": 8.78,
+  "voice_start": 160.15
  },
  {
   "id": "limits",
-  "start": 158.45,
-  "secs": 10.82,
-  "voice_start": 158.85
+  "start": 168.53,
+  "secs": 10.45,
+  "voice_start": 168.93
  },
  {
   "id": "closing",
-  "start": 169.27,
+  "start": 178.98,
   "secs": 4.64,
-  "voice_start": 169.67
+  "voice_start": 179.38
  }
 ]
