@@ -1,0 +1,116 @@
+[
+ {
+  "id": "question",
+  "start": 0.0,
+  "secs": 11.42,
+  "voice_start": 0.4
+ },
+ {
+  "id": "card",
+  "start": 11.42,
+  "secs": 9.94,
+  "voice_start": 11.82
+ },
+ {
+  "id": "objective",
+  "start": 21.36,
+  "secs": 10.45,
+  "voice_start": 21.76
+ },
+ {
+  "id": "slipped",
+  "start": 31.81,
+  "secs": 9.98,
+  "voice_start": 32.21
+ },
+ {
+  "id": "windows",
+  "start": 41.79,
+  "secs": 10.82,
+  "voice_start": 42.19
+ },
+ {
+  "id": "view3d",
+  "start": 52.61,
+  "secs": 8.31,
+  "voice_start": 53.01
+ },
+ {
+  "id": "custom",
+  "start": 60.92,
+  "secs": 7.66,
+  "voice_start": 61.32
+ },
+ {
+  "id": "map",
+  "start": 68.58,
+  "secs": 9.89,
+  "voice_start": 68.98
+ },
+ {
+  "id": "grids",
+  "start": 78.47,
+  "secs": 9.2,
+  "voice_start": 78.87
+ },
+ {
+  "id": "slope",
+  "start": 87.67,
+  "secs": 8.68,
+  "voice_start": 88.07
+ },
+ {
+  "id": "touchdown",
+  "start": 96.35,
+  "secs": 9.1,
+  "voice_start": 96.75
+ },
+ {
+  "id": "im1",
+  "start": 105.45,
+  "secs": 9.2,
+  "voice_start": 105.85
+ },
+ {
+  "id": "regions",
+  "start": 114.65,
+  "secs": 10.22,
+  "voice_start": 115.05
+ },
+ {
+  "id": "atlas",
+  "start": 124.87,
+  "secs": 7.34,
+  "voice_start": 125.27
+ },
+ {
+  "id": "relay",
+  "start": 132.21,
+  "secs": 9.43,
+  "voice_start": 132.61
+ },
+ {
+  "id": "listen",
+  "start": 141.64,
+  "secs": 8.96,
+  "voice_start": 142.04
+ },
+ {
+  "id": "game",
+  "start": 150.6,
+  "secs": 7.85,
+  "voice_start": 151.0
+ },
+ {
+  "id": "limits",
+  "start": 158.45,
+  "secs": 10.82,
+  "voice_start": 158.85
+ },
+ {
+  "id": "closing",
+  "start": 169.27,
+  "secs": 4.64,
+  "voice_start": 169.67
+ }
+]

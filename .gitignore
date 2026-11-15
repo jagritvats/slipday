@@ -1,0 +1,17 @@
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+# 231 MB, over GitHub's file limit: rebuild with scripts/fetch_grid80.py or scripts/prepare_dem.py
+# (the app falls back to the 240 m grid without it)
+data/dem/ldem_80s_80m_f32.npy
+*.tmp.npz
+# official NASA downloads (1.2 GB): scripts/fetch_on_your_machine.sh fetches them again
+data/reference/
+
+# the 20 m crop around the pole (85 MB) is optional and rebuilt by scripts/fetch_ldem20_crop.py and
+# scripts/fetch_ldem20_tiles.py
+data/dem20/*.npy
+
+# 5 m site models (pgda LOLA_5mpp), rebuilt by scripts/prepare_dem5.py
+data/dem5/*/*.npy

@@ -1,0 +1,170 @@
+{
+ "landing": "2026-11-18T00:00:00Z",
+ "need": "240 sunlit h, 100 Earth h in 14 days; Sun and Earth at touchdown; station rule on",
+ "rows": [
+  {
+   "grid": "LOLA, 80 m/px",
+   "site_height_m": 1173.7,
+   "verdict": "yes",
+   "slip_margin_days": 8,
+   "points_passing_by_day": [
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    0,
+    0,
+    0
+   ],
+   "sunlit_h": 314,
+   "earth_h": 311,
+   "reasons": [],
+   "next_good": [],
+   "site": "robust_pick",
+   "stack": "data/dem"
+  },
+  {
+   "grid": "LOLA, 20 m/px",
+   "site_height_m": 1173.9,
+   "verdict": "yes",
+   "slip_margin_days": 8,
+   "points_passing_by_day": [
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    0,
+    0,
+    0
+   ],
+   "sunlit_h": 308,
+   "earth_h": 311,
+   "reasons": [],
+   "next_good": [],
+   "site": "robust_pick",
+   "stack": "data/dem20"
+  },
+  {
+   "grid": "LOLA, 5 m/px",
+   "site_height_m": 1173.9,
+   "verdict": "yes",
+   "slip_margin_days": 8,
+   "points_passing_by_day": [
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    0,
+    0,
+    0
+   ],
+   "sunlit_h": 306,
+   "earth_h": 311,
+   "reasons": [],
+   "next_good": [],
+   "site": "robust_pick",
+   "stack": "data/dem5/site07"
+  },
+  {
+   "grid": "LOLA, 80 m/px",
+   "site_height_m": 1957.6,
+   "verdict": "yes",
+   "slip_margin_days": 7,
+   "points_passing_by_day": [
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    12,
+    0,
+    0,
+    0
+   ],
+   "sunlit_h": 336,
+   "earth_h": 295,
+   "reasons": [],
+   "next_good": [],
+   "site": "shackleton",
+   "stack": "data/dem"
+  },
+  {
+   "grid": "LOLA, 20 m/px",
+   "site_height_m": 1958.7,
+   "verdict": "not sure",
+   "slip_margin_days": -1,
+   "points_passing_by_day": [
+    11,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    10,
+    0,
+    0,
+    0
+   ],
+   "sunlit_h": 336,
+   "earth_h": 295,
+   "reasons": [],
+   "next_good": [
+    "2026-11-19T00:00:00Z",
+    "2026-11-20T00:00:00Z",
+    "2026-11-21T00:00:00Z"
+   ],
+   "site": "shackleton",
+   "stack": "data/dem20"
+  },
+  {
+   "grid": "LOLA, 5 m/px",
+   "site_height_m": 1958.5,
+   "verdict": "not sure",
+   "slip_margin_days": -1,
+   "points_passing_by_day": [
+    12,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    10,
+    0,
+    0,
+    0
+   ],
+   "sunlit_h": 336,
+   "earth_h": 295,
+   "reasons": [],
+   "next_good": [
+    "2026-11-19T00:00:00Z",
+    "2026-11-20T00:00:00Z",
+    "2026-11-21T00:00:00Z"
+   ],
+   "site": "shackleton",
+   "stack": "data/dem5/site01"
+  }
+ ]
+}

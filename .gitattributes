@@ -1,0 +1,11 @@
+# Store text with LF line endings whatever the machine that commits it uses: the shell scripts, the
+# Dockerfile and the Procfile do not run on Linux with CRLF endings.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.npy binary
+*.npz binary
+*.IMG binary
+*.png binary
+*.jpg binary
+*.TIF binary
+*.JP2 binary

@@ -1,0 +1,95 @@
+{
+ "note": "written by scripts/prepare_dem.py; paths are relative to this folder",
+ "dems": [
+  {
+   "name": "ldem_80s_80m",
+   "kind": "polar_stereo",
+   "path": "ldem_80s_80m_f32.npy",
+   "format": "npy",
+   "pole": -1,
+   "pixel_m": 80.0,
+   "x0_m": -303960.0,
+   "y0_m": 303960.0,
+   "scale": 1.0,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_80S_80MPP_ADJ",
+   "provenance": "LDEM_80S_80MPP_ADJ.TIF, LOLA south-pole 80 m mosaic, NASA GSFC PGDA product 90 (Barker et al. 2023); values unchanged, re-saved as .npy; source sha256 82030dcbdd7c4bb0"
+  },
+  {
+   "name": "ldem_75s_240m",
+   "kind": "polar_stereo",
+   "path": "ldem_75s_240m_i16.npy",
+   "format": "npy",
+   "pole": -1,
+   "pixel_m": 240.0,
+   "x0_m": -457320.0,
+   "y0_m": 457320.0,
+   "scale": 0.5,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_75S_240M (PDS GDR)",
+   "provenance": "LDEM_75S_240M.JP2, PDS LRO-L-LOLA-4-GDR-V1.0 south-polar DEM to 75S; JPEG2000 decoded, values unchanged (int16 half-metres), re-saved as .npy; source sha256 a0ebbad0a2650c74"
+  },
+  {
+   "name": "ldem_64_south",
+   "kind": "equirect",
+   "path": "ldem_64_south.npy",
+   "format": "npy",
+   "ppd": 64.0,
+   "lat0": -60.0078125,
+   "lon0": -179.9921875,
+   "scale": 0.5,
+   "offset": -10000.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "SVS CGI Moon Kit ldem_64_uint",
+   "provenance": "60S-90S crop (rows 9600 to 11519, no resampling) of NASA SVS CGI Moon Kit ldem_64_uint.tif (LOLA, svs.gsfc.nasa.gov/4720); sha256 of the crop 2b5a02c566b30c3a, of the source file 0f40bce8b42864de"
+  },
+  {
+   "name": "ldem_16",
+   "kind": "equirect",
+   "path": "LDEM_16.IMG",
+   "format": "raw",
+   "dtype": "<i2",
+   "shape": [
+    2880,
+    5760
+   ],
+   "header_bytes": 0,
+   "ppd": 16.0,
+   "lat0": 89.96875,
+   "lon0": 0.03125,
+   "scale": 0.5,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_16 (PDS GDR V3.1)",
+   "provenance": "LDEM_16.IMG, PDS LRO-L-LOLA-4-GDR-V1.0 product LDEM_16; sha256 a511e40d7a3ea327"
+  }
+ ],
+ "layers": {
+  "avgvis": {
+   "path": "avgvis_80s_480m_u8.npy",
+   "pixel_m": 480.0,
+   "x0_m": -303760.0,
+   "y0_m": 303760.0,
+   "scale": 0.004,
+   "label": "average solar visibility, LOLA team map AVGVISIB_75S_120M_201608 (Mazarico et al.), shown at 480 m",
+   "provenance": "DERIVED for display from AVGVISIB_75S_120M_201608.TIF: cropped to 80S, 4x4 block mean"
+  }
+ },
+ "source_notes": {
+  "ldem_80s_80m": {
+   "min_m": -7295.51708984375,
+   "max_m": 7026.3310546875,
+   "sha256_source": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a"
+  },
+  "ldem_64_south": {
+   "sha256_source": "0f40bce8b42864deddb6943a38474879e691d5b20647aa5e54c2612b23106499",
+   "sha256_crop": "2b5a02c566b30c3aed617c3a1d738009053f3ef4e23cfeb4617db64f7afa1c89"
+  }
+ }
+}

@@ -1,0 +1,35 @@
+/* Slipday 3-D terrain view (static/view3d.js).  The stage is dark in both colour schemes, like the polar
+   map: the lunar sky is black, and the terrain colours are the same in light and dark mode. */
+.v3d { margin-top: 6px; min-width: 0; }
+.v3dBar { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; margin: 4px 0 8px; }
+.v3dBar label.inline { font-size: 12px; color: var(--text2); }
+.v3dBar select { padding: 4px 6px; font-size: 13px; }
+.v3dBtns { display: flex; flex-wrap: wrap; gap: 4px; }
+.v3dBtns button { font-size: 12.5px; padding: 4px 9px; font-weight: 600; }
+.v3dStage { position: relative; border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 100%, #23252b 0%, #131316 62%, #0c0c0e 100%); }
+.v3dStage canvas { display: block; width: 100%; height: 420px; touch-action: pan-y; cursor: grab; outline-offset: -3px; }
+.v3dStage canvas.drag { cursor: grabbing; }
+.v3dStage canvas:focus-visible { outline: 2px solid #8fc0fa; }
+.v3dMsg { position: absolute; left: 50%; top: 34px; transform: translateX(-50%); max-width: 86%; text-align: center;
+  background: rgba(16, 16, 18, .86); color: #f2f1ec; border: 1px solid rgba(255, 255, 255, .22); border-radius: 6px;
+  padding: 6px 10px; font-size: 12.5px; pointer-events: none; user-select: none; -webkit-user-select: none; }
+.v3dMsg[hidden] { display: none; }
+.v3dMsg button { font-size: 12px; padding: 2px 8px; margin-left: 4px; pointer-events: auto; }
+.v3dStage canvas { user-select: none; -webkit-user-select: none; }
+.v3dTime { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 8px 0 4px; }
+.v3dTime[hidden] { display: none; }
+.v3dTime input[type=range] { flex: 1 1 200px; min-width: 120px; }
+.v3dPlay { min-width: 4.6em; font-size: 13px; padding: 4px 10px; }
+.v3dWhen { font-size: 12.5px; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); min-width: 0; }
+.v3dState { font-size: 13px; color: var(--text); margin: 6px 0 4px; max-width: 110ch; }
+.v3dCap { font-size: 12px; max-width: 110ch; margin-bottom: 4px; }
+.v3dMore summary { cursor: pointer; font-size: 12.5px; color: var(--text2); font-weight: 600; }
+.v3dMore .note { font-size: 12px; margin: 6px 0 0; max-width: 110ch; }
+.v3d.off .v3dBar, .v3d.off .v3dTime { opacity: .45; pointer-events: none; }
+.v3d.off .v3dStage canvas { height: 120px; }
+@media (max-width: 760px) {
+  .v3dStage canvas { height: 300px; }
+  .v3dBtns button { padding: 4px 7px; font-size: 12px; }
+  .v3dState { font-size: 12.5px; }
+}

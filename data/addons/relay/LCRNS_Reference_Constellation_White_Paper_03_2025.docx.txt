@@ -1,0 +1,204 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="cp:revision" content="61">
+<meta name="extended-properties:DocSecurity" content="4">
+<meta name="extended-properties:AppVersion" content="16.0000">
+<meta name="meta:paragraph-count" content="8">
+<meta name="meta:word-count" content="656">
+<meta name="dc:creator" content="Nakshun, Valeriya A. (GSFC-450.2)[ASRC FEDERAL SYSTEM SOLUTIONS]">
+<meta name="extended-properties:Company" content="">
+<meta name="dcterms:created" content="2025-03-14T17:39:00Z">
+<meta name="meta:line-count" content="31">
+<meta name="dcterms:modified" content="2025-03-14T19:15:00Z">
+<meta name="meta:character-count" content="3741">
+<meta name="meta:character-count-with-spaces" content="4389">
+<meta name="extended-properties:TotalTime" content="103">
+<meta name="Content-Type-Override" content="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+<meta name="Content-Type" content="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+<meta name="custom:ContentTypeId" content="0x010100E58E1543ACF3C2479809FBCD469E231B">
+<meta name="extended-properties:Application" content="Microsoft Office Word">
+<meta name="meta:last-author" content="Michael Volle">
+<meta name="xmpTPg:NPages" content="1">
+<meta name="extended-properties:Template" content="Normal.dotm">
+<meta name="X-TIKA:Parsed-By" content="org.apache.tika.parser.DefaultParser">
+<meta name="X-TIKA:Parsed-By" content="org.apache.tika.parser.microsoft.ooxml.OOXMLParser">
+<meta name="extended-properties:DocSecurityString" content="ReadOnlyEnforced">
+<meta name="custom:MediaServiceImageTags" content="">
+<meta name="meta:page-count" content="1">
+<meta name="dc:publisher" content="">
+<title></title>
+</head>
+<body><p class="header"><img src="embedded:image1.png" alt=""></p>
+<p class="header"></p>
+<h1>NASA Lunar Communications Relay and Navigation Systems (LCRNS) Reference Constellation 3.1</h1>
+<h2 class="subtitle">Grant Ryden / NASA GSFC Code 592
+Michael Volle / NASA GSFC Code 595</h2>
+<p class="body_Text"></p>
+<h2>Background</h2>
+<p>The LCRNS constellation is required to provide communications and navigation services to users in the region of the lunar south pole [1].  As such, many groups that represent end-users of LCRNS need trajectory data for the LCRNS constellation in order to perform analyses.  This document is provided to supply end-users with a set of states representing the government reference Constellation design for these analyses.  This reference design is not final; the final design choice belongs to Intuitive Machines (IM), under the contract to provide services to the Near Space Network (NSN) [2].  Any subsequent design updates will replace this version and will include updated version numbers for clarity.</p>
+<p></p>
+<h2>Reference Trajectory States</h2>
+<p>In order to achieve adequate coverage of the region surrounding the lunar south pole with a small number of satellites, a class of orbits known as Elliptical Lunar Frozen Orbits (ELFO) was selected to provide longer dwell times with apolune above the south pole.  This class of orbits makes use of the Earth’s perturbations to provide stability in the orbit Argument of Perilune (AOP) and Eccentricity [3].  In order to ensure consistent geometry of the constellation over time, a steepest descent targeting approach was used to identify initial states with long-term average periods.  </p>
+<p>Tables 1 and 2 below offer two different representations of the constellation initial states at the reference epoch of March 01, 2027 00:00:00.000 UTC.  The Moon Principal Axis frame is realized based on the JPL DE 421 planetary ephemeris.  The period of these orbits is approximately 30 hours on average.  </p>
+<p></p>
+<p><b><i>Table 1</i></b><i>: LCRNS Reference Constellation Initial States in Keplerian Elements in the Moon-centered Principal Axis Frame, referenced to the J2000 Epoch.</i></p>
+<table><tbody><tr>	<td><p></p>
+</td>	<td><p><b>SMA</b></p>
+</td>	<td><p><b>ECC</b></p>
+</td>	<td><p><b>INC</b></p>
+</td>	<td><p><b>RAAN</b></p>
+</td>	<td><p><b>AOP</b></p>
+</td>	<td><p><b>TA</b></p>
+</td></tr>
+<tr>	<td><p><b>SV-1</b></p>
+</td>	<td><p>11315.936501</p>
+</td>	<td><p>0.691982</p>
+</td>	<td><p>59.373229</p>
+</td>	<td><p>321.019197</p>
+</td>	<td><p>92.494031</p>
+</td>	<td><p>0.000000</p>
+</td></tr>
+<tr>	<td><p><b>SV-2</b></p>
+</td>	<td><p>11317.948675</p>
+</td>	<td><p>0.691982</p>
+</td>	<td><p>58.951732</p>
+</td>	<td><p>320.997768</p>
+</td>	<td><p>92.505016</p>
+</td>	<td><p>180.000000</p>
+</td></tr>
+<tr>	<td><p><b>SV-3</b></p>
+</td>	<td><p>11305.413654</p>
+</td>	<td><p>0.691982</p>
+</td>	<td><p>52.733096</p>
+</td>	<td><p>81.148790</p>
+</td>	<td><p>92.062891</p>
+</td>	<td><p>140.049207</p>
+</td></tr>
+<tr>	<td><p><b>SV-4</b></p>
+</td>	<td><p>11326.302154</p>
+</td>	<td><p>0.691982</p>
+</td>	<td><p>52.513419</p>
+</td>	<td><p>81.138818</p>
+</td>	<td><p>92.068945</p>
+</td>	<td><p>195.992393</p>
+</td></tr>
+<tr>	<td><p><b>SV-5</b></p>
+</td>	<td><p>11307.882863</p>
+</td>	<td><p>0.691982</p>
+</td>	<td><p>56.310396</p>
+</td>	<td><p>204.889626</p>
+</td>	<td><p>85.444071</p>
+</td>	<td><p>164.007607</p>
+</td></tr>
+</tbody></table>
+<p></p>
+<p></p>
+<p><b><i>Table 2</i></b><i>: LCRNS Reference Constellation Initial States in Cartesian Elements in the Moon-centered International Celestial Reference Frame (ICRF).</i></p>
+<table><tbody><tr>	<td><p></p>
+</td>	<td><p><b>X</b></p>
+</td>	<td><p><b>Y</b></p>
+</td>	<td><p><b>Z</b></p>
+</td>	<td><p><b>Vx</b></p>
+</td>	<td><p><b>Vy</b></p>
+</td>	<td><p><b>Vz</b></p>
+</td></tr>
+<tr>	<td><p><b>SV-1</b></p>
+</td>	<td><p>-198.931445</p>
+</td>	<td><p>386.023132</p>
+</td>	<td><p>3458.355412</p>
+</td>	<td><p>-1.539867</p>
+</td>	<td><p>0.022243</p>
+</td>	<td><p>-0.091059</p>
+</td></tr>
+<tr>	<td><p><b>SV-2</b></p>
+</td>	<td><p>1089.980598</p>
+</td>	<td><p>-2260.918271</p>
+</td>	<td><p>-18984.562823</p>
+</td>	<td><p>0.280301</p>
+</td>	<td><p>-0.004049</p>
+</td>	<td><p>0.016575</p>
+</td></tr>
+<tr>	<td><p><b>SV-3</b></p>
+</td>	<td><p>9187.665852</p>
+</td>	<td><p>-260.470721</p>
+</td>	<td><p>-8543.222759</p>
+</td>	<td><p>0.273629</p>
+</td>	<td><p>0.417588</p>
+</td>	<td><p>-0.313828</p>
+</td></tr>
+<tr>	<td><p><b>SV-4</b></p>
+</td>	<td><p>6484.019002</p>
+</td>	<td><p>14329.883921</p>
+</td>	<td><p>-7966.345594</p>
+</td>	<td><p>-0.258433</p>
+</td>	<td><p>0.033951</p>
+</td>	<td><p>0.235264</p>
+</td></tr>
+<tr>	<td><p><b>SV-5</b></p>
+</td>	<td><p>-5074.242314</p>
+</td>	<td><p>14473.022751</p>
+</td>	<td><p>-8638.530033</p>
+</td>	<td><p>-0.229931</p>
+</td>	<td><p>-0.026926</p>
+</td>	<td><p>-0.264381</p>
+</td></tr>
+</tbody></table>
+<p></p>
+<h3>Dynamical Model for Propagation</h3>
+<p class="body_Text">In order to realize the long-term stability of these reference orbits, a dynamical model must be used that is consistent with the model used to generate these states.  Table 3 provides the recommended dynamical model settings for propagation of these orbit states.   The gravity field used for the Moon is the Grail Gravity Model (GRGM-900c).  The Solar Flux used based on a constant output from the Sun of 1367 W/m^2 at 1 AU distance, and scaled based on the spacecraft distance from the Sun. </p>
+<p class="body_Text"></p>
+<p class="body_Text"><b><i>Table 3</i></b><i>: Recommended Dynamical Model for State Propagation</i></p>
+<table><tbody><tr>	<td><p class="body_Text">Planetary Reference</p>
+</td>	<td><p class="body_Text">DE 421</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Gravity Field</p>
+</td>	<td><p class="body_Text">GRGM-900c, 25x25 (Deg/Ord)</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Solid Tides</p>
+</td>	<td><p class="body_Text">Off</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Point Masses</p>
+</td>	<td><p class="body_Text">Sun, Venus, Earth, Mars, Jupiter, Saturn</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Atmospheric Drag</p>
+</td>	<td><p class="body_Text">Off</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Solar Radiation Pressure</p>
+</td>	<td><p class="body_Text">Spherical</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Solar Flux</p>
+</td>	<td><p class="body_Text">Constant, 1367 W/m^2 @ 1 AU</p>
+</td></tr>
+<tr>	<td><p class="body_Text">Cr</p>
+</td>	<td><p class="body_Text">1.8</p>
+</td></tr>
+<tr>	<td><p class="body_Text">SV Mass</p>
+</td>	<td><p class="body_Text">850 kg</p>
+</td></tr>
+<tr>	<td><p class="body_Text">SV Area</p>
+</td>	<td><p class="body_Text">1 m^2</p>
+</td></tr>
+</tbody></table>
+<p class="body_Text"></p>
+<p class="body_Text"></p>
+<p class="body_Text"></p>
+<p class="body_Text"></p>
+<h2>References</h2>
+<p class="body_Text"></p>
+<table><tbody><tr>	<td><p class="bibliography">[1] </p>
+</td>	<td><p class="bibliography">NASA Exploration &amp; Space Communications, "Lunar Communications Relay and Navigation Systems (LCRNS)," [Online]. Available: https://esc.gsfc.nasa.gov/projects/LCRNS. [Accessed Feb. 2025].</p>
+</td></tr>
+<tr>	<td><p class="bibliography">[2] </p>
+</td>	<td><p class="bibliography">NASA, "NASA Selects Lunar Relay Contractor for Near Space Network Services," 17 September 2024. [Online]. Available: https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services/.</p>
+</td></tr>
+<tr>	<td><p class="bibliography">[3] </p>
+</td>	<td><p class="bibliography">D. Folta and D. Quinn, "Lunar Frozen Orbits," in <i>AIAA/AAS Astrodynamics Specalist Conference &amp; Exhibit</i>, Keystone, CO, 2006. </p>
+</td></tr>
+</tbody></table>
+<p></p>
+<p class="body_Text"></p>
+<p>2</p>
+<p class="footer"></p>
+<div class="package-entry"><h1>image1.png</h1>
+</div>
+</body></html>

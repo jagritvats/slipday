@@ -1,0 +1,116 @@
+[
+ {
+  "id": "question",
+  "text": "Rocket launches often slip by a few days. Near the Moon's south pole, that can decide everything. Slipday asks: if the launch slips, can we still land here?",
+  "text_hash": "e895c8731df1c114",
+  "dur": 10.124
+ },
+ {
+  "id": "card",
+  "text": "The answer is yes, not sure, or no. Here: yes, with eight days of slip margin, checked at thirteen touchdown points around the target.",
+  "text_hash": "bca9ba290865a431",
+  "dur": 8.638
+ },
+ {
+  "id": "objective",
+  "text": "This line is the challenge's goal: where the Sun and the Earth stand against the real horizon at touchdown, in numbers, with their paths drawn below.",
+  "text_hash": "0416a04682fd99b2",
+  "dur": 9.149
+ },
+ {
+  "id": "slipped",
+  "text": "Type how many days the launch slipped. Nine days: no. The Earth sinks behind distant ground, so radio contact falls short.",
+  "text_hash": "5e328da85b3284e1",
+  "dur": 8.684
+ },
+ {
+  "id": "windows",
+  "text": "Missed the window? December still works. Other sites can work in January, though most are fragile. And one click downloads the whole answer.",
+  "text_hash": "39f7b4f0229a25f7",
+  "dur": 9.52
+ },
+ {
+  "id": "view3d",
+  "text": "Here is the real ground in 3-D, from NASA's laser measurements. The low Sun drags long shadows across it.",
+  "text_hash": "333d8d21f56d1d03",
+  "dur": 7.012
+ },
+ {
+  "id": "custom",
+  "text": "You can type your own spot right on the card. Here the answer is no: the Earth is hidden when it lands.",
+  "text_hash": "0946ae61fe81375d",
+  "dur": 6.362
+ },
+ {
+  "id": "map",
+  "text": "The map shows how many days of slip each spot survives. Red crosses mark where NASA's finer twenty-metre terrain disagrees.",
+  "text_hash": "54082ad8dbe6df27",
+  "dur": 8.591
+ },
+ {
+  "id": "grids",
+  "text": "Detail matters. At the Shackleton ridge, the eighty-metre map says yes. The twenty and five-metre maps say not sure.",
+  "text_hash": "69abf61a4991c999",
+  "dur": 7.895
+ },
+ {
+  "id": "slope",
+  "text": "Is the ground flat enough? Here, only just: the steepest spot sits right at NASA's goal for its crewed lander.",
+  "text_hash": "066a893b82edc206",
+  "dur": 7.384
+ },
+ {
+  "id": "touchdown",
+  "text": "A lander does not come down exactly on target, so this gives the chance the ground under it is flat enough, for three kinds of lander.",
+  "text_hash": "a99b356055a0386a",
+  "dur": 7.802
+ },
+ {
+  "id": "im1",
+  "text": "A real test: the IM-1 lander. The app says yes for the February window it flew, and for the January one it missed.",
+  "text_hash": "3ce9e85ce785916e",
+  "dur": 7.895
+ },
+ {
+  "id": "regions",
+  "text": "NASA keeps nine Artemis regions, because one is not enough. The best one is open at twenty-eight point one percent of landing times.",
+  "text_hash": "5d66f434efa28538",
+  "dur": 8.916
+ },
+ {
+  "id": "atlas",
+  "text": "The atlas runs that check for nine years. The weak season comes a little earlier every year.",
+  "text_hash": "c13e3b17b9cbd728",
+  "dur": 6.037
+ },
+ {
+  "id": "relay",
+  "text": "When the Earth is hidden, a relay satellite circling the Moon could pass messages on. The main answer still counts the Earth alone.",
+  "text_hash": "3b45d776d99b883b",
+  "dur": 8.127
+ },
+ {
+  "id": "listen",
+  "text": "You can also listen to the landing window: a high tone for the Sun, a low one for the Earth, quiet when the ground hides them.",
+  "text_hash": "e953470c287edceb",
+  "dur": 7.663
+ },
+ {
+  "id": "game",
+  "text": "And a short game for students: the launch slips, you pick a site, and the app shows the real answer.",
+  "text_hash": "a53a65f1f2e3a3cd",
+  "dur": 6.548
+ },
+ {
+  "id": "limits",
+  "text": "What it can't tell you: the eighty-metre terrain is coarse and can be too hopeful. The needs are examples, and fragile answers can flip.",
+  "text_hash": "f29d2d8b77d4c283",
+  "dur": 9.52
+ },
+ {
+  "id": "closing",
+  "text": "Slipday. Know your margin before the date moves.",
+  "text_hash": "ba02ea8af561acdb",
+  "dur": 3.344
+ }
+]

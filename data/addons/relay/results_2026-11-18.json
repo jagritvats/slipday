@@ -1,0 +1,462 @@
+{
+ "what": "relay add-on results, landing 18 Nov 2026 00:00 UTC, 14-day window, 80 m LOLA terrain stack, written by the add-on code itself",
+ "terrain": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+ "label": "a representative relay orbit from NASA's LCRNS Reference Constellation 3.1 (March 2025), not a live service",
+ "source": "https://ntrs.nasa.gov/citations/20250002698",
+ "sites": {
+  "robust_pick": {
+   "name": "Slip-robust ridge point (89.010 S, 122.764 E)",
+   "lat": -89.0098,
+   "lon": 122.76389,
+   "horizon": "terrain (LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km), 2 m above ground",
+   "two_stations_on": {
+    "hours": {
+     "earth": 311,
+     "relay": 336,
+     "either": 336,
+     "earth_only": 0,
+     "relay_only": 25,
+     "both": 311,
+     "none": 0
+    },
+    "code": "333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333332222222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 11,
+    "earth_ends_because": [
+     "only 95 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [
+     "only 229 sunlit hours of the 240 needed"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 11,
+      "middle": 11.0,
+      "highest": 11
+     }
+    }
+   },
+   "one_stations_on": {
+    "hours": {
+     "earth": 311,
+     "relay": 292,
+     "either": 333,
+     "earth_only": 41,
+     "relay_only": 22,
+     "both": 270,
+     "none": 3
+    },
+    "code": "333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333310002222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 11,
+    "earth_ends_because": [
+     "only 95 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [
+     "only 229 sunlit hours of the 240 needed"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 277,
+      "middle": 287.0,
+      "highest": 292
+     },
+     "either_h": {
+      "lowest": 331,
+      "middle": 332.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 11,
+      "middle": 11.0,
+      "highest": 11
+     }
+    }
+   },
+   "two_stations_off": {
+    "hours": {
+     "earth": 311,
+     "relay": 336,
+     "either": 336,
+     "earth_only": 0,
+     "relay_only": 25,
+     "both": 311,
+     "none": 0
+    },
+    "code": "333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333332222222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 11,
+    "earth_ends_because": [
+     "only 95 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [
+     "only 229 sunlit hours of the 240 needed"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 11,
+      "middle": 11.0,
+      "highest": 11
+     }
+    }
+   },
+   "one_stations_off": {
+    "hours": {
+     "earth": 311,
+     "relay": 292,
+     "either": 333,
+     "earth_only": 41,
+     "relay_only": 22,
+     "both": 270,
+     "none": 3
+    },
+    "code": "333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333310002222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 11,
+    "earth_ends_because": [
+     "only 95 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [
+     "only 229 sunlit hours of the 240 needed"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 277,
+      "middle": 287.0,
+      "highest": 292
+     },
+     "either_h": {
+      "lowest": 331,
+      "middle": 332.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 11,
+      "middle": 11.0,
+      "highest": 11
+     }
+    }
+   }
+  },
+  "shackleton": {
+   "name": "Shackleton connecting ridge (C1)",
+   "lat": -89.4398,
+   "lon": -137.17,
+   "horizon": "terrain (LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km), 2 m above ground",
+   "two_stations_on": {
+    "hours": {
+     "earth": 295,
+     "relay": 336,
+     "either": 336,
+     "earth_only": 0,
+     "relay_only": 41,
+     "both": 295,
+     "none": 0
+    },
+    "code": "333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222222222222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 59,
+    "earth_ends_because": [
+     "only 79 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [],
+    "spread": {
+     "relay_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 59,
+      "middle": 59.0,
+      "highest": 59
+     }
+    }
+   },
+   "one_stations_on": {
+    "hours": {
+     "earth": 295,
+     "relay": 292,
+     "either": 332,
+     "earth_only": 40,
+     "relay_only": 37,
+     "both": 255,
+     "none": 4
+    },
+    "code": "333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333322222222222222200002222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 12,
+    "earth_ends_because": [
+     "only 79 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [
+     "no contact by Earth or relay at touchdown"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 285,
+      "middle": 291.0,
+      "highest": 292
+     },
+     "either_h": {
+      "lowest": 326,
+      "middle": 331.0,
+      "highest": 332
+     },
+     "margin_either_days": {
+      "lowest": 12,
+      "middle": 15.0,
+      "highest": 59
+     }
+    }
+   },
+   "two_stations_off": {
+    "hours": {
+     "earth": 295,
+     "relay": 336,
+     "either": 336,
+     "earth_only": 0,
+     "relay_only": 41,
+     "both": 295,
+     "none": 0
+    },
+    "code": "333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222222222222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 59,
+    "earth_ends_because": [
+     "only 79 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [],
+    "spread": {
+     "relay_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 59,
+      "middle": 59.0,
+      "highest": 59
+     }
+    }
+   },
+   "one_stations_off": {
+    "hours": {
+     "earth": 295,
+     "relay": 292,
+     "either": 332,
+     "earth_only": 40,
+     "relay_only": 37,
+     "both": 255,
+     "none": 4
+    },
+    "code": "333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333322222222222222200002222222222222222222222",
+    "margin_earth_days": 8,
+    "margin_either_days": 12,
+    "earth_ends_because": [
+     "only 79 hours of Earth contact of the 100 needed"
+    ],
+    "either_ends_because": [
+     "no contact by Earth or relay at touchdown"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 285,
+      "middle": 291.0,
+      "highest": 292
+     },
+     "either_h": {
+      "lowest": 326,
+      "middle": 331.0,
+      "highest": 332
+     },
+     "margin_either_days": {
+      "lowest": 12,
+      "middle": 15.0,
+      "highest": 59
+     }
+    }
+   }
+  },
+  "nr101": {
+   "name": "Nobile Rim 1, site NR101",
+   "lat": -85.295,
+   "lon": 36.9168,
+   "horizon": "terrain (LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km), 2 m above ground",
+   "two_stations_on": {
+    "hours": {
+     "earth": 336,
+     "relay": 336,
+     "either": 336,
+     "earth_only": 0,
+     "relay_only": 0,
+     "both": 336,
+     "none": 0
+    },
+    "code": "333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+    "margin_earth_days": 14,
+    "margin_either_days": 59,
+    "earth_ends_because": [
+     "no Earth contact at touchdown"
+    ],
+    "either_ends_because": [],
+    "spread": {
+     "relay_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 59,
+      "middle": 59.0,
+      "highest": 59
+     }
+    }
+   },
+   "one_stations_on": {
+    "hours": {
+     "earth": 336,
+     "relay": 292,
+     "either": 336,
+     "earth_only": 44,
+     "relay_only": 0,
+     "both": 292,
+     "none": 0
+    },
+    "code": "333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333",
+    "margin_earth_days": 14,
+    "margin_either_days": 17,
+    "earth_ends_because": [
+     "no Earth contact at touchdown"
+    ],
+    "either_ends_because": [
+     "no contact by Earth or relay at touchdown"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 284,
+      "middle": 291.0,
+      "highest": 292
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 14,
+      "middle": 17.0,
+      "highest": 59
+     }
+    }
+   },
+   "two_stations_off": {
+    "hours": {
+     "earth": 336,
+     "relay": 336,
+     "either": 336,
+     "earth_only": 0,
+     "relay_only": 0,
+     "both": 336,
+     "none": 0
+    },
+    "code": "333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+    "margin_earth_days": 14,
+    "margin_either_days": 59,
+    "earth_ends_because": [
+     "no Earth contact at touchdown"
+    ],
+    "either_ends_because": [],
+    "spread": {
+     "relay_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 59,
+      "middle": 59.0,
+      "highest": 59
+     }
+    }
+   },
+   "one_stations_off": {
+    "hours": {
+     "earth": 336,
+     "relay": 292,
+     "either": 336,
+     "earth_only": 44,
+     "relay_only": 0,
+     "both": 292,
+     "none": 0
+    },
+    "code": "333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333333311113333333333333333333333",
+    "margin_earth_days": 14,
+    "margin_either_days": 17,
+    "earth_ends_because": [
+     "no Earth contact at touchdown"
+    ],
+    "either_ends_because": [
+     "no contact by Earth or relay at touchdown"
+    ],
+    "spread": {
+     "relay_h": {
+      "lowest": 284,
+      "middle": 291.0,
+      "highest": 292
+     },
+     "either_h": {
+      "lowest": 336,
+      "middle": 336.0,
+      "highest": 336
+     },
+     "margin_either_days": {
+      "lowest": 14,
+      "middle": 17.0,
+      "highest": 59
+     }
+    }
+   }
+  }
+ }
+}

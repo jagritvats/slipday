@@ -1,0 +1,19 @@
+{
+ "n": 120,
+ "half_km": 30.0,
+ "step_m": 500.0,
+ "mast_m": 2.0,
+ "n_az": 720,
+ "el_scale_deg": 0.002,
+ "max_km": 300.0,
+ "dem_label": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+ "dem_name": "ldem_80s_80m+ldem_75s_240m+ldem_64_south+ldem_16",
+ "dem_fingerprint": "76de51d5e9+35bc39a609+cdb14f87ee+feb25e8376",
+ "resolution_m": 80.0,
+ "provenance": "LDEM_80S_80MPP_ADJ.TIF, LOLA south-pole 80 m mosaic, NASA GSFC PGDA product 90 (Barker et al. 2023); values unchanged, re-saved as .npy; source sha256 82030dcbdd7c4bb0; LDEM_75S_240M.JP2, PDS LRO-L-LOLA-4-GDR-V1.0 south-polar DEM to 75S; JPEG2000 decoded, values unchanged (int16 half-metres), re-saved as .npy; source sha256 a0ebbad0a2650c74; 60S-90S crop (rows 9600 to 11519, no resampling) of NASA SVS CGI Moon Kit ldem_64_uint.tif (LOLA, svs.gsfc.nasa.gov/4720); sha256 of the crop 2b5a02c566b30c3a, of the source file 0f40bce8b42864de; LDEM_16.IMG, PDS LRO-L-LOLA-4-GDR-V1.0 product LDEM_16; sha256 a511e40d7a3ea327",
+ "projection": "south polar stereographic, true scale at the pole, R = 1737.4 km; row 0 is +y (longitude 0)",
+ "built_utc": "2026-11-14T09:51:59Z",
+ "seconds": 812.0,
+ "points": 14400,
+ "points_without_terrain": 0
+}

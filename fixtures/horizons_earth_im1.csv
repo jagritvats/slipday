@@ -1,0 +1,46 @@
+# Source: JPL Horizons API (observer table, QUANTITIES=4: airless apparent azimuth/elevation of target centre)
+# URL: https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=399&OBJ_DATA=NO&CENTER='coord@301'&SITE_COORD='1.44,-80.13,0'&START_TIME='2024-02-16'&STOP_TIME='2024-03-04'&STEP_SIZE='12h'&QUANTITIES=4&CSV_FORMAT=YES
+# Target: Earth (399)   Observer: lunar surface, E-lon 1.44 deg, lat -80.13 deg, alt 0 km (Horizons "coord@301", geodetic)
+# Retrieved: 2026-11-14 via the WebFetch tool. The sandbox shell cannot reach ssd.jpl.nasa.gov, so the
+# response was relayed by WebFetch's page-reading model, which was asked to copy every data row exactly.
+# This is therefore NOT a byte-exact raw response: header/footer text was dropped and only the rows
+# between $$SOE and $$EOE are kept. Times are UTC. Azimuth is clockwise from north.
+# Refresh byte-exact with: python scripts/fetch_horizons_fixtures.py (needs internet access to ssd.jpl.nasa.gov)
+# Verified 2026-11-14 on a machine with direct access to ssd.jpl.nasa.gov: all 35 rows equal the table downloaded directly with
+# scripts/fetch_horizons_fixtures.py (raw response in fixtures/raw/horizons_earth_im1.txt).
+# columns: utc, azimuth_deg, elevation_deg
+2024-Feb-16 00:00, 5.477561, 13.107677
+2024-Feb-16 12:00, 5.636346, 13.751402
+2024-Feb-17 00:00, 5.706077, 14.331143
+2024-Feb-17 12:00, 5.691911, 14.841851
+2024-Feb-18 00:00, 5.599435, 15.279621
+2024-Feb-18 12:00, 5.434404, 15.641575
+2024-Feb-19 00:00, 5.202537, 15.925756
+2024-Feb-19 12:00, 4.909361, 16.131041
+2024-Feb-20 00:00, 4.560110, 16.257074
+2024-Feb-20 12:00, 4.159663, 16.304215
+2024-Feb-21 00:00, 3.712526, 16.273502
+2024-Feb-21 12:00, 3.222857, 16.166616
+2024-Feb-22 00:00, 2.694507, 15.985857
+2024-Feb-22 12:00, 2.131092, 15.734121
+2024-Feb-23 00:00, 1.536086, 15.414864
+2024-Feb-23 12:00, 0.912917, 15.032074
+2024-Feb-24 00:00, 0.265072, 14.590235
+2024-Feb-24 12:00, 359.596199, 14.094276
+2024-Feb-25 00:00, 358.910209, 13.549533
+2024-Feb-25 12:00, 358.211362, 12.961693
+2024-Feb-26 00:00, 357.504342, 12.336750
+2024-Feb-26 12:00, 356.794322, 11.680958
+2024-Feb-27 00:00, 356.087002, 11.000791
+2024-Feb-27 12:00, 355.388642, 10.302914
+2024-Feb-28 00:00, 354.706067, 9.594159
+2024-Feb-28 12:00, 354.046653, 8.881514
+2024-Feb-29 00:00, 353.418300, 8.172124
+2024-Feb-29 12:00, 352.829374, 7.473296
+2024-Mar-01 00:00, 352.288631, 6.792513
+2024-Mar-01 12:00, 351.805111, 6.137452
+2024-Mar-02 00:00, 351.387998, 5.515995
+2024-Mar-02 12:00, 351.046459, 4.936232
+2024-Mar-03 00:00, 350.789426, 4.406449
+2024-Mar-03 12:00, 350.625355, 3.935078
+2024-Mar-04 00:00, 350.561932, 3.530624

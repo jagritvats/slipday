@@ -1,0 +1,885 @@
+{
+ "made_utc": "2026-11-14T18:01:39Z",
+ "fine_grid": "LOLA, 20 m/px; beyond its edge 80 m, 240 m, 474 m, 1.90 km",
+ "used_grid": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+ "source": "LDEM_80S_20MPP_ADJ.TIF, LOLA south-pole 20 m mosaic, NASA GSFC PGDA product 90 (Barker et al. 2023): the 71.7 km square around the pole, fetched by range request (scripts/fetch_ldem20_crop.py); the 80 m grid and coarser ones beyond it",
+ "what": "The same example worked out with the app's own functions on a terrain stack whose finest grid is the 20 m crop. The page itself stays on the 80 m grid: the slip-margin map, the stored validation and the tests were made on it.",
+ "entries": [
+  {
+   "site_id": "shackleton",
+   "lat": -89.4398,
+   "lon": -137.17,
+   "landing_utc": "2026-11-18T00:00:00Z",
+   "need_sun_h": 240.0,
+   "need_earth_h": 100.0,
+   "window_days": 14.0,
+   "scatter_m": 100.0,
+   "text": "On NASA's 20 m LOLA grid (off-line check) this example reads Not sure on the planned date: 11 of 13 touchdown points pass; slips of 1 to 7 days pass at all 13. On the 80 m grid used here: Yes, 13 of 13, 7 days of margin.",
+   "fine": {
+    "points": 13,
+    "points_passing_by_day": [
+     11,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     8,
+     10,
+     12,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     7,
+     10,
+     10,
+     10,
+     10,
+     9,
+     10
+    ],
+    "grid_under_site": "LOLA, 20 m/px; beyond its edge 80 m, 240 m, 474 m, 1.90 km",
+    "site_height_m": 1958.7,
+    "skyline_deg": [
+     -2.739,
+     -0.552
+    ],
+    "verdict": "not sure",
+    "slip_margin_days": -1,
+    "sure": "How sure: 11 of 13 points within 100 m of the target pass; the coarser grid (LOLA, 80 m/px) says yes; finer near-field sampling says yes.",
+    "points_passing_by_day_0_to_9": [
+     11,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     10,
+     0
+    ],
+    "sunlit_h_and_earth_h_as_planned": [
+     336,
+     295
+    ],
+    "clear_yes_dates_of_60": 13,
+    "not_sure_dates_of_60": 13,
+    "clear_yes_dates_of_365": 35,
+    "not_sure_dates_of_365": 79,
+    "what_ends_the_margin": "The planned date (landing 18 Nov) is not a clear yes: 100 m north-west of the target the Earth is behind the skyline at touchdown and stays hidden for 11 h. The Earth comes out from behind ground 0.1 km away towards azimuth 131 deg (south-east), at 89.440 S, 137.152 W (3 m above the site).",
+    "landing_circles_planned_pct": {
+     "within 100 m": [
+      88.3,
+      [
+       75.8,
+       100.0
+      ]
+     ],
+     "within 250 m": [
+      49.4,
+      [
+       37.6,
+       62.1
+      ]
+     ],
+     "within 500 m": [
+      21.7,
+      [
+       14.3,
+       31.2
+      ]
+     ],
+     "within 1 km": [
+      10.4,
+      [
+       5.5,
+       16.3
+      ]
+     ]
+    },
+    "lander_classes_planned_pct": {
+     "precision lander": [
+      90.6,
+      [
+       74.6,
+       100.0
+      ]
+     ],
+     "CLPS-class lander": [
+      28.1,
+      [
+       20.8,
+       36.0
+      ]
+     ],
+     "unguided lander": [
+      13.9,
+      [
+       9.1,
+       20.0
+      ]
+     ]
+    },
+    "any_sun_pct_365_days": {
+     "at_the_point": 92.36,
+     "range_within_100_m": [
+      64.24,
+      92.36
+     ]
+    },
+    "longest_darkness_h": {
+     "at_the_point": 110.0,
+     "range_within_100_m": [
+      193.0,
+      564.0
+     ]
+    },
+    "seconds": 0.8
+   },
+   "used": {
+    "points": 13,
+    "points_passing_by_day": [
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     8,
+     12,
+     12,
+     12,
+     13,
+     13,
+     13
+    ],
+    "grid_under_site": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+    "site_height_m": 1957.6,
+    "skyline_deg": [
+     -2.596,
+     -0.687
+    ],
+    "verdict": "yes",
+    "slip_margin_days": 7,
+    "sure": "How sure: 13 of 13 points within 100 m of the target pass; the coarser grid (LOLA, 240 m/px) says yes; finer near-field sampling says yes.",
+    "points_passing_by_day_0_to_9": [
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     12,
+     0
+    ],
+    "sunlit_h_and_earth_h_as_planned": [
+     336,
+     295
+    ],
+    "clear_yes_dates_of_60": 20,
+    "not_sure_dates_of_60": 6,
+    "clear_yes_dates_of_365": 62,
+    "not_sure_dates_of_365": 54,
+    "what_ends_the_margin": "A slip of 8 days (landing 26 Nov) is no longer a clear yes: 100 m north-west of the target the Earth is hidden for 239 of the 336 hours (from 30 Nov 01:00 UTC), leaving 97 hours of Earth contact of the 100 needed. The Earth goes behind the crest it stands on: ground 80 m away (one cell of the elevation grid) towards azimuth 144 deg (south-east).",
+    "landing_circles_planned_pct": {
+     "within 100 m": [
+      100.0,
+      [
+       100.0,
+       100.0
+      ]
+     ],
+     "within 250 m": [
+      62.1,
+      [
+       54.2,
+       70.0
+      ]
+     ],
+     "within 500 m": [
+      26.9,
+      [
+       19.4,
+       36.3
+      ]
+     ],
+     "within 1 km": [
+      12.9,
+      [
+       7.3,
+       19.4
+      ]
+     ]
+    },
+    "lander_classes_planned_pct": {
+     "precision lander": [
+      100.0,
+      [
+       100.0,
+       100.0
+      ]
+     ],
+     "CLPS-class lander": [
+      34.8,
+      [
+       28.6,
+       42.6
+      ]
+     ],
+     "unguided lander": [
+      17.1,
+      [
+       11.6,
+       23.5
+      ]
+     ]
+    },
+    "any_sun_pct_365_days": {
+     "at_the_point": 92.51,
+     "range_within_100_m": [
+      74.0,
+      92.95
+     ]
+    },
+    "longest_darkness_h": {
+     "at_the_point": 194.0,
+     "range_within_100_m": [
+      145.0,
+      509.0
+     ]
+    },
+    "seconds": 0.9
+   }
+  },
+  {
+   "site_id": "ridge_c2",
+   "lat": -89.313,
+   "lon": -114.02,
+   "landing_utc": "2026-11-18T00:00:00Z",
+   "need_sun_h": 240.0,
+   "need_earth_h": 100.0,
+   "window_days": 14.0,
+   "scatter_m": 100.0,
+   "text": "On NASA's 20 m LOLA grid (off-line check) this example reads Not sure on the planned date: 6 of 13 touchdown points pass. On the 80 m grid used here: Not sure, 9 of 13.",
+   "fine": {
+    "points": 13,
+    "points_passing_by_day": [
+     6,
+     7,
+     9,
+     9,
+     9,
+     9,
+     8,
+     8,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     4,
+     5,
+     6,
+     6,
+     8,
+     8,
+     7,
+     8,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     4,
+     4,
+     0,
+     0,
+     0,
+     4,
+     5
+    ],
+    "grid_under_site": "LOLA, 20 m/px; beyond its edge 80 m, 240 m, 474 m, 1.90 km",
+    "site_height_m": 1692.7,
+    "skyline_deg": [
+     -3.196,
+     1.647
+    ],
+    "verdict": "not sure",
+    "slip_margin_days": -1,
+    "sure": "How sure: 6 of 13 points within 100 m of the target pass; the coarser grid (LOLA, 80 m/px) says yes; finer near-field sampling says yes.",
+    "points_passing_by_day_0_to_9": [
+     6,
+     7,
+     9,
+     9,
+     9,
+     9,
+     8,
+     8,
+     7,
+     0
+    ],
+    "sunlit_h_and_earth_h_as_planned": [
+     336,
+     294
+    ],
+    "clear_yes_dates_of_60": 0,
+    "not_sure_dates_of_60": 21,
+    "clear_yes_dates_of_365": 0,
+    "not_sure_dates_of_365": 84,
+    "what_ends_the_margin": "The planned date (landing 18 Nov) is not a clear yes: 100 m north-west of the target the Sun is behind the skyline at touchdown and stays hidden for 336 h. The Sun comes out from behind the crest it stands on: ground 40 m away (two cells of the elevation grid) towards azimuth 23 deg (north-north-east).",
+    "landing_circles_planned_pct": {
+     "within 100 m": [
+      48.4,
+      [
+       31.2,
+       66.4
+      ]
+     ],
+     "within 250 m": [
+      36.6,
+      [
+       22.7,
+       51.5
+      ]
+     ],
+     "within 500 m": [
+      27.1,
+      [
+       17.2,
+       38.8
+      ]
+     ],
+     "within 1 km": [
+      15.3,
+      [
+       8.7,
+       22.9
+      ]
+     ]
+    },
+    "lander_classes_planned_pct": {
+     "precision lander": [
+      69.1,
+      [
+       51.3,
+       86.9
+      ]
+     ],
+     "CLPS-class lander": [
+      29.0,
+      [
+       19.9,
+       39.4
+      ]
+     ],
+     "unguided lander": [
+      17.1,
+      [
+       10.9,
+       24.5
+      ]
+     ]
+    },
+    "any_sun_pct_365_days": {
+     "at_the_point": 82.81,
+     "range_within_100_m": [
+      4.27,
+      82.81
+     ]
+    },
+    "longest_darkness_h": {
+     "at_the_point": 163.0,
+     "range_within_100_m": [
+      164.0,
+      5617.0
+     ]
+    },
+    "seconds": 0.9
+   },
+   "used": {
+    "points": 13,
+    "points_passing_by_day": [
+     9,
+     11,
+     12,
+     12,
+     12,
+     12,
+     11,
+     11,
+     9,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     8,
+     10,
+     10,
+     11,
+     12,
+     12,
+     12,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     5,
+     0,
+     0,
+     0,
+     5,
+     7
+    ],
+    "grid_under_site": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+    "site_height_m": 1689.0,
+    "skyline_deg": [
+     -2.538,
+     1.665
+    ],
+    "verdict": "not sure",
+    "slip_margin_days": -1,
+    "sure": "How sure: 9 of 13 points within 100 m of the target pass; the coarser grid (LOLA, 240 m/px) says yes; finer near-field sampling says yes.",
+    "points_passing_by_day_0_to_9": [
+     9,
+     11,
+     12,
+     12,
+     12,
+     12,
+     11,
+     11,
+     9,
+     0
+    ],
+    "sunlit_h_and_earth_h_as_planned": [
+     336,
+     294
+    ],
+    "clear_yes_dates_of_60": 0,
+    "not_sure_dates_of_60": 21,
+    "clear_yes_dates_of_365": 0,
+    "not_sure_dates_of_365": 84,
+    "what_ends_the_margin": "The planned date (landing 18 Nov) is not a clear yes: 100 m north-west of the target the Sun is hidden for 97 of the 336 hours (from 18 Nov 18:00 UTC), leaving 239 sunlit hours of the 240 needed. The Sun goes behind the crest it stands on: ground 80 m away (one cell of the elevation grid) towards azimuth 183 deg (south).",
+    "landing_circles_planned_pct": {
+     "within 100 m": [
+      78.1,
+      [
+       67.2,
+       89.1
+      ]
+     ],
+     "within 250 m": [
+      51.5,
+      [
+       34.8,
+       66.5
+      ]
+     ],
+     "within 500 m": [
+      32.0,
+      [
+       21.7,
+       42.7
+      ]
+     ],
+     "within 1 km": [
+      20.3,
+      [
+       11.9,
+       28.7
+      ]
+     ]
+    },
+    "lander_classes_planned_pct": {
+     "precision lander": [
+      96.2,
+      [
+       94.4,
+       98.1
+      ]
+     ],
+     "CLPS-class lander": [
+      36.8,
+      [
+       26.5,
+       46.7
+      ]
+     ],
+     "unguided lander": [
+      21.9,
+      [
+       14.6,
+       29.7
+      ]
+     ]
+    },
+    "any_sun_pct_365_days": {
+     "at_the_point": 82.02,
+     "range_within_100_m": [
+      37.29,
+      82.72
+     ]
+    },
+    "longest_darkness_h": {
+     "at_the_point": 227.0,
+     "range_within_100_m": [
+      164.0,
+      556.0
+     ]
+    },
+    "seconds": 0.8
+   }
+  }
+ ],
+ "opening_example": {
+  "rule": "LOCAL_PASS_2_RESULTS.md section H.1",
+  "made_utc": "2026-11-14T18:25:26Z",
+  "landing_utc": "2026-11-18T00:00:00Z",
+  "need_sun_h": 240.0,
+  "need_earth_h": 100.0,
+  "window_days": 14.0,
+  "scatter_m": 100.0,
+  "candidates": 18,
+  "tried": [
+   {
+    "rank": 1,
+    "map_index": 11150,
+    "lat": -89.0098,
+    "lon": 122.76389,
+    "surviving_margin_days": 8,
+    "single_point_margin_days": 8,
+    "good_dates_single_point": 16,
+    "tiles_needed_r0_r1_c0_c1": [
+     30,
+     32,
+     31,
+     33
+    ],
+    "tiles_on_disk": true,
+    "card_80m": {
+     "grid": "LOLA, 80 m/px",
+     "verdict": "yes",
+     "slip_margin_days": 8,
+     "points": 13,
+     "points_passing_by_day": [
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "coarse_passes": true,
+     "near_passes": true,
+     "sure": "How sure: 13 of 13 points within 100 m of the target pass; the coarser grid (LOLA, 240 m/px) says yes; finer near-field sampling says yes.",
+     "sunlit_h": 314,
+     "earth_h": 311,
+     "clear_yes_dates_of_60": 16,
+     "not_sure_dates_of_60": 0,
+     "next_good_dates": [
+      "2026-12-17T00:00:00Z",
+      "2026-12-18T00:00:00Z",
+      "2026-12-19T00:00:00Z"
+     ],
+     "site_height_m": 1173.7,
+     "what_ends_the_margin": "A slip of 9 days (landing 27 Nov) fails: at the target itself the Earth is hidden for 241 of the 336 hours (from 30 Nov 23:00 UTC), leaving 95 hours of Earth contact of the 100 needed. The Earth goes behind ground 131.59 km away towards azimuth 244 deg (west-south-west), at 85.996 S, 19.485 E (488 m above the site).",
+     "ended_by": null
+    },
+    "card_20m": {
+     "grid": "LOLA, 20 m/px",
+     "verdict": "yes",
+     "slip_margin_days": 8,
+     "points": 13,
+     "points_passing_by_day": [
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "coarse_passes": true,
+     "near_passes": true,
+     "sure": "How sure: 13 of 13 points within 100 m of the target pass; the coarser grid (LOLA, 80 m/px) says yes; finer near-field sampling says yes.",
+     "sunlit_h": 308,
+     "earth_h": 311,
+     "clear_yes_dates_of_60": 15,
+     "not_sure_dates_of_60": 1,
+     "next_good_dates": [
+      "2026-12-18T00:00:00Z",
+      "2026-12-19T00:00:00Z",
+      "2026-12-20T00:00:00Z"
+     ],
+     "site_height_m": 1173.9,
+     "what_ends_the_margin": "A slip of 9 days (landing 27 Nov) fails: at the target itself the Earth is hidden for 241 of the 336 hours (from 30 Nov 23:00 UTC), leaving 95 hours of Earth contact of the 100 needed. The Earth goes behind ground 131.63 km away towards azimuth 244 deg (west-south-west), at 85.995 S, 19.481 E (489 m above the site).",
+     "ended_by": null
+    },
+    "passes": true,
+    "seconds": 5.3
+   }
+  ],
+  "chosen": {
+   "rank": 1,
+   "map_index": 11150,
+   "lat": -89.0098,
+   "lon": 122.76389
+  }
+ }
+}

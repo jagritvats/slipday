@@ -1,0 +1,46 @@
+# Source: JPL Horizons API (observer table, QUANTITIES=4: airless apparent azimuth/elevation of target centre)
+# URL: https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=10&OBJ_DATA=NO&CENTER='coord@301'&SITE_COORD='61.81,18.56,0'&START_TIME='2025-03-01'&STOP_TIME='2025-03-18'&STEP_SIZE='12h'&QUANTITIES=4&CSV_FORMAT=YES
+# Target: Sun (10)   Observer: lunar surface, E-lon 61.81 deg, lat 18.56 deg, alt 0 km (Horizons "coord@301", geodetic)
+# Retrieved: 2026-11-14 via the WebFetch tool. The sandbox shell cannot reach ssd.jpl.nasa.gov, so the
+# response was relayed by WebFetch's page-reading model, which was asked to copy every data row exactly.
+# This is therefore NOT a byte-exact raw response: header/footer text was dropped and only the rows
+# between $$SOE and $$EOE are kept. Times are UTC. Azimuth is clockwise from north.
+# Refresh byte-exact with: python scripts/fetch_horizons_fixtures.py (needs internet access to ssd.jpl.nasa.gov)
+# Verified 2026-11-14 on a machine with direct access to ssd.jpl.nasa.gov: all 35 rows equal the table downloaded directly with
+# scripts/fetch_horizons_fixtures.py (raw response in fixtures/raw/horizons_sun_blueghost1.txt).
+# columns: utc, azimuth_deg, elevation_deg
+2025-Mar-01 00:00, 86.331592, -12.276986
+2025-Mar-01 12:00, 88.306236, -6.494323
+2025-Mar-02 00:00, 90.240634, -0.706336
+2025-Mar-02 12:00, 92.174807, 5.080145
+2025-Mar-03 00:00, 94.148579, 10.858294
+2025-Mar-03 12:00, 96.204723, 16.620750
+2025-Mar-04 00:00, 98.392564, 22.358972
+2025-Mar-04 12:00, 100.772638, 28.062394
+2025-Mar-05 00:00, 103.423296, 33.717183
+2025-Mar-05 12:00, 106.450627, 39.304292
+2025-Mar-06 00:00, 110.003955, 44.796268
+2025-Mar-06 12:00, 114.300467, 50.151785
+2025-Mar-07 00:00, 119.663847, 55.305968
+2025-Mar-07 12:00, 126.579678, 60.153060
+2025-Mar-08 00:00, 135.749201, 64.516332
+2025-Mar-08 12:00, 148.030732, 68.104159
+2025-Mar-09 00:00, 163.931787, 70.484142
+2025-Mar-09 12:00, 182.407083, 71.192612
+2025-Mar-10 00:00, 200.480435, 70.051686
+2025-Mar-10 12:00, 215.522544, 67.340258
+2025-Mar-11 00:00, 226.979414, 63.538147
+2025-Mar-11 12:00, 235.531691, 59.046156
+2025-Mar-12 00:00, 242.021136, 54.124043
+2025-Mar-12 12:00, 247.094596, 48.927790
+2025-Mar-13 00:00, 251.192882, 43.551044
+2025-Mar-13 12:00, 254.609573, 38.051685
+2025-Mar-14 00:00, 257.542647, 32.466899
+2025-Mar-14 12:00, 260.129272, 26.821585
+2025-Mar-15 00:00, 262.467824, 21.133157
+2025-Mar-15 12:00, 264.631773, 15.414363
+2025-Mar-16 00:00, 266.678643, 9.675028
+2025-Mar-16 12:00, 268.656052, 3.923188
+2025-Mar-17 00:00, 270.606056, -1.834116
+2025-Mar-17 12:00, 272.568596, -7.590216
+2025-Mar-18 00:00, 274.584616, -13.338263

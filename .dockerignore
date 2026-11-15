@@ -1,0 +1,15 @@
+.venv/
+node_modules/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+*.tmp.npz
+# official downloads kept for the reviewer (1.2 GB); the app reads data/dem/, not these
+data/reference/
+fixtures/raw/
+screenshots/
+data/dem20/
+
+# deploy assets are not part of the image
+deploy/
+.github/

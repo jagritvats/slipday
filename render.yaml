@@ -1,0 +1,22 @@
+# Render blueprint.  Written and not run: nothing here has been tried on Render.
+# The build step fetches NASA's 80 m grid (189 MB download). It stays a build step, not a file in the
+# repository, because the array it makes (231 MB) is over GitHub's file limit; scripts/fetch_grid80.py
+# refuses the download unless its sha256 is 82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a
+# (the build then fails rather than serving another grid). Without the grid the app runs on 240 m and the
+# headline example reads "Yes, 7 days" only for a landing within 240 m instead of "Yes, 8 days" within 100 m.
+# Memory: take 1 GB or more. The present code peaked at a working set of 579 MiB on Windows under load
+# (LOCAL_PASS_2_RESULTS.md, P3.7); the 512 MB container figure of the first pass belongs to older code and
+# no container figure exists for this code (scripts/container_check.sh is written and has not been run).
+# If the build cannot fetch or convert the grid, remove the second command and the service runs on 240 m.
+services:
+  - type: web
+    name: slipday
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python scripts/fetch_grid80.py
+    startCommand: uvicorn slipday.api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: MALLOC_ARENA_MAX
+        value: "2"
+      - key: PYTHON_VERSION
+        value: "3.12.7"

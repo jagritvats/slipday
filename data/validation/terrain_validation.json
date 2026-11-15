@@ -1,0 +1,3076 @@
+{
+ "generated_utc": "2026-11-14T18:22:38Z",
+ "dems": [
+  {
+   "name": "ldem_80s_80m",
+   "source": "LOLA",
+   "resolution_m": 80.0,
+   "synthetic": false,
+   "label": "LOLA, 80 m/px",
+   "provenance": "LDEM_80S_80MPP_ADJ.TIF, LOLA south-pole 80 m mosaic, NASA GSFC PGDA product 90 (Barker et al. 2023); values unchanged, re-saved as .npy; source sha256 82030dcbdd7c4bb0",
+   "product": "LDEM_80S_80MPP_ADJ",
+   "kind": "PolarStereoDEM",
+   "shape": [
+    7600,
+    7600
+   ]
+  },
+  {
+   "name": "ldem_75s_240m",
+   "source": "LOLA",
+   "resolution_m": 240.0,
+   "synthetic": false,
+   "label": "LOLA, 240 m/px",
+   "provenance": "LDEM_75S_240M.JP2, PDS LRO-L-LOLA-4-GDR-V1.0 south-polar DEM to 75S; JPEG2000 decoded, values unchanged (int16 half-metres), re-saved as .npy; source sha256 a0ebbad0a2650c74",
+   "product": "LDEM_75S_240M (PDS GDR)",
+   "kind": "PolarStereoDEM",
+   "shape": [
+    3812,
+    3812
+   ]
+  },
+  {
+   "name": "ldem_64_south",
+   "source": "LOLA",
+   "resolution_m": 473.80235037733564,
+   "synthetic": false,
+   "label": "LOLA, 474 m/px",
+   "provenance": "60S-90S crop (rows 9600 to 11519, no resampling) of NASA SVS CGI Moon Kit ldem_64_uint.tif (LOLA, svs.gsfc.nasa.gov/4720); sha256 of the crop 2b5a02c566b30c3a, of the source file 0f40bce8b42864de",
+   "product": "SVS CGI Moon Kit ldem_64_uint",
+   "kind": "EquirectDEM",
+   "shape": [
+    1920,
+    23040
+   ]
+  },
+  {
+   "name": "ldem_16",
+   "source": "LOLA",
+   "resolution_m": 1895.2094015093426,
+   "synthetic": false,
+   "label": "LOLA, 1.90 km/px",
+   "provenance": "LDEM_16.IMG, PDS LRO-L-LOLA-4-GDR-V1.0 product LDEM_16; sha256 a511e40d7a3ea327",
+   "product": "LDEM_16 (PDS GDR V3.1)",
+   "kind": "EquirectDEM",
+   "shape": [
+    2880,
+    5760
+   ]
+  }
+ ],
+ "settings": {
+  "cycle_start": "2016-08-01T00:00:00Z",
+  "cycle_days": 6793.7,
+  "cycle_step_hours": 3,
+  "azimuths": 720,
+  "max_ray_km": 300,
+  "quick": false
+ },
+ "tables": [
+  {
+   "title": "Terrain model against the LOLA team's published average-sunlight maps (real data)",
+   "note": "200 seeded random points per map. Published: share of time any part of the solar disc is visible from the surface (PDS LOLA GDR maps AVGVISIB_85S_060M_201608 and AVGVISIB_75S_120M_201608, LOLA team, method of Mazarico et al. 2011), read at the nearest map pixel. Computed: the same quantity from this app's ray-cast skyline, observer at 0 m, one 18.6-year cycle from 2016-08-01 in 3-hour steps. Differences are in percentage points. 'DEM used here' is the grid under the point (80 m: PGDA LDEM_80S_80MPP_ADJ; 240 m: PDS LDEM_75S_240M; 474 m: SVS ldem_64; 1.9 km: PDS LDEM_16), with coarser grids beyond its edge. The published maps were computed on the LOLA team's own 60 m and 120 m grids, so part of the difference is the DEM, not the method.",
+   "columns": [
+    "Published map",
+    "DEM used here",
+    "Points",
+    "Published mean %",
+    "Computed mean %",
+    "Mean difference",
+    "Mean |difference|",
+    "95th pct |difference|",
+    "Correlation",
+    "Same call on permanent shadow %"
+   ],
+   "rows": [
+    [
+     "60 m map, 85 S to the pole",
+     "80 m",
+     200,
+     20.01,
+     20.39,
+     0.39,
+     0.8,
+     3.76,
+     0.9916,
+     98.5
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "240 m",
+     200,
+     20.01,
+     21.18,
+     1.17,
+     1.37,
+     6.08,
+     0.9786,
+     97.5
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "474 m",
+     200,
+     20.01,
+     22.26,
+     2.26,
+     2.42,
+     11.16,
+     0.9564,
+     95.0
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "1.9 km",
+     200,
+     20.01,
+     26.14,
+     6.13,
+     6.19,
+     23.93,
+     0.8616,
+     92.5
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "smooth sphere",
+     200,
+     20.01,
+     53.2,
+     33.2,
+     33.2,
+     55.17,
+     -0.3928,
+     84.5
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "80 m",
+     200,
+     30.14,
+     29.68,
+     -0.45,
+     0.76,
+     2.97,
+     0.9949,
+     99.5
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "240 m",
+     200,
+     30.14,
+     30.68,
+     0.54,
+     0.86,
+     3.73,
+     0.9931,
+     99.5
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "474 m",
+     200,
+     30.14,
+     32.14,
+     2.0,
+     2.26,
+     8.0,
+     0.9436,
+     98.5
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "1.9 km",
+     200,
+     30.14,
+     36.13,
+     6.0,
+     6.08,
+     25.37,
+     0.8322,
+     98.5
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "smooth sphere",
+     200,
+     30.14,
+     51.06,
+     20.92,
+     20.92,
+     49.02,
+     -0.0943,
+     97.5
+    ]
+   ]
+  },
+  {
+   "title": "Published ridge-top results at the stated coordinates and heights (real data, 80 m DEM here against 20 m DEMs there)",
+   "note": "Each cell: average illumination % / solar visibility % (any part of the disc) / longest shadow. Computed with the 80 m LOLA mosaic from 2017-01-01 for 20 years in 1-hour steps, the period of Glaser et al. 2018. The published figures are each paper's best pixel on a 20 m DEM; an 80 m grid cannot place an observer on a crest a few tens of metres wide, so single points differ by several points either way. 'Best nearby' is the best-lit point on a 5 x 5 neighbourhood of 80 m steps around the published coordinates. Published values were read through a web-fetch tool (not byte-exact). Read the C1 rows with the two tables that follow: the 2 m match sits at the top of the range found within 100 m of the point, and the 0 m rows rest on the near-field sampling convention.",
+   "columns": [
+    "Point",
+    "Lat, east lon",
+    "Height",
+    "Published",
+    "Computed at the point",
+    "Difference (avg / visibility, pts)",
+    "Computed, best nearby",
+    "Source"
+   ],
+   "rows": [
+    [
+     "Connecting ridge C1",
+     "-89.4505, 222.84",
+     "0 m",
+     "76.0 / 81.3 / 268 h",
+     "75.5 / 81.2 / 266 h",
+     "-0.5 / -0.1",
+     "75.5 / 81.2 / 266 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Connecting ridge C2",
+     "-89.3157, 245.94",
+     "0 m",
+     "75.6 / 80.6 / 166 h",
+     "70.1 / 77.6 / 176 h",
+     "-5.5 / -3.0",
+     "70.1 / 77.6 / 176 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Shackleton rim S",
+     "-89.7849, 203.97",
+     "0 m",
+     "81.0 / 85.5 / 221 h",
+     "56.3 / 60.1 / 389 h",
+     "-24.7 / -25.4",
+     "75.7 / 80.9 / 266 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Connecting ridge C1",
+     "-89.4398, 222.83",
+     "2 m",
+     "88.0 / 92.1 / 112 h",
+     "88.0 / 92.1 / 198 h",
+     "+0.0 / -0.0",
+     "88.0 / 92.1 / 198 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Connecting ridge C2",
+     "-89.3130, 245.98",
+     "2 m",
+     "78.1 / 82.0 / 165 h",
+     "77.3 / 81.2 / 230 h",
+     "-0.8 / -0.8",
+     "77.9 / 81.9 / 166 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Shackleton rim S",
+     "-89.6866, 197.19",
+     "2 m",
+     "85.5 / 89.4 / 66 h",
+     "84.4 / 88.7 / 67 h",
+     "-1.1 / -0.7",
+     "84.4 / 88.7 / 67 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Shackleton rim S, second point",
+     "-89.7815, 204.70",
+     "2 m",
+     "82.1 / 89.8 / 65 h",
+     "72.2 / 78.3 / 363 h",
+     "-9.9 / -11.5",
+     "84.8 / 90.4 / 64 h",
+     "Glaser et al. 2018 PSS 162 (20 m LOLA DTM"
+    ],
+    [
+     "Connecting ridge CR1 spot 2",
+     "-89.4399, 222.85",
+     "2 m",
+     "87.9 / 92.3 / 111 h",
+     "87.9 / 92.2 / 199 h",
+     "+0.0 / -0.1",
+     "87.9 / 92.2 / 199 h",
+     "Glaser et al. 2014 EPSC2014-136 (20 m LOLA DTM"
+    ],
+    [
+     "Connecting ridge CR1 spot 4",
+     "-89.4544, 222.84",
+     "10 m",
+     "91.9 / 95.7 / 76 h",
+     "91.8 / 95.7 / 73 h",
+     "-0.1 / +0.0",
+     "91.8 / 95.7 / 73 h",
+     "Glaser et al. 2014 EPSC2014-136 (20 m LOLA DTM"
+    ]
+   ]
+  },
+  {
+   "title": "Earth visibility: the one published per-site table found (Bryant 2009) could not be co-located, so it tests nothing",
+   "collapsed": true,
+   "note": "Shown so the gap is visible. Each cell: share of time with at least 0 % / 50 % / 100 % of the disc above the skyline, observer 2 m above ground. Published: Bryant 2009, JPL IPN PR 42-176, Goldstone radar DEM at 40 m, 2009-2028, daily steps. Computed here: LOLA 80 m mosaic, one 18.6-year cycle in 3-hour steps. Bryant's sites are illumination maxima on a radar DEM in a different frame. At the stated coordinates the LOLA terrain is off the crest (Sun 14 to 40 % against a published 77 to 95 %), and the best-lit point within 1.2 km on the LOLA grid (160 m search steps, chosen on sunlight only) still does not reach the published sunlight, so these are not the same places and the Earth columns cannot be compared. The Earth side is checked against the LOLA team's own Earth-visibility maps instead, where they are installed: see the Earth tile above and its table below. Also tested: the skyline (against the sunlight maps above, in every direction) and the direction of the Earth (against JPL Horizons). Published values were read through a web-fetch tool (not byte-exact).",
+   "columns": [
+    "Site (Bryant 2009)",
+    "Stated lat, east lon",
+    "Published Earth",
+    "Computed Earth at stated point",
+    "Computed Earth at best-lit point nearby",
+    "Earth difference at 50 % (pts), not meaningful",
+    "Published Sun",
+    "Computed Sun at stated point",
+    "Computed Sun at best-lit point nearby",
+    "Distance moved"
+   ],
+   "rows": [
+    [
+     "A1 Shackleton rim",
+     "-89.633, -160.388",
+     "62.2 / 55.3 / 48.4",
+     "0.0 / 0.0 / 0.0",
+     "20.8 / 10.4 / 0.0",
+     "-44.9",
+     "93.5 / 90.4 / 86.3",
+     "15.7 / 14.4 / 12.9",
+     "59.0 / 55.7 / 52.5",
+     "1131 m"
+    ],
+    [
+     "A2 Shackleton rim",
+     "-89.723, -153.925",
+     "63.9 / 57.0 / 50.1",
+     "34.9 / 29.2 / 21.7",
+     "39.8 / 35.0 / 29.6",
+     "-22.0",
+     "93.0 / 89.5 / 84.8",
+     "25.7 / 23.1 / 20.7",
+     "72.2 / 67.4 / 61.8",
+     "816 m"
+    ],
+    [
+     "B1 connecting ridge",
+     "-89.388, -137.810",
+     "65.2 / 58.2 / 51.3",
+     "0.0 / 0.0 / 0.0",
+     "28.6 / 22.2 / 13.4",
+     "-36.0",
+     "97.0 / 94.8 / 91.7",
+     "31.5 / 30.4 / 29.2",
+     "66.2 / 64.4 / 62.8",
+     "716 m"
+    ],
+    [
+     "C1 de Gerlache rim",
+     "-88.657, -70.688",
+     "71.0 / 64.0 / 57.1",
+     "0.0 / 0.0 / 0.0",
+     "3.6 / 0.0 / 0.0",
+     "-64.0",
+     "90.0 / 87.0 / 83.1",
+     "41.2 / 39.5 / 37.5",
+     "48.6 / 47.1 / 45.7",
+     "1165 m"
+    ],
+    [
+     "F peak near Shackleton",
+     "-88.813, 126.601",
+     "67.3 / 60.4 / 53.5",
+     "0.0 / 0.0 / 0.0",
+     "49.5 / 44.9 / 40.2",
+     "-15.5",
+     "89.3 / 86.0 / 81.8",
+     "42.0 / 40.3 / 38.8",
+     "68.5 / 65.1 / 61.6",
+     "1131 m"
+    ],
+    [
+     "Malapert alpha",
+     "-86.037, 1.704",
+     "100.0 / 100.0 / 94.7",
+     "35.9 / 30.7 / 24.7",
+     "55.8 / 51.2 / 46.7",
+     "-48.8",
+     "82.1 / 78.4 / 74.5",
+     "42.0 / 39.1 / 35.9",
+     "69.3 / 63.5 / 57.6",
+     "1073 m"
+    ],
+    [
+     "Leibnitz beta (Mons Mouton)",
+     "-84.722, 39.470",
+     "100.0 / 100.0 / 100.0",
+     "40.7 / 35.8 / 30.6",
+     "74.8 / 68.9 / 63.7",
+     "-31.1",
+     "79.1 / 77.4 / 75.8",
+     "30.1 / 28.2 / 26.4",
+     "75.4 / 73.5 / 71.6",
+     "1012 m"
+    ]
+   ]
+  },
+  {
+   "collapsed": true,
+   "title": "How the answer changes with DEM resolution: calendar year 2027, observer 2 m above ground",
+   "note": "Each site computed four times from real LOLA grids of different resolution, then on the smooth sphere. Hourly samples. 'Sunlit' uses the half-disc rule; darkness means no part of the Sun visible.",
+   "columns": [
+    "Site",
+    "DEM at the site",
+    "Any Sun visible %",
+    "Sunlit % (half disc)",
+    "Longest darkness (d)",
+    "Longest light (d)",
+    "Earth in view %",
+    "Longest Earth outage (d)"
+   ],
+   "rows": [
+    [
+     "Shackleton connecting ridge (C1)",
+     "80 m",
+     92.51,
+     88.49,
+     8.1,
+     169.0,
+     51.11,
+     13.3
+    ],
+    [
+     "",
+     "240 m",
+     89.19,
+     85.42,
+     9.0,
+     168.5,
+     51.1,
+     13.3
+    ],
+    [
+     "",
+     "474 m",
+     89.34,
+     86.84,
+     7.1,
+     139.6,
+     51.11,
+     13.3
+    ],
+    [
+     "",
+     "1.9 km",
+     95.34,
+     92.63,
+     3.3,
+     192.0,
+     51.18,
+     13.3
+    ],
+    [
+     "",
+     "smooth sphere",
+     57.12,
+     51.97,
+     137.3,
+     139.3,
+     45.18,
+     15.0
+    ],
+    [
+     "Shackleton rim (S)",
+     "80 m",
+     88.88,
+     85.01,
+     2.8,
+     117.7,
+     45.92,
+     14.7
+    ],
+    [
+     "",
+     "240 m",
+     89.11,
+     85.37,
+     2.8,
+     117.6,
+     45.3,
+     14.8
+    ],
+    [
+     "",
+     "474 m",
+     85.7,
+     81.66,
+     3.6,
+     117.4,
+     43.14,
+     15.4
+    ],
+    [
+     "",
+     "1.9 km",
+     79.37,
+     75.15,
+     4.1,
+     28.1,
+     36.63,
+     17.2
+    ],
+    [
+     "",
+     "smooth sphere",
+     56.14,
+     53.53,
+     160.1,
+     160.0,
+     45.65,
+     14.9
+    ],
+    [
+     "Connecting ridge (C2)",
+     "80 m",
+     81.97,
+     78.25,
+     9.5,
+     28.3,
+     52.83,
+     13.1
+    ],
+    [
+     "",
+     "240 m",
+     82.67,
+     78.88,
+     6.8,
+     28.3,
+     52.81,
+     13.1
+    ],
+    [
+     "",
+     "474 m",
+     82.21,
+     77.82,
+     6.8,
+     28.3,
+     52.83,
+     13.1
+    ],
+    [
+     "",
+     "1.9 km",
+     81.82,
+     78.49,
+     7.0,
+     28.0,
+     52.84,
+     13.1
+    ],
+    [
+     "",
+     "smooth sphere",
+     57.37,
+     52.4,
+     113.0,
+     139.2,
+     45.8,
+     14.9
+    ],
+    [
+     "Malapert massif summit",
+     "80 m",
+     67.87,
+     64.97,
+     13.7,
+     25.8,
+     80.13,
+     5.8
+    ],
+    [
+     "",
+     "240 m",
+     69.7,
+     64.47,
+     14.5,
+     111.7,
+     76.24,
+     6.8
+    ],
+    [
+     "",
+     "474 m",
+     73.97,
+     70.1,
+     14.4,
+     28.0,
+     72.26,
+     7.9
+    ],
+    [
+     "",
+     "1.9 km",
+     80.07,
+     77.12,
+     10.9,
+     28.3,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "smooth sphere",
+     50.95,
+     48.76,
+     17.7,
+     19.0,
+     67.65,
+     9.1
+    ],
+    [
+     "Malapert massif, Earth-facing shoulder",
+     "80 m",
+     57.99,
+     56.44,
+     14.2,
+     19.6,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "240 m",
+     55.76,
+     54.22,
+     14.8,
+     18.8,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "474 m",
+     59.71,
+     58.25,
+     13.5,
+     19.8,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "1.9 km",
+     75.59,
+     73.3,
+     10.8,
+     26.2,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "smooth sphere",
+     50.96,
+     48.76,
+     17.8,
+     19.0,
+     67.75,
+     9.1
+    ],
+    [
+     "IM-2 Athena (Mons Mouton)",
+     "80 m",
+     45.55,
+     43.77,
+     17.1,
+     15.8,
+     80.43,
+     5.8
+    ],
+    [
+     "",
+     "240 m",
+     45.7,
+     43.92,
+     17.1,
+     15.8,
+     80.5,
+     5.7
+    ],
+    [
+     "",
+     "474 m",
+     46.88,
+     44.93,
+     16.8,
+     16.1,
+     81.03,
+     5.6
+    ],
+    [
+     "",
+     "1.9 km",
+     47.58,
+     45.75,
+     18.0,
+     16.9,
+     81.97,
+     5.4
+    ],
+    [
+     "",
+     "smooth sphere",
+     50.23,
+     48.62,
+     17.0,
+     18.0,
+     71.92,
+     8.0
+    ],
+    [
+     "Mons Mouton (VIPER area)",
+     "80 m",
+     32.08,
+     29.43,
+     22.9,
+     12.4,
+     56.15,
+     12.2
+    ],
+    [
+     "",
+     "240 m",
+     32.57,
+     29.81,
+     22.6,
+     12.5,
+     56.45,
+     12.1
+    ],
+    [
+     "",
+     "474 m",
+     32.83,
+     30.23,
+     22.2,
+     12.0,
+     56.77,
+     12.0
+    ],
+    [
+     "",
+     "1.9 km",
+     39.49,
+     37.79,
+     20.0,
+     14.3,
+     60.17,
+     11.1
+    ],
+    [
+     "",
+     "smooth sphere",
+     50.18,
+     48.63,
+     16.9,
+     17.9,
+     72.57,
+     7.8
+    ],
+    [
+     "IM-1 Odysseus (Malapert A)",
+     "80 m",
+     38.72,
+     38.07,
+     18.8,
+     12.9,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "240 m",
+     38.6,
+     37.93,
+     18.8,
+     12.8,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "474 m",
+     40.81,
+     40.18,
+     18.2,
+     13.5,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "1.9 km",
+     45.17,
+     44.49,
+     17.0,
+     14.9,
+     100.0,
+     0.0
+    ],
+    [
+     "",
+     "smooth sphere",
+     49.49,
+     48.63,
+     15.9,
+     16.5,
+     100.0,
+     0.0
+    ],
+    [
+     "Haworth (crater centre)",
+     "80 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "240 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "474 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "1.9 km",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.4,
+     206.5
+    ],
+    [
+     "",
+     "smooth sphere",
+     52.77,
+     49.03,
+     19.6,
+     21.8,
+     59.58,
+     11.2
+    ],
+    [
+     "Nobile (crater centre)",
+     "80 m",
+     35.46,
+     34.45,
+     21.2,
+     12.1,
+     20.76,
+     21.7
+    ],
+    [
+     "",
+     "240 m",
+     35.51,
+     34.52,
+     21.1,
+     12.2,
+     20.87,
+     21.6
+    ],
+    [
+     "",
+     "474 m",
+     35.65,
+     34.54,
+     21.1,
+     12.2,
+     21.07,
+     21.6
+    ],
+    [
+     "",
+     "1.9 km",
+     36.2,
+     35.02,
+     21.0,
+     12.3,
+     22.44,
+     21.2
+    ],
+    [
+     "",
+     "smooth sphere",
+     50.88,
+     49.01,
+     17.2,
+     18.4,
+     61.87,
+     10.6
+    ],
+    [
+     "de Gerlache (crater centre)",
+     "80 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "240 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "474 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "1.9 km",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "smooth sphere",
+     59.78,
+     51.03,
+     23.9,
+     85.5,
+     47.35,
+     14.5
+    ],
+    [
+     "Shackleton crater floor (always dark)",
+     "80 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "240 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "474 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "1.9 km",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     0.0,
+     365.0
+    ],
+    [
+     "",
+     "smooth sphere",
+     56.02,
+     54.58,
+     160.5,
+     156.0,
+     46.1,
+     14.8
+    ],
+    [
+     "LCROSS impact, Cabeus (always dark)",
+     "80 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     15.08,
+     23.9
+    ],
+    [
+     "",
+     "240 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     15.15,
+     23.8
+    ],
+    [
+     "",
+     "474 m",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     15.37,
+     23.8
+    ],
+    [
+     "",
+     "1.9 km",
+     0.0,
+     0.0,
+     365.0,
+     0.0,
+     16.77,
+     23.1
+    ],
+    [
+     "",
+     "smooth sphere",
+     51.39,
+     49.78,
+     17.0,
+     17.9,
+     63.82,
+     10.1
+    ]
+   ]
+  },
+  {
+   "id": "more-a",
+   "title": "Well-lit ridge pixels: where the average agreement does not hold (real data)",
+   "note": "The 60 m LOLA map rates 1612 pixels (0.0063 % of the map) above 60 % sunlit. A seeded sample of 60 of them (seed 20261115) was computed exactly as in the table above (0 m, any part of the disc, one 18.6-year cycle in 3-hour steps). Selecting on a high published value pulls the computed mean down by itself, so part of the negative mean difference is selection; the scatter is real. This row is the first random draw; the next table repeats it on other seeds.",
+   "columns": [
+    "Pixels sampled",
+    "Published mean %",
+    "Computed mean %",
+    "Mean difference",
+    "Mean |difference|",
+    "95th pct |difference|",
+    "Within 5 points %",
+    "Correlation"
+   ],
+   "rows": [
+    [
+     60,
+     63.95,
+     61.17,
+     -2.78,
+     4.02,
+     10.05,
+     68.3,
+     0.6085
+    ]
+   ]
+  },
+  {
+   "id": "more-s",
+   "collapsed": true,
+   "title": "Well-lit ridge pixels on 10 seeds: a range, not one draw (real data)",
+   "note": "The ridge-pixel check repeated with other random draws of 60 pixels from the same 1612 pixels the 60 m Sun map rates above 60 %. Seeds: the seed of checks a and f (20261115) and the next 9 integers after it, a rule fixed before those runs were made. Sun columns: any part of the solar disc, against the 60 m Sun map. Earth columns: the same pixels against the 60 m Earth map, with the map's rule (any part of the disc) and with the mission card's rule (the Earth's centre). Differences are in percentage points, model minus map. A single pixel that is far off moves a 60-pixel mean and its correlation a good deal: read the Sun figure on ridges as this range.",
+   "columns": [
+    "Seed",
+    "Pixels",
+    "Sun: mean |difference|",
+    "Sun: mean difference",
+    "Sun: correlation",
+    "Sun: within 5 points %",
+    "Sun: largest |difference|",
+    "Earth, any part: mean |difference|",
+    "Earth, any part: correlation",
+    "Earth's centre (the card's rule): mean difference"
+   ],
+   "rows": [
+    [
+     20261115,
+     60,
+     4.02,
+     -2.78,
+     0.6085,
+     68.3,
+     18.1,
+     1.57,
+     0.9707,
+     -5.18
+    ],
+    [
+     20261116,
+     60,
+     4.42,
+     -3.28,
+     0.7468,
+     68.3,
+     18.1,
+     1.84,
+     0.9266,
+     -5.38
+    ],
+    [
+     20261117,
+     60,
+     4.25,
+     -2.97,
+     0.6126,
+     70.0,
+     18.1,
+     1.44,
+     0.9822,
+     -5.3
+    ],
+    [
+     20261118,
+     60,
+     5.04,
+     -3.2,
+     0.4087,
+     63.3,
+     25.92,
+     1.68,
+     0.949,
+     -5.59
+    ],
+    [
+     20261119,
+     60,
+     3.99,
+     -2.39,
+     0.643,
+     71.7,
+     19.77,
+     1.62,
+     0.9693,
+     -5.69
+    ],
+    [
+     20261120,
+     60,
+     4.26,
+     -2.71,
+     0.5727,
+     68.3,
+     23.09,
+     1.3,
+     0.9743,
+     -5.18
+    ],
+    [
+     20261121,
+     60,
+     4.25,
+     -2.52,
+     0.7333,
+     68.3,
+     18.1,
+     1.4,
+     0.9767,
+     -5.36
+    ],
+    [
+     20261122,
+     60,
+     5.25,
+     -3.29,
+     0.4756,
+     58.3,
+     25.7,
+     1.74,
+     0.9665,
+     -5.46
+    ],
+    [
+     20261123,
+     60,
+     3.77,
+     -1.67,
+     0.7274,
+     70.0,
+     14.72,
+     1.58,
+     0.9793,
+     -5.29
+    ],
+    [
+     20261124,
+     60,
+     4.77,
+     -3.41,
+     0.4619,
+     65.0,
+     18.74,
+     1.98,
+     0.9806,
+     -5.89
+    ]
+   ]
+  },
+  {
+   "id": "more-b",
+   "title": "How firm is the match at the connecting ridge (C1, 2 m)? Not very (real data)",
+   "note": "The same computation as the ridge-top table (2017-01-01, 20 years, hourly), repeated with the point moved, the observer raised or lowered, and the nearest ground sampled more finely. Each cell is the range over the variants. The agreement at the stated point is real but sits at the top of this range.",
+   "columns": [
+    "Variant",
+    "Average illumination %",
+    "Any Sun visible %",
+    "Longest darkness (h)"
+   ],
+   "rows": [
+    [
+     "as published (20 m DEM)",
+     "88.0",
+     "92.1",
+     "112"
+    ],
+    [
+     "this build, at the stated point, 2 m, first sample 80 m",
+     "88.0",
+     "92.1",
+     "198"
+    ],
+    [
+     "first ray sample at 20 m",
+     "86.9",
+     "91.5",
+     "209"
+    ],
+    [
+     "first ray sample at 40 m",
+     "87.2",
+     "91.7",
+     "198"
+    ],
+    [
+     "observer at 1.5 m",
+     "86.0",
+     "90.8",
+     "227"
+    ],
+    [
+     "observer at 2.5 m",
+     "89.3",
+     "93.3",
+     "137"
+    ],
+    [
+     "observer at 3 m",
+     "90.2",
+     "93.7",
+     "108"
+    ],
+    [
+     "13-point landing scatter, 100 m",
+     "67.8 to 86.4",
+     "72.5 to 92.5",
+     "147 to 509"
+    ],
+    [
+     "moved 20 m (8 directions)",
+     "86.4 to 88.3",
+     "91.0 to 93.0",
+     "118 to 221"
+    ],
+    [
+     "moved 40 m (8 directions)",
+     "83.7 to 88.2",
+     "88.3 to 92.7",
+     "145 to 292"
+    ]
+   ]
+  },
+  {
+   "id": "more-c",
+   "collapsed": true,
+   "title": "Ground-level (0 m) crest values depend on how the nearest ground is sampled (real data)",
+   "note": "Average illumination at two published 0 m points against the distance of the first ray sample. The app uses one grid spacing (80 m), the node-to-node convention of the LOLA team's maps: a grid holds no information about nearer ground, and sampling the interpolated surface closer measures the interpolation. The agreement of the 0 m rows in the ridge-top table rests on that convention. The page offers 2 m and 10 m only.",
+   "columns": [
+    "Point",
+    "Published %",
+    "First sample 80 m (app)",
+    "40 m",
+    "20 m",
+    "10 m"
+   ],
+   "rows": [
+    [
+     "Connecting ridge C1, 0 m",
+     76.0,
+     75.51,
+     67.13,
+     50.02,
+     42.7
+    ],
+    [
+     "Connecting ridge C2, 0 m",
+     75.6,
+     70.07,
+     60.54,
+     44.92,
+     44.28
+    ]
+   ]
+  },
+  {
+   "id": "more-d",
+   "collapsed": true,
+   "title": "What sets the longest darkness at C1 (198 h here, 112 h published): ground a few hundred metres away",
+   "note": "During the longest computed dark run the Sun's upper limb stays just under a skyline set by nearby terrain, which an 80 m grid resolves poorly. Longest darkness on a ridge site is therefore indicative only.",
+   "columns": [
+    "Run",
+    "Length (h)",
+    "Median distance of the blocking terrain (km)",
+    "10th to 90th percentile (km)",
+    "Share of hours blocked from under 1 km",
+    "Sun's upper limb below the skyline, median (deg)",
+    "Ten longest dark runs (h)"
+   ],
+   "rows": [
+    [
+     "2030-03-09 to 2030-03-18",
+     198,
+     0.4,
+     "0.24 to 0.4",
+     "90.9 %",
+     0.35,
+     "198, 197, 197, 197, 197, 196, 196, 196, 196, 195"
+    ]
+   ]
+  },
+  {
+   "id": "more-e",
+   "title": "Earth visibility against the LOLA team's Earth maps (real data)",
+   "note": "Same 400 seeded points as the Sun check, observer at 0 m, one 18.6-year cycle in 3-hour steps. The map's own definition, from its label: This data product is a map of the average illumination by the Earth disc of the Lunar South Pole at a resolution of 60 m/pix by 60 m/pix, true at the pole in polar stereographic (spherical) projection. The calculations are based on the LOLA elevation map LDEM_85S_060M and are described in [MAZARICOETAL2011]. The values are continuous between 0 (permanent shadow) and 1, and indicate the percentage of timesteps where each pixel was sunlit (by any fraction of the Earth disc). Note a scaling was applied to fit the data in the INT16 value range. This label describes an IMG file in the form of a binary resampling with pixel registration. The label names no observer height and no time span; the maps are computed from the 60 m and 120 m LOLA grids, this build from the 80 m mosaic. Four rules are computed here so the definition can be seen to matter: only the row marked as the map's rule is the check. The mission card counts Earth contact by the Earth's centre, a stricter rule than the map's, so it reports fewer hours than this map would.",
+   "columns": [
+    "Published map",
+    "Rule computed here",
+    "Points",
+    "Published mean %",
+    "Computed mean %",
+    "Mean difference",
+    "Mean |difference|",
+    "95th pct |difference|",
+    "Correlation"
+   ],
+   "rows": [
+    [
+     "60 m map, 85 S to the pole",
+     "earth centre",
+     200,
+     25.74,
+     22.22,
+     -3.52,
+     3.89,
+     8.91,
+     0.9873
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "earth any part (the map's rule)",
+     200,
+     25.74,
+     26.61,
+     0.87,
+     0.97,
+     5.13,
+     0.9946
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "earth whole disc",
+     200,
+     25.74,
+     18.16,
+     -7.58,
+     7.65,
+     17.9,
+     0.9662
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "earth mean disc fraction",
+     200,
+     25.74,
+     22.26,
+     -3.48,
+     3.84,
+     9.71,
+     0.9883
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "earth centre",
+     200,
+     30.45,
+     26.37,
+     -4.09,
+     4.11,
+     11.18,
+     0.9922
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "earth any part (the map's rule)",
+     200,
+     30.45,
+     30.3,
+     -0.16,
+     0.69,
+     4.24,
+     0.9984
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "earth whole disc",
+     200,
+     30.45,
+     22.54,
+     -7.91,
+     7.91,
+     19.31,
+     0.9806
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "earth mean disc fraction",
+     200,
+     30.45,
+     26.39,
+     -4.06,
+     4.09,
+     10.76,
+     0.9931
+    ],
+    [
+     "60 m map, 60 well-lit ridge pixels (the Sun map above 60 %, seed 20261115)",
+     "earth centre",
+     60,
+     52.82,
+     47.64,
+     -5.18,
+     5.22,
+     9.38,
+     0.9743
+    ],
+    [
+     "60 m map, 60 well-lit ridge pixels (the Sun map above 60 %, seed 20261115)",
+     "earth any part (the map's rule)",
+     60,
+     52.82,
+     52.59,
+     -0.24,
+     1.57,
+     6.21,
+     0.9707
+    ],
+    [
+     "60 m map, 60 well-lit ridge pixels (the Sun map above 60 %, seed 20261115)",
+     "earth whole disc",
+     60,
+     52.82,
+     42.64,
+     -10.18,
+     10.18,
+     15.73,
+     0.9714
+    ],
+    [
+     "60 m map, 60 well-lit ridge pixels (the Sun map above 60 %, seed 20261115)",
+     "earth mean disc fraction",
+     60,
+     52.82,
+     47.63,
+     -5.19,
+     5.24,
+     9.33,
+     0.9741
+    ]
+   ]
+  },
+  {
+   "id": "more-e2",
+   "collapsed": true,
+   "title": "The Earth check with and without the points that agree trivially, and the mission card's rule (real data)",
+   "note": "At some of the random points the map and the model are both exactly 0 (the Earth never rises there) or both exactly 1 (it never sets). Those points agree by construction and pull the mean difference down, so each map is listed twice: with every point, and without them. \"Exactly\" is to the four decimals stored for each point (under 0.005 % of the time). The any-part rule is the one the maps' labels state and the one the tile reports. The centre rule is what the mission card counts as Earth contact; it has no published reference of its own, and its rows show how far below the map it reads. Differences are in percentage points, model minus map.",
+   "columns": [
+    "Published map",
+    "Points used",
+    "Points",
+    "Left out: both exactly 0",
+    "Left out: both exactly 1",
+    "Rule computed here",
+    "Mean difference",
+    "Mean |difference|",
+    "Correlation"
+   ],
+   "rows": [
+    [
+     "60 m map, 85 S to the pole",
+     "every point inside the map",
+     200,
+     0,
+     0,
+     "earth any part: the map's own rule, checked on the tile",
+     0.87,
+     0.97,
+     0.9946
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "every point inside the map",
+     200,
+     0,
+     0,
+     "earth centre: the mission card's rule, stricter",
+     -3.52,
+     3.89,
+     0.9873
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "without the points that agree trivially",
+     147,
+     53,
+     0,
+     "earth any part: the map's own rule, checked on the tile",
+     1.19,
+     1.31,
+     0.9898
+    ],
+    [
+     "60 m map, 85 S to the pole",
+     "without the points that agree trivially",
+     147,
+     53,
+     0,
+     "earth centre: the mission card's rule, stricter",
+     -4.79,
+     5.29,
+     0.9834
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "every point inside the map",
+     200,
+     0,
+     0,
+     "earth any part: the map's own rule, checked on the tile",
+     -0.16,
+     0.69,
+     0.9984
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "every point inside the map",
+     200,
+     0,
+     0,
+     "earth centre: the mission card's rule, stricter",
+     -4.09,
+     4.11,
+     0.9922
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "without the points that agree trivially",
+     124,
+     64,
+     12,
+     "earth any part: the map's own rule, checked on the tile",
+     -0.25,
+     1.11,
+     0.9957
+    ],
+    [
+     "120 m map, 80 S to 85 S",
+     "without the points that agree trivially",
+     124,
+     64,
+     12,
+     "earth centre: the mission card's rule, stricter",
+     -6.42,
+     6.46,
+     0.9907
+    ]
+   ]
+  }
+ ],
+ "headline": [
+  {
+   "k": "Sunlit share against the LOLA team's published map: ordinary terrain",
+   "v": "\u00b10.8 pts",
+   "s": "mean |difference| at 200 random points within 5\u00b0 of the pole, correlation 0.9916; smooth sphere at the same points: \u00b133.2 pts. Rule: any part of the solar disc above the skyline, as the map's label states; the mission card's default asks for half the disc, which is stricter. Most of these points are poorly lit; see the next tile for ridges.",
+   "tag": "terrain (LOLA, 80 m/px)"
+  },
+  {
+   "id": "more-a",
+   "k": "The same check on well-lit ridge pixels, where landers would go",
+   "v": "\u00b13.77 to 5.25 pts",
+   "s": "mean |difference| at 60 seeded pixels the 60 m map rates above 60 %: the range over 10 random draws (median 4.3), correlation 0.41 to 0.75. First draw (seed 20261115): \u00b14.0, mean difference -2.8, 68 % within 5 points. Rule: any part of the solar disc above the skyline. An 80 m grid cannot hold a crest a few tens of metres wide.",
+   "tag": "terrain (LOLA, 80 m/px)"
+  },
+  {
+   "id": "more-e",
+   "k": "Earth in view against the LOLA team's Earth-visibility map",
+   "v": "\u00b11.0 pts",
+   "s": "mean |difference| at 200 of the same random points within 5\u00b0 of the pole (\u00b10.97 pts to two decimals), correlation 0.9946. Without the 53 points where the map and the model are both exactly zero (the Earth never rises there): \u00b11.31 pts at 147 points, correlation 0.9898. Rule: any part of the Earth's disc above the skyline, the rule the map's own label states. The mission card does not use this rule: it counts the Earth's centre, which is stricter and reads 3.5 points lower than this map at the same points (4.8 without those 53). 120 m map: \u00b10.69 pts, correlation 0.9984 (\u00b11.11 pts, correlation 0.9957 without 76 points where the map and the model are both exactly 0 or both exactly 1); on 60 well-lit ridge pixels: \u00b11.57 pts, mean difference -0.2, correlation 0.9707 (\u00b11.30 to \u00b11.98 pts on 9 other random draws).",
+   "tag": "terrain (LOLA, 80 m/px)"
+  },
+  {
+   "k": "Shackleton connecting ridge, 2 m above ground: time with any Sun",
+   "v": "92.1%",
+   "s": "published 92.1% (Glaser et al. 2018, 20 m DEM). The match is not firm: within 100 m of the point the model gives 72.5 to 92.5%. Smooth sphere at the same point 55.6%. Rule: any part of the solar disc above the skyline.",
+   "tag": "terrain (LOLA, 80 m/px)"
+  }
+ ],
+ "results": {
+  "map_check": [
+   {
+    "n": 200,
+    "published_mean_pct": 20.01,
+    "computed_mean_pct": 20.39,
+    "bias_pts": 0.39,
+    "mae_pts": 0.8,
+    "rmse_pts": 1.95,
+    "p95_abs_pts": 3.76,
+    "max_abs_pts": 15.88,
+    "correlation": 0.9916,
+    "shadow_agreement_pct": 98.5,
+    "map": "60 m map, 85 S to the pole",
+    "dem": "80 m",
+    "seconds": 59.1
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 20.01,
+    "computed_mean_pct": 21.18,
+    "bias_pts": 1.17,
+    "mae_pts": 1.37,
+    "rmse_pts": 3.26,
+    "p95_abs_pts": 6.08,
+    "max_abs_pts": 21.79,
+    "correlation": 0.9786,
+    "shadow_agreement_pct": 97.5,
+    "map": "60 m map, 85 S to the pole",
+    "dem": "240 m",
+    "seconds": 24.7
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 20.01,
+    "computed_mean_pct": 22.26,
+    "bias_pts": 2.26,
+    "mae_pts": 2.42,
+    "rmse_pts": 4.9,
+    "p95_abs_pts": 11.16,
+    "max_abs_pts": 25.09,
+    "correlation": 0.9564,
+    "shadow_agreement_pct": 95.0,
+    "map": "60 m map, 85 S to the pole",
+    "dem": "474 m",
+    "seconds": 18.8
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 20.01,
+    "computed_mean_pct": 26.14,
+    "bias_pts": 6.13,
+    "mae_pts": 6.19,
+    "rmse_pts": 10.07,
+    "p95_abs_pts": 23.93,
+    "max_abs_pts": 54.31,
+    "correlation": 0.8616,
+    "shadow_agreement_pct": 92.5,
+    "map": "60 m map, 85 S to the pole",
+    "dem": "1.9 km",
+    "seconds": 10.4
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 20.01,
+    "computed_mean_pct": 53.2,
+    "bias_pts": 33.2,
+    "mae_pts": 33.2,
+    "rmse_pts": 36.6,
+    "p95_abs_pts": 55.17,
+    "max_abs_pts": 57.97,
+    "correlation": -0.3928,
+    "shadow_agreement_pct": 84.5,
+    "map": "60 m map, 85 S to the pole",
+    "dem": "smooth sphere"
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 30.14,
+    "computed_mean_pct": 29.68,
+    "bias_pts": -0.45,
+    "mae_pts": 0.76,
+    "rmse_pts": 1.54,
+    "p95_abs_pts": 2.97,
+    "max_abs_pts": 10.51,
+    "correlation": 0.9949,
+    "shadow_agreement_pct": 99.5,
+    "map": "120 m map, 80 S to 85 S",
+    "dem": "80 m",
+    "seconds": 53.9
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 30.14,
+    "computed_mean_pct": 30.68,
+    "bias_pts": 0.54,
+    "mae_pts": 0.86,
+    "rmse_pts": 1.79,
+    "p95_abs_pts": 3.73,
+    "max_abs_pts": 10.71,
+    "correlation": 0.9931,
+    "shadow_agreement_pct": 99.5,
+    "map": "120 m map, 80 S to 85 S",
+    "dem": "240 m",
+    "seconds": 21.7
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 30.14,
+    "computed_mean_pct": 32.14,
+    "bias_pts": 2.0,
+    "mae_pts": 2.26,
+    "rmse_pts": 5.2,
+    "p95_abs_pts": 8.0,
+    "max_abs_pts": 35.21,
+    "correlation": 0.9436,
+    "shadow_agreement_pct": 98.5,
+    "map": "120 m map, 80 S to 85 S",
+    "dem": "474 m",
+    "seconds": 16.2
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 30.14,
+    "computed_mean_pct": 36.13,
+    "bias_pts": 6.0,
+    "mae_pts": 6.08,
+    "rmse_pts": 10.06,
+    "p95_abs_pts": 25.37,
+    "max_abs_pts": 40.91,
+    "correlation": 0.8322,
+    "shadow_agreement_pct": 98.5,
+    "map": "120 m map, 80 S to 85 S",
+    "dem": "1.9 km",
+    "seconds": 10.4
+   },
+   {
+    "n": 200,
+    "published_mean_pct": 30.14,
+    "computed_mean_pct": 51.06,
+    "bias_pts": 20.92,
+    "mae_pts": 20.92,
+    "rmse_pts": 25.45,
+    "p95_abs_pts": 49.02,
+    "max_abs_pts": 51.43,
+    "correlation": -0.0943,
+    "shadow_agreement_pct": 97.5,
+    "map": "120 m map, 80 S to 85 S",
+    "dem": "smooth sphere"
+   }
+  ],
+  "published_points": [
+   {
+    "name": "Connecting ridge C1",
+    "lat": -89.4505,
+    "lon": 222.84,
+    "mast_m": 0.0,
+    "avg": 76.0,
+    "vis": 81.3,
+    "dark_h": 268,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 81.19,
+    "computed_avg_illumination_pct": 75.51,
+    "computed_longest_dark_h": 266.0,
+    "site_height_m": 1955.7,
+    "best_within_160m": {
+     "lat": -89.4505,
+     "lon": -137.16,
+     "visibility_pct": 81.19,
+     "avg_illumination_pct": 75.51,
+     "longest_dark_h": 266.0
+    }
+   },
+   {
+    "name": "Connecting ridge C2",
+    "lat": -89.3157,
+    "lon": 245.94,
+    "mast_m": 0.0,
+    "avg": 75.6,
+    "vis": 80.6,
+    "dark_h": 166,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 77.57,
+    "computed_avg_illumination_pct": 70.07,
+    "computed_longest_dark_h": 176.0,
+    "site_height_m": 1689.8,
+    "best_within_160m": {
+     "lat": -89.3157,
+     "lon": -114.06,
+     "visibility_pct": 77.57,
+     "avg_illumination_pct": 70.07,
+     "longest_dark_h": 176.0
+    }
+   },
+   {
+    "name": "Shackleton rim S",
+    "lat": -89.7849,
+    "lon": 203.97,
+    "mast_m": 0.0,
+    "avg": 81.0,
+    "vis": 85.5,
+    "dark_h": 221,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 60.05,
+    "computed_avg_illumination_pct": 56.34,
+    "computed_longest_dark_h": 389.0,
+    "site_height_m": 1731.9,
+    "best_within_160m": {
+     "lat": -89.7838,
+     "lon": -155.3911,
+     "visibility_pct": 80.86,
+     "avg_illumination_pct": 75.67,
+     "longest_dark_h": 266.0
+    }
+   },
+   {
+    "name": "Connecting ridge C1",
+    "lat": -89.4398,
+    "lon": 222.83,
+    "mast_m": 2.0,
+    "avg": 88.0,
+    "vis": 92.1,
+    "dark_h": 112,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 92.06,
+    "computed_avg_illumination_pct": 88.01,
+    "computed_longest_dark_h": 198.0,
+    "site_height_m": 1957.6,
+    "best_within_160m": {
+     "lat": -89.4398,
+     "lon": -137.17,
+     "visibility_pct": 92.06,
+     "avg_illumination_pct": 88.01,
+     "longest_dark_h": 198.0
+    }
+   },
+   {
+    "name": "Connecting ridge C2",
+    "lat": -89.313,
+    "lon": 245.98,
+    "mast_m": 2.0,
+    "avg": 78.1,
+    "vis": 82.0,
+    "dark_h": 165,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 81.17,
+    "computed_avg_illumination_pct": 77.28,
+    "computed_longest_dark_h": 230.0,
+    "site_height_m": 1689.0,
+    "best_within_160m": {
+     "lat": -89.3154,
+     "lon": -114.1099,
+     "visibility_pct": 81.88,
+     "avg_illumination_pct": 77.9,
+     "longest_dark_h": 166.0
+    }
+   },
+   {
+    "name": "Shackleton rim S",
+    "lat": -89.6866,
+    "lon": 197.19,
+    "mast_m": 2.0,
+    "avg": 85.5,
+    "vis": 89.4,
+    "dark_h": 66,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 88.66,
+    "computed_avg_illumination_pct": 84.44,
+    "computed_longest_dark_h": 67.0,
+    "site_height_m": 1727.4,
+    "best_within_160m": {
+     "lat": -89.6866,
+     "lon": -162.81,
+     "visibility_pct": 88.66,
+     "avg_illumination_pct": 84.44,
+     "longest_dark_h": 67.0
+    }
+   },
+   {
+    "name": "Shackleton rim S, second point",
+    "lat": -89.7815,
+    "lon": 204.7,
+    "mast_m": 2.0,
+    "avg": 82.1,
+    "vis": 89.8,
+    "dark_h": 65,
+    "source": "Glaser et al. 2018, PSS 162 (20 m LOLA DTM, 2017-2037, hourly)",
+    "computed_visibility_pct": 78.3,
+    "computed_avg_illumination_pct": 72.23,
+    "computed_longest_dark_h": 363.0,
+    "site_height_m": 1734.2,
+    "best_within_160m": {
+     "lat": -89.7802,
+     "lon": -156.2121,
+     "visibility_pct": 90.43,
+     "avg_illumination_pct": 84.82,
+     "longest_dark_h": 64.0
+    }
+   },
+   {
+    "name": "Connecting ridge CR1 spot 2",
+    "lat": -89.4399,
+    "lon": 222.8524,
+    "mast_m": 2.0,
+    "avg": 87.9,
+    "vis": 92.3,
+    "dark_h": 110.88,
+    "source": "Glaser et al. 2014, EPSC2014-136 (20 m LOLA DTM, about 19 years, hourly)",
+    "computed_visibility_pct": 92.21,
+    "computed_avg_illumination_pct": 87.91,
+    "computed_longest_dark_h": 199.0,
+    "site_height_m": 1957.7,
+    "best_within_160m": {
+     "lat": -89.4399,
+     "lon": -137.1476,
+     "visibility_pct": 92.21,
+     "avg_illumination_pct": 87.91,
+     "longest_dark_h": 199.0
+    }
+   },
+   {
+    "name": "Connecting ridge CR1 spot 4",
+    "lat": -89.4544,
+    "lon": 222.8445,
+    "mast_m": 10.0,
+    "avg": 91.9,
+    "vis": 95.66,
+    "dark_h": 76.08,
+    "source": "Glaser et al. 2014, EPSC2014-136 (20 m LOLA DTM, about 19 years, hourly)",
+    "computed_visibility_pct": 95.71,
+    "computed_avg_illumination_pct": 91.77,
+    "computed_longest_dark_h": 73.0,
+    "site_height_m": 1954.3,
+    "best_within_160m": {
+     "lat": -89.4544,
+     "lon": -137.1555,
+     "visibility_pct": 95.71,
+     "avg_illumination_pct": 91.77,
+     "longest_dark_h": 73.0
+    }
+   }
+  ],
+  "published_points_summary": {
+   "n": 9,
+   "mean_diff_avg_pts": -4.73,
+   "mean_abs_diff_avg_pts": 4.73,
+   "mean_diff_vis_pts": -4.64,
+   "mean_abs_diff_vis_pts": 4.65
+  },
+  "c1_smooth_visibility_pct": 55.59,
+  "earth_points": [
+   {
+    "name": "A1 Shackleton rim",
+    "lat": -89.633,
+    "lon": -160.388,
+    "sun": [
+     93.46,
+     90.36,
+     86.31
+    ],
+    "earth": [
+     62.2,
+     55.29,
+     48.37
+    ],
+    "at_stated_point": {
+     "earth": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "sun": [
+      15.66,
+      14.44,
+      12.89
+     ],
+     "height_m": 1330.2
+    },
+    "best_lit_within_1p2km": {
+     "lat": -89.6663,
+     "lon": -163.1358,
+     "moved_m": 1131,
+     "earth": [
+      20.83,
+      10.42,
+      0.01
+     ],
+     "sun": [
+      59.0,
+      55.74,
+      52.48
+     ],
+     "height_m": 1657.7
+    }
+   },
+   {
+    "name": "A2 Shackleton rim",
+    "lat": -89.723,
+    "lon": -153.925,
+    "sun": [
+     92.98,
+     89.47,
+     84.83
+    ],
+    "earth": [
+     63.9,
+     56.98,
+     50.07
+    ],
+    "at_stated_point": {
+     "earth": [
+      34.89,
+      29.22,
+      21.72
+     ],
+     "sun": [
+      25.71,
+      23.12,
+      20.67
+     ],
+     "height_m": 1462.6
+    },
+    "best_lit_within_1p2km": {
+     "lat": -89.7286,
+     "lon": -159.4259,
+     "moved_m": 816,
+     "earth": [
+      39.85,
+      34.95,
+      29.56
+     ],
+     "sun": [
+      72.19,
+      67.36,
+      61.78
+     ],
+     "height_m": 1677.3
+    }
+   },
+   {
+    "name": "B1 connecting ridge",
+    "lat": -89.388,
+    "lon": -137.81,
+    "sun": [
+     97.01,
+     94.79,
+     91.67
+    ],
+    "earth": [
+     65.16,
+     58.24,
+     51.33
+    ],
+    "at_stated_point": {
+     "earth": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "sun": [
+      31.52,
+      30.35,
+      29.17
+     ],
+     "height_m": 1708.7
+    },
+    "best_lit_within_1p2km": {
+     "lat": -89.3939,
+     "lon": -139.9588,
+     "moved_m": 716,
+     "earth": [
+      28.58,
+      22.19,
+      13.45
+     ],
+     "sun": [
+      66.23,
+      64.36,
+      62.81
+     ],
+     "height_m": 1832.8
+    }
+   },
+   {
+    "name": "C1 de Gerlache rim",
+    "lat": -88.657,
+    "lon": -70.688,
+    "sun": [
+     90.01,
+     86.95,
+     83.12
+    ],
+    "earth": [
+     70.97,
+     64.05,
+     57.14
+    ],
+    "at_stated_point": {
+     "earth": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "sun": [
+      41.19,
+      39.49,
+      37.51
+     ],
+     "height_m": 1284.9
+    },
+    "best_lit_within_1p2km": {
+     "lat": -88.6542,
+     "lon": -69.0553,
+     "moved_m": 1165,
+     "earth": [
+      3.58,
+      0.0,
+      0.0
+     ],
+     "sun": [
+      48.57,
+      47.13,
+      45.66
+     ],
+     "height_m": 1721.7
+    }
+   },
+   {
+    "name": "F peak near Shackleton",
+    "lat": -88.813,
+    "lon": 126.601,
+    "sun": [
+     89.28,
+     85.97,
+     81.77
+    ],
+    "earth": [
+     67.3,
+     60.38,
+     53.47
+    ],
+    "at_stated_point": {
+     "earth": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "sun": [
+      41.99,
+      40.33,
+      38.85
+     ],
+     "height_m": 1480.6
+    },
+    "best_lit_within_1p2km": {
+     "lat": -88.807,
+     "lon": 124.8281,
+     "moved_m": 1131,
+     "earth": [
+      49.47,
+      44.92,
+      40.24
+     ],
+     "sun": [
+      68.51,
+      65.06,
+      61.55
+     ],
+     "height_m": 1618.5
+    }
+   },
+   {
+    "name": "Malapert alpha",
+    "lat": -86.037,
+    "lon": 1.704,
+    "sun": [
+     82.08,
+     78.36,
+     74.49
+    ],
+    "earth": [
+     100.0,
+     100.0,
+     94.68
+    ],
+    "at_stated_point": {
+     "earth": [
+      35.94,
+      30.69,
+      24.69
+     ],
+     "sun": [
+      41.98,
+      39.11,
+      35.9
+     ],
+     "height_m": 4973.5
+    },
+    "best_lit_within_1p2km": {
+     "lat": -86.0201,
+     "lon": 2.1526,
+     "moved_m": 1073,
+     "earth": [
+      55.76,
+      51.2,
+      46.69
+     ],
+     "sun": [
+      69.29,
+      63.48,
+      57.58
+     ],
+     "height_m": 5114.2
+    }
+   },
+   {
+    "name": "Leibnitz beta (Mons Mouton)",
+    "lat": -84.722,
+    "lon": 39.47,
+    "sun": [
+     79.06,
+     77.43,
+     75.82
+    ],
+    "earth": [
+     100.0,
+     100.0,
+     100.0
+    ],
+    "at_stated_point": {
+     "earth": [
+      40.73,
+      35.84,
+      30.56
+     ],
+     "sun": [
+      30.09,
+      28.17,
+      26.39
+     ],
+     "height_m": 6859.9
+    },
+    "best_lit_within_1p2km": {
+     "lat": -84.7339,
+     "lon": 39.1314,
+     "moved_m": 1012,
+     "earth": [
+      74.8,
+      68.9,
+      63.72
+     ],
+     "sun": [
+      75.42,
+      73.48,
+      71.56
+     ],
+     "height_m": 6928.1
+    }
+   }
+  ],
+  "earth_points_summary": {
+   "n": 7,
+   "best_lit_nearby_mean_diff_pts": -37.48,
+   "best_lit_nearby_mean_abs_diff_pts": 37.48,
+   "at_stated_point_mean_abs_diff_pts": 57.03
+  },
+  "sites_by_resolution": [
+   {
+    "site": "Shackleton connecting ridge (C1)",
+    "dem": "80 m",
+    "any_light_pct": 92.51,
+    "lit_pct": 88.49,
+    "longest_dark_days": 8.1,
+    "longest_light_days": 169.0,
+    "earth_visible_pct": 51.11,
+    "longest_earth_outage_days": 13.3
+   },
+   {
+    "site": "Shackleton connecting ridge (C1)",
+    "dem": "240 m",
+    "any_light_pct": 89.19,
+    "lit_pct": 85.42,
+    "longest_dark_days": 9.0,
+    "longest_light_days": 168.5,
+    "earth_visible_pct": 51.1,
+    "longest_earth_outage_days": 13.3
+   },
+   {
+    "site": "Shackleton connecting ridge (C1)",
+    "dem": "474 m",
+    "any_light_pct": 89.34,
+    "lit_pct": 86.84,
+    "longest_dark_days": 7.1,
+    "longest_light_days": 139.6,
+    "earth_visible_pct": 51.11,
+    "longest_earth_outage_days": 13.3
+   },
+   {
+    "site": "Shackleton connecting ridge (C1)",
+    "dem": "1.9 km",
+    "any_light_pct": 95.34,
+    "lit_pct": 92.63,
+    "longest_dark_days": 3.3,
+    "longest_light_days": 192.0,
+    "earth_visible_pct": 51.18,
+    "longest_earth_outage_days": 13.3
+   },
+   {
+    "site": "Shackleton connecting ridge (C1)",
+    "dem": "smooth sphere",
+    "any_light_pct": 57.12,
+    "lit_pct": 51.97,
+    "longest_dark_days": 137.3,
+    "longest_light_days": 139.3,
+    "earth_visible_pct": 45.18,
+    "longest_earth_outage_days": 15.0
+   },
+   {
+    "site": "Shackleton rim (S)",
+    "dem": "80 m",
+    "any_light_pct": 88.88,
+    "lit_pct": 85.01,
+    "longest_dark_days": 2.8,
+    "longest_light_days": 117.7,
+    "earth_visible_pct": 45.92,
+    "longest_earth_outage_days": 14.7
+   },
+   {
+    "site": "Shackleton rim (S)",
+    "dem": "240 m",
+    "any_light_pct": 89.11,
+    "lit_pct": 85.37,
+    "longest_dark_days": 2.8,
+    "longest_light_days": 117.6,
+    "earth_visible_pct": 45.3,
+    "longest_earth_outage_days": 14.8
+   },
+   {
+    "site": "Shackleton rim (S)",
+    "dem": "474 m",
+    "any_light_pct": 85.7,
+    "lit_pct": 81.66,
+    "longest_dark_days": 3.6,
+    "longest_light_days": 117.4,
+    "earth_visible_pct": 43.14,
+    "longest_earth_outage_days": 15.4
+   },
+   {
+    "site": "Shackleton rim (S)",
+    "dem": "1.9 km",
+    "any_light_pct": 79.37,
+    "lit_pct": 75.15,
+    "longest_dark_days": 4.1,
+    "longest_light_days": 28.1,
+    "earth_visible_pct": 36.63,
+    "longest_earth_outage_days": 17.2
+   },
+   {
+    "site": "Shackleton rim (S)",
+    "dem": "smooth sphere",
+    "any_light_pct": 56.14,
+    "lit_pct": 53.53,
+    "longest_dark_days": 160.1,
+    "longest_light_days": 160.0,
+    "earth_visible_pct": 45.65,
+    "longest_earth_outage_days": 14.9
+   },
+   {
+    "site": "Connecting ridge (C2)",
+    "dem": "80 m",
+    "any_light_pct": 81.97,
+    "lit_pct": 78.25,
+    "longest_dark_days": 9.5,
+    "longest_light_days": 28.3,
+    "earth_visible_pct": 52.83,
+    "longest_earth_outage_days": 13.1
+   },
+   {
+    "site": "Connecting ridge (C2)",
+    "dem": "240 m",
+    "any_light_pct": 82.67,
+    "lit_pct": 78.88,
+    "longest_dark_days": 6.8,
+    "longest_light_days": 28.3,
+    "earth_visible_pct": 52.81,
+    "longest_earth_outage_days": 13.1
+   },
+   {
+    "site": "Connecting ridge (C2)",
+    "dem": "474 m",
+    "any_light_pct": 82.21,
+    "lit_pct": 77.82,
+    "longest_dark_days": 6.8,
+    "longest_light_days": 28.3,
+    "earth_visible_pct": 52.83,
+    "longest_earth_outage_days": 13.1
+   },
+   {
+    "site": "Connecting ridge (C2)",
+    "dem": "1.9 km",
+    "any_light_pct": 81.82,
+    "lit_pct": 78.49,
+    "longest_dark_days": 7.0,
+    "longest_light_days": 28.0,
+    "earth_visible_pct": 52.84,
+    "longest_earth_outage_days": 13.1
+   },
+   {
+    "site": "Connecting ridge (C2)",
+    "dem": "smooth sphere",
+    "any_light_pct": 57.37,
+    "lit_pct": 52.4,
+    "longest_dark_days": 113.0,
+    "longest_light_days": 139.2,
+    "earth_visible_pct": 45.8,
+    "longest_earth_outage_days": 14.9
+   },
+   {
+    "site": "Malapert massif summit",
+    "dem": "80 m",
+    "any_light_pct": 67.87,
+    "lit_pct": 64.97,
+    "longest_dark_days": 13.7,
+    "longest_light_days": 25.8,
+    "earth_visible_pct": 80.13,
+    "longest_earth_outage_days": 5.8
+   },
+   {
+    "site": "Malapert massif summit",
+    "dem": "240 m",
+    "any_light_pct": 69.7,
+    "lit_pct": 64.47,
+    "longest_dark_days": 14.5,
+    "longest_light_days": 111.7,
+    "earth_visible_pct": 76.24,
+    "longest_earth_outage_days": 6.8
+   },
+   {
+    "site": "Malapert massif summit",
+    "dem": "474 m",
+    "any_light_pct": 73.97,
+    "lit_pct": 70.1,
+    "longest_dark_days": 14.4,
+    "longest_light_days": 28.0,
+    "earth_visible_pct": 72.26,
+    "longest_earth_outage_days": 7.9
+   },
+   {
+    "site": "Malapert massif summit",
+    "dem": "1.9 km",
+    "any_light_pct": 80.07,
+    "lit_pct": 77.12,
+    "longest_dark_days": 10.9,
+    "longest_light_days": 28.3,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "Malapert massif summit",
+    "dem": "smooth sphere",
+    "any_light_pct": 50.95,
+    "lit_pct": 48.76,
+    "longest_dark_days": 17.7,
+    "longest_light_days": 19.0,
+    "earth_visible_pct": 67.65,
+    "longest_earth_outage_days": 9.1
+   },
+   {
+    "site": "Malapert massif, Earth-facing shoulder",
+    "dem": "80 m",
+    "any_light_pct": 57.99,
+    "lit_pct": 56.44,
+    "longest_dark_days": 14.2,
+    "longest_light_days": 19.6,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "Malapert massif, Earth-facing shoulder",
+    "dem": "240 m",
+    "any_light_pct": 55.76,
+    "lit_pct": 54.22,
+    "longest_dark_days": 14.8,
+    "longest_light_days": 18.8,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "Malapert massif, Earth-facing shoulder",
+    "dem": "474 m",
+    "any_light_pct": 59.71,
+    "lit_pct": 58.25,
+    "longest_dark_days": 13.5,
+    "longest_light_days": 19.8,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "Malapert massif, Earth-facing shoulder",
+    "dem": "1.9 km",
+    "any_light_pct": 75.59,
+    "lit_pct": 73.3,
+    "longest_dark_days": 10.8,
+    "longest_light_days": 26.2,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "Malapert massif, Earth-facing shoulder",
+    "dem": "smooth sphere",
+    "any_light_pct": 50.96,
+    "lit_pct": 48.76,
+    "longest_dark_days": 17.8,
+    "longest_light_days": 19.0,
+    "earth_visible_pct": 67.75,
+    "longest_earth_outage_days": 9.1
+   },
+   {
+    "site": "IM-2 Athena (Mons Mouton)",
+    "dem": "80 m",
+    "any_light_pct": 45.55,
+    "lit_pct": 43.77,
+    "longest_dark_days": 17.1,
+    "longest_light_days": 15.8,
+    "earth_visible_pct": 80.43,
+    "longest_earth_outage_days": 5.8
+   },
+   {
+    "site": "IM-2 Athena (Mons Mouton)",
+    "dem": "240 m",
+    "any_light_pct": 45.7,
+    "lit_pct": 43.92,
+    "longest_dark_days": 17.1,
+    "longest_light_days": 15.8,
+    "earth_visible_pct": 80.5,
+    "longest_earth_outage_days": 5.7
+   },
+   {
+    "site": "IM-2 Athena (Mons Mouton)",
+    "dem": "474 m",
+    "any_light_pct": 46.88,
+    "lit_pct": 44.93,
+    "longest_dark_days": 16.8,
+    "longest_light_days": 16.1,
+    "earth_visible_pct": 81.03,
+    "longest_earth_outage_days": 5.6
+   },
+   {
+    "site": "IM-2 Athena (Mons Mouton)",
+    "dem": "1.9 km",
+    "any_light_pct": 47.58,
+    "lit_pct": 45.75,
+    "longest_dark_days": 18.0,
+    "longest_light_days": 16.9,
+    "earth_visible_pct": 81.97,
+    "longest_earth_outage_days": 5.4
+   },
+   {
+    "site": "IM-2 Athena (Mons Mouton)",
+    "dem": "smooth sphere",
+    "any_light_pct": 50.23,
+    "lit_pct": 48.62,
+    "longest_dark_days": 17.0,
+    "longest_light_days": 18.0,
+    "earth_visible_pct": 71.92,
+    "longest_earth_outage_days": 8.0
+   },
+   {
+    "site": "Mons Mouton (VIPER area)",
+    "dem": "80 m",
+    "any_light_pct": 32.08,
+    "lit_pct": 29.43,
+    "longest_dark_days": 22.9,
+    "longest_light_days": 12.4,
+    "earth_visible_pct": 56.15,
+    "longest_earth_outage_days": 12.2
+   },
+   {
+    "site": "Mons Mouton (VIPER area)",
+    "dem": "240 m",
+    "any_light_pct": 32.57,
+    "lit_pct": 29.81,
+    "longest_dark_days": 22.6,
+    "longest_light_days": 12.5,
+    "earth_visible_pct": 56.45,
+    "longest_earth_outage_days": 12.1
+   },
+   {
+    "site": "Mons Mouton (VIPER area)",
+    "dem": "474 m",
+    "any_light_pct": 32.83,
+    "lit_pct": 30.23,
+    "longest_dark_days": 22.2,
+    "longest_light_days": 12.0,
+    "earth_visible_pct": 56.77,
+    "longest_earth_outage_days": 12.0
+   },
+   {
+    "site": "Mons Mouton (VIPER area)",
+    "dem": "1.9 km",
+    "any_light_pct": 39.49,
+    "lit_pct": 37.79,
+    "longest_dark_days": 20.0,
+    "longest_light_days": 14.3,
+    "earth_visible_pct": 60.17,
+    "longest_earth_outage_days": 11.1
+   },
+   {
+    "site": "Mons Mouton (VIPER area)",
+    "dem": "smooth sphere",
+    "any_light_pct": 50.18,
+    "lit_pct": 48.63,
+    "longest_dark_days": 16.9,
+    "longest_light_days": 17.9,
+    "earth_visible_pct": 72.57,
+    "longest_earth_outage_days": 7.8
+   },
+   {
+    "site": "IM-1 Odysseus (Malapert A)",
+    "dem": "80 m",
+    "any_light_pct": 38.72,
+    "lit_pct": 38.07,
+    "longest_dark_days": 18.8,
+    "longest_light_days": 12.9,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "IM-1 Odysseus (Malapert A)",
+    "dem": "240 m",
+    "any_light_pct": 38.6,
+    "lit_pct": 37.93,
+    "longest_dark_days": 18.8,
+    "longest_light_days": 12.8,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "IM-1 Odysseus (Malapert A)",
+    "dem": "474 m",
+    "any_light_pct": 40.81,
+    "lit_pct": 40.18,
+    "longest_dark_days": 18.2,
+    "longest_light_days": 13.5,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "IM-1 Odysseus (Malapert A)",
+    "dem": "1.9 km",
+    "any_light_pct": 45.17,
+    "lit_pct": 44.49,
+    "longest_dark_days": 17.0,
+    "longest_light_days": 14.9,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "IM-1 Odysseus (Malapert A)",
+    "dem": "smooth sphere",
+    "any_light_pct": 49.49,
+    "lit_pct": 48.63,
+    "longest_dark_days": 15.9,
+    "longest_light_days": 16.5,
+    "earth_visible_pct": 100.0,
+    "longest_earth_outage_days": 0.0
+   },
+   {
+    "site": "Haworth (crater centre)",
+    "dem": "80 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Haworth (crater centre)",
+    "dem": "240 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Haworth (crater centre)",
+    "dem": "474 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Haworth (crater centre)",
+    "dem": "1.9 km",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.4,
+    "longest_earth_outage_days": 206.5
+   },
+   {
+    "site": "Haworth (crater centre)",
+    "dem": "smooth sphere",
+    "any_light_pct": 52.77,
+    "lit_pct": 49.03,
+    "longest_dark_days": 19.6,
+    "longest_light_days": 21.8,
+    "earth_visible_pct": 59.58,
+    "longest_earth_outage_days": 11.2
+   },
+   {
+    "site": "Nobile (crater centre)",
+    "dem": "80 m",
+    "any_light_pct": 35.46,
+    "lit_pct": 34.45,
+    "longest_dark_days": 21.2,
+    "longest_light_days": 12.1,
+    "earth_visible_pct": 20.76,
+    "longest_earth_outage_days": 21.7
+   },
+   {
+    "site": "Nobile (crater centre)",
+    "dem": "240 m",
+    "any_light_pct": 35.51,
+    "lit_pct": 34.52,
+    "longest_dark_days": 21.1,
+    "longest_light_days": 12.2,
+    "earth_visible_pct": 20.87,
+    "longest_earth_outage_days": 21.6
+   },
+   {
+    "site": "Nobile (crater centre)",
+    "dem": "474 m",
+    "any_light_pct": 35.65,
+    "lit_pct": 34.54,
+    "longest_dark_days": 21.1,
+    "longest_light_days": 12.2,
+    "earth_visible_pct": 21.07,
+    "longest_earth_outage_days": 21.6
+   },
+   {
+    "site": "Nobile (crater centre)",
+    "dem": "1.9 km",
+    "any_light_pct": 36.2,
+    "lit_pct": 35.02,
+    "longest_dark_days": 21.0,
+    "longest_light_days": 12.3,
+    "earth_visible_pct": 22.44,
+    "longest_earth_outage_days": 21.2
+   },
+   {
+    "site": "Nobile (crater centre)",
+    "dem": "smooth sphere",
+    "any_light_pct": 50.88,
+    "lit_pct": 49.01,
+    "longest_dark_days": 17.2,
+    "longest_light_days": 18.4,
+    "earth_visible_pct": 61.87,
+    "longest_earth_outage_days": 10.6
+   },
+   {
+    "site": "de Gerlache (crater centre)",
+    "dem": "80 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "de Gerlache (crater centre)",
+    "dem": "240 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "de Gerlache (crater centre)",
+    "dem": "474 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "de Gerlache (crater centre)",
+    "dem": "1.9 km",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "de Gerlache (crater centre)",
+    "dem": "smooth sphere",
+    "any_light_pct": 59.78,
+    "lit_pct": 51.03,
+    "longest_dark_days": 23.9,
+    "longest_light_days": 85.5,
+    "earth_visible_pct": 47.35,
+    "longest_earth_outage_days": 14.5
+   },
+   {
+    "site": "Shackleton crater floor (always dark)",
+    "dem": "80 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Shackleton crater floor (always dark)",
+    "dem": "240 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Shackleton crater floor (always dark)",
+    "dem": "474 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Shackleton crater floor (always dark)",
+    "dem": "1.9 km",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 0.0,
+    "longest_earth_outage_days": 365.0
+   },
+   {
+    "site": "Shackleton crater floor (always dark)",
+    "dem": "smooth sphere",
+    "any_light_pct": 56.02,
+    "lit_pct": 54.58,
+    "longest_dark_days": 160.5,
+    "longest_light_days": 156.0,
+    "earth_visible_pct": 46.1,
+    "longest_earth_outage_days": 14.8
+   },
+   {
+    "site": "LCROSS impact, Cabeus (always dark)",
+    "dem": "80 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 15.08,
+    "longest_earth_outage_days": 23.9
+   },
+   {
+    "site": "LCROSS impact, Cabeus (always dark)",
+    "dem": "240 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 15.15,
+    "longest_earth_outage_days": 23.8
+   },
+   {
+    "site": "LCROSS impact, Cabeus (always dark)",
+    "dem": "474 m",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 15.37,
+    "longest_earth_outage_days": 23.8
+   },
+   {
+    "site": "LCROSS impact, Cabeus (always dark)",
+    "dem": "1.9 km",
+    "any_light_pct": 0.0,
+    "lit_pct": 0.0,
+    "longest_dark_days": 365.0,
+    "longest_light_days": 0.0,
+    "earth_visible_pct": 16.77,
+    "longest_earth_outage_days": 23.1
+   },
+   {
+    "site": "LCROSS impact, Cabeus (always dark)",
+    "dem": "smooth sphere",
+    "any_light_pct": 51.39,
+    "lit_pct": 49.78,
+    "longest_dark_days": 17.0,
+    "longest_light_days": 17.9,
+    "earth_visible_pct": 63.82,
+    "longest_earth_outage_days": 10.1
+   }
+  ],
+  "hindcast": [
+   {
+    "mission": "Chandrayaan-3 (Vikram)",
+    "event": "Lander put into sleep mode (about 08:00 IST, 4 Sep 2023)",
+    "reported_utc": "2023-09-04T02:30:00Z",
+    "models": {
+     "smooth sphere": {
+      "predicted_utc": "2023-09-04T16:07:10Z",
+      "predicted_minus_reported_h": 13.6,
+      "size": "within 1 day"
+     },
+     "terrain": {
+      "predicted_utc": "2023-09-04T06:37:40Z",
+      "predicted_minus_reported_h": 4.1,
+      "size": "within 6 h"
+     }
+    }
+   },
+   {
+    "mission": "Chandrayaan-3 (Vikram)",
+    "event": "ISRO wake-up target, 'sunlight returns on September 22' (date only)",
+    "reported_utc": "2023-09-22T00:00:00Z",
+    "models": {
+     "smooth sphere": {
+      "predicted_utc": "2023-09-19T19:20:54Z",
+      "predicted_minus_reported_h": -52.7,
+      "size": "off by 2.2 days"
+     },
+     "terrain": {
+      "predicted_utc": "2023-09-19T23:17:45Z",
+      "predicted_minus_reported_h": -48.7,
+      "size": "off by 2.0 days"
+     }
+    }
+   },
+   {
+    "mission": "IM-1 Odysseus",
+    "event": "Lander lost power (29 Feb 2024, date only)",
+    "reported_utc": "2024-02-29T00:00:00Z",
+    "models": {
+     "smooth sphere": {
+      "predicted_utc": "2024-03-03T07:12:19Z",
+      "predicted_minus_reported_h": 79.2,
+      "size": "off by 3.3 days"
+     },
+     "terrain": {
+      "predicted_utc": "2024-03-02T14:17:36Z",
+      "predicted_minus_reported_h": 62.3,
+      "size": "off by 2.6 days"
+     }
+    }
+   },
+   {
+    "mission": "Blue Ghost Mission 1",
+    "event": "Last communication (about 6:15 pm CDT, 16 Mar 2025)",
+    "reported_utc": "2025-03-16T23:15:00Z",
+    "models": {
+     "smooth sphere": {
+      "predicted_utc": "2025-03-16T20:10:37Z",
+      "predicted_minus_reported_h": -3.1,
+      "size": "within 6 h"
+     },
+     "terrain": {
+      "predicted_utc": "2025-03-16T19:56:04Z",
+      "predicted_minus_reported_h": -3.3,
+      "size": "within 6 h"
+     }
+    }
+   },
+   {
+    "mission": "Blue Ghost Mission 1",
+    "event": "Landing + reported 346-hour mission",
+    "reported_utc": "2025-03-16T18:34:00Z",
+    "models": {
+     "smooth sphere": {
+      "predicted_utc": "2025-03-16T20:10:37Z",
+      "predicted_minus_reported_h": 1.6,
+      "size": "within 6 h"
+     },
+     "terrain": {
+      "predicted_utc": "2025-03-16T19:56:04Z",
+      "predicted_minus_reported_h": 1.4,
+      "size": "within 6 h"
+     }
+    }
+   }
+  ]
+ },
+ "seconds": 592.7,
+ "more_generated_utc": "2026-11-14T18:35:07Z"
+}

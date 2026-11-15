@@ -1,0 +1,50 @@
+# Source: JPL Horizons API (observer table, QUANTITIES=4: airless apparent azimuth/elevation of target centre)
+# URL: https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=10&OBJ_DATA=NO&CENTER='coord@301'&SITE_COORD='32.32,-69.37,0'&START_TIME='2023-08-20'&STOP_TIME='2023-09-08'&STEP_SIZE='12h'&QUANTITIES=4&CSV_FORMAT=YES
+# Target: Sun (10)   Observer: lunar surface, E-lon 32.32 deg, lat -69.37 deg, alt 0 km (Horizons "coord@301", geodetic)
+# Retrieved: 2026-11-14 via the WebFetch tool. The sandbox shell cannot reach ssd.jpl.nasa.gov, so the
+# response was relayed by WebFetch's page-reading model, which was asked to copy every data row exactly.
+# This is therefore NOT a byte-exact raw response: header/footer text was dropped and only the rows
+# between $$SOE and $$EOE are kept. Times are UTC. Azimuth is clockwise from north.
+# Refresh byte-exact with: python scripts/fetch_horizons_fixtures.py (needs internet access to ssd.jpl.nasa.gov)
+# Verified 2026-11-14 on a machine with direct access to ssd.jpl.nasa.gov: all 39 rows equal the table downloaded directly with
+# scripts/fetch_horizons_fixtures.py (raw response in fixtures/raw/horizons_sun_chandrayaan3.txt).
+# columns: utc, azimuth_deg, elevation_deg
+2023-Aug-20 00:00, 102.618968, -6.173406
+2023-Aug-20 12:00, 96.862863, -4.042875
+2023-Aug-21 00:00, 91.132827, -1.886670
+2023-Aug-21 12:00, 85.412815, 0.273599
+2023-Aug-22 00:00, 79.686731, 2.416422
+2023-Aug-22 12:00, 73.938887, 4.520367
+2023-Aug-23 00:00, 68.154475, 6.564073
+2023-Aug-23 12:00, 62.320048, 8.526272
+2023-Aug-24 00:00, 56.424021, 10.385859
+2023-Aug-24 12:00, 50.457194, 12.122029
+2023-Aug-25 00:00, 44.413258, 13.714485
+2023-Aug-25 12:00, 38.289279, 15.143727
+2023-Aug-26 00:00, 32.086076, 16.391432
+2023-Aug-26 12:00, 25.808451, 17.440886
+2023-Aug-27 00:00, 19.465204, 18.277476
+2023-Aug-27 12:00, 13.068868, 18.889183
+2023-Aug-28 00:00, 6.635138, 19.267036
+2023-Aug-28 12:00, 0.182028, 19.405486
+2023-Aug-29 00:00, 353.728778, 19.302645
+2023-Aug-29 12:00, 347.294653, 18.960370
+2023-Aug-30 00:00, 340.897726, 18.384166
+2023-Aug-30 12:00, 334.553800, 17.582945
+2023-Aug-31 00:00, 328.275547, 16.568643
+2023-Aug-31 12:00, 322.071937, 15.355766
+2023-Sep-01 00:00, 315.947973, 13.960892
+2023-Sep-01 12:00, 309.904693, 12.402187
+2023-Sep-02 00:00, 303.939397, 10.698972
+2023-Sep-02 12:00, 298.046022, 8.871352
+2023-Sep-03 00:00, 292.215613, 6.939930
+2023-Sep-03 12:00, 286.436835, 4.925597
+2023-Sep-04 00:00, 280.696482, 2.849406
+2023-Sep-04 12:00, 274.979978, 0.732499
+2023-Sep-05 00:00, 269.271853, -1.403914
+2023-Sep-05 12:00, 263.556201, -3.538548
+2023-Sep-06 00:00, 257.817141, -5.650018
+2023-Sep-06 12:00, 252.039278, -7.716822
+2023-Sep-07 00:00, 246.208202, -9.717346
+2023-Sep-07 12:00, 240.311018, -11.629904
+2023-Sep-08 00:00, 234.336914, -13.432850

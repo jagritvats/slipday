@@ -1,0 +1,87 @@
+{
+ "points": 2407,
+ "selected": 2407,
+ "members_per_point": 12,
+ "scatter_m": 100.0,
+ "layout_fraction_bearing": [
+  [
+   1.0,
+   0
+  ],
+  [
+   1.0,
+   45
+  ],
+  [
+   1.0,
+   90
+  ],
+  [
+   1.0,
+   135
+  ],
+  [
+   1.0,
+   180
+  ],
+  [
+   1.0,
+   225
+  ],
+  [
+   1.0,
+   270
+  ],
+  [
+   1.0,
+   315
+  ],
+  [
+   0.5,
+   22.5
+  ],
+  [
+   0.5,
+   112.5
+  ],
+  [
+   0.5,
+   202.5
+  ],
+  [
+   0.5,
+   292.5
+  ]
+ ],
+ "mast_m": 2.0,
+ "n_az": 720,
+ "el_scale_deg": 0.002,
+ "max_km": 300.0,
+ "dem_label": "LOLA, 80 m/px; beyond its edge 240 m, 474 m, 1.90 km",
+ "dem_name": "ldem_80s_80m+ldem_75s_240m+ldem_64_south+ldem_16",
+ "dem_fingerprint": "76de51d5e9+35bc39a609+cdb14f87ee+feb25e8376",
+ "selection": {
+  "starts": [
+   "2026-11-18T00:00:00Z",
+   "2026-11-14T00:00:00Z"
+  ],
+  "n_dates": 60,
+  "need": {
+   "need_sun_h": 240.0,
+   "need_earth_h": 100.0,
+   "window_days": 14.0,
+   "sun_at_touchdown": true,
+   "earth_at_touchdown": true,
+   "min_sun_fraction": 0.5
+  },
+  "rule": "map points where the single-point check passes on at least one landing date of these spans",
+  "group_sizes_in_order": [
+   733,
+   1673,
+   1
+  ]
+ },
+ "complete": true,
+ "built_utc": "2026-11-14T17:39:13Z",
+ "seconds_this_run": 1711.3
+}

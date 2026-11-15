@@ -1,0 +1,164 @@
+# URL: https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='10'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='coord@301'&COORD_TYPE='GEODETIC'&SITE_COORD='32.320000,-69.370000,0.0000'&START_TIME='2023-08-20'&STOP_TIME='2023-09-08'&STEP_SIZE='12h'&QUANTITIES='4'&CSV_FORMAT='YES'&CAL_FORMAT='CAL'&TIME_DIGITS='MINUTES'
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+
+
+*******************************************************************************
+Ephemeris / API_USER Sat Nov 14 03:11:56 2026 Pasadena, USA      / Horizons    
+*******************************************************************************
+Target body name: Sun (10)                        {source: DE441}
+Center body name: Moon (301)                      {source: DE441}
+Center-site name: (user defined site below)
+*******************************************************************************
+Start time      : A.D. 2023-Aug-20 00:00:00.0000 UT      
+Stop  time      : A.D. 2023-Sep-08 00:00:00.0000 UT      
+Step-size       : 720 minutes
+*******************************************************************************
+Target pole/equ : IAU_SUN                         {East-longitude positive}
+Target radii    : 695700.0, 695700.0, 695700.0 km {Equator_a, b, pole_c}       
+Center geodetic : 32.32, -69.37, -6.1755E-13      {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 32.32, 612.14113, -1625.9895    {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}
+Center radii    : 1737.4, 1737.4, 1737.4 km       {Equator_a, b, pole_c}       
+Target primary  : Sun
+Vis. interferer : EARTH (R_eq= 6378.137) km       {source: DE441}
+Rel. light bend : Sun, EARTH                      {source: DE441}
+Rel. lght bnd GM: 1.3271E+11, 3.9860E+05 km^3/s^2                              
+Atmos refraction: NO (AIRLESS)
+RA format       : HMS
+Time format     : CAL 
+Calendar mode   : Mixed Julian/Gregorian
+EOP file        : eop.261113.p270209                                           
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-NOV-13. PREDICTS-> 2027-FEB-08
+Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass     n.a.    , Daylight (NO )
+Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
+Table cut-offs 3: RA/DEC angular rate (     0.0=NO )                           
+Table format    : Comma Separated Values (spreadsheet)
+*******************************************************************************
+ Date__(UT)__HR:MN, , ,Azi_(a-app), Elev_(a-app),
+*************************************************
+$$SOE
+ 2023-Aug-20 00:00, ,i, 102.618968,    -6.173406,
+ 2023-Aug-20 12:00, ,i,  96.862863,    -4.042875,
+ 2023-Aug-21 00:00, ,i,  91.132827,    -1.886670,
+ 2023-Aug-21 12:00,*,i,  85.412815,     0.273599,
+ 2023-Aug-22 00:00,*,i,  79.686731,     2.416422,
+ 2023-Aug-22 12:00,*,i,  73.938887,     4.520367,
+ 2023-Aug-23 00:00,*,i,  68.154475,     6.564073,
+ 2023-Aug-23 12:00,*,i,  62.320048,     8.526272,
+ 2023-Aug-24 00:00,*,i,  56.424021,    10.385859,
+ 2023-Aug-24 12:00,*,i,  50.457194,    12.122029,
+ 2023-Aug-25 00:00,*,i,  44.413258,    13.714485,
+ 2023-Aug-25 12:00,*,i,  38.289279,    15.143727,
+ 2023-Aug-26 00:00,*,i,  32.086076,    16.391432,
+ 2023-Aug-26 12:00,*,i,  25.808451,    17.440886,
+ 2023-Aug-27 00:00,*,i,  19.465204,    18.277476,
+ 2023-Aug-27 12:00,*,i,  13.068868,    18.889183,
+ 2023-Aug-28 00:00,*,i,   6.635138,    19.267036,
+ 2023-Aug-28 12:00,*,i,   0.182028,    19.405486,
+ 2023-Aug-29 00:00,*,i, 353.728778,    19.302645,
+ 2023-Aug-29 12:00,*,i, 347.294653,    18.960370,
+ 2023-Aug-30 00:00,*,i, 340.897726,    18.384166,
+ 2023-Aug-30 12:00,*,i, 334.553800,    17.582945,
+ 2023-Aug-31 00:00,*,i, 328.275547,    16.568643,
+ 2023-Aug-31 12:00,*,i, 322.071937,    15.355766,
+ 2023-Sep-01 00:00,*,i, 315.947973,    13.960892,
+ 2023-Sep-01 12:00,*,i, 309.904693,    12.402187,
+ 2023-Sep-02 00:00,*,i, 303.939397,    10.698972,
+ 2023-Sep-02 12:00,*,i, 298.046022,     8.871352,
+ 2023-Sep-03 00:00,*,i, 292.215613,     6.939930,
+ 2023-Sep-03 12:00,*,i, 286.436835,     4.925597,
+ 2023-Sep-04 00:00,*,i, 280.696482,     2.849406,
+ 2023-Sep-04 12:00,*,i, 274.979978,     0.732499,
+ 2023-Sep-05 00:00, ,i, 269.271853,    -1.403914,
+ 2023-Sep-05 12:00, ,i, 263.556201,    -3.538548,
+ 2023-Sep-06 00:00, ,i, 257.817141,    -5.650018,
+ 2023-Sep-06 12:00, ,i, 252.039278,    -7.716822,
+ 2023-Sep-07 00:00, ,i, 246.208202,    -9.717346,
+ 2023-Sep-07 12:00, ,i, 240.311018,   -11.629904,
+ 2023-Sep-08 00:00, ,i, 234.336914,   -13.432850,
+$$EOE
+*******************************************************************************
+Column meaning:
+ 
+TIME
+
+  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
+using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the non-uniform civil UT time-scale requested for output
+has not been determined for UTC times after the next July or January 1st.
+Therefore, the last known leap-second is used as a constant over future
+intervals.
+
+  Time tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
+(" ") denotes an A.D. date.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+  NOTE: "n.a." in output means quantity "not available" at the print-time.
+ 
+SOLAR PRESENCE (OBSERVING SITE)
+  Time tag is followed by a blank, then a solar-presence symbol:
+
+       '*'  Daylight (solar upper-limb on or above apparent horizon)
+       ' '  Night OR body-centered ephemeris
+
+INTERFERING BODY PRESENCE (OBSERVING SITE)
+  The solar-presence symbol is immediately followed by an "interfering body"
+presence symbol.
+
+       'i'  Upper-limb of interfering body on or above apparent horizon
+       ' '  Upper-limb of interfering body below apparent horizon OR body
+              centered ephemeris.
+
+  An "interfering body" is the largest other body in the immediate
+planet/satellite system, potentially compromising visual observations due to
+its brightness. Any such body is identified in the print-out header.
+ 
+ 'Azi_(a-app), Elev_(a-app),' =
+  Airless apparent azimuth and elevation of target center. Compensated
+for light-time, the gravitational deflection of light, stellar aberration,
+precession and nutation. Azimuth is measured clockwise from north:
+
+  North(0) -> East(90) -> South(180) -> West(270) -> North (360)
+
+Elevation angle is with respect to a plane perpendicular to the reference
+surface local zenith direction. TOPOCENTRIC ONLY.  Units: DEGREES
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+
+*******************************************************************************

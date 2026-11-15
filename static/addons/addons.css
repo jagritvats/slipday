@@ -1,0 +1,74 @@
+/* ===== Slipday add-ons: "Listen to the landing window" and "Be the mission planner" (listen.js, planner_game.js) =====
+   Every rule is scoped to .sd-addon / .sd-sr so it cannot change the rest of the page.  Colours come from the page's
+   own tokens in style.css (light and dark), with fallbacks so the demo page works alone. */
+.sd-addon { background: var(--surface, #fcfcfb); color: var(--text, #0b0b0b); border: 1px solid var(--line, #dddbd3);
+  border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.sd-addon h2 { font-size: 17px; margin: 0 0 8px; }
+.sd-addon p { max-width: 78ch; }
+.sd-addon .sd-lead, .sd-addon .sd-intro p { margin: 0 0 8px; color: var(--text, #0b0b0b); }
+.sd-addon .sd-what { margin: 0 0 8px; color: var(--text2, #52514e); font-size: 14px; }
+.sd-addon .sd-note { margin: 10px 0 0; color: var(--muted, #7b7a74); font-size: 12.5px; }
+.sd-addon .sd-row { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; margin: 8px 0; }
+.sd-addon button { font: inherit; font-weight: 600; color: var(--text, #0b0b0b); background: var(--surface, #fcfcfb);
+  border: 1px solid var(--line, #dddbd3); border-radius: 6px; padding: 8px 12px; min-height: 44px; cursor: pointer; }
+.sd-addon button:hover { border-color: var(--accent, #0e3f7e); }
+.sd-addon button:focus-visible, .sd-addon input:focus-visible, .sd-addon summary:focus-visible,
+.sd-addon [tabindex="-1"]:focus-visible { outline: 3px solid var(--accent, #0e3f7e); outline-offset: 2px; }
+.sd-addon button.sd-primary { background: var(--accent, #0e3f7e); border-color: var(--accent, #0e3f7e); color: var(--surface, #fff); }
+.sd-addon button[disabled] { cursor: default; opacity: .75; }
+.sd-addon .sd-vol { display: inline-flex; flex-direction: row; align-items: center; gap: 8px; font-size: 14px; color: var(--text2, #52514e); }
+.sd-addon .sd-vol input { flex: 0 0 140px; width: 140px; height: 32px; min-height: 32px; padding: 0; border: 0; background: transparent; accent-color: var(--accent, #0e3f7e); }
+.sd-addon .sd-now { min-height: 1.5em; margin: 8px 0; padding: 8px 10px; border-left: 4px solid var(--accent, #0e3f7e);
+  background: var(--ok-bg, #e3eefb); color: var(--ok-ink, #0e3f7e); font-size: 15px; }
+.sd-addon .sd-now:empty { display: none; }
+.sd-addon .sd-more summary { cursor: pointer; font-weight: 600; padding: 6px 0; }
+.sd-addon .sd-list { margin: 4px 0 0; padding-left: 1.4em; font-size: 14px; max-width: 80ch; }
+.sd-addon .sd-list li { margin: 2px 0; }
+.sd-addon .sd-help button { font-weight: 500; font-size: 13.5px; }
+
+/* the day strip under the Listen buttons: one cell per day, filled by the share of the day the body is up */
+.sd-addon .sd-strip { margin: 6px 0; max-width: 760px; }
+.sd-addon .sd-stripRow { display: flex; align-items: center; gap: 8px; margin: 2px 0; }
+.sd-addon .sd-k { width: 3.4em; font-size: 12px; color: var(--text2, #52514e); }
+.sd-addon .sd-cells { display: flex; gap: 2px; flex: 1 1 auto; height: 18px; }
+.sd-addon .sd-c { flex: 1 1 0; min-width: 0; border-radius: 2px; background: var(--night, #e4e2da); position: relative; overflow: hidden; }
+.sd-addon .sd-c::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--f, 0) * 100%); }
+.sd-addon .sd-sun .sd-c::after { background: var(--sun, #eb6834); }
+.sd-addon .sd-earth .sd-c::after { background: var(--earth, #2a78d6); }
+.sd-addon .sd-c.sd-on { outline: 2px solid var(--text, #0b0b0b); outline-offset: 1px; }
+.sd-addon .sd-stripAxis { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted, #7b7a74); padding-left: calc(3.4em + 8px); }
+
+/* the game */
+.sd-game .sd-score { font-size: 14px; color: var(--text2, #52514e); }
+.sd-game .sd-round { font-size: 16px; margin: 10px 0 8px; }
+.sd-game .sd-choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 900px; }
+.sd-game .sd-choice { text-align: left; padding: 12px 14px; min-height: 56px; line-height: 1.3; }
+.sd-game .sd-choice small { display: block; font-weight: 400; color: var(--muted, #7b7a74); }
+.sd-game .sd-choice.sd-picked { border: 3px solid var(--accent, #0e3f7e); }
+.sd-game .sd-wait { color: var(--text2, #52514e); }
+.sd-game .sd-result { font-size: 16px; margin: 12px 0 6px; }
+.sd-game .sd-answers { list-style: none; margin: 0; padding: 0; max-width: 900px; }
+.sd-game .sd-ans { display: flex; gap: 10px; align-items: flex-start; padding: 10px; border: 1px solid var(--line, #dddbd3); border-radius: 8px; margin: 6px 0; }
+.sd-game .sd-ans.sd-mine { border-width: 3px; border-color: var(--accent, #0e3f7e); }
+.sd-game .sd-icon { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%;
+  color: #fff; font-weight: 700; }
+.sd-game .v-yes .sd-icon { background: var(--good, #0ca30c); }
+.sd-game .v-notsure .sd-icon { background: var(--warn, #fab219); color: #0b0b0b; }
+.sd-game .v-no .sd-icon { background: var(--crit, #d03b3b); }
+.sd-game .v-na .sd-icon { background: var(--muted, #7b7a74); }
+.sd-game .sd-body { font-size: 14.5px; }
+
+/* visually hidden, still read by screen readers (the main-card summary) */
+.sd-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 600px) {
+  .sd-addon { padding: 12px; }
+  .sd-game .sd-choices { grid-template-columns: 1fr; }
+  .sd-addon .sd-row > button { flex: 1 1 100%; }
+  .sd-addon .sd-vol { flex: 1 1 100%; }
+  .sd-addon .sd-vol input { flex: 1 1 auto; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sd-addon *, .sd-addon *::before, .sd-addon *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+/* ===== end of listen / planner game ===== */

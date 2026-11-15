@@ -1,0 +1,26 @@
+main best year 2028 worst year 2032 season drift {'months_used': 111, 'season_period_days': 347.2, 'earlier_per_year_days': 18.05, 'share_of_variation_explained': 0.536} first try 15.0
+  by region: {'Peak near Cabeus B': 18.65, 'Haworth': 18.65, 'Malapert Massif': 18.95, 'Mons Mouton Plateau': 18.85, 'Mons Mouton': 18.45, 'Nobile Rim 1': 18.85, 'Nobile Rim 2': 18.65, 'de Gerlache Rim 2': 18.75, 'Slater Plain': 18.55}
+   2027 all nine 0.4185 best 1/2/3 [0.2774, 0.3555, 0.3829] ['Nobile Rim 1'] need 6
+   2028 all nine 0.4693 best 1/2/3 [0.2985, 0.3893, 0.4296] ['Nobile Rim 1'] need 6
+   2029 all nine 0.4432 best 1/2/3 [0.2705, 0.3644, 0.4021] ['Nobile Rim 1'] need 7
+   2030 all nine 0.4315 best 1/2/3 [0.2753, 0.3623, 0.3911] ['Nobile Rim 1'] need 8
+   2031 all nine 0.413 best 1/2/3 [0.2637, 0.3425, 0.3774] ['Nobile Rim 1'] need 7
+   2032 all nine 0.3928 best 1/2/3 [0.2486, 0.3231, 0.3545] ['Nobile Rim 1'] need 8
+   2033 all nine 0.4185 best 1/2/3 [0.2712, 0.3438, 0.3767] ['Nobile Rim 1'] need 8
+   2034 all nine 0.4555 best 1/2/3 [0.2774, 0.3685, 0.4178] ['Nobile Rim 1'] need 8
+   2035 all nine 0.4466 best 1/2/3 [0.2726, 0.3705, 0.4075] ['Nobile Rim 1'] need 6
+  overlap identical: True
+sun_only best year 2028 worst year 2035 season drift {'months_used': 111, 'season_period_days': 346.6, 'earlier_per_year_days': 18.65, 'share_of_variation_explained': 0.893} first try 11.5
+  by region: {'Peak near Cabeus B': 18.85, 'Haworth': 18.55, 'Malapert Massif': 18.85, 'Mons Mouton Plateau': 18.85, 'Mons Mouton': 18.75, 'Nobile Rim 1': 18.85, 'Nobile Rim 2': 18.75, 'de Gerlache Rim 2': 18.65, 'Slater Plain': 18.55}
+   2027 all nine 0.9205 best 1/2/3 [0.4774, 0.7432, 0.9096] ['Nobile Rim 1'] need 5
+   2028 all nine 0.9242 best 1/2/3 [0.4904, 0.7561, 0.9146] ['Nobile Rim 1'] need 5
+   2029 all nine 0.9178 best 1/2/3 [0.4623, 0.75, 0.911] ['Nobile Rim 1'] need 5
+   2030 all nine 0.9185 best 1/2/3 [0.4836, 0.7404, 0.9089] ['Nobile Rim 1'] need 5
+   2031 all nine 0.9205 best 1/2/3 [0.4808, 0.7555, 0.9082] ['Nobile Rim 1'] need 5
+   2032 all nine 0.9098 best 1/2/3 [0.4617, 0.7398, 0.9003] ['Nobile Rim 1'] need 5
+   2033 all nine 0.924 best 1/2/3 [0.4877, 0.7507, 0.9151] ['Nobile Rim 1'] need 5
+   2034 all nine 0.9178 best 1/2/3 [0.4712, 0.7514, 0.9055] ['Nobile Rim 1'] need 5
+   2035 all nine 0.9034 best 1/2/3 [0.4623, 0.7288, 0.8938] ['Nobile Rim 1'] need 5
+  overlap identical: True
+sub-solar drift 19.3 [33.0, 11.0, 12.0, 27.0, 10.0, 29.0, 10.0, 35.0] {'months_used': 111, 'season_period_days': 346.6, 'earlier_per_year_days': 18.65, 'share_of_variation_explained': 1.0}
+wrote D:\dev\projects\spaceapps26\spaceapps_handoff\mvps\slipday\data\addons\atlas\atlas.json 0.8 s

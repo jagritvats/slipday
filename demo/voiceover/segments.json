@@ -1,0 +1,82 @@
+[
+ {
+  "seg": 1,
+  "step": "answer",
+  "start": 0.15,
+  "slot": 4.75,
+  "dur": 4.087,
+  "tempo": 1.0,
+  "text": "Launch slipped. Can we still land here? Yes, eight days to spare.",
+  "text_hash": "e6a6622738029219"
+ },
+ {
+  "seg": 2,
+  "step": "objective",
+  "start": 5.15,
+  "slot": 4.75,
+  "dur": 4.365,
+  "tempo": 1.0,
+  "text": "The challenge: Sun and Earth against the real horizon, in numbers.",
+  "text_hash": "cf6ee86bcc388901"
+ },
+ {
+  "seg": 3,
+  "step": "why",
+  "start": 10.15,
+  "slot": 3.75,
+  "dur": 3.529,
+  "tempo": 1.0,
+  "text": "On day nine, the Earth sets behind distant ground.",
+  "text_hash": "ed84aa84e0ed0b7a"
+ },
+ {
+  "seg": 4,
+  "step": "view3d",
+  "start": 14.15,
+  "slot": 2.75,
+  "dur": 1.95,
+  "tempo": 1.0,
+  "text": "NASA terrain, in 3-D.",
+  "text_hash": "12f49e961ca0c942"
+ },
+ {
+  "seg": 5,
+  "step": "safety",
+  "start": 17.15,
+  "slot": 2.75,
+  "dur": 2.229,
+  "tempo": 1.0,
+  "text": "Flat enough to land? Only just.",
+  "text_hash": "398fdae93542bd05"
+ },
+ {
+  "seg": 6,
+  "step": "regions",
+  "start": 20.15,
+  "slot": 3.75,
+  "dur": 3.483,
+  "tempo": 1.0,
+  "text": "One region is not enough: NASA must keep several.",
+  "text_hash": "f612bdf64e215d24"
+ },
+ {
+  "seg": 7,
+  "step": "map",
+  "start": 24.15,
+  "slot": 2.75,
+  "dur": 2.461,
+  "tempo": 1.0,
+  "text": "Checked again on NASA's finer terrain.",
+  "text_hash": "2f81c716f295be23"
+ },
+ {
+  "seg": 8,
+  "step": "closing",
+  "start": 27.15,
+  "slot": 2.25,
+  "dur": 2.043,
+  "tempo": 1.0,
+  "text": "Slipday: know your margin.",
+  "text_hash": "ae2110dbe6d124d9"
+ }
+]

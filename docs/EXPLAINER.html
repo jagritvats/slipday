@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slipday explained</title>
+<meta name="description" content="What Slipday shows, screen by screen, in plain words: can a Moon landing near the south pole still work if the launch slips?">
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --text: #1d1d1b; --text2: #4a4a45; --muted: #77766f; --line: #e2e0d8;
+  --accent: #1f5fa8; --good: #0b7a0b; --warn: #8a5a00; --crit: #b42828; --tag: #eef3fa;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121416; --surface: #1b1e21; --text: #ecebe6; --text2: #c9c8c2; --muted: #9a9993; --line: #31353a;
+    --accent: #7fb2ee; --good: #6fd36f; --warn: #f0c060; --crit: #ff8a8a; --tag: #22303f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121416; --surface: #1b1e21; --text: #ecebe6; --text2: #c9c8c2; --muted: #9a9993; --line: #31353a;
+  --accent: #7fb2ee; --good: #6fd36f; --warn: #f0c060; --crit: #ff8a8a; --tag: #22303f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 820px; margin: 0 auto; padding: 24px 16px 48px; }
+header.top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 34px; line-height: 1.15; margin: 8px 0 4px; letter-spacing: -0.01em; }
+.lede { font-size: 19px; color: var(--text2); margin: 10px 0 18px; }
+h2 { font-size: 23px; margin: 0 0 10px; line-height: 1.25; }
+h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 14px 0 4px; }
+p { margin: 0 0 8px; }
+a { color: var(--accent); }
+.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 18px 0 26px; }
+.toc ol { margin: 6px 0 0; padding-left: 22px; columns: 2; column-gap: 28px; }
+.toc li { break-inside: avoid; font-size: 15px; }
+section.feature { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 14px; margin: 0 0 22px; }
+.num { display: inline-block; min-width: 1.7em; color: var(--muted); font-variant-numeric: tabular-nums; }
+figure { margin: 6px 0 10px; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.cant { border-left: 3px solid var(--warn); padding-left: 10px; }
+.video { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 0 0 24px; }
+.video video { width: 100%; height: auto; border-radius: 6px; background: #000; }
+.terms { font-size: 15px; color: var(--text2); }
+.terms dt { font-weight: 650; color: var(--text); margin-top: 6px; }
+.terms dd { margin: 0 0 4px; }
+ul.data { padding-left: 20px; }
+ul.data li { margin: 0 0 6px; }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 30px; padding-top: 14px; }
+button.theme { font: inherit; font-size: 14px; color: var(--text2); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+@media (max-width: 560px) { body { font-size: 16px; } h1 { font-size: 28px; } .toc ol { columns: 1; } section.feature { padding: 14px 12px 10px; } }
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <h1>Slipday, explained</h1>
+  <button class="theme" type="button" id="themeBtn">Light / dark</button>
+</header>
+<p class="lede">Rocket launches slip. A few days late is normal. Near the Moon's south pole the Sun stays very low, so a few days can
+decide whether a lander gets enough sunlight and can still talk to Earth. Slipday answers one question: if the launch slips,
+can we still land at this spot? It answers yes, not sure or no, and says how many days of slip the plan can take.</p>
+
+<div class="video">
+  <h2>Watch it (about 3 minutes)</h2>
+  <video controls preload="metadata" src="../demo/slipday_explainer.mp4"></video>
+  <p class="terms">The video and this page follow the same order. Every number in them is on the app's screen.</p>
+</div>
+
+<dl class="terms">
+  <dt>Slip margin</dt><dd>How many days the landing can slip and still work.</dd>
+  <dt>Landing scatter</dt><dd>A lander rarely touches down exactly where it aims. Slipday checks 13 touchdown points within 100 m of the target, and says Yes only if all of them pass.</dd>
+  <dt>Skyline</dt><dd>The outline of hills and crater rims around the site. If the Sun or the Earth is below it, the lander gets no sunlight or no radio contact.</dd>
+  <dt>Fragile</dt><dd>A Yes where the Sun or the Earth sits less than 0.27 degrees above the skyline at a touchdown point. A small error in the map could flip it.</dd>
+</dl>
+
+<nav class="toc" aria-label="Contents">
+  <strong>On this page</strong>
+  <ol>
+    <li><a href="#question">The question</a></li>
+    <li><a href="#card">Yes, not sure or no, and the slip margin</a></li>
+    <li><a href="#objective">The challenge objective, in numbers</a></li>
+    <li><a href="#slipped">Launch slipped by N days</a></li>
+    <li><a href="#windows">Next windows, other sites, and Download</a></li>
+    <li><a href="#view3d">The ground in 3-D</a></li>
+    <li><a href="#custom">Your own site</a></li>
+    <li><a href="#map">The slip-margin map</a></li>
+    <li><a href="#grids">80, 20 and 5 m terrain</a></li>
+    <li><a href="#slope">Is the ground flat enough?</a></li>
+    <li><a href="#touchdown">Chance of a safe touchdown</a></li>
+    <li><a href="#im1">A real landing: IM-1</a></li>
+    <li><a href="#regions">NASA&#x27;s nine Artemis regions</a></li>
+    <li><a href="#atlas">Which years suit a landing, 2027 to 2035</a></li>
+    <li><a href="#relay">Relay satellites</a></li>
+    <li><a href="#listen">Listen to the landing window</a></li>
+    <li><a href="#game">Be the mission planner</a></li>
+    <li><a href="#limits">What it cannot tell you</a></li>
+    <li><a href="#data">The data behind it</a></li>
+  </ol>
+</nav>
+
+<section class="feature" id="question">
+  <h2><span class="num">1</span>The question</h2>
+  <figure><img src="explainer/question.jpg" alt="The top of the app: the title, a three-sentence introduction, a bar of links, and the input sentence" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>The title, three plain sentences on what the app answers, a bar of links to each part of the page, and one sentence you can edit: where you land, the date and hour, how many hours of sunlight and radio contact the mission needs, how many days on the surface, and how close to the target it lands.</p>
+  <h3>What it means</h3>
+  <p>The page opens on an example: a ridge at 89.010 S, 122.764 E, landing on 18 Nov 2026, needing 240 hours of sunlight and 100 hours of contact with Earth in the first 14 days. Change any part and the answer updates.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">It does not plan the launch. The 240 and 100 hours are example needs, not a real mission&#x27;s.</p>
+</section>
+
+<section class="feature" id="card">
+  <h2><span class="num">2</span>Yes, not sure or no, and the slip margin</h2>
+  <figure><img src="explainer/card.jpg" alt="Yes, it survives a slip of up to 8 days, with a strip of green and red day cells" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>A big Yes: &quot;it survives a slip of up to 8 days if it touches down within 100 m of the target&quot;. Under it, a strip with one cell per day of slip: green yes, amber not sure, red no.</p>
+  <h3>What it means</h3>
+  <p>The landing can slip up to 8 days and still work. Yes needs all 13 touchdown points to pass, on two terrain maps. The line under it says NASA&#x27;s finer 20 m map agrees: 13 of 13 points, 8 days.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The Yes holds only if the lander comes down within 100 m. A wider miss can change it.</p>
+</section>
+
+<section class="feature" id="objective">
+  <h2><span class="num">3</span>The challenge objective, in numbers</h2>
+  <figure><img src="explainer/objective.jpg" alt="The objective line with the Sun and Earth directions and heights above the skyline, and the skyline chart" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>A line labelled &quot;Challenge objective&quot;: at touchdown the Sun stands at azimuth 315° (north-west), 1.2° above the skyline, and the Earth at azimuth 231° (south-west), 0.6° above it. Below it, the skyline all round with the paths of the Sun and the Earth.</p>
+  <h3>What it means</h3>
+  <p>This is the challenge&#x27;s one firm goal: show the Sun and the Earth against the real horizon for a chosen place and time. Both are only just above the hills.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The skyline comes from an 80 m terrain map. Narrow ridges can come out a little too high or too low.</p>
+</section>
+
+<section class="feature" id="slipped">
+  <h2><span class="num">4</span>Launch slipped by N days</h2>
+  <figure><img src="explainer/slipped.jpg" alt="Launch slipped by 9 days: a banner says No, only 95 of the 100 hours of Earth contact" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>Type how many days the launch slipped. At 9 days a banner reads: &quot;Land on Nov 27 (launch slipped 9 days): No: only 95 hours of Earth contact of the 100 needed.&quot; The Earth goes behind ground 131.6 km away.</p>
+  <h3>What it means</h3>
+  <p>Clicking a day on the strip does the same. The plan and its monthly windows stay as they were.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">Typing a new date instead makes it the new plan, with its own windows.</p>
+</section>
+
+<section class="feature" id="windows">
+  <h2><span class="num">5</span>Next windows, other sites, and Download</h2>
+  <figure><img src="explainer/windows.jpg" alt="Next windows: Dec 17 yes, Jan 16 and Feb 14 no; other options; Download buttons" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>&quot;Missed the window? Next&quot;: Dec 17 ✓ 6 d, Jan 16 ✕ sunlight, Feb 14 ✕. &quot;Other sites, other hours&quot; finds that in January 13 of 20 other sites have a Yes hour within 3 days, 11 of them fragile. &quot;Download this answer&quot; saves it all as CSV or JSON.</p>
+  <h3>What it means</h3>
+  <p>A lander can launch only a few days each month; miss them and the landing moves about a month later. Fragile means the Sun or the Earth is less than 0.27° above the skyline at a touchdown point, so a small error could flip it.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The monthly step is our reading of mission reports. The other-site search answers the monthly windows, not the slipped day.</p>
+</section>
+
+<section class="feature" id="view3d">
+  <h2><span class="num">6</span>The ground in 3-D</h2>
+  <figure><img src="explainer/view3d.jpg" alt="3-D view of the terrain around the site with the Sun and Earth directions and long shadows" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>The real ground around the site, built from NASA&#x27;s LOLA laser altimeter (an instrument on the Lunar Reconnaissance Orbiter that measured heights with laser pulses). Press play to move through the landing window.</p>
+  <h3>What it means</h3>
+  <p>The Sun circles low in the sky, so long shadows sweep across the ground. You can see which ridge blocks the Sun or the Earth.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">It is a model of the same 80 m map, not a photograph. Heights are drawn twice as tall.</p>
+</section>
+
+<section class="feature" id="custom">
+  <h2><span class="num">7</span>Your own site</h2>
+  <figure><img src="explainer/custom.jpg" alt="The card with a typed site at 86.000 S, 160.000 W: No, the Earth 4.8 degrees below the skyline" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>Pick &quot;Your own coordinates…&quot; in the card&#x27;s site list and type a latitude in degrees south and a longitude. Here: 86.000 S, 160.000 W. The card says No, and the objective line shows the Earth 4.8° below the skyline at touchdown.</p>
+  <h3>What it means</h3>
+  <p>The same checks run for any spot near the pole, and any of the 32 listed sites can be picked the same way.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">Far from the pole there is no terrain data, and the answer uses a smooth Moon; the page warns about it.</p>
+</section>
+
+<section class="feature" id="map">
+  <h2><span class="num">8</span>The slip-margin map</h2>
+  <figure><img src="explainer/map.jpg" alt="Map near the pole coloured by days of slip; 574 of 733 points keep a margin" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>The ground near the pole, coloured by how many days of slip each spot survives, checked at 13 touchdown points. 574 of the 733 spots that pass on the planned date keep a margin; 159 lose it; 343 survive at least one day of slip.</p>
+  <h3>What it means</h3>
+  <p>You can see where a slip is safe and where it is not. Small red crosses mark spots where NASA&#x27;s finer 20 m map disagrees.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">Where the two maps disagree, the 80 m map is nearly always the more hopeful one.</p>
+</section>
+
+<section class="feature" id="grids">
+  <h2><span class="num">9</span>80, 20 and 5 m terrain</h2>
+  <figure><img src="explainer/grids.jpg" alt="Shackleton connecting ridge: Yes for up to 7 days on 80 m, Not sure on the 20 m and 5 m grids" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>At the Shackleton connecting ridge the card says Yes, for up to 7 days. The line under it: on the 20 m grid, Not sure (11 of 13 touchdown points); 5 m: Not sure (12 of 13).</p>
+  <h3>What it means</h3>
+  <p>Finer maps show small bumps that a coarse map smooths away. Here they turn a Yes into Not sure, so the app shows all three answers.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The 20 m and 5 m maps cover only small areas, so most spots get the 80 m answer alone.</p>
+</section>
+
+<section class="feature" id="slope">
+  <h2><span class="num">10</span>Is the ground flat enough?</h2>
+  <figure><img src="explainer/slope.jpg" alt="Flat enough to land? Yes; the steepest touchdown point is 4.9 degrees" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>&quot;Flat enough at all 13 touchdown points: the steepest is 4.9°, under NASA&#x27;s 8° limit.&quot; NASA&#x27;s crewed lander may lean at most 8° (5° is the goal).</p>
+  <h3>What it means</h3>
+  <p>The opening example is flat enough, but only just: its steepest point is about 5°, right at the goal. Moving it by one 5 m cell gives 4.4° to 5.8°.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">NASA&#x27;s slope maps are uncertain by about 2° per point, and 76 of the 78 published region sites have only 80 m terrain, too coarse for slope. No boulders are seen.</p>
+</section>
+
+<section class="feature" id="touchdown">
+  <h2><span class="num">11</span>Chance of a safe touchdown</h2>
+  <figure><img src="explainer/touchdown.jpg" alt="Chance the ground under the lander is within 8 degrees, for three lander accuracies" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>For three assumed kinds of lander, the chance the ground under it is within 8°: over 99.9 % for a precision lander, 94 % for a CLPS-class lander (like the commercial landers NASA buys rides on).</p>
+  <h3>What it means</h3>
+  <p>A lander does not come down exactly on target, so the slope that matters is spread over where it might land.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">Slope only, no boulder data. The lander accuracies are assumptions taken from one published figure each.</p>
+</section>
+
+<section class="feature" id="im1">
+  <h2><span class="num">12</span>A real landing: IM-1</h2>
+  <figure><img src="explainer/im1.jpg" alt="IM-1 table: January (missed) Yes 1 day, February (flown) Yes 1 day" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>The IM-1 lander planned about seven days on the surface. The table says Yes, with 1 day of margin, for the February window it flew, and also for the January window it missed.</p>
+  <h3>What it means</h3>
+  <p>The app agrees with what happened: sunlight was not what stopped IM-1. It replays a published plan; it is not a forecast.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The January landing time is modelled. The slope check puts IM-1&#x27;s target at about 12°, too steep, and IM-1 tipped over on landing; the app knows nothing about the lander&#x27;s hardware.</p>
+</section>
+
+<section class="feature" id="regions">
+  <h2><span class="num">13</span>NASA&#x27;s nine Artemis regions</h2>
+  <figure><img src="explainer/regions.jpg" alt="Calendar of nine regions 2027 to 2030 and a table: best region 28.1 percent, three regions 40.1 percent" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>A calendar of NASA&#x27;s nine possible Artemis landing regions from 2027 to 2030. The best region is open at 28.1% of landing times, three regions at 40.1%; with sunlight only, 47.8% and 91.1%.</p>
+  <h3>What it means</h3>
+  <p>NASA writes that more than one region must be kept, because one gives too few chances. The app shows it using 78 landing sites a research team published (Wueller et al. 2026).</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The shares count landing times every 6 hours, not real launch chances. The cap with all nine regions comes from the example Earth-contact need.</p>
+</section>
+
+<section class="feature" id="atlas">
+  <h2><span class="num">14</span>Which years suit a landing, 2027 to 2035</h2>
+  <figure><img src="explainer/atlas.jpg" alt="The atlas: one row per year from 2027 to 2035, one column per month" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>The same check run for every year from 2027 to 2035, one row per year and one column per month. Darker cells are months when more landing times work.</p>
+  <h3>What it means</h3>
+  <p>The weak season comes a little earlier each year, because the Moon&#x27;s seasons follow a 346.6-day year.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">Over nine years its averages come out about a point lower than the 2027 to 2030 panel; for 2027 to 2030 the two agree exactly.</p>
+</section>
+
+<section class="feature" id="relay">
+  <h2><span class="num">15</span>Relay satellites</h2>
+  <figure><img src="explainer/relay.jpg" alt="Relay panel: contact 336 of 336 hours with two relays instead of 311 with the Earth alone" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>When the Earth is behind the skyline, a relay satellite circling the Moon could pass messages on. With two relays of a NASA design, contact covers 336 of 336 hours instead of 311 with the Earth alone.</p>
+  <h3>What it means</h3>
+  <p>Relays would remove the radio limit at many sites. The main answer still counts the Earth alone.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The relay orbit is a representative NASA design that is not final and not in service; where a relay is at a given hour is illustrative.</p>
+</section>
+
+<section class="feature" id="listen">
+  <h2><span class="num">16</span>Listen to the landing window</h2>
+  <figure><img src="explainer/listen.jpg" alt="Listen panel with Play, Stop, Volume and Read it as text" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>&quot;Play the sound&quot; turns the first 14 days into about 20 seconds of sound: a high tone for the Sun, a low tone for the Earth, quiet while the ground hides them. &quot;Read it as text&quot; gives the same in words.</p>
+  <h3>What it means</h3>
+  <p>It helps anyone who cannot see the chart, and screen readers also hear the card&#x27;s answer.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">Nobody has tested it yet with a real screen reader.</p>
+</section>
+
+<section class="feature" id="game">
+  <h2><span class="num">17</span>Be the mission planner</h2>
+  <figure><img src="explainer/game.jpg" alt="The game&#x27;s first round: the launch slips and you pick one of three sites" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>A short game for students: the launch slips by a few days, you pick one of three sites, and the app shows the real answer for each, with one plain reason. Five rounds.</p>
+  <h3>What it means</h3>
+  <p>It teaches the same idea as the card: a few days can move the Sun and the Earth behind the hills.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">A round where no site works does not count.</p>
+</section>
+
+<section class="feature" id="limits">
+  <h2><span class="num">18</span>What it cannot tell you</h2>
+  <figure><img src="explainer/limits.jpg" alt="Can you trust it? Tiles comparing the model with NASA maps: within 0.8 points on ordinary terrain, 3.77 to 5.25 on ridges" loading="lazy"></figure>
+  <h3>What you see</h3>
+  <p>&quot;Can you trust it?&quot; compares the app with published NASA maps. Sunlight agrees within 0.8 points on ordinary ground, and within 3.77 to 5.25 points on the bright ridges where landers would go.</p>
+  <h3>What it means</h3>
+  <p>The model is close on average, and less exact on narrow ridges.</p>
+  <h3 class="cant">What it can't tell you</h3>
+  <p class="cant">The 80 m terrain is coarse and can be too hopeful. The sunlight and contact needs are examples. There is no battery or heat model. Fragile answers can flip with a small change.</p>
+</section>
+
+<section class="feature" id="data">
+  <h2>The data behind it</h2>
+  <p>Everything comes from public data. These are the main sources.</p>
+  <ul class="data">
+    <li>Terrain: NASA's LOLA laser altimeter maps of the south pole, 80 m, 20 m and 5 m (<a href="https://pgda.gsfc.nasa.gov/products/90">NASA PGDA, product 90</a>; <a href="https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/">5 m site models</a>), plus <a href="https://pds-geosciences.wustl.edu/missions/lro/lola.htm">coarser LOLA maps in NASA's Planetary Data System</a>.</li>
+    <li>Checking sunlight and Earth views: the LOLA team's average sunlight and Earth-visibility maps (<a href="https://imbrium.mit.edu/EXTRAS/ILLUMINATION/">illumination maps</a>).</li>
+    <li>Where the Sun and the Earth are: NASA JPL's DE421 planetary positions, checked against <a href="https://ssd.jpl.nasa.gov/horizons/">JPL Horizons</a>.</li>
+    <li>Deep Space Network stations: <a href="https://deepspace.jpl.nasa.gov/dsndocs/810-005/">DSN Telecommunications Link Design Handbook 810-005</a>.</li>
+    <li>Artemis regions: <a href="https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/">NASA's update on the Artemis III landing regions</a> and the <a href="https://ntrs.nasa.gov/citations/20250011660">LPSC 2026 site-selection abstract</a>.</li>
+    <li>Landing sites in the regions: Wueller et al. 2026, <a href="https://doi.org/10.1029/2025JE009434">JGR Planets</a> (CC BY 4.0), data on <a href="https://doi.org/10.5281/zenodo.17084058">Zenodo</a>.</li>
+  </ul>
+  <h3>Challenge resources</h3>
+  <ul class="data">
+    <li><a href="https://quickmap.lroc.im-ldi.com/">LROC QuickMap</a>, an online map of the Moon: every site in the app links to the same spot there. No data is taken from it.</li>
+    <li><a href="https://ssd.jpl.nasa.gov/horizons/">JPL Horizons</a>, which gives where the Sun, Earth and Moon are at any time: used to check the app's Sun and Earth directions.</li>
+    <li><a href="https://trek.nasa.gov/moon/">NASA Moon Trek</a>, an online 3-D Moon viewer: every site links to the same spot there. No data is taken from it.</li>
+    <li>The Canadian Space Agency's Moon exploration page: background reading only. It holds no data, and nothing in the app comes from it.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Slipday, by [TEAM NAME]. NASA Space Apps 2026: Lunar Landing Site Navigator.</p>
+  <p>The voice in the video is synthetic: made with ElevenLabs text-to-speech. The pictures are screenshots of the running app.</p>
+</footer>
+</main>
+<script>
+(function () {
+  var b = document.getElementById('themeBtn'), root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('slipdayExplainerTheme'); } catch (e) { saved = null; }
+  if (saved === 'light' || saved === 'dark') { root.setAttribute('data-theme', saved); }
+  b.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' || (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('slipdayExplainerTheme', next); } catch (e) { /* not saved */ }
+  });
+}());
+</script>
+</body>
+</html>

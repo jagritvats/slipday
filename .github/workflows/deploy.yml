@@ -1,0 +1,100 @@
+name: Deploy
+
+# Every push to main builds the arm64 image, pushes it to GHCR and restarts Slipday on the VM.
+# Kill switch: the repository variable DEPLOY_ENABLED must be 'true'; anything else skips the run.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/opt/spaceapps/slipday' }}
+  DEPLOY_PORT: ${{ secrets.DEPLOY_PORT || '22' }}
+
+jobs:
+  build:
+    name: Build and publish
+    # The VM is arm64: build natively, no QEMU.
+    runs-on: ubuntu-24.04-arm
+    if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+    outputs:
+      image_ref: ${{ steps.image.outputs.image_ref }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve image name
+        id: image
+        run: |
+          image_repo="$(echo "${REGISTRY}/${GITHUB_REPOSITORY}" | tr '[:upper:]' '[:lower:]')"
+          echo "image_repo=${image_repo}" >> "$GITHUB_OUTPUT"
+          echo "image_ref=${image_repo}:${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/arm64
+          push: true
+          tags: |
+            ${{ steps.image.outputs.image_ref }}
+            ${{ steps.image.outputs.image_repo }}:main
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to VM
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Copy deploy folder
+        run: |
+          target="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+          ssh -i ~/.ssh/deploy_key -p "${DEPLOY_PORT}" "$target" "mkdir -p '${DEPLOY_PATH}/deploy'"
+          scp -i ~/.ssh/deploy_key -P "${DEPLOY_PORT}" deploy/docker-compose.yml deploy/deploy.sh \
+            "$target:${DEPLOY_PATH}/deploy/"
+
+      - name: Pull and restart
+        env:
+          IMAGE_REF: ${{ needs.build.outputs.image_ref }}
+          GHCR_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLIPDAY_HOST_RULE: ${{ vars.SLIPDAY_HOST_RULE }}
+        run: |
+          {
+            printf 'export SLIPDAY_IMAGE=%q\n' "$IMAGE_REF"
+            printf 'export GHCR_USER=%q\n' "$GHCR_USER"
+            printf 'export GHCR_TOKEN=%q\n' "$GHCR_TOKEN"
+            printf 'export SLIPDAY_HOST_RULE=%q\n' "$SLIPDAY_HOST_RULE"
+            printf 'bash %q/deploy/deploy.sh\n' "$DEPLOY_PATH"
+          } | ssh -i ~/.ssh/deploy_key -p "${DEPLOY_PORT}" \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" "bash -s"

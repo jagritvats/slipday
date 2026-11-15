@@ -1,0 +1,55 @@
+# Slipday on the shared VM. Run through deploy/deploy.sh, which writes deploy/.env and checks the data first.
+#
+# The image carries the code and the data that is in git (the 240 m grid, the skyline fields, the stored
+# horizons). The grids that are over GitHub's file limit live on the VM under SLIPDAY_DATA and are mounted
+# read-only at the paths the app reads:
+#   dem/ldem_80s_80m_f32.npy   NASA's 80 m mosaic re-saved as .npy (231 MB; scripts/fetch_grid80.py)
+#   dem20/                     the 20 m crop around the pole and its stored skylines (125 MB)
+#   dem5/                      the LOLA team's 5 m site models (80 MB)
+#   horizon_cache/             stored skylines; writable, so new ones survive a redeploy
+#
+# Public traffic arrives only through the shared Traefik edge (Synpse stack, network synapse-edge), which
+# terminates TLS with the Cloudflare Origin Certificate for *.synpse.app.
+
+services:
+  slipday:
+    image: ${SLIPDAY_IMAGE:-ghcr.io/jagritvats/slipday:main}
+    container_name: slipday
+    restart: unless-stopped
+    mem_limit: ${SLIPDAY_MEM_LIMIT:-1g}
+    environment:
+      PORT: "8000"
+      MALLOC_ARENA_MAX: "2"
+    volumes:
+      - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/dem/ldem_80s_80m_f32.npy:/app/data/dem/ldem_80s_80m_f32.npy:ro
+      - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/dem20:/app/data/dem20:ro
+      - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/dem5:/app/data/dem5:ro
+      - ${SLIPDAY_DATA:-/opt/spaceapps/slipday/data-large}/horizon_cache:/app/data/horizon_cache
+    ports:
+      - "127.0.0.1:${SLIPDAY_LOCAL_PORT:-8100}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - synapse-edge
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=synapse-edge"
+      - "traefik.http.routers.slipday.rule=${SLIPDAY_HOST_RULE:-Host(`slipday.synpse.app`)}"
+      - "traefik.http.routers.slipday.entrypoints=websecure"
+      - "traefik.http.routers.slipday.tls=true"
+      - "traefik.http.services.slipday.loadbalancer.server.port=8000"
+
+# Created and owned by the Synpse stack: docker network create synapse-edge
+networks:
+  synapse-edge:
+    external: true
+    name: ${TRAEFIK_NETWORK:-synapse-edge}

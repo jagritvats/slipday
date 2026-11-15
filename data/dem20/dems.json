@@ -1,0 +1,89 @@
+{
+ "note": "written by scripts/fetch_ldem20_crop.py: the 20 m crop around the pole on top of the installed grids; not the default stack (use SLIPDAY_DEM_DIR=data/dem20)",
+ "dems": [
+  {
+   "name": "ldem_pole_20m",
+   "kind": "polar_stereo",
+   "path": "ldem_pole_20m_f32.npy",
+   "format": "npy",
+   "pole": -1,
+   "pixel_m": 20.0,
+   "x0_m": -47990.0,
+   "y0_m": 47990.0,
+   "scale": 1.0,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_80S_20MPP_ADJ (crop)",
+   "provenance": "tiles 26..32 x 26..32 of LDEM_80S_20MPP_ADJ.TIF, LOLA south-pole 20 m mosaic, NASA GSFC PGDA product 90 (Barker et al. 2023), read by HTTP range request; deflate and floating-point predictor decoded, values unchanged; sha256 of the received tile bytes 43766eff358e612b; plus tiles rows 30..32, columns 33..33 (sha256 of their bytes fd7006d95713b38a); cells with no tile are empty; plus tiles rows 25..25, columns 25..33 (sha256 of their bytes 839b97df8f405c6d); cells with no tile are empty; plus tiles rows 33..33, columns 25..33 (sha256 of their bytes 40e7d6dc4cf74fa5); cells with no tile are empty; plus tiles rows 26..32, columns 25..25 (sha256 of their bytes f5f01de5b22d0da9); cells with no tile are empty; plus tiles rows 26..29, columns 33..33 (sha256 of their bytes 1bd26a73355ed636); cells with no tile are empty"
+  },
+  {
+   "name": "ldem_80s_80m",
+   "kind": "polar_stereo",
+   "path": "../dem/ldem_80s_80m_f32.npy",
+   "format": "npy",
+   "pole": -1,
+   "pixel_m": 80.0,
+   "x0_m": -303960.0,
+   "y0_m": 303960.0,
+   "scale": 1.0,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_80S_80MPP_ADJ",
+   "provenance": "LDEM_80S_80MPP_ADJ.TIF, LOLA south-pole 80 m mosaic, NASA GSFC PGDA product 90 (Barker et al. 2023); values unchanged, re-saved as .npy; source sha256 82030dcbdd7c4bb0"
+  },
+  {
+   "name": "ldem_75s_240m",
+   "kind": "polar_stereo",
+   "path": "../dem/ldem_75s_240m_i16.npy",
+   "format": "npy",
+   "pole": -1,
+   "pixel_m": 240.0,
+   "x0_m": -457320.0,
+   "y0_m": 457320.0,
+   "scale": 0.5,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_75S_240M (PDS GDR)",
+   "provenance": "LDEM_75S_240M.JP2, PDS LRO-L-LOLA-4-GDR-V1.0 south-polar DEM to 75S; JPEG2000 decoded, values unchanged (int16 half-metres), re-saved as .npy; source sha256 a0ebbad0a2650c74"
+  },
+  {
+   "name": "ldem_64_south",
+   "kind": "equirect",
+   "path": "../dem/ldem_64_south.npy",
+   "format": "npy",
+   "ppd": 64.0,
+   "lat0": -60.0078125,
+   "lon0": -179.9921875,
+   "scale": 0.5,
+   "offset": -10000.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "SVS CGI Moon Kit ldem_64_uint",
+   "provenance": "60S-90S crop (rows 9600 to 11519, no resampling) of NASA SVS CGI Moon Kit ldem_64_uint.tif (LOLA, svs.gsfc.nasa.gov/4720); sha256 of the crop 2b5a02c566b30c3a, of the source file 0f40bce8b42864de"
+  },
+  {
+   "name": "ldem_16",
+   "kind": "equirect",
+   "path": "../dem/LDEM_16.IMG",
+   "format": "raw",
+   "dtype": "<i2",
+   "shape": [
+    2880,
+    5760
+   ],
+   "header_bytes": 0,
+   "ppd": 16.0,
+   "lat0": 89.96875,
+   "lon0": 0.03125,
+   "scale": 0.5,
+   "offset": 0.0,
+   "nodata": null,
+   "source": "LOLA",
+   "product": "LDEM_16 (PDS GDR V3.1)",
+   "provenance": "LDEM_16.IMG, PDS LRO-L-LOLA-4-GDR-V1.0 product LDEM_16; sha256 a511e40d7a3ea327"
+  }
+ ]
+}
