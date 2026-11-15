@@ -11,6 +11,10 @@
 # Public traffic arrives only through the shared Traefik edge (Synpse stack, network synapse-edge), which
 # terminates TLS with the Cloudflare Origin Certificate for *.synpse.app.
 
+# An explicit project name: without it Compose names the project after the folder ("deploy"), which other
+# stacks on the same VM share, and "up --remove-orphans" in any of them would remove the others' containers.
+name: slipday
+
 services:
   slipday:
     image: ${SLIPDAY_IMAGE:-ghcr.io/jagritvats/slipday:main}

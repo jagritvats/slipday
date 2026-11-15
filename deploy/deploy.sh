@@ -40,8 +40,16 @@ fi
   true
 } > .env
 
+# A container called "slipday" left over from before the project had its own name would block the new one.
+old_project="$(docker inspect -f '{{ index .Config.Labels "com.docker.compose.project" }}' slipday 2>/dev/null || true)"
+if [[ -n "$old_project" && "$old_project" != "slipday" ]]; then
+  echo "Removing the old slipday container from compose project '$old_project'."
+  docker rm -f slipday >/dev/null
+fi
+
+# No --remove-orphans: the VM is shared, and this stack owns exactly one service.
 docker compose pull
-docker compose up -d --remove-orphans
+docker compose up -d
 
 echo "Waiting for /api/health ..."
 health=""
